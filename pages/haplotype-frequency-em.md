@@ -19,13 +19,15 @@ $$
 
 ### Data
 
-Counts of two-locus genotypes:
+Counts of two-locus genotypes (first number is SMN1 copy number, second number
+is number of Alt alleles in SNP genotype).
 
 \begin{align*}
 \vec N =
-&N_{00}, N_{01}, N_{02}, \\
 &N_{10}, N_{11}, N_{12}, \\
-&N_{20}, N_{21}, N_{22}
+&N_{20}, N_{21}, N_{22}, \\
+&N_{30}, N_{31}, N_{32}, \\
+&N_{40}, N_{41}, N_{42}, \\
 \end{align*}
 
 
@@ -34,7 +36,7 @@ Counts of two-locus genotypes:
 Haplotype frequencies:
 
 $$
-\vec p = p_{00}, p_{01}, p_{10}, p_{11}
+\vec p = p_{00}, p_{01}, p_{10}, p_{11}, p_{20}, p_{21}
 $$
 
 
@@ -43,7 +45,7 @@ $$
 Data is multinomial given two-locus genotype frequencies:
 
 $$
-\Pr(\vec N) \propto P_{jk}^{N_{jk}}
+\Pr(\vec N) \propto \prod F_{jk}^{N_{jk}}
 $$
 
 ### EM Algorithm
@@ -55,15 +57,23 @@ haplotypes, using the current estimates of the haplotype
 frequencies. Specifically:
 
 1. For each individual $i$, and for each possible pair of haplotypes $g =
-   ((j_1,k_1),(j_2,k_2))$ that are consistent with $i$'s data:
+   \Big((j_1,k_1),(j_2,k_2)\Big)$, if the haplotype pair $g$ is consistent with
+   $i$'s data then set
    $$
    q_{ig} \leftarrow \hat p_{j_1k_1} \hat p_{j_2k_2}
    $$
+   (with factors of two when the haplotypes differ, to account for lack of unordering)
+   If $g$ is inconsistent with $i$'s genotypes, then set $q_{ig} \leftarrow 0$.
 
+2. For each individual $i$ and for each $g$, normalize these conditional
+   probabilities by dividing by the sum:
    $$
-   Pr\Big(G_i = g|X_i, \hat{ \vec p}\Big) \leftarrow \hat p_{j_1k_1} \hat p_{j_2k_2}
+   q_{ig} \leftarrow Pr\Big(G_i = g|X_i, \hat{ \vec p}\Big) = q_{ig} / \small{ \sum_{g'} } q_{ig'}
    $$
-2. For each individual $i$, normalize this probability distribution by dividing by the sum.
+   Note that many of these entries will be equal to 1 because certain two-locus
+   genotypes are consistent with only one haplotype pair. For example $10$
+   is consistent only with $(1,0),(0,0)$.
+
 
 #### M-step
 
@@ -73,5 +83,5 @@ according to the probabilities computed in the E-step.
 For each haplotype $(j,k)$:
 
 $$
-\hat p_{jk} \leftarrow \frac{ \sum_i Pr\Big(G_i=(j,k) | X_i, \hat p\Big) }{2N}
+\hat p_{jk} \leftarrow \frac{ \sum_i q_{ig} }{2N}
 $$
