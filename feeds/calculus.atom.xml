@@ -1,5 +1,249 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/calculus.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-06-27T00:00:00-07:00</updated><entry><title>Calculus: useful results</title><link href="http://dandavison.github.io/notes/calculus-useful-results.html" rel="alternate"></link><published>2016-06-27T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-06-27:notes/calculus-useful-results.html</id><summary type="html">&lt;p&gt;&lt;img alt="antiderivatives" src="/images/calculus/antiderivatives.png" /&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/calculus.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-11-19T00:00:00-08:00</updated><entry><title>Sequences and series</title><link href="http://dandavison.github.io/notes/sequences-series.html" rel="alternate"></link><published>2016-11-19T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-19:notes/sequences-series.html</id><summary type="html">&lt;style type="text/css"&gt;
+body {color: black;}
+&lt;/style&gt;
+
+&lt;div class="math"&gt;$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+\newcommand{\sumn}{\sum_{n=1}^{\infty}}
+\newcommand{\limn}{\lim\limits_{n \to \infty}}
+\newcommand{\ninfty}{n \rightarrow \infty}
+$$&lt;/div&gt;
+&lt;p&gt;Notes on Stewart - Calculus ch. 11&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h2 id="definition-of-sequences-and-series"&gt;Definition of sequences and series&lt;/h2&gt;
+&lt;p&gt;A &lt;strong&gt;sequence&lt;/strong&gt; is an infinite sequence of numbers &lt;span class="math"&gt;\(a_1, a_2, a_3, ...\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;series&lt;/strong&gt; is the sum of a sequence: &lt;span class="math"&gt;\(s = a_1 + a_2 + a_3 + ... = \sum_{n=1}^\infty a_n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;A sequence is often defined by giving the closed-form expression for the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; item, e.g. &lt;span class="math"&gt;\(a_n = \frac{1}{n}\)&lt;/span&gt;. This refers to the sequence&lt;/p&gt;
+&lt;div class="math"&gt;$$\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, ...$$&lt;/div&gt;
+&lt;p&gt;The corresponding series is&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\sumn \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...
+$$&lt;/div&gt;
+&lt;p&gt;A sequence may have a limit: &lt;span class="math"&gt;\(\lim_{n \rightarrow \infty} a_n\)&lt;/span&gt;. If it does then the sequence &lt;em&gt;converges&lt;/em&gt;. If not, it &lt;em&gt;diverges&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="typical-questions-about-sequences-111"&gt;Typical questions about sequences (11.1)&lt;/h3&gt;
+&lt;h4 id="determine-whether-the-sequence-converges-or-diverges-if-it-converges-find-the-limit"&gt;Determine whether the sequence converges or diverges. If it converges, find the limit.&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Easier&lt;/strong&gt; (11.1.24)
+  &lt;div class="math"&gt;$$
+  a_n = \frac{n^3}{n^3 + 1}
+  $$&lt;/div&gt;
+  It's asking whether the sequence converges, so we want to try to compute the limit of the sequence as &lt;span class="math"&gt;\(n \rightarrow \infty\)&lt;/span&gt;. If the limit exists then it converges. Rearrange so that all &lt;span class="math"&gt;\(n\)&lt;/span&gt;s are on the bottom of fractions:
+  &lt;div class="math"&gt;$$
+  a_n = \frac{1}{1 + \frac{1}{n^3}}
+  $$&lt;/div&gt;
+  So now
+  &lt;div class="math"&gt;$$
+  \limn a_n = \frac{1}{1 + \limn\frac{1}{n^3}} = \frac{1}{1 + 0} = 1.
+  $$&lt;/div&gt;
+&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Easier&lt;/strong&gt; (11.1.26)
+  &lt;div class="math"&gt;$$
+  a_n = \frac{n^3}{n + 1}
+  $$&lt;/div&gt;
+  With this one, we can't get the &lt;span class="math"&gt;\(n\)&lt;/span&gt;s to appear only on the bottom of fractions:
+  &lt;div class="math"&gt;$$
+  a_n = \frac{n^2}{1 + \frac{1}{n}}
+  $$&lt;/div&gt;
+  So
+  &lt;div class="math"&gt;$$
+  \limn a_n = \frac{\limn n^2}{1 + \limn\frac{1}{n}} = \frac{\limn n^2}{1 + 0} = \limn n^2.
+  $$&lt;/div&gt;
+  But &lt;span class="math"&gt;\(n^2\)&lt;/span&gt; increases without bound as &lt;span class="math"&gt;\(\ninfty\)&lt;/span&gt;. People write that as &lt;span class="math"&gt;\(\limn n^2 = \infty\)&lt;/span&gt;. In any case, the limit does not exist and this sequence diverges.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;Harder&lt;/strong&gt; (11.1.56)
+  &lt;div class="math"&gt;$$
+  a_n = \frac{(-3)^n}{n!}
+  $$&lt;/div&gt;
+  The negative factor means that the terms of the sequence alternate between being negative and positive. Rewrite it as
+  &lt;div class="math"&gt;$$
+  a_n = (-1)^n\frac{3}{1}\frac{3}{2}\frac{3}{3}\frac{3}{4}...\frac{3}{n-1}\frac{3}{n}
+  $$&lt;/div&gt;
+  Now we use two theorems in the book. The first ("Theorem 6") says that if &lt;span class="math"&gt;\(\limn |a_n|\)&lt;/span&gt; is zero, then so is &lt;span class="math"&gt;\(\limn a_n\)&lt;/span&gt;. So that means we can see what happens while ignoring the -1 term. The second theorem is the "Squeeze Theorem": if we can show that the quantity we're studying lies between 0 and something else whose limit is zero, then we've proved that the limit of our quantity is 0. To do that we notice that all the terms from &lt;span class="math"&gt;\(\frac{3}{4}\)&lt;/span&gt; to &lt;span class="math"&gt;\(\frac{3}{n-1}\)&lt;/span&gt; are less than 1. Therefore
+  &lt;div class="math"&gt;$$
+  0 &amp;lt; |a_n| &amp;lt; \frac{9}{2}\frac{3}{n} = \frac{27}{2n}
+  $$&lt;/div&gt;
+  But &lt;span class="math"&gt;\(\limn \frac{27}{2n} = 0\)&lt;/span&gt; so this (together with the Theorem 6 argument about the &lt;span class="math"&gt;\((-1)^n\)&lt;/span&gt;) proves that the sequence converges and that its limiting value is 0.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="series"&gt;Series&lt;/h3&gt;
+&lt;p&gt;If the series sums to a finite value then it is said to converge; if not, it diverges.&lt;/p&gt;
+&lt;h4 id="divergence-test-for-series"&gt;Divergence test for series&lt;/h4&gt;
+&lt;p&gt;The &lt;em&gt;series&lt;/em&gt; (i.e. the infinite sum) can only have a finite value if the &lt;em&gt;sequence&lt;/em&gt; converges to zero. But even then, it might not have a finite value. The famous example is &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)&lt;/span&gt;. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)&lt;/span&gt; the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.&lt;/p&gt;
+&lt;h4 id="geometric-series"&gt;Geometric series&lt;/h4&gt;
+&lt;p&gt;Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
+$$&lt;/div&gt;
+&lt;p&gt;Theorem: if &lt;span class="math"&gt;\(|r| &amp;lt; 1\)&lt;/span&gt; then the geometric series converges. Its value is &lt;span class="math"&gt;\(\frac{a}{1-r}\)&lt;/span&gt;. For &lt;span class="math"&gt;\(|r| &amp;gt;= 1\)&lt;/span&gt; it diverges.&lt;/p&gt;
+&lt;h3 id="typical-questions-about-series"&gt;Typical questions about series&lt;/h3&gt;
+&lt;h4 id="find-the-values-of-x-for-which-the-series-converges-find-the-sum-of-the-series-for-those-values-of-x"&gt;Find the values of x for which the series converges. Find the sum of the series for those values of x.&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;11.2.59
+  &lt;div class="math"&gt;$$
+  \sum_{n=0}^{\infty} \frac{(x-2)^n}{3^n}
+  $$&lt;/div&gt;
+  We have to recognize that this is a geometric series. Rewrite it as
+  &lt;div class="math"&gt;$$
+  \sum_{n=0}^{\infty} \Big(\frac{x-2}{3}\Big)^n
+  $$&lt;/div&gt;
+  and it's clear that it is a GS with &lt;span class="math"&gt;\(a=1\)&lt;/span&gt; and &lt;span class="math"&gt;\(r=\frac{x-2}{3}\)&lt;/span&gt;. Therefore it converges if
+  &lt;div class="math"&gt;$$
+  -1 &amp;lt; \frac{x-2}{3} &amp;lt; 1 \Leftrightarrow -1 &amp;lt; x &amp;lt; 5
+  $$&lt;/div&gt;
+  and when x is in that range, its sum is
+  &lt;div class="math"&gt;$$
+  \frac{a}{1-r} = \frac{1}{1 - \frac{x-2}{3}} = \frac{3}{5-x}.
+  $$&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Differential equations</title><link href="http://dandavison.github.io/notes/differential-equations.html" rel="alternate"></link><published>2016-11-13T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-13:notes/differential-equations.html</id><summary type="html">&lt;style type="text/css"&gt;
+body {color: black;}
+&lt;/style&gt;
+
+&lt;div class="math"&gt;$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+$$&lt;/div&gt;
+&lt;h1 id="first-order"&gt;First-order&lt;/h1&gt;
+&lt;h2 id="separable"&gt;Separable&lt;/h2&gt;
+&lt;div class="math"&gt;$$
+y' = f(x)g(y)
+$$&lt;/div&gt;
+&lt;p&gt;Separate and integrate.&lt;/p&gt;
+&lt;h3 id="linear"&gt;Linear&lt;/h3&gt;
+&lt;div class="math"&gt;$$
+y' + f(x)y = g(x)
+$$&lt;/div&gt;
+&lt;p&gt;Use an integrating factor.&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Calculus: useful results</title><link href="http://dandavison.github.io/notes/calculus-useful-results.html" rel="alternate"></link><published>2016-06-27T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-06-27:notes/calculus-useful-results.html</id><summary type="html">&lt;p&gt;&lt;img alt="antiderivatives" src="/images/calculus/antiderivatives.png" /&gt;
 &lt;img alt="ftc" src="/images/calculus/ftc.png" /&gt;
 &lt;img alt="indefinite-integrals" src="/images/calculus/indefinite-integrals.png" /&gt;
 &lt;img alt="sums-of-powers" src="/images/calculus/sums-of-powers-of-positive-integers.png" /&gt;&lt;/p&gt;</summary></entry></feed>

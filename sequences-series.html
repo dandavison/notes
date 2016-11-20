@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Sequences and series — Notes</title>
+	<meta name="description" content="Title: Sequences and series; Date: 2016-11-19; Author: Dan Davison">
+	<meta name="author" content="Dan Davison">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://dandavison.github.io/notes/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://dandavison.github.io/notes/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/local.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="http://dandavison.github.io/notes/">Notes</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Sequences and series</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Dan Davison</h4>
+		</span>
+		<time datetime="2016-11-19T00:00:00-08:00" itemprop="datePublished">Sat 19 November 2016</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="http://dandavison.github.io/notes/category/calculus.html" rel="category">calculus</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><style type="text/css">
+body {color: black;}
+</style>
+
+<div class="math">$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+\newcommand{\sumn}{\sum_{n=1}^{\infty}}
+\newcommand{\limn}{\lim\limits_{n \to \infty}}
+\newcommand{\ninfty}{n \rightarrow \infty}
+$$</div>
+<p>Notes on Stewart - Calculus ch. 11</p>
+<hr />
+<h2 id="definition-of-sequences-and-series">Definition of sequences and series</h2>
+<p>A <strong>sequence</strong> is an infinite sequence of numbers <span class="math">\(a_1, a_2, a_3, ...\)</span>.</p>
+<p>A <strong>series</strong> is the sum of a sequence: <span class="math">\(s = a_1 + a_2 + a_3 + ... = \sum_{n=1}^\infty a_n\)</span>.</p>
+<p>A sequence is often defined by giving the closed-form expression for the <span class="math">\(\nth\)</span> item, e.g. <span class="math">\(a_n = \frac{1}{n}\)</span>. This refers to the sequence</p>
+<div class="math">$$\frac{1}{1}, \frac{1}{2}, \frac{1}{3}, ...$$</div>
+<p>The corresponding series is</p>
+<div class="math">$$
+\sumn \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...
+$$</div>
+<p>A sequence may have a limit: <span class="math">\(\lim_{n \rightarrow \infty} a_n\)</span>. If it does then the sequence <em>converges</em>. If not, it <em>diverges</em>.</p>
+<h3 id="typical-questions-about-sequences-111">Typical questions about sequences (11.1)</h3>
+<h4 id="determine-whether-the-sequence-converges-or-diverges-if-it-converges-find-the-limit">Determine whether the sequence converges or diverges. If it converges, find the limit.</h4>
+<ul>
+<li>
+<p><strong>Easier</strong> (11.1.24)
+  <div class="math">$$
+  a_n = \frac{n^3}{n^3 + 1}
+  $$</div>
+  It's asking whether the sequence converges, so we want to try to compute the limit of the sequence as <span class="math">\(n \rightarrow \infty\)</span>. If the limit exists then it converges. Rearrange so that all <span class="math">\(n\)</span>s are on the bottom of fractions:
+  <div class="math">$$
+  a_n = \frac{1}{1 + \frac{1}{n^3}}
+  $$</div>
+  So now
+  <div class="math">$$
+  \limn a_n = \frac{1}{1 + \limn\frac{1}{n^3}} = \frac{1}{1 + 0} = 1.
+  $$</div>
+</p>
+</li>
+<li>
+<p><strong>Easier</strong> (11.1.26)
+  <div class="math">$$
+  a_n = \frac{n^3}{n + 1}
+  $$</div>
+  With this one, we can't get the <span class="math">\(n\)</span>s to appear only on the bottom of fractions:
+  <div class="math">$$
+  a_n = \frac{n^2}{1 + \frac{1}{n}}
+  $$</div>
+  So
+  <div class="math">$$
+  \limn a_n = \frac{\limn n^2}{1 + \limn\frac{1}{n}} = \frac{\limn n^2}{1 + 0} = \limn n^2.
+  $$</div>
+  But <span class="math">\(n^2\)</span> increases without bound as <span class="math">\(\ninfty\)</span>. People write that as <span class="math">\(\limn n^2 = \infty\)</span>. In any case, the limit does not exist and this sequence diverges.</p>
+</li>
+<li>
+<p><strong>Harder</strong> (11.1.56)
+  <div class="math">$$
+  a_n = \frac{(-3)^n}{n!}
+  $$</div>
+  The negative factor means that the terms of the sequence alternate between being negative and positive. Rewrite it as
+  <div class="math">$$
+  a_n = (-1)^n\frac{3}{1}\frac{3}{2}\frac{3}{3}\frac{3}{4}...\frac{3}{n-1}\frac{3}{n}
+  $$</div>
+  Now we use two theorems in the book. The first ("Theorem 6") says that if <span class="math">\(\limn |a_n|\)</span> is zero, then so is <span class="math">\(\limn a_n\)</span>. So that means we can see what happens while ignoring the -1 term. The second theorem is the "Squeeze Theorem": if we can show that the quantity we're studying lies between 0 and something else whose limit is zero, then we've proved that the limit of our quantity is 0. To do that we notice that all the terms from <span class="math">\(\frac{3}{4}\)</span> to <span class="math">\(\frac{3}{n-1}\)</span> are less than 1. Therefore
+  <div class="math">$$
+  0 &lt; |a_n| &lt; \frac{9}{2}\frac{3}{n} = \frac{27}{2n}
+  $$</div>
+  But <span class="math">\(\limn \frac{27}{2n} = 0\)</span> so this (together with the Theorem 6 argument about the <span class="math">\((-1)^n\)</span>) proves that the sequence converges and that its limiting value is 0.</p>
+</li>
+</ul>
+<h3 id="series">Series</h3>
+<p>If the series sums to a finite value then it is said to converge; if not, it diverges.</p>
+<h4 id="divergence-test-for-series">Divergence test for series</h4>
+<p>The <em>series</em> (i.e. the infinite sum) can only have a finite value if the <em>sequence</em> converges to zero. But even then, it might not have a finite value. The famous example is <span class="math">\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)</span>. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for <span class="math">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)</span> the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.</p>
+<h4 id="geometric-series">Geometric series</h4>
+<p>Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:</p>
+<div class="math">$$
+s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
+$$</div>
+<p>Theorem: if <span class="math">\(|r| &lt; 1\)</span> then the geometric series converges. Its value is <span class="math">\(\frac{a}{1-r}\)</span>. For <span class="math">\(|r| &gt;= 1\)</span> it diverges.</p>
+<h3 id="typical-questions-about-series">Typical questions about series</h3>
+<h4 id="find-the-values-of-x-for-which-the-series-converges-find-the-sum-of-the-series-for-those-values-of-x">Find the values of x for which the series converges. Find the sum of the series for those values of x.</h4>
+<ul>
+<li>11.2.59
+  <div class="math">$$
+  \sum_{n=0}^{\infty} \frac{(x-2)^n}{3^n}
+  $$</div>
+  We have to recognize that this is a geometric series. Rewrite it as
+  <div class="math">$$
+  \sum_{n=0}^{\infty} \Big(\frac{x-2}{3}\Big)^n
+  $$</div>
+  and it's clear that it is a GS with <span class="math">\(a=1\)</span> and <span class="math">\(r=\frac{x-2}{3}\)</span>. Therefore it converges if
+  <div class="math">$$
+  -1 &lt; \frac{x-2}{3} &lt; 1 \Leftrightarrow -1 &lt; x &lt; 5
+  $$</div>
+  and when x is in that range, its sum is
+  <div class="math">$$
+  \frac{a}{1-r} = \frac{1}{1 - \frac{x-2}{3}} = \frac{3}{5-x}.
+  $$</div>
+</li>
+</ul>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
+	<hr>
+	<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dandavison7-notes'; 
+    var disqus_title = 'Sequences and series';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes">Notes</a></li>
+							<li><a href="http://dandavison.github.io/notes/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/dandavison">github</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (3)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (2)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Dan Davison 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>

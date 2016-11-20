@@ -1,5 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/misc.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-08-14T00:00:00-07:00</updated><entry><title>Logs</title><link href="http://dandavison.github.io/notes/logs.html" rel="alternate"></link><published>2016-08-14T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-08-14:notes/logs.html</id><summary type="html">&lt;h3 id="evaluate"&gt;Evaluate:&lt;/h3&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/misc.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-10-17T00:00:00-07:00</updated><entry><title>EM algorithm for haplotype frequency estimation</title><link href="http://dandavison.github.io/notes/haplotype-frequency-em.html" rel="alternate"></link><published>2016-10-17T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-10-17:notes/haplotype-frequency-em.html</id><summary type="html">&lt;style type="text/css"&gt;
+body {color: black;}
+&lt;/style&gt;
+
+&lt;div class="math"&gt;$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+$$&lt;/div&gt;
+&lt;h3 id="data"&gt;Data&lt;/h3&gt;
+&lt;p&gt;Counts of two-locus genotypes (first number is SMN1 copy number, second number
+is number of Alt alleles in SNP genotype).&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+\vec N =
+&amp;amp;N_{10}, N_{11}, N_{12}, \\
+&amp;amp;N_{20}, N_{21}, N_{22}, \\
+&amp;amp;N_{30}, N_{31}, N_{32}, \\
+&amp;amp;N_{40}, N_{41}, N_{42}, \\
+\end{align*}&lt;/div&gt;
+&lt;h3 id="parameters-of-interest"&gt;Parameters of interest&lt;/h3&gt;
+&lt;p&gt;Haplotype frequencies:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\vec p = p_{00}, p_{01}, p_{10}, p_{11}, p_{20}, p_{21}
+$$&lt;/div&gt;
+&lt;h3 id="model"&gt;Model&lt;/h3&gt;
+&lt;p&gt;Data is multinomial given two-locus genotype frequencies:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\Pr(\vec N) \propto \prod F_{jk}^{N_{jk}}
+$$&lt;/div&gt;
+&lt;h3 id="em-algorithm"&gt;EM Algorithm&lt;/h3&gt;
+&lt;h4 id="e-step"&gt;E-step&lt;/h4&gt;
+&lt;p&gt;For each individual, compute a probability distribution over its possible
+haplotypes, using the current estimates of the haplotype
+frequencies. Specifically:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;For each individual &lt;span class="math"&gt;\(i\)&lt;/span&gt;, and for each possible pair of haplotypes &lt;span class="math"&gt;\(g =
+   \Big((j_1,k_1),(j_2,k_2)\Big)\)&lt;/span&gt;, if the haplotype pair &lt;span class="math"&gt;\(g\)&lt;/span&gt; is consistent with
+   &lt;span class="math"&gt;\(i\)&lt;/span&gt;'s data then set
+   &lt;div class="math"&gt;$$
+   q_{ig} \leftarrow \hat p_{j_1k_1} \hat p_{j_2k_2}
+   $$&lt;/div&gt;
+   (with factors of two when the haplotypes differ, to account for lack of unordering)
+   If &lt;span class="math"&gt;\(g\)&lt;/span&gt; is inconsistent with &lt;span class="math"&gt;\(i\)&lt;/span&gt;'s genotypes, then set &lt;span class="math"&gt;\(q_{ig} \leftarrow 0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;For each individual &lt;span class="math"&gt;\(i\)&lt;/span&gt; and for each &lt;span class="math"&gt;\(g\)&lt;/span&gt;, normalize these conditional
+   probabilities by dividing by the sum:
+   &lt;div class="math"&gt;$$
+   q_{ig} \leftarrow Pr\Big(G_i = g|X_i, \hat{ \vec p}\Big) = q_{ig} / \small{ \sum_{g'} } q_{ig'}
+   $$&lt;/div&gt;
+   Note that many of these entries will be equal to 1 because certain two-locus
+   genotypes are consistent with only one haplotype pair. For example &lt;span class="math"&gt;\(10\)&lt;/span&gt;
+   is consistent only with &lt;span class="math"&gt;\((1,0),(0,0)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h4 id="m-step"&gt;M-step&lt;/h4&gt;
+&lt;p&gt;Update the haplotype frequency parameters by weighting each individual
+according to the probabilities computed in the E-step.&lt;/p&gt;
+&lt;p&gt;For each haplotype &lt;span class="math"&gt;\((j,k)\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\hat p_{jk} \leftarrow \frac{ \sum_i q_{ig} }{2N}
+$$&lt;/div&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Logs</title><link href="http://dandavison.github.io/notes/logs.html" rel="alternate"></link><published>2016-08-14T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-08-14:notes/logs.html</id><summary type="html">&lt;h3 id="evaluate"&gt;Evaluate:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(\log_{10} 100\)&lt;/span&gt;&lt;/p&gt;

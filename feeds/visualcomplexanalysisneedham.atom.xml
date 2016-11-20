@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/visualcomplexanalysisneedham.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-11-12T00:00:00-08:00</updated><entry><title>Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic</title><link href="http://dandavison.github.io/notes/visual-complex-analysis-1.html" rel="alternate"></link><published>2016-11-12T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-12:notes/visual-complex-analysis-1.html</id><summary type="html">&lt;style type="text/css"&gt;
+body {color: black;}
+&lt;/style&gt;
+
+&lt;div class="math"&gt;$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+$$&lt;/div&gt;
+&lt;p&gt;A complex number &lt;span class="math"&gt;\(z = x + iy\)&lt;/span&gt; is a point in the two-dimensional plane &lt;span class="math"&gt;\(\mathbb{C}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Addition is normal vector addition.&lt;/p&gt;
+&lt;p&gt;Multiplication is not obvious: &lt;span class="math"&gt;\(z_1z_2\)&lt;/span&gt; has angle equal to the sum of the two
+angles, and length equal to the product of the two lengths.&lt;/p&gt;
+&lt;p&gt;In other words, multiplying by a complex number &lt;span class="math"&gt;\(z\)&lt;/span&gt; rotates by &lt;span class="math"&gt;\(z\)&lt;/span&gt;'s angle, and
+scales by &lt;span class="math"&gt;\(z\)&lt;/span&gt;'s length.&lt;/p&gt;
+&lt;p&gt;For example: multiplying by &lt;span class="math"&gt;\(i\)&lt;/span&gt; is an anticlockwise rotation through 90°; &lt;span class="math"&gt;\(i^2 = -1\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;A complex number has infinitely many representations &lt;span class="math"&gt;\((r, \theta)\)&lt;/span&gt; in polar
+coordinates, with &lt;span class="math"&gt;\(\theta\)&lt;/span&gt; differing by multiples of &lt;span class="math"&gt;\(2\pi\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;"Bombelli's wild thought"&lt;/strong&gt;: complex numbers are usually introduced by
+considering the roots of a quadratic which does not intersect the
+x-axis. However it is more compelling to consider solutions to a cubic
+intersecting a line. In this case real solutions do exist, but they may require
+complex arithmetic, and this arithmetic implies the addition and multiplication
+laws.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Obtaining symbolic from geometric rule&lt;/strong&gt;: Addition &lt;span class="math"&gt;\(z_1 + z_2\)&lt;/span&gt;
+describes a parallelogram. So multiplication &lt;span class="math"&gt;\(z_3(z_1 + z_2)\)&lt;/span&gt; describes a
+rotated and shifted parallelogram. (...?)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Obtaining geometric from symbolic rule&lt;/strong&gt;: Consider multiplying &lt;span class="math"&gt;\(z\)&lt;/span&gt; by &lt;span class="math"&gt;\(A =
+4 + 3i = (5, tan^{-1}(\frac{3}{4}))\)&lt;/span&gt;. We want to show that the algebraic result
+is equivalent to rotating by &lt;span class="math"&gt;\(A\)&lt;/span&gt;'s angle and scaling by &lt;span class="math"&gt;\(5\)&lt;/span&gt;. Algebraically, &lt;span class="math"&gt;\(Az
+= 4z + 3(iz)\)&lt;/span&gt;. That describes a right-angle triangle with sides of length
+&lt;span class="math"&gt;\(4|z|\)&lt;/span&gt; and &lt;span class="math"&gt;\(3|z|\)&lt;/span&gt;. So the hypotenuse is length &lt;span class="math"&gt;\(5|z|\)&lt;/span&gt; as required, and since
+the triangles are similar, their angles are the same and so we have rotated &lt;span class="math"&gt;\(z\)&lt;/span&gt;
+by &lt;span class="math"&gt;\(A\)&lt;/span&gt;'s angle.&lt;/p&gt;
+&lt;h2 id="eulers-formula"&gt;Euler's formula&lt;/h2&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(e^{i\theta}\)&lt;/span&gt; is the point/vector on the unit circle at angle &lt;span class="math"&gt;\(\theta\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+e^{i\theta} = cos \theta + i ~ sin \theta,
+$$&lt;/div&gt;
+&lt;p&gt;and a generic complex number is &lt;span class="math"&gt;\(z = re^{i\theta}\)&lt;/span&gt;. This makes the
+multiplication law natural:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+(ae^{i\theta})(be^{i\phi}) = ab~e^{i(\theta + \phi)}.
+$$&lt;/div&gt;
+&lt;h3 id="two-justifications-of-eulers-formula"&gt;Two justification's of Euler's formula&lt;/h3&gt;
+&lt;h4 id="1-particle-moving-in-mathbbc"&gt;1. Particle moving in &lt;span class="math"&gt;\(\mathbb{C}\)&lt;/span&gt;&lt;/h4&gt;
+&lt;h4 id="2-power-series"&gt;2. Power series&lt;/h4&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry></feed>

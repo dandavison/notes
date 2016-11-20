@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Logs — Notes</title>
-	<meta name="description" content="Title: Logs; Date: 2016-08-14; Author: Dan Davison">
+	<title>Differential equations — Notes</title>
+	<meta name="description" content="Title: Differential equations; Date: 2016-11-13; Author: Dan Davison">
 	<meta name="author" content="Dan Davison">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -26,69 +26,42 @@
 		<div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
-		<h1 itemprop="name headline" class="article-title">Logs</h1>
+		<h1 itemprop="name headline" class="article-title">Differential equations</h1>
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 			<h4 itemprop="name">Dan Davison</h4>
 		</span>
-		<time datetime="2016-08-14T00:00:00-07:00" itemprop="datePublished">Sun 14 August 2016</time>
+		<time datetime="2016-11-13T00:00:00-08:00" itemprop="datePublished">Sun 13 November 2016</time>
 	</div>
 	<div>
 		Category:
 		<span itemprop="articleSection">
-			<a href="http://dandavison.github.io/notes/category/misc.html" rel="category">misc</a>
+			<a href="http://dandavison.github.io/notes/category/calculus.html" rel="category">calculus</a>
 		</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"><h3 id="evaluate">Evaluate:</h3>
-<ul>
-<li>
-<p><span class="math">\(\log_{10} 100\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log_{10} 0.1\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log_{10} 0.01\)</span></p>
-</li>
-<li>
-<p><span class="math">\(2^0, 2^1, 2^2, 2^3, 2^4, 2^5, 2^6, 2^7, 2^8\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log_{2}  1, \log_{2}  2, \log_{2}  4, \log_{2}  8, \log_{2}  16, \log_{2}  32, \log_{2}  64, \log_{2}  128, \log_{2}  256\)</span></p>
-</li>
-<li>
-<p>How many different values (e.g. ASCII characters) can a byte (8 bits) respresent? What's the maximum integer a byte can represent? (Assuming it starts at zero and doesn't represent negative numbers)</p>
-</li>
-<li>
-<p>What's the maximum value of a 32-bit integer? (making same assumption)</p>
-</li>
-</ul>
-<h3 id="simplify">Simplify</h3>
-<ul>
-<li>
-<p><span class="math">\(\log xy\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log x^2\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log \frac{1}{x}\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log \frac{x}{y}\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log 3x^a\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\ln e^x\)</span> (i.e. <span class="math">\(\log_e e^x\)</span>)</p>
-</li>
-<li>
-<p><span class="math">\(\log_{10} e^x\)</span></p>
-</li>
-<li>
-<p><span class="math">\(\log (x+y)\)</span></p>
-</li>
-</ul>
+	<div itemprop="articleBody" class="article-body"><style type="text/css">
+body {color: black;}
+</style>
+
+<div class="math">$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+$$</div>
+<h1 id="first-order">First-order</h1>
+<h2 id="separable">Separable</h2>
+<div class="math">$$
+y' = f(x)g(y)
+$$</div>
+<p>Separate and integrate.</p>
+<h3 id="linear">Linear</h3>
+<div class="math">$$
+y' + f(x)y = g(x)
+$$</div>
+<p>Use an integrating factor.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -151,7 +124,7 @@
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dandavison7-notes'; 
-    var disqus_title = 'Logs';
+    var disqus_title = 'Differential equations';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
