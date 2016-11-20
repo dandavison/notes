@@ -41,12 +41,7 @@ $$
 
 A sequence may have a limit: $\lim_{n \rightarrow \infty} a_n$. If it does then the sequence *converges*. If not, it *diverges*.
 
-**Divergence test for series:** The *series* (i.e. the infinite sum) can only have a finite value if the *sequence* converges to zero. But even then, it might not have a finite value. The famous example is $\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...$. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...$ the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof.
-
-If the series sum is finite then the series *converges*; if not, it diverges.
-
-
-## Typical questions about sequences (11.1)
+### Typical questions about sequences (11.1)
 
 
 #### Determine whether the sequence converges or diverges. If it converges, find the limit.
@@ -91,3 +86,40 @@ If the series sum is finite then the series *converges*; if not, it diverges.
   0 < |a_n| < \frac{9}{2}\frac{3}{n} = \frac{27}{2n}
   $$
   But $\limn \frac{27}{2n} = 0$ so this (together with the Theorem 6 argument about the $(-1)^n$) proves that the sequence converges and that its limiting value is 0.
+
+### Series
+
+If the series sums to a finite value then it is said to converge; if not, it diverges.
+
+#### Divergence test for series
+The *series* (i.e. the infinite sum) can only have a finite value if the *sequence* converges to zero. But even then, it might not have a finite value. The famous example is $\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...$. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...$ the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.
+
+#### Geometric series
+Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:
+
+$$
+s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
+$$
+
+Theorem: if $|r| < 1$ then the geometric series converges. Its value is $\frac{a}{1-r}$. For $|r| >= 1$ it diverges.
+
+### Typical questions about series
+
+#### Find the values of x for which the series converges. Find the sum of the series for those values of x.
+
+- 11.2.59
+  $$
+  \sum_{n=0}^{\infty} \frac{(x-2)^n}{3^n}
+  $$
+  We have to recognize that this is a geometric series. Rewrite it as
+  $$
+  \sum_{n=0}^{\infty} \Big(\frac{x-2}{3}\Big)^n
+  $$
+  and it's clear that it is a GS with $a=1$ and $r=\frac{x-2}{3}$. Therefore it converges if
+  $$
+  -1 < \frac{x-2}{3} < 1 \Leftrightarrow -1 < x < 5
+  $$
+  and when x is in that range, its sum is
+  $$
+  \frac{a}{1-r} = \frac{1}{1 - \frac{x-2}{3}} = \frac{3}{5-x}.
+  $$
