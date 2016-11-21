@@ -91,8 +91,9 @@ A sequence may have a limit: $\lim_{n \rightarrow \infty} a_n$. If it does then 
 
 If the series sums to a finite value then it is said to converge; if not, it diverges.
 
-#### Divergence test for series
-The *series* (i.e. the infinite sum) can only have a finite value if the *sequence* converges to zero. But even then, it might not have a finite value. The famous example is $\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...$. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...$ the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.
+A series has an associated *sequence* of **partial sums**: $a_1, a_1 + a_2, a_1 + a_2 + a+3, ...$. I.e. the sequence $a_n = \sum_{i=1}^n a_i$. If the series sums to $s$ (converges) then $s$ is the limit of sequence of partial sums.
+
+In general it is not easy to find the sum of a series, and so a lot of the material in the book focuses on methods for determining whether the series converges or not. However, it is easy to find the sum if the series is a *geometric series*:
 
 #### Geometric series
 Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:
@@ -101,7 +102,7 @@ $$
 s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
 $$
 
-Theorem: if $|r| < 1$ then the geometric series converges. Its value is $\frac{a}{1-r}$. For $|r| >= 1$ it diverges.
+Theorem: if $|r| < 1$ then the geometric series converges. Its value is $\frac{a}{1-r}$. For $|r| \geq 1$ it diverges.
 
 ### Typical questions about series
 
@@ -123,3 +124,56 @@ Theorem: if $|r| < 1$ then the geometric series converges. Its value is $\frac{a
   $$
   \frac{a}{1-r} = \frac{1}{1 - \frac{x-2}{3}} = \frac{3}{5-x}.
   $$
+
+### Divergence test for series
+If the *sequence* does not converge to zero then the *series* (the sum of the infinite sequence) is divergent. That's fairly intuitive: if the sequence doesn't converge to zero then the series is going to be summing infinitely many non-zero terms and so will not converge.
+
+So that means that most of the questions about series involve decreasing sequences that converge to zero, for example $a_n = \frac{1}{n}$, or $a_n = \frac{2}{(n-3)^2}$.
+
+What's less intuitive is that even if the sequence *does* converge to zero, the series still might not converge. The famous example is $\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...$. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for $\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...$ the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum. We can prove it using the *integral test*.
+
+### Integral test for convergence
+Consider a series like $\sumn \frac{1}{n}$. The continuous function $f(x) = \frac{1}{x}$ passes through the discrete points of the sequence. The integral test says that we can use the area under the graph of the continuous function to assess whether the series converges. That's because we can visualize the series as summing together infinitely many rectangles of width 1, so the sum of the areas of the rectangle is related to the area under the graph.
+
+**Integral test**: If $\int_1^\infty f(x) dx$ is convergent (has a finite value) then the series is convergent. And if the integral is divergent then the series is divergent.
+
+For example
+$$
+\int_1^\infty \frac{1}{x^2} dx = \frac{-1}{x} \Big|_1^\infty = 1.
+$$
+
+so that shows that $\sumn \frac{1}{n^2}$ converges (to something, we don't know what). On the other hand
+
+$$
+\int_1^\infty \frac{1}{x} dx = \ln x \Big|_1^\infty = \lim_{x \to \infty} \ln x - 0
+$$
+
+which is divergent (not a finite value). So that shows that $\sumn \frac{1}{n}$ does not converge.
+
+### p-series
+
+A p-series is a series like $\sumn \frac{1}{n^p}$.
+
+Theorem: a p-series is convergent if $p>1$ and divergent if $p \leq 1$.
+
+### Remainder theorem
+
+## Comparison tests
+
+### Comparison to known-convergent series
+Consider a series for which all terms are *positive*. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-convergent series, then our series is divergent.
+
+For example, we know that $\sumn\frac{1}{2^n}$ converges to zero (p-series with $p > 1$) but what about $\sumn\frac{1}{2^n + 1}$? It seems obvious that it converges to zero, but how do you prove it? The answer is that its terms are always smaller than the terms of $\sumn\frac{1}{2^n}$, therefore it also converges to zero.
+
+
+### Limit comparison test
+This involves looking at the limit of the *ratio* of the terms from two different series. Suppose you have a series $\sumn b_n$ which you know either converges or diverges, and you have a series $\sumn a_n$ which you don't know the behavior of. If you can show that their ratio has a finite limit:
+
+$$
+\limn \frac{a_n}{b_n} = c > 0
+$$
+then either *both converge* or *both diverge*. Seeing as you know how $b$ behaves, that tells you whether $a$ converges or not.
+
+
+## Alternating series test
+The previous tests are all for series with positive terms only. Alternating series are often the result of a $(-1)^n$ factor, for example $\sumn (-1)^n \frac{1}{n}$. The *alternating series test* says: look at the absolute values; if they are decreasing (i.e. $a_{n+1} < a_n$), and if their limit is zero, then the series converges.
