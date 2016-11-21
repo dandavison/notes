@@ -78,14 +78,14 @@ $$&lt;/div&gt;
 &lt;/ul&gt;
 &lt;h3 id="series"&gt;Series&lt;/h3&gt;
 &lt;p&gt;If the series sums to a finite value then it is said to converge; if not, it diverges.&lt;/p&gt;
-&lt;h4 id="divergence-test-for-series"&gt;Divergence test for series&lt;/h4&gt;
-&lt;p&gt;The &lt;em&gt;series&lt;/em&gt; (i.e. the infinite sum) can only have a finite value if the &lt;em&gt;sequence&lt;/em&gt; converges to zero. But even then, it might not have a finite value. The famous example is &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)&lt;/span&gt;. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)&lt;/span&gt; the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.&lt;/p&gt;
+&lt;p&gt;A series has an associated &lt;em&gt;sequence&lt;/em&gt; of &lt;strong&gt;partial sums&lt;/strong&gt;: &lt;span class="math"&gt;\(a_1, a_1 + a_2, a_1 + a_2 + a+3, ...\)&lt;/span&gt;. I.e. the sequence &lt;span class="math"&gt;\(a_n = \sum_{i=1}^n a_i\)&lt;/span&gt;. If the series sums to &lt;span class="math"&gt;\(s\)&lt;/span&gt; (converges) then &lt;span class="math"&gt;\(s\)&lt;/span&gt; is the limit of sequence of partial sums.&lt;/p&gt;
+&lt;p&gt;In general it is not easy to find the sum of a series, and so a lot of the material in the book focuses on methods for determining whether the series converges or not. However, it is easy to find the sum if the series is a &lt;em&gt;geometric series&lt;/em&gt;:&lt;/p&gt;
 &lt;h4 id="geometric-series"&gt;Geometric series&lt;/h4&gt;
 &lt;p&gt;Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:&lt;/p&gt;
 &lt;div class="math"&gt;$$
 s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
 $$&lt;/div&gt;
-&lt;p&gt;Theorem: if &lt;span class="math"&gt;\(|r| &amp;lt; 1\)&lt;/span&gt; then the geometric series converges. Its value is &lt;span class="math"&gt;\(\frac{a}{1-r}\)&lt;/span&gt;. For &lt;span class="math"&gt;\(|r| &amp;gt;= 1\)&lt;/span&gt; it diverges.&lt;/p&gt;
+&lt;p&gt;Theorem: if &lt;span class="math"&gt;\(|r| &amp;lt; 1\)&lt;/span&gt; then the geometric series converges. Its value is &lt;span class="math"&gt;\(\frac{a}{1-r}\)&lt;/span&gt;. For &lt;span class="math"&gt;\(|r| \geq 1\)&lt;/span&gt; it diverges.&lt;/p&gt;
 &lt;h3 id="typical-questions-about-series"&gt;Typical questions about series&lt;/h3&gt;
 &lt;h4 id="find-the-values-of-x-for-which-the-series-converges-find-the-sum-of-the-series-for-those-values-of-x"&gt;Find the values of x for which the series converges. Find the sum of the series for those values of x.&lt;/h4&gt;
 &lt;ul&gt;
@@ -107,6 +107,40 @@ $$&lt;/div&gt;
   $$&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id="divergence-test-for-series"&gt;Divergence test for series&lt;/h3&gt;
+&lt;p&gt;If the &lt;em&gt;sequence&lt;/em&gt; does not converge to zero then the &lt;em&gt;series&lt;/em&gt; (the sum of the infinite sequence) is divergent. That's fairly intuitive: if the sequence doesn't converge to zero then the series is going to be summing infinitely many non-zero terms and so will not converge.&lt;/p&gt;
+&lt;p&gt;So that means that most of the questions about series involve decreasing sequences that converge to zero, for example &lt;span class="math"&gt;\(a_n = \frac{1}{n}\)&lt;/span&gt;, or &lt;span class="math"&gt;\(a_n = \frac{2}{(n-3)^2}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;What's less intuitive is that even if the sequence &lt;em&gt;does&lt;/em&gt; converge to zero, the series still might not converge. The famous example is &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)&lt;/span&gt;. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)&lt;/span&gt; the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum. We can prove it using the &lt;em&gt;integral test&lt;/em&gt;.&lt;/p&gt;
+&lt;h3 id="integral-test-for-convergence"&gt;Integral test for convergence&lt;/h3&gt;
+&lt;p&gt;Consider a series like &lt;span class="math"&gt;\(\sumn \frac{1}{n}\)&lt;/span&gt;. The continuous function &lt;span class="math"&gt;\(f(x) = \frac{1}{x}\)&lt;/span&gt; passes through the discrete points of the sequence. The integral test says that we can use the area under the graph of the continuous function to assess whether the series converges. That's because we can visualize the series as summing together infinitely many rectangles of width 1, so the sum of the areas of the rectangle is related to the area under the graph.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Integral test&lt;/strong&gt;: If &lt;span class="math"&gt;\(\int_1^\infty f(x) dx\)&lt;/span&gt; is convergent (has a finite value) then the series is convergent. And if the integral is divergent then the series is divergent.&lt;/p&gt;
+&lt;p&gt;For example
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int_1^\infty \frac{1}{x^2} dx = \frac{-1}{x} \Big|_1^\infty = 1.
+$$&lt;/div&gt;
+&lt;p&gt;so that shows that &lt;span class="math"&gt;\(\sumn \frac{1}{n^2}\)&lt;/span&gt; converges (to something, we don't know what). On the other hand&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int_1^\infty \frac{1}{x} dx = \ln x \Big|_1^\infty = \lim_{x \to \infty} \ln x - 0
+$$&lt;/div&gt;
+&lt;p&gt;which is divergent (not a finite value). So that shows that &lt;span class="math"&gt;\(\sumn \frac{1}{n}\)&lt;/span&gt; does not converge.&lt;/p&gt;
+&lt;h3 id="p-series"&gt;p-series&lt;/h3&gt;
+&lt;p&gt;A p-series is a series like &lt;span class="math"&gt;\(\sumn \frac{1}{n^p}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Theorem: a p-series is convergent if &lt;span class="math"&gt;\(p&amp;gt;1\)&lt;/span&gt; and divergent if &lt;span class="math"&gt;\(p \leq 1\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="remainder-theorem"&gt;Remainder theorem&lt;/h3&gt;
+&lt;h2 id="comparison-tests"&gt;Comparison tests&lt;/h2&gt;
+&lt;h3 id="comparison-to-known-convergent-series"&gt;Comparison to known-convergent series&lt;/h3&gt;
+&lt;p&gt;Consider a series for which all terms are &lt;em&gt;positive&lt;/em&gt;. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-convergent series, then our series is divergent.&lt;/p&gt;
+&lt;p&gt;For example, we know that &lt;span class="math"&gt;\(\sumn\frac{1}{2^n}\)&lt;/span&gt; converges to zero (p-series with &lt;span class="math"&gt;\(p &amp;gt; 1\)&lt;/span&gt;) but what about &lt;span class="math"&gt;\(\sumn\frac{1}{2^n + 1}\)&lt;/span&gt;? It seems obvious that it converges to zero, but how do you prove it? The answer is that its terms are always smaller than the terms of &lt;span class="math"&gt;\(\sumn\frac{1}{2^n}\)&lt;/span&gt;, therefore it also converges to zero.&lt;/p&gt;
+&lt;h3 id="limit-comparison-test"&gt;Limit comparison test&lt;/h3&gt;
+&lt;p&gt;This involves looking at the limit of the &lt;em&gt;ratio&lt;/em&gt; of the terms from two different series. Suppose you have a series &lt;span class="math"&gt;\(\sumn b_n\)&lt;/span&gt; which you know either converges or diverges, and you have a series &lt;span class="math"&gt;\(\sumn a_n\)&lt;/span&gt; which you don't know the behavior of. If you can show that their ratio has a finite limit:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\limn \frac{a_n}{b_n} = c &amp;gt; 0
+$$&lt;/div&gt;
+&lt;p&gt;
+then either &lt;em&gt;both converge&lt;/em&gt; or &lt;em&gt;both diverge&lt;/em&gt;. Seeing as you know how &lt;span class="math"&gt;\(b\)&lt;/span&gt; behaves, that tells you whether &lt;span class="math"&gt;\(a\)&lt;/span&gt; converges or not.&lt;/p&gt;
+&lt;h2 id="alternating-series-test"&gt;Alternating series test&lt;/h2&gt;
+&lt;p&gt;The previous tests are all for series with positive terms only. Alternating series are often the result of a &lt;span class="math"&gt;\((-1)^n\)&lt;/span&gt; factor, for example &lt;span class="math"&gt;\(\sumn (-1)^n \frac{1}{n}\)&lt;/span&gt;. The &lt;em&gt;alternating series test&lt;/em&gt; says: look at the absolute values; if they are decreasing (i.e. &lt;span class="math"&gt;\(a_{n+1} &amp;lt; a_n\)&lt;/span&gt;), and if their limit is zero, then the series converges.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

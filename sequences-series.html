@@ -117,14 +117,14 @@ $$</div>
 </ul>
 <h3 id="series">Series</h3>
 <p>If the series sums to a finite value then it is said to converge; if not, it diverges.</p>
-<h4 id="divergence-test-for-series">Divergence test for series</h4>
-<p>The <em>series</em> (i.e. the infinite sum) can only have a finite value if the <em>sequence</em> converges to zero. But even then, it might not have a finite value. The famous example is <span class="math">\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)</span>. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for <span class="math">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)</span> the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum.</p>
+<p>A series has an associated <em>sequence</em> of <strong>partial sums</strong>: <span class="math">\(a_1, a_1 + a_2, a_1 + a_2 + a+3, ...\)</span>. I.e. the sequence <span class="math">\(a_n = \sum_{i=1}^n a_i\)</span>. If the series sums to <span class="math">\(s\)</span> (converges) then <span class="math">\(s\)</span> is the limit of sequence of partial sums.</p>
+<p>In general it is not easy to find the sum of a series, and so a lot of the material in the book focuses on methods for determining whether the series converges or not. However, it is easy to find the sum if the series is a <em>geometric series</em>:</p>
 <h4 id="geometric-series">Geometric series</h4>
 <p>Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:</p>
 <div class="math">$$
 s = a + ar^1 + ar^2 + ar^3 + ... = \sumn ar^{n-1}
 $$</div>
-<p>Theorem: if <span class="math">\(|r| &lt; 1\)</span> then the geometric series converges. Its value is <span class="math">\(\frac{a}{1-r}\)</span>. For <span class="math">\(|r| &gt;= 1\)</span> it diverges.</p>
+<p>Theorem: if <span class="math">\(|r| &lt; 1\)</span> then the geometric series converges. Its value is <span class="math">\(\frac{a}{1-r}\)</span>. For <span class="math">\(|r| \geq 1\)</span> it diverges.</p>
 <h3 id="typical-questions-about-series">Typical questions about series</h3>
 <h4 id="find-the-values-of-x-for-which-the-series-converges-find-the-sum-of-the-series-for-those-values-of-x">Find the values of x for which the series converges. Find the sum of the series for those values of x.</h4>
 <ul>
@@ -146,6 +146,40 @@ $$</div>
   $$</div>
 </li>
 </ul>
+<h3 id="divergence-test-for-series">Divergence test for series</h3>
+<p>If the <em>sequence</em> does not converge to zero then the <em>series</em> (the sum of the infinite sequence) is divergent. That's fairly intuitive: if the sequence doesn't converge to zero then the series is going to be summing infinitely many non-zero terms and so will not converge.</p>
+<p>So that means that most of the questions about series involve decreasing sequences that converge to zero, for example <span class="math">\(a_n = \frac{1}{n}\)</span>, or <span class="math">\(a_n = \frac{2}{(n-3)^2}\)</span>.</p>
+<p>What's less intuitive is that even if the sequence <em>does</em> converge to zero, the series still might not converge. The famous example is <span class="math">\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)</span>. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for <span class="math">\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)</span> the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum. We can prove it using the <em>integral test</em>.</p>
+<h3 id="integral-test-for-convergence">Integral test for convergence</h3>
+<p>Consider a series like <span class="math">\(\sumn \frac{1}{n}\)</span>. The continuous function <span class="math">\(f(x) = \frac{1}{x}\)</span> passes through the discrete points of the sequence. The integral test says that we can use the area under the graph of the continuous function to assess whether the series converges. That's because we can visualize the series as summing together infinitely many rectangles of width 1, so the sum of the areas of the rectangle is related to the area under the graph.</p>
+<p><strong>Integral test</strong>: If <span class="math">\(\int_1^\infty f(x) dx\)</span> is convergent (has a finite value) then the series is convergent. And if the integral is divergent then the series is divergent.</p>
+<p>For example
+</p>
+<div class="math">$$
+\int_1^\infty \frac{1}{x^2} dx = \frac{-1}{x} \Big|_1^\infty = 1.
+$$</div>
+<p>so that shows that <span class="math">\(\sumn \frac{1}{n^2}\)</span> converges (to something, we don't know what). On the other hand</p>
+<div class="math">$$
+\int_1^\infty \frac{1}{x} dx = \ln x \Big|_1^\infty = \lim_{x \to \infty} \ln x - 0
+$$</div>
+<p>which is divergent (not a finite value). So that shows that <span class="math">\(\sumn \frac{1}{n}\)</span> does not converge.</p>
+<h3 id="p-series">p-series</h3>
+<p>A p-series is a series like <span class="math">\(\sumn \frac{1}{n^p}\)</span>.</p>
+<p>Theorem: a p-series is convergent if <span class="math">\(p&gt;1\)</span> and divergent if <span class="math">\(p \leq 1\)</span>.</p>
+<h3 id="remainder-theorem">Remainder theorem</h3>
+<h2 id="comparison-tests">Comparison tests</h2>
+<h3 id="comparison-to-known-convergent-series">Comparison to known-convergent series</h3>
+<p>Consider a series for which all terms are <em>positive</em>. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-convergent series, then our series is divergent.</p>
+<p>For example, we know that <span class="math">\(\sumn\frac{1}{2^n}\)</span> converges to zero (p-series with <span class="math">\(p &gt; 1\)</span>) but what about <span class="math">\(\sumn\frac{1}{2^n + 1}\)</span>? It seems obvious that it converges to zero, but how do you prove it? The answer is that its terms are always smaller than the terms of <span class="math">\(\sumn\frac{1}{2^n}\)</span>, therefore it also converges to zero.</p>
+<h3 id="limit-comparison-test">Limit comparison test</h3>
+<p>This involves looking at the limit of the <em>ratio</em> of the terms from two different series. Suppose you have a series <span class="math">\(\sumn b_n\)</span> which you know either converges or diverges, and you have a series <span class="math">\(\sumn a_n\)</span> which you don't know the behavior of. If you can show that their ratio has a finite limit:</p>
+<div class="math">$$
+\limn \frac{a_n}{b_n} = c &gt; 0
+$$</div>
+<p>
+then either <em>both converge</em> or <em>both diverge</em>. Seeing as you know how <span class="math">\(b\)</span> behaves, that tells you whether <span class="math">\(a\)</span> converges or not.</p>
+<h2 id="alternating-series-test">Alternating series test</h2>
+<p>The previous tests are all for series with positive terms only. Alternating series are often the result of a <span class="math">\((-1)^n\)</span> factor, for example <span class="math">\(\sumn (-1)^n \frac{1}{n}\)</span>. The <em>alternating series test</em> says: look at the absolute values; if they are decreasing (i.e. <span class="math">\(a_{n+1} &lt; a_n\)</span>), and if their limit is zero, then the series converges.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
