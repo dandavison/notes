@@ -93,6 +93,10 @@ If the series sums to a finite value then it is said to converge; if not, it div
 
 A series has an associated *sequence* of **partial sums**: $a_1, a_1 + a_2, a_1 + a_2 + a+3, ...$. I.e. the sequence $a_n = \sum_{i=1}^n a_i$. If the series sums to $s$ (converges) then $s$ is the limit of sequence of partial sums.
 
+Say you only sum the first $n$ values of a series. The **remainder** $R_n$ is the difference between the true sum (of infinitely many values) and what you got from the first $n$ (the $\nth$ partial sum): $R_n = s - \sum_{i=1}^n$.
+
+
+
 In general it is not easy to find the sum of a series, and so a lot of the material in the book focuses on methods for determining whether the series converges or not. However, it is easy to find the sum if the series is a *geometric series*:
 
 #### Geometric series
@@ -125,7 +129,7 @@ Theorem: if $|r| < 1$ then the geometric series converges. Its value is $\frac{a
   \frac{a}{1-r} = \frac{1}{1 - \frac{x-2}{3}} = \frac{3}{5-x}.
   $$
 
-### Divergence test for series
+### Test for divergence of series
 If the *sequence* does not converge to zero then the *series* (the sum of the infinite sequence) is divergent. That's fairly intuitive: if the sequence doesn't converge to zero then the series is going to be summing infinitely many non-zero terms and so will not converge.
 
 So that means that most of the questions about series involve decreasing sequences that converge to zero, for example $a_n = \frac{1}{n}$, or $a_n = \frac{2}{(n-3)^2}$.
@@ -150,13 +154,19 @@ $$
 
 which is divergent (not a finite value). So that shows that $\sumn \frac{1}{n}$ does not converge.
 
+#### Remainder theorem for integral test
+Because of the details of the location of the rectangle lines in the approximation, the size of the remainder lies between these two integrals:
+
+$$
+\int_{x=n+1}^\infty f(x) dx \leq R_n \leq \int_{x=n}^\infty f(x) dx
+$$
+
+
 ### p-series
 
 A p-series is a series like $\sumn \frac{1}{n^p}$.
 
 Theorem: a p-series is convergent if $p>1$ and divergent if $p \leq 1$.
-
-### Remainder theorem
 
 ## Comparison tests
 
@@ -175,5 +185,60 @@ $$
 then either *both converge* or *both diverge*. Seeing as you know how $b$ behaves, that tells you whether $a$ converges or not.
 
 
+## Alternating series
+The two theorems about alternating series are fairly obvious if we draw a picture of an alternating series.
+
 ## Alternating series test
 The previous tests are all for series with positive terms only. Alternating series are often the result of a $(-1)^n$ factor, for example $\sumn (-1)^n \frac{1}{n}$. The *alternating series test* says: look at the absolute values; if they are decreasing (i.e. $a_{n+1} < a_n$), and if their limit is zero, then the series converges.
+
+
+### Alternating series remainder theorem
+The absolute size of the error is less than or equal to the size of the first neglected term. (Only for alternating series!)
+
+
+## Absolute and conditional convergence
+
+Sometimes a series with positive and negative terms might converge, but the absolute value version of the same series does *not* converge. This situation is called **conditional convergence**. An example is $\sumn (-1)^n \frac{1}{n}$. This converges (by alternating series test: the successive terms get smaller) but the absolute version doesn't converge (as discussed above).
+
+If the absolute value version of an alternating series *does* converge, then this is called **absolute convergence**.
+
+Theorem: if an alternating series is absolutely convergent, then the alternating version is convergent also.
+
+In other words, there are two different categories of convergent alternating series: conditional (only the alternating version converges), and absolute (both versions converge).
+
+## Ratio and tests
+
+These can be used for alternating and non-alternating series.
+
+### Ratio test
+Write down the ratio of successive terms in the series $\frac{a_{n+1}}{a_n}$, take the absolute value and take the limit of that. So $\limn \Big|\frac{a_{n+1}}{a_n}\Big|$. There are 3 possible outcomes:
+
+$$
+\begin{cases}
+0 < \text{limit} < 1&Convergent\\
+\text{limit} = 1&Inconclusive\\
+\text{limit} > 1 ~\text{or}~ \text{limit} = \infty&Divergent\\
+\end{cases}
+$$
+
+
+### Root test
+This is like the ratio test, but you use it if there are powers of $n$.
+
+Evaluate the limit of the absolute value of the $\nth$ root of the $\nth$: $|\sqrt[n]{a_n}|$. The cases are the same as for the ratio test:
+
+
+$$
+\begin{cases}
+0 < \text{root} < 1&Convergent\\
+\text{root} = 1&Inconclusive\\
+\text{root} > 1 ~\text{or}~ \text{root} = \infty&Divergent\\
+\end{cases}
+$$
+
+
+## Strategy
+
+See section 11.7 for overall strategy for testing series for convergence/divergence.
+
+
