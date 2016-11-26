@@ -171,7 +171,7 @@ Theorem: a p-series is convergent if $p>1$ and divergent if $p \leq 1$.
 ## Comparison tests
 
 ### Comparison to known-convergent series
-Consider a series for which all terms are *positive*. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-convergent series, then our series is divergent.
+Consider a series for which all terms are *positive*. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-di>vergent series, then our series is divergent.
 
 For example, we know that $\sumn\frac{1}{2^n}$ converges to zero (p-series with $p > 1$) but what about $\sumn\frac{1}{2^n + 1}$? It seems obvious that it converges to zero, but how do you prove it? The answer is that its terms are always smaller than the terms of $\sumn\frac{1}{2^n}$, therefore it also converges to zero.
 
@@ -206,7 +206,7 @@ Theorem: if an alternating series is absolutely convergent, then the alternating
 
 In other words, there are two different categories of convergent alternating series: conditional (only the alternating version converges), and absolute (both versions converge).
 
-## Ratio and tests
+## Ratio and root tests
 
 These can be used for alternating and non-alternating series.
 
@@ -242,9 +242,14 @@ $$
 See section 11.7 for overall strategy for testing series for convergence/divergence.
 
 
-## Power series
+## Power series ##
 
-### Taylor and Maclaurin series
+### Geometric series ###
+
+One class of tricks involves connecting the function to a geometric series. For example,
+
+
+### Taylor and Maclaurin series ###
 
 Suppose that any function of a real number $f(x)$ can be represented by a "power series" with certain coefficients $c_i$
 
@@ -252,11 +257,15 @@ $$
 f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
 $$
 
-If that is so, the question is: what are the coefficients for any given
-function? This can be established by differentiating and evaluating the result
-at $x=0$.
+If that is so, there are two questions:
 
-Firstly, without differentiating at all, we see that $c_0 = f(0)$. Then differentiate once:
+(1) what are the coefficients for any given function? This can be established
+by differentiating and evaluating the result at $x=0$.
+
+(2) Over what interval of $x$-values does the series converge? This can be
+answered using the Ratio Test for convergence.
+
+To answer (1), firstly, without differentiating at all, we see that $c_0 = f(0)$. Then differentiate once:
 
 $$
 f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
@@ -285,3 +294,40 @@ $$
 e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
 $$
 
+
+## Problems
+
+- **11.1: 3, 25, 37**
+- **11.2: 14, 29, 42**
+- **11.3: 7, 16, 25, 26**
+- **11.4: (18, 25, 26) Test for convergent or divergent**
+    - Questions concerne series with positive terms
+    - Use Comparison Test or Limit Comparison Test
+    - $\frac{1}{n}$ diverges. So if you can show that terms are larger than this, or that limit of ratio with this exists, then it must also be divergent,
+    - $\frac{1}{n^2}$ converges. If you can show that terms are smaller than this, or that limit converges, then it converges.
+
+- **11.5 (5, 8, 11) Test for convergent or divergent**
+    - Questions typically concern alternating series
+    - Alternating series test: show that successive values are decreasing *and* that limit of sequence is 0.
+    - If it's not obviously decreasing, convert $a_n$ to continuous function $f(x)$ and show that derivative is negative or becomes negative for large values of $x$.
+
+- **11.6 (5, 6, 29) Absolutely convergent | Conditionally convergent | Divergent**
+    - Questions typically concern alternating series
+    - Use ratio test on absolute values to check if absolutely convergent. If it is, then stop.
+    - Use Alternating Series Test to check if conditionally convergent or divergent.
+
+- **11.8 (10, 12) Find radius / interval of convergence**
+    - Typically, use the ratio test (converges for values of $x$ that make $\limn |\frac{a_{n+1}}{a_n}|$ less than 1)
+    - If they ask for interval, then you need to test the endpoints for convergence separately.
+
+- **11.9 (3, 6) Find a power series representation for a given function, and radius/interval of convergence.**
+    - Match up the function to the formula for the sum of a geometric series ($a/(1-r)$) and thus construct a geometric series that it's equal to.
+    - Use ratio test to determine interval of convergence
+    - A variant is: you have to differentiate the function before it looks like $a/(1-r)$. Then find the power series, and integrate the power series to get something equal to the original function.
+
+- **11.10 (8, 9, 17) Find a Taylor / Maclaurin series for a given function, and radius/interval of convergence**
+    - Memorize definition of general Taylor series (Maclaurin is $a=0$)
+    - Compute derivatives and evaluate them at zero
+    - Use those to write out first few terms of Taylor series
+    - If there's a pattern, represent the sum using sigma notation
+    - Use the ratio test to assess radius of convergence
