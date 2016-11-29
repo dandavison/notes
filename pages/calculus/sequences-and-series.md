@@ -91,7 +91,7 @@ A sequence may have a limit: $\lim_{n \rightarrow \infty} a_n$. If it does then 
 
 If the series sums to a finite value then it is said to converge; if not, it diverges.
 
-A series has an associated *sequence* of **partial sums**: $a_1, a_1 + a_2, a_1 + a_2 + a+3, ...$. I.e. the sequence $a_n = \sum_{i=1}^n a_i$. If the series sums to $s$ (converges) then $s$ is the limit of sequence of partial sums.
+A series has an associated *sequence* of **partial sums**: $a_1, a_1 + a_2, a_1 + a_2 + a_3, ...$. I.e. the sequence $a_n = \sum_{i=1}^n a_i$. If the series sums to $s$ (converges) then $s$ is the limit of sequence of partial sums.
 
 Say you only sum the first $n$ values of a series. The **remainder** $R_n$ is the difference between the true sum (of infinitely many values) and what you got from the first $n$ (the $\nth$ partial sum): $R_n = s - \sum_{i=1}^n$.
 
@@ -298,15 +298,20 @@ $$
 ## Problems
 
 - **11.1: 3, 25, 37**
-- **11.2: 14, 29, 42**
-- **11.3: 7, 16, 25, 26**
-- **11.4: (18, 25, 26) Test for convergent or divergent**
-    - Questions concerne series with positive terms
-    - Use Comparison Test or Limit Comparison Test
-    - $\frac{1}{n}$ diverges. So if you can show that terms are larger than this, or that limit of ratio with this exists, then it must also be divergent,
-    - $\frac{1}{n^2}$ converges. If you can show that terms are smaller than this, or that limit converges, then it converges.
+- **11.2: (14, 29, 42)**
+    - One trick to find sums: use partial fractions and then write first few terms of series out and identify a telescoping sum (q. 14)
 
-- **11.5 (5, 8, 11) Test for convergent or divergent**
+- **11.3: (7, 16, 25, 26) Determine whether convergent or divergent (Integral test)**
+    - Use integral test (if $\int_1_\infty f(x) dx$ is finite then converges, otherwise diverges)
+    - Although it seems less work to use limit comparison test for some
+
+- **11.4: (18, 25, 26) Determine whether convergent or divergent**
+    - Questions concern series with positive terms
+    - Use Comparison Test or Limit Comparison Test
+    - $\frac{1}{n}$ diverges. So if you can show that terms are larger than this, or that limit of ratio with this exists, then it must also be divergent.
+    - $\frac{1}{n^2}$ converges. If you can show that terms are smaller than this, or that limit of ratio with this exists, then it converges.
+
+- **11.5 (5, 8, 11) Determine whether convergent or divergent**
     - Questions typically concern alternating series
     - Alternating series test: show that successive values are decreasing *and* that limit of sequence is 0.
     - If it's not obviously decreasing, convert $a_n$ to continuous function $f(x)$ and show that derivative is negative or becomes negative for large values of $x$.
