@@ -45,4 +45,6 @@ MD_EXTENSIONS = [
 
 THEME = 'themes/aboutwilson'
 
-STATIC_PATHS = ['images']
+STATIC_PATHS = [
+    'images',
+]
