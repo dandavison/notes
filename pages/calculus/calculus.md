@@ -44,10 +44,10 @@ E.g. consider position $x(t)$ and its derivative velocity $x'(t)$. If someone mo
 ** Attempted Proof:** (Is the following in the direction of a valid proof of part of FTC?)
 
 \begin{align*}
-\int_a^b F'(t) \dt
+\int_{t_a}^{t_b} F'(t) \dt
 &= \limn \sum_{i=1}^n F'(t_i) \Delta t \\
-&= \limDt \sum_{i=1}^{(b-a)/\Delta t} \frac{F(t_i + \Delta t) - F(t_i)}{\Delta t} \Delta t \\
-&= \limDt \sum_{i=1}^{(b-a)/\Delta t} F(t_i + \Delta t) - F(t_i) \\
-&= \limDt F(a + \Delta t) - F(a) + F(a + \Delta t + \Delta t) - F(a + \Delta t) + \ldots  + F(b - \Delta t + \Delta t) - F(b - \Delta t) \\
-&= F(b) - F(a)
+&= \limDt \sum_{i=1}^{(t_b-t_a)/\Delta t} \frac{F(t_i + \Delta t) - F(t_i)}{\Delta t} \Delta t \\
+&= \limDt \sum_{i=1}^{(t_b-t_a)/\Delta t} F(t_i + \Delta t) - F(t_i) \\
+&= \limDt F(t_a + \Delta t) - F(t_a) + F(t_a + \Delta t + \Delta t) - F(t_a + \Delta t) + \ldots  + F(t_b - \Delta t + \Delta t) - F(t_b - \Delta t) \\
+&= F(t_b) - F(t_a)
 \end{align*}
