@@ -32,9 +32,16 @@ $$
 
 ----------------------------------------------------------------------------
 
-(Is the following in the direction of a valid proof of part of FTC?)
+### Fundamental Theorem of Calculus
 
-In the case where $f(t)$ is the derivative of some function $F(t)$, then the area under $F'(t)$ is $F(b) - F(a)$:
+Consider the case where $f(t)$ is the derivative of some function $F(t)$.
+
+**Theorem:** The area under $F'(t)$ between $t=t_a$ and $t=t_b$ is $F(b) - F(a)$.
+
+E.g. consider position $x(t)$ and its derivative velocity $x'(t)$. If someone moves
+
+
+** Attempted Proof:** (Is the following in the direction of a valid proof of part of FTC?)
 
 \begin{align*}
 \int_a^b F'(t) \dt
