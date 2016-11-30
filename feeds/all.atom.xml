@@ -1,5 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-11-19T00:00:00-08:00</updated><entry><title>Sequences and series</title><link href="http://dandavison.github.io/notes/sequences-series.html" rel="alternate"></link><published>2016-11-19T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-19:notes/sequences-series.html</id><summary type="html">&lt;style type="text/css"&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-11-28T00:00:00-08:00</updated><entry><title>Calculus</title><link href="http://dandavison.github.io/notes/calculus.html" rel="alternate"></link><published>2016-11-28T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-28:notes/calculus.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\i}{\mathbf{i}}
+\newcommand{\j}{\mathbf{j}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\nth}{n^{\text{th}}}
+\newcommand{\sumn}{\sum_{n=1}^{\infty}}
+\newcommand{\limn}{\lim\limits_{n \to \infty}}
+\newcommand{\limDt}{\lim\limits_{\Delta t \to 0}}
+\newcommand{\dt}{\,\mathrm{d}t}
+$$&lt;/div&gt;
+&lt;p&gt;Define &lt;span class="math"&gt;\(\int_a^b f(t) dt\)&lt;/span&gt; to be the area under the graph of &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; between
+&lt;span class="math"&gt;\(t=a\)&lt;/span&gt; and &lt;span class="math"&gt;\(t=b\)&lt;/span&gt;. This can be approximated as the sum of areas of rectangles,
+where &lt;span class="math"&gt;\(t_i\)&lt;/span&gt; is the height of the &lt;span class="math"&gt;\(i\mathrm{th}\)&lt;/span&gt; rectangle.&lt;sup id="sf-calculus-1-back"&gt;&lt;a href="#sf-calculus-1" class="simple-footnote" title="The rectangles can be chosen so that their height is given by the value of \(f(t)\) at either their left or right endpoint, or in fact anywhere inbetween."&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int_a^b f(t) \dt = \limn \sum_{i=1}^n f(t_i) \Delta t
+$$&lt;/div&gt;
+&lt;hr&gt;
+&lt;h3 id="fundamental-theorem-of-calculus"&gt;Fundamental Theorem of Calculus&lt;/h3&gt;
+&lt;p&gt;Consider the case where &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; is the derivative of some function &lt;span class="math"&gt;\(F(t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; The area under &lt;span class="math"&gt;\(F'(t)\)&lt;/span&gt; between &lt;span class="math"&gt;\(t=a\)&lt;/span&gt; and &lt;span class="math"&gt;\(t=b\)&lt;/span&gt; is &lt;span class="math"&gt;\(F(b) - F(a)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;E.g. consider position &lt;span class="math"&gt;\(x(t)\)&lt;/span&gt; and its derivative velocity &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;. If someone
+is stationary until time &lt;span class="math"&gt;\(t=a\)&lt;/span&gt;, then moves at constant velocity &lt;span class="math"&gt;\(v\)&lt;/span&gt; until time
+&lt;span class="math"&gt;\(t=b\)&lt;/span&gt;, and then is stationary again, their total displacement is
+&lt;span class="math"&gt;\(v(b-a)\)&lt;/span&gt;. I.e. their displacement is equal to the rectangular area under the
+graph of &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Attempted Proof:&lt;/strong&gt; (Is the following in the direction of a valid proof of part of FTC?)&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+\int_{a}^{b} F'(t) \dt
+&amp;amp;= \limn \sum_{i=1}^n F'(t_i) \Delta t \\
+&amp;amp;= \limDt \sum_{i=1}^{(b-a)/\Delta t} \frac{F(t_i + \Delta t) - F(t_i)}{\Delta t} \Delta t \\
+&amp;amp;= \limDt \sum_{i=1}^{(b-a)/\Delta t} F(t_i + \Delta t) - F(t_i) \\
+&amp;amp;= \limDt F(a + \Delta t) - F(a) + F(a + \Delta t + \Delta t) - F(a + \Delta t) + \ldots  + F(b - \Delta t + \Delta t) - F(b - \Delta t) \\
+&amp;amp;= F(b) - F(a)
+\end{align*}&lt;/div&gt;
+&lt;h4 id="antiderivative"&gt;Antiderivative&lt;/h4&gt;
+&lt;p&gt;&lt;img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;ol class="simple-footnotes"&gt;&lt;li id="sf-calculus-1"&gt;The rectangles
+can be chosen so that their height is given by the value of &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; at either
+their left or right endpoint, or in fact anywhere inbetween. &lt;a href="#sf-calculus-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Sequences and series</title><link href="http://dandavison.github.io/notes/sequences-series.html" rel="alternate"></link><published>2016-11-19T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-19:notes/sequences-series.html</id><summary type="html">&lt;style type="text/css"&gt;
 body {color: black;}
 &lt;/style&gt;
 
@@ -78,7 +176,8 @@ $$&lt;/div&gt;
 &lt;/ul&gt;
 &lt;h3 id="series"&gt;Series&lt;/h3&gt;
 &lt;p&gt;If the series sums to a finite value then it is said to converge; if not, it diverges.&lt;/p&gt;
-&lt;p&gt;A series has an associated &lt;em&gt;sequence&lt;/em&gt; of &lt;strong&gt;partial sums&lt;/strong&gt;: &lt;span class="math"&gt;\(a_1, a_1 + a_2, a_1 + a_2 + a+3, ...\)&lt;/span&gt;. I.e. the sequence &lt;span class="math"&gt;\(a_n = \sum_{i=1}^n a_i\)&lt;/span&gt;. If the series sums to &lt;span class="math"&gt;\(s\)&lt;/span&gt; (converges) then &lt;span class="math"&gt;\(s\)&lt;/span&gt; is the limit of sequence of partial sums.&lt;/p&gt;
+&lt;p&gt;A series has an associated &lt;em&gt;sequence&lt;/em&gt; of &lt;strong&gt;partial sums&lt;/strong&gt;: &lt;span class="math"&gt;\(a_1, a_1 + a_2, a_1 + a_2 + a_3, ...\)&lt;/span&gt;. I.e. the sequence &lt;span class="math"&gt;\(a_n = \sum_{i=1}^n a_i\)&lt;/span&gt;. If the series sums to &lt;span class="math"&gt;\(s\)&lt;/span&gt; (converges) then &lt;span class="math"&gt;\(s\)&lt;/span&gt; is the limit of sequence of partial sums.&lt;/p&gt;
+&lt;p&gt;Say you only sum the first &lt;span class="math"&gt;\(n\)&lt;/span&gt; values of a series. The &lt;strong&gt;remainder&lt;/strong&gt; &lt;span class="math"&gt;\(R_n\)&lt;/span&gt; is the difference between the true sum (of infinitely many values) and what you got from the first &lt;span class="math"&gt;\(n\)&lt;/span&gt; (the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; partial sum): &lt;span class="math"&gt;\(R_n = s - \sum_{i=1}^n\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;In general it is not easy to find the sum of a series, and so a lot of the material in the book focuses on methods for determining whether the series converges or not. However, it is easy to find the sum if the series is a &lt;em&gt;geometric series&lt;/em&gt;:&lt;/p&gt;
 &lt;h4 id="geometric-series"&gt;Geometric series&lt;/h4&gt;
 &lt;p&gt;Several questions require recognizing a geometric series. A geometric series is a series where each term differs by a constant multiplier:&lt;/p&gt;
@@ -107,7 +206,7 @@ $$&lt;/div&gt;
   $$&lt;/div&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;h3 id="divergence-test-for-series"&gt;Divergence test for series&lt;/h3&gt;
+&lt;h3 id="test-for-divergence-of-series"&gt;Test for divergence of series&lt;/h3&gt;
 &lt;p&gt;If the &lt;em&gt;sequence&lt;/em&gt; does not converge to zero then the &lt;em&gt;series&lt;/em&gt; (the sum of the infinite sequence) is divergent. That's fairly intuitive: if the sequence doesn't converge to zero then the series is going to be summing infinitely many non-zero terms and so will not converge.&lt;/p&gt;
 &lt;p&gt;So that means that most of the questions about series involve decreasing sequences that converge to zero, for example &lt;span class="math"&gt;\(a_n = \frac{1}{n}\)&lt;/span&gt;, or &lt;span class="math"&gt;\(a_n = \frac{2}{(n-3)^2}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;What's less intuitive is that even if the sequence &lt;em&gt;does&lt;/em&gt; converge to zero, the series still might not converge. The famous example is &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n} = \frac{1}{1} + \frac{1}{2} + \frac{1}{3} + ...\)&lt;/span&gt;. Although the sequence converges to zero, its sum (the series) does not converge to a finite value. On the other hand, for &lt;span class="math"&gt;\(\sum_{n=1}^\infty \frac{1}{n^2} = \frac{1}{1} + \frac{1}{4} + \frac{1}{9} + ...\)&lt;/span&gt; the sequence converges to zero and the series does have a finite value. Those facts are not obvious, they require proof: both are infinite sequences of numbers that approach zero, it's just that one aproaches zero more rapidly and has a finite sum whereas the other approaches more slowly and fails to have a finite sum. We can prove it using the &lt;em&gt;integral test&lt;/em&gt;.&lt;/p&gt;
@@ -124,13 +223,17 @@ $$&lt;/div&gt;
 \int_1^\infty \frac{1}{x} dx = \ln x \Big|_1^\infty = \lim_{x \to \infty} \ln x - 0
 $$&lt;/div&gt;
 &lt;p&gt;which is divergent (not a finite value). So that shows that &lt;span class="math"&gt;\(\sumn \frac{1}{n}\)&lt;/span&gt; does not converge.&lt;/p&gt;
+&lt;h4 id="remainder-theorem-for-integral-test"&gt;Remainder theorem for integral test&lt;/h4&gt;
+&lt;p&gt;Because of the details of the location of the rectangle lines in the approximation, the size of the remainder lies between these two integrals:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\int_{x=n+1}^\infty f(x) dx \leq R_n \leq \int_{x=n}^\infty f(x) dx
+$$&lt;/div&gt;
 &lt;h3 id="p-series"&gt;p-series&lt;/h3&gt;
 &lt;p&gt;A p-series is a series like &lt;span class="math"&gt;\(\sumn \frac{1}{n^p}\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Theorem: a p-series is convergent if &lt;span class="math"&gt;\(p&amp;gt;1\)&lt;/span&gt; and divergent if &lt;span class="math"&gt;\(p \leq 1\)&lt;/span&gt;.&lt;/p&gt;
-&lt;h3 id="remainder-theorem"&gt;Remainder theorem&lt;/h3&gt;
 &lt;h2 id="comparison-tests"&gt;Comparison tests&lt;/h2&gt;
 &lt;h3 id="comparison-to-known-convergent-series"&gt;Comparison to known-convergent series&lt;/h3&gt;
-&lt;p&gt;Consider a series for which all terms are &lt;em&gt;positive&lt;/em&gt;. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-convergent series, then our series is divergent.&lt;/p&gt;
+&lt;p&gt;Consider a series for which all terms are &lt;em&gt;positive&lt;/em&gt;. If we can show that the terms of our series are always less than the corresponding terms of a known-convergent series, then our series is convergent. SImilarly if our terms are larger than those of a known-di&amp;gt;vergent series, then our series is divergent.&lt;/p&gt;
 &lt;p&gt;For example, we know that &lt;span class="math"&gt;\(\sumn\frac{1}{2^n}\)&lt;/span&gt; converges to zero (p-series with &lt;span class="math"&gt;\(p &amp;gt; 1\)&lt;/span&gt;) but what about &lt;span class="math"&gt;\(\sumn\frac{1}{2^n + 1}\)&lt;/span&gt;? It seems obvious that it converges to zero, but how do you prove it? The answer is that its terms are always smaller than the terms of &lt;span class="math"&gt;\(\sumn\frac{1}{2^n}\)&lt;/span&gt;, therefore it also converges to zero.&lt;/p&gt;
 &lt;h3 id="limit-comparison-test"&gt;Limit comparison test&lt;/h3&gt;
 &lt;p&gt;This involves looking at the limit of the &lt;em&gt;ratio&lt;/em&gt; of the terms from two different series. Suppose you have a series &lt;span class="math"&gt;\(\sumn b_n\)&lt;/span&gt; which you know either converges or diverges, and you have a series &lt;span class="math"&gt;\(\sumn a_n\)&lt;/span&gt; which you don't know the behavior of. If you can show that their ratio has a finite limit:&lt;/p&gt;
@@ -139,8 +242,140 @@ $$&lt;/div&gt;
 $$&lt;/div&gt;
 &lt;p&gt;
 then either &lt;em&gt;both converge&lt;/em&gt; or &lt;em&gt;both diverge&lt;/em&gt;. Seeing as you know how &lt;span class="math"&gt;\(b\)&lt;/span&gt; behaves, that tells you whether &lt;span class="math"&gt;\(a\)&lt;/span&gt; converges or not.&lt;/p&gt;
+&lt;h2 id="alternating-series"&gt;Alternating series&lt;/h2&gt;
+&lt;p&gt;The two theorems about alternating series are fairly obvious if we draw a picture of an alternating series.&lt;/p&gt;
 &lt;h2 id="alternating-series-test"&gt;Alternating series test&lt;/h2&gt;
 &lt;p&gt;The previous tests are all for series with positive terms only. Alternating series are often the result of a &lt;span class="math"&gt;\((-1)^n\)&lt;/span&gt; factor, for example &lt;span class="math"&gt;\(\sumn (-1)^n \frac{1}{n}\)&lt;/span&gt;. The &lt;em&gt;alternating series test&lt;/em&gt; says: look at the absolute values; if they are decreasing (i.e. &lt;span class="math"&gt;\(a_{n+1} &amp;lt; a_n\)&lt;/span&gt;), and if their limit is zero, then the series converges.&lt;/p&gt;
+&lt;h3 id="alternating-series-remainder-theorem"&gt;Alternating series remainder theorem&lt;/h3&gt;
+&lt;p&gt;The absolute size of the error is less than or equal to the size of the first neglected term. (Only for alternating series!)&lt;/p&gt;
+&lt;h2 id="absolute-and-conditional-convergence"&gt;Absolute and conditional convergence&lt;/h2&gt;
+&lt;p&gt;Sometimes a series with positive and negative terms might converge, but the absolute value version of the same series does &lt;em&gt;not&lt;/em&gt; converge. This situation is called &lt;strong&gt;conditional convergence&lt;/strong&gt;. An example is &lt;span class="math"&gt;\(\sumn (-1)^n \frac{1}{n}\)&lt;/span&gt;. This converges (by alternating series test: the successive terms get smaller) but the absolute version doesn't converge (as discussed above).&lt;/p&gt;
+&lt;p&gt;If the absolute value version of an alternating series &lt;em&gt;does&lt;/em&gt; converge, then this is called &lt;strong&gt;absolute convergence&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Theorem: if an alternating series is absolutely convergent, then the alternating version is convergent also.&lt;/p&gt;
+&lt;p&gt;In other words, there are two different categories of convergent alternating series: conditional (only the alternating version converges), and absolute (both versions converge).&lt;/p&gt;
+&lt;h2 id="ratio-and-root-tests"&gt;Ratio and root tests&lt;/h2&gt;
+&lt;p&gt;These can be used for alternating and non-alternating series.&lt;/p&gt;
+&lt;h3 id="ratio-test"&gt;Ratio test&lt;/h3&gt;
+&lt;p&gt;Write down the ratio of successive terms in the series &lt;span class="math"&gt;\(\frac{a_{n+1}}{a_n}\)&lt;/span&gt;, take the absolute value and take the limit of that. So &lt;span class="math"&gt;\(\limn \Big|\frac{a_{n+1}}{a_n}\Big|\)&lt;/span&gt;. There are 3 possible outcomes:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{cases}
+0 &amp;lt; \text{limit} &amp;lt; 1&amp;amp;Convergent\\
+\text{limit} = 1&amp;amp;Inconclusive\\
+\text{limit} &amp;gt; 1 ~\text{or}~ \text{limit} = \infty&amp;amp;Divergent\\
+\end{cases}
+$$&lt;/div&gt;
+&lt;h3 id="root-test"&gt;Root test&lt;/h3&gt;
+&lt;p&gt;This is like the ratio test, but you use it if there are powers of &lt;span class="math"&gt;\(n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Evaluate the limit of the absolute value of the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; root of the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt;: &lt;span class="math"&gt;\(|\sqrt[n]{a_n}|\)&lt;/span&gt;. The cases are the same as for the ratio test:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{cases}
+0 &amp;lt; \text{root} &amp;lt; 1&amp;amp;Convergent\\
+\text{root} = 1&amp;amp;Inconclusive\\
+\text{root} &amp;gt; 1 ~\text{or}~ \text{root} = \infty&amp;amp;Divergent\\
+\end{cases}
+$$&lt;/div&gt;
+&lt;h2 id="strategy"&gt;Strategy&lt;/h2&gt;
+&lt;p&gt;See section 11.7 for overall strategy for testing series for convergence/divergence.&lt;/p&gt;
+&lt;h2 id="power-series"&gt;Power series&lt;/h2&gt;
+&lt;h3 id="geometric-series_1"&gt;Geometric series&lt;/h3&gt;
+&lt;p&gt;One class of tricks involves connecting the function to a geometric series. For example,&lt;/p&gt;
+&lt;h3 id="taylor-and-maclaurin-series"&gt;Taylor and Maclaurin series&lt;/h3&gt;
+&lt;p&gt;Suppose that any function of a real number &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; can be represented by a "power series" with certain coefficients &lt;span class="math"&gt;\(c_i\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
+$$&lt;/div&gt;
+&lt;p&gt;If that is so, there are two questions:&lt;/p&gt;
+&lt;p&gt;(1) what are the coefficients for any given function? This can be established
+by differentiating and evaluating the result at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;(2) Over what interval of &lt;span class="math"&gt;\(x\)&lt;/span&gt;-values does the series converge? This can be
+answered using the Ratio Test for convergence.&lt;/p&gt;
+&lt;p&gt;To answer (1), firstly, without differentiating at all, we see that &lt;span class="math"&gt;\(c_0 = f(0)\)&lt;/span&gt;. Then differentiate once:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
+$$&lt;/div&gt;
+&lt;p&gt;and we see that evaluating the first derivative at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt; gives the coefficient
+&lt;span class="math"&gt;\(c_1 = f'(0)\)&lt;/span&gt;. Differentiating again yields &lt;span class="math"&gt;\(c_2\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+f''(x) &amp;amp;= (2\cdot 1)c_2 + (3\cdot 2)c_3x^1 + (4\cdot 3)c_4x^2 + ... \\
+\frac{f''(0)}{2} &amp;amp;= c_2
+\end{align*}&lt;/div&gt;
+&lt;p&gt;Continuing like that it becomes clear that each coefficient is equal to an &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; derivative evaluated at zero, divided by a factorial term which results from the repeated differentiation:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+f'''(x) &amp;amp;= (3\cdot2)c_3 + (4\cdot3\cdot2)c_4x^1 + ... \\
+\frac{f'''(0)}{3!} &amp;amp;= c_2
+\end{align*}&lt;/div&gt;
+&lt;p&gt;and in general &lt;span class="math"&gt;\(c_n = \frac{f^{(n)}(0)}{n!}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For example, take &lt;span class="math"&gt;\(f(x) = e^x\)&lt;/span&gt;. The derivatives are all the same of course: &lt;span class="math"&gt;\(f^{(n)}(x) = e^x\)&lt;/span&gt;. And &lt;span class="math"&gt;\(e^0 = 1\)&lt;/span&gt;, so&lt;/p&gt;
+&lt;div class="math"&gt;$$
+e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
+$$&lt;/div&gt;
+&lt;h2 id="problems"&gt;Problems&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;11.1: 3, 25, 37&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.2: (14, 29, 42)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;One trick to find sums: use partial fractions and then write first few terms of series out and identify a telescoping sum (q. 14)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.3: (7, 16, 25, 26) Determine whether convergent or divergent (Integral test)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Use integral test (if &lt;span class="math"&gt;\(\int_1_\infty f(x) dx\)&lt;/span&gt; is finite then converges, otherwise diverges)&lt;/li&gt;
+&lt;li&gt;Although it seems less work to use limit comparison test for some&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.4: (18, 25, 26) Determine whether convergent or divergent&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Questions concern series with positive terms&lt;/li&gt;
+&lt;li&gt;Use Comparison Test or Limit Comparison Test&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\frac{1}{n}\)&lt;/span&gt; diverges. So if you can show that terms are larger than this, or that limit of ratio with this exists, then it must also be divergent.&lt;/li&gt;
+&lt;li&gt;&lt;span class="math"&gt;\(\frac{1}{n^2}\)&lt;/span&gt; converges. If you can show that terms are smaller than this, or that limit of ratio with this exists, then it converges.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.5 (5, 8, 11) Determine whether convergent or divergent&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Questions typically concern alternating series&lt;/li&gt;
+&lt;li&gt;Alternating series test: show that successive values are decreasing &lt;em&gt;and&lt;/em&gt; that limit of sequence is 0.&lt;/li&gt;
+&lt;li&gt;If it's not obviously decreasing, convert &lt;span class="math"&gt;\(a_n\)&lt;/span&gt; to continuous function &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; and show that derivative is negative or becomes negative for large values of &lt;span class="math"&gt;\(x\)&lt;/span&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.6 (5, 6, 29) Absolutely convergent | Conditionally convergent | Divergent&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Questions typically concern alternating series&lt;/li&gt;
+&lt;li&gt;Use ratio test on absolute values to check if absolutely convergent. If it is, then stop.&lt;/li&gt;
+&lt;li&gt;Use Alternating Series Test to check if conditionally convergent or divergent.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.8 (10, 12) Find radius / interval of convergence&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Typically, use the ratio test (converges for values of &lt;span class="math"&gt;\(x\)&lt;/span&gt; that make &lt;span class="math"&gt;\(\limn |\frac{a_{n+1}}{a_n}|\)&lt;/span&gt; less than 1)&lt;/li&gt;
+&lt;li&gt;If they ask for interval, then you need to test the endpoints for convergence separately.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.9 (3, 6) Find a power series representation for a given function, and radius/interval of convergence.&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Match up the function to the formula for the sum of a geometric series (&lt;span class="math"&gt;\(a/(1-r)\)&lt;/span&gt;) and thus construct a geometric series that it's equal to.&lt;/li&gt;
+&lt;li&gt;Use ratio test to determine interval of convergence&lt;/li&gt;
+&lt;li&gt;A variant is: you have to differentiate the function before it looks like &lt;span class="math"&gt;\(a/(1-r)\)&lt;/span&gt;. Then find the power series, and integrate the power series to get something equal to the original function.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;11.10 (8, 9, 17) Find a Taylor / Maclaurin series for a given function, and radius/interval of convergence&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Memorize definition of general Taylor series (Maclaurin is &lt;span class="math"&gt;\(a=0\)&lt;/span&gt;)&lt;/li&gt;
+&lt;li&gt;Compute derivatives and evaluate them at zero&lt;/li&gt;
+&lt;li&gt;Use those to write out first few terms of Taylor series&lt;/li&gt;
+&lt;li&gt;If there's a pattern, represent the sum using sigma notation&lt;/li&gt;
+&lt;li&gt;Use the ratio test to assess radius of convergence&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
