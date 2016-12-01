@@ -186,7 +186,7 @@ then either <em>both converge</em> or <em>both diverge</em>. Seeing as you know 
 <h2 id="alternating-series">Alternating series</h2>
 <p>The two theorems about alternating series are fairly obvious if we draw a picture of an alternating series.</p>
 <h2 id="alternating-series-test">Alternating series test</h2>
-<p>The previous tests are all for series with positive terms only. Alternating series are often the result of a <span class="math">\((-1)^n\)</span> factor, for example <span class="math">\(\sumn (-1)^n \frac{1}{n}\)</span>. The <em>alternating series test</em> says: look at the absolute values; if they are decreasing (i.e. <span class="math">\(a_{n+1} &lt; a_n\)</span>), and if their limit is zero, then the series converges.</p>
+<p>The previous tests are all for series with positive terms only. Alternating series are often the result of a <span class="math">\((-1)^n\)</span> factor, for example <span class="math">\(\sumn (-1)^n \frac{1}{n}\)</span>. The <strong>alternating series test</strong> says: look at the <em>absolute values</em>; if they are decreasing (i.e. <span class="math">\(|a_{n+1}| &lt; |a_n|\)</span>), and if their limit is zero, then the series converges.</p>
 <h3 id="alternating-series-remainder-theorem">Alternating series remainder theorem</h3>
 <p>The absolute size of the error is less than or equal to the size of the first neglected term. (Only for alternating series!)</p>
 <h2 id="absolute-and-conditional-convergence">Absolute and conditional convergence</h2>
@@ -221,35 +221,8 @@ $$</div>
 <h3 id="geometric-series_1">Geometric series</h3>
 <p>One class of tricks involves connecting the function to a geometric series. For example,</p>
 <h3 id="taylor-and-maclaurin-series">Taylor and Maclaurin series</h3>
-<p>Suppose that any function of a real number <span class="math">\(f(x)\)</span> can be represented by a "power series" with certain coefficients <span class="math">\(c_i\)</span></p>
-<div class="math">$$
-f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
-$$</div>
-<p>If that is so, there are two questions:</p>
-<p>(1) what are the coefficients for any given function? This can be established
-by differentiating and evaluating the result at <span class="math">\(x=0\)</span>.</p>
-<p>(2) Over what interval of <span class="math">\(x\)</span>-values does the series converge? This can be
-answered using the Ratio Test for convergence.</p>
-<p>To answer (1), firstly, without differentiating at all, we see that <span class="math">\(c_0 = f(0)\)</span>. Then differentiate once:</p>
-<div class="math">$$
-f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
-$$</div>
-<p>and we see that evaluating the first derivative at <span class="math">\(x=0\)</span> gives the coefficient
-<span class="math">\(c_1 = f'(0)\)</span>. Differentiating again yields <span class="math">\(c_2\)</span>:</p>
-<div class="math">\begin{align*}
-f''(x) &amp;= (2\cdot 1)c_2 + (3\cdot 2)c_3x^1 + (4\cdot 3)c_4x^2 + ... \\
-\frac{f''(0)}{2} &amp;= c_2
-\end{align*}</div>
-<p>Continuing like that it becomes clear that each coefficient is equal to an <span class="math">\(\nth\)</span> derivative evaluated at zero, divided by a factorial term which results from the repeated differentiation:</p>
-<div class="math">\begin{align*}
-f'''(x) &amp;= (3\cdot2)c_3 + (4\cdot3\cdot2)c_4x^1 + ... \\
-\frac{f'''(0)}{3!} &amp;= c_2
-\end{align*}</div>
-<p>and in general <span class="math">\(c_n = \frac{f^{(n)}(0)}{n!}\)</span>.</p>
-<p>For example, take <span class="math">\(f(x) = e^x\)</span>. The derivatives are all the same of course: <span class="math">\(f^{(n)}(x) = e^x\)</span>. And <span class="math">\(e^0 = 1\)</span>, so</p>
-<div class="math">$$
-e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
-$$</div>
+<p>Memorize the general formula for a Taylor series around a point <span class="math">\(a\)</span>. (Maclaurin series is the same but with <span class="math">\(a=0\)</span>).</p>
+<p>A common question is: over what interval of <span class="math">\(x\)</span>-values does the series converge? This can be answered using the Ratio Test for convergence.</p>
 <h2 id="problems">Problems</h2>
 <ul>
 <li><strong>11.1: 3, 25, 37</strong></li>
@@ -262,7 +235,7 @@ $$</div>
 <li>
 <p><strong>11.3: (7, 16, 25, 26) Determine whether convergent or divergent (Integral test)</strong></p>
 <ul>
-<li>Use integral test (if <span class="math">\(\int_1_\infty f(x) dx\)</span> is finite then converges, otherwise diverges)</li>
+<li>Use integral test (if <span class="math">\(\int_1^\infty f(x) dx\)</span> is finite then converges, otherwise diverges)</li>
 <li>Although it seems less work to use limit comparison test for some</li>
 </ul>
 </li>
@@ -317,6 +290,36 @@ $$</div>
 </ul>
 </li>
 </ul>
+<h3 id="maclaurin-series-derivation">Maclaurin series derivation</h3>
+<p>Suppose that any function of a real number <span class="math">\(f(x)\)</span> can be represented by a "power series" with certain coefficients <span class="math">\(c_i\)</span></p>
+<div class="math">$$
+f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
+$$</div>
+<p>If that is so, there are two questions:</p>
+<p>(1) what are the coefficients for any given function? This can be established
+by differentiating and evaluating the result at <span class="math">\(x=0\)</span>.</p>
+<p>(2) Over what interval of <span class="math">\(x\)</span>-values does the series converge? This can be
+answered using the Ratio Test for convergence.</p>
+<p>To answer (1), firstly, without differentiating at all, we see that <span class="math">\(c_0 = f(0)\)</span>. Then differentiate once:</p>
+<div class="math">$$
+f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
+$$</div>
+<p>and we see that evaluating the first derivative at <span class="math">\(x=0\)</span> gives the coefficient
+<span class="math">\(c_1 = f'(0)\)</span>. Differentiating again yields <span class="math">\(c_2\)</span>:</p>
+<div class="math">\begin{align*}
+f''(x) &amp;= (2\cdot 1)c_2 + (3\cdot 2)c_3x^1 + (4\cdot 3)c_4x^2 + ... \\
+\frac{f''(0)}{2} &amp;= c_2
+\end{align*}</div>
+<p>Continuing like that it becomes clear that each coefficient is equal to an <span class="math">\(\nth\)</span> derivative evaluated at zero, divided by a factorial term which results from the repeated differentiation:</p>
+<div class="math">\begin{align*}
+f'''(x) &amp;= (3\cdot2)c_3 + (4\cdot3\cdot2)c_4x^1 + ... \\
+\frac{f'''(0)}{3!} &amp;= c_2
+\end{align*}</div>
+<p>and in general <span class="math">\(c_n = \frac{f^{(n)}(0)}{n!}\)</span>.</p>
+<p>For example, take <span class="math">\(f(x) = e^x\)</span>. The derivatives are all the same of course: <span class="math">\(f^{(n)}(x) = e^x\)</span>. And <span class="math">\(e^0 = 1\)</span>, so</p>
+<div class="math">$$
+e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
+$$</div>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

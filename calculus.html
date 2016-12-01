@@ -83,7 +83,14 @@ graph of <span class="math">\(x'(t)\)</span>.</p>
 <h4 id="antiderivative">Antiderivative</h4>
 <p><img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"></p>
 <h3 id="arc-length">Arc length</h3>
-<p>An example of a definite integral that does not correspond to an area:</p>
+<p>An example of a definite integral that does not correspond to an area: the
+length of a curved line between <span class="math">\(a\)</span> and <span class="math">\(b\)</span> is the limit of the sum of
+hypotenuses:</p>
+<div class="math">\begin{align*}
+L =&amp; \limn \sqrt{\big(f'(x_i)\Delta x\big)^2 + \big(\Delta x\big)^2} \\
+  =&amp; \limn \sqrt{\big(f'(x_i)\big)^2 + 1} \Delta x\\
+  =&amp; \int_a^b \sqrt{\big(f'(x)\big)^2 + 1} \d x
+\end{align*}</div>
 <hr>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",

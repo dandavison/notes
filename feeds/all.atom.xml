@@ -44,7 +44,14 @@ graph of &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;h4 id="antiderivative"&gt;Antiderivative&lt;/h4&gt;
 &lt;p&gt;&lt;img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"&gt;&lt;/p&gt;
 &lt;h3 id="arc-length"&gt;Arc length&lt;/h3&gt;
-&lt;p&gt;An example of a definite integral that does not correspond to an area:&lt;/p&gt;
+&lt;p&gt;An example of a definite integral that does not correspond to an area: the
+length of a curved line between &lt;span class="math"&gt;\(a\)&lt;/span&gt; and &lt;span class="math"&gt;\(b\)&lt;/span&gt; is the limit of the sum of
+hypotenuses:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+L =&amp;amp; \limn \sqrt{\big(f'(x_i)\Delta x\big)^2 + \big(\Delta x\big)^2} \\
+  =&amp;amp; \limn \sqrt{\big(f'(x_i)\big)^2 + 1} \Delta x\\
+  =&amp;amp; \int_a^b \sqrt{\big(f'(x)\big)^2 + 1} \d x
+\end{align*}&lt;/div&gt;
 &lt;hr&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -252,7 +259,7 @@ then either &lt;em&gt;both converge&lt;/em&gt; or &lt;em&gt;both diverge&lt;/em&
 &lt;h2 id="alternating-series"&gt;Alternating series&lt;/h2&gt;
 &lt;p&gt;The two theorems about alternating series are fairly obvious if we draw a picture of an alternating series.&lt;/p&gt;
 &lt;h2 id="alternating-series-test"&gt;Alternating series test&lt;/h2&gt;
-&lt;p&gt;The previous tests are all for series with positive terms only. Alternating series are often the result of a &lt;span class="math"&gt;\((-1)^n\)&lt;/span&gt; factor, for example &lt;span class="math"&gt;\(\sumn (-1)^n \frac{1}{n}\)&lt;/span&gt;. The &lt;em&gt;alternating series test&lt;/em&gt; says: look at the absolute values; if they are decreasing (i.e. &lt;span class="math"&gt;\(a_{n+1} &amp;lt; a_n\)&lt;/span&gt;), and if their limit is zero, then the series converges.&lt;/p&gt;
+&lt;p&gt;The previous tests are all for series with positive terms only. Alternating series are often the result of a &lt;span class="math"&gt;\((-1)^n\)&lt;/span&gt; factor, for example &lt;span class="math"&gt;\(\sumn (-1)^n \frac{1}{n}\)&lt;/span&gt;. The &lt;strong&gt;alternating series test&lt;/strong&gt; says: look at the &lt;em&gt;absolute values&lt;/em&gt;; if they are decreasing (i.e. &lt;span class="math"&gt;\(|a_{n+1}| &amp;lt; |a_n|\)&lt;/span&gt;), and if their limit is zero, then the series converges.&lt;/p&gt;
 &lt;h3 id="alternating-series-remainder-theorem"&gt;Alternating series remainder theorem&lt;/h3&gt;
 &lt;p&gt;The absolute size of the error is less than or equal to the size of the first neglected term. (Only for alternating series!)&lt;/p&gt;
 &lt;h2 id="absolute-and-conditional-convergence"&gt;Absolute and conditional convergence&lt;/h2&gt;
@@ -287,35 +294,8 @@ $$&lt;/div&gt;
 &lt;h3 id="geometric-series_1"&gt;Geometric series&lt;/h3&gt;
 &lt;p&gt;One class of tricks involves connecting the function to a geometric series. For example,&lt;/p&gt;
 &lt;h3 id="taylor-and-maclaurin-series"&gt;Taylor and Maclaurin series&lt;/h3&gt;
-&lt;p&gt;Suppose that any function of a real number &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; can be represented by a "power series" with certain coefficients &lt;span class="math"&gt;\(c_i\)&lt;/span&gt;&lt;/p&gt;
-&lt;div class="math"&gt;$$
-f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
-$$&lt;/div&gt;
-&lt;p&gt;If that is so, there are two questions:&lt;/p&gt;
-&lt;p&gt;(1) what are the coefficients for any given function? This can be established
-by differentiating and evaluating the result at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;(2) Over what interval of &lt;span class="math"&gt;\(x\)&lt;/span&gt;-values does the series converge? This can be
-answered using the Ratio Test for convergence.&lt;/p&gt;
-&lt;p&gt;To answer (1), firstly, without differentiating at all, we see that &lt;span class="math"&gt;\(c_0 = f(0)\)&lt;/span&gt;. Then differentiate once:&lt;/p&gt;
-&lt;div class="math"&gt;$$
-f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
-$$&lt;/div&gt;
-&lt;p&gt;and we see that evaluating the first derivative at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt; gives the coefficient
-&lt;span class="math"&gt;\(c_1 = f'(0)\)&lt;/span&gt;. Differentiating again yields &lt;span class="math"&gt;\(c_2\)&lt;/span&gt;:&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
-f''(x) &amp;amp;= (2\cdot 1)c_2 + (3\cdot 2)c_3x^1 + (4\cdot 3)c_4x^2 + ... \\
-\frac{f''(0)}{2} &amp;amp;= c_2
-\end{align*}&lt;/div&gt;
-&lt;p&gt;Continuing like that it becomes clear that each coefficient is equal to an &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; derivative evaluated at zero, divided by a factorial term which results from the repeated differentiation:&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
-f'''(x) &amp;amp;= (3\cdot2)c_3 + (4\cdot3\cdot2)c_4x^1 + ... \\
-\frac{f'''(0)}{3!} &amp;amp;= c_2
-\end{align*}&lt;/div&gt;
-&lt;p&gt;and in general &lt;span class="math"&gt;\(c_n = \frac{f^{(n)}(0)}{n!}\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;For example, take &lt;span class="math"&gt;\(f(x) = e^x\)&lt;/span&gt;. The derivatives are all the same of course: &lt;span class="math"&gt;\(f^{(n)}(x) = e^x\)&lt;/span&gt;. And &lt;span class="math"&gt;\(e^0 = 1\)&lt;/span&gt;, so&lt;/p&gt;
-&lt;div class="math"&gt;$$
-e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
-$$&lt;/div&gt;
+&lt;p&gt;Memorize the general formula for a Taylor series around a point &lt;span class="math"&gt;\(a\)&lt;/span&gt;. (Maclaurin series is the same but with &lt;span class="math"&gt;\(a=0\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;A common question is: over what interval of &lt;span class="math"&gt;\(x\)&lt;/span&gt;-values does the series converge? This can be answered using the Ratio Test for convergence.&lt;/p&gt;
 &lt;h2 id="problems"&gt;Problems&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;strong&gt;11.1: 3, 25, 37&lt;/strong&gt;&lt;/li&gt;
@@ -328,7 +308,7 @@ $$&lt;/div&gt;
 &lt;li&gt;
 &lt;p&gt;&lt;strong&gt;11.3: (7, 16, 25, 26) Determine whether convergent or divergent (Integral test)&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;Use integral test (if &lt;span class="math"&gt;\(\int_1_\infty f(x) dx\)&lt;/span&gt; is finite then converges, otherwise diverges)&lt;/li&gt;
+&lt;li&gt;Use integral test (if &lt;span class="math"&gt;\(\int_1^\infty f(x) dx\)&lt;/span&gt; is finite then converges, otherwise diverges)&lt;/li&gt;
 &lt;li&gt;Although it seems less work to use limit comparison test for some&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
@@ -383,6 +363,36 @@ $$&lt;/div&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
+&lt;h3 id="maclaurin-series-derivation"&gt;Maclaurin series derivation&lt;/h3&gt;
+&lt;p&gt;Suppose that any function of a real number &lt;span class="math"&gt;\(f(x)\)&lt;/span&gt; can be represented by a "power series" with certain coefficients &lt;span class="math"&gt;\(c_i\)&lt;/span&gt;&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(x) = c_0 + c_1x^1 + c_2x^2 + c_3x^3 + c_4x^4 + ...
+$$&lt;/div&gt;
+&lt;p&gt;If that is so, there are two questions:&lt;/p&gt;
+&lt;p&gt;(1) what are the coefficients for any given function? This can be established
+by differentiating and evaluating the result at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;(2) Over what interval of &lt;span class="math"&gt;\(x\)&lt;/span&gt;-values does the series converge? This can be
+answered using the Ratio Test for convergence.&lt;/p&gt;
+&lt;p&gt;To answer (1), firstly, without differentiating at all, we see that &lt;span class="math"&gt;\(c_0 = f(0)\)&lt;/span&gt;. Then differentiate once:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f'(x) = c_1 + 2c_2x^1 + 3c_3x^2 + 4c_4x^3 + ...
+$$&lt;/div&gt;
+&lt;p&gt;and we see that evaluating the first derivative at &lt;span class="math"&gt;\(x=0\)&lt;/span&gt; gives the coefficient
+&lt;span class="math"&gt;\(c_1 = f'(0)\)&lt;/span&gt;. Differentiating again yields &lt;span class="math"&gt;\(c_2\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+f''(x) &amp;amp;= (2\cdot 1)c_2 + (3\cdot 2)c_3x^1 + (4\cdot 3)c_4x^2 + ... \\
+\frac{f''(0)}{2} &amp;amp;= c_2
+\end{align*}&lt;/div&gt;
+&lt;p&gt;Continuing like that it becomes clear that each coefficient is equal to an &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; derivative evaluated at zero, divided by a factorial term which results from the repeated differentiation:&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+f'''(x) &amp;amp;= (3\cdot2)c_3 + (4\cdot3\cdot2)c_4x^1 + ... \\
+\frac{f'''(0)}{3!} &amp;amp;= c_2
+\end{align*}&lt;/div&gt;
+&lt;p&gt;and in general &lt;span class="math"&gt;\(c_n = \frac{f^{(n)}(0)}{n!}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For example, take &lt;span class="math"&gt;\(f(x) = e^x\)&lt;/span&gt;. The derivatives are all the same of course: &lt;span class="math"&gt;\(f^{(n)}(x) = e^x\)&lt;/span&gt;. And &lt;span class="math"&gt;\(e^0 = 1\)&lt;/span&gt;, so&lt;/p&gt;
+&lt;div class="math"&gt;$$
+e^x = 1 + \frac{x}{1} + \frac{x^2}{2!} + \frac{x^3}{3!} + ... = \sum_{i=0}^\infty \frac{x^i}{i!}
+$$&lt;/div&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
