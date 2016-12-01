@@ -189,7 +189,7 @@ then either *both converge* or *both diverge*. Seeing as you know how $b$ behave
 The two theorems about alternating series are fairly obvious if we draw a picture of an alternating series.
 
 ## Alternating series test
-The previous tests are all for series with positive terms only. Alternating series are often the result of a $(-1)^n$ factor, for example $\sumn (-1)^n \frac{1}{n}$. The *alternating series test* says: look at the absolute values; if they are decreasing (i.e. $a_{n+1} < a_n$), and if their limit is zero, then the series converges.
+The previous tests are all for series with positive terms only. Alternating series are often the result of a $(-1)^n$ factor, for example $\sumn (-1)^n \frac{1}{n}$. The **alternating series test** says: look at the *absolute values*; if they are decreasing (i.e. $|a_{n+1}| < |a_n|$), and if their limit is zero, then the series converges.
 
 
 ### Alternating series remainder theorem
@@ -302,7 +302,7 @@ $$
     - One trick to find sums: use partial fractions and then write first few terms of series out and identify a telescoping sum (q. 14)
 
 - **11.3: (7, 16, 25, 26) Determine whether convergent or divergent (Integral test)**
-    - Use integral test (if $\int_1_\infty f(x) dx$ is finite then converges, otherwise diverges)
+    - Use integral test (if $\int_1^\infty f(x) dx$ is finite then converges, otherwise diverges)
     - Although it seems less work to use limit comparison test for some
 
 - **11.4: (18, 25, 26) Determine whether convergent or divergent**
