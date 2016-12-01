@@ -18,9 +18,10 @@ $$
 \newcommand{\limn}{\lim\limits_{n \to \infty}}
 \newcommand{\limDt}{\lim\limits_{\Delta t \to 0}}
 \newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\d}{\,\mathrm{d}}
 $$
 
-Define $\int_a^b f(t) dt$ to be the area under the graph of $f(t)$ between
+Define $\int_a^b f(t) \dt$ to be the area under the graph of $f(t)$ between
 $t=a$ and $t=b$. This can be approximated as the sum of areas of rectangles,
 where $t_i$ is the height of the $i\mathrm{th}$ rectangle.[ref]The rectangles
 can be chosen so that their height is given by the value of $f(t)$ at either
@@ -34,9 +35,15 @@ $$
 
 ### Fundamental Theorem of Calculus
 
-Consider the case where $f(t)$ is the derivative of some function $F(t)$.
+**Theorem (FTC I):** The derivative of the cumulative area function is the original function itself.
 
-**Theorem:** The area under $F'(t)$ between $t=a$ and $t=b$ is $F(b) - F(a)$.
+$$
+\frac{d}{\dt} \int_a^t f(s) \d s = f(t)
+$$
+
+Consider the case where $f(t)$ is the derivative of some function $F(t)$; i.e. $F(t)$ is an antiderivative of $f(t)$.
+
+**Theorem (FTC II):** The area under $F'(t)$ between $t=a$ and $t=b$ is $F(b) - F(a)$.
 
 E.g. consider position $x(t)$ and its derivative velocity $x'(t)$. If someone
 is stationary until time $t=a$, then moves at constant velocity $v$ until time
@@ -58,6 +65,19 @@ graph of $x'(t)$.
 
 #### Antiderivative
 ![ftc-position-velocity](/images/calculus/ftc-position-velocity.png)
+
+
+### Arc length
+
+An example of a definite integral that does not correspond to an area: the
+length of a curved line between $a$ and $b$ is the limit of the sum of
+hypotenuses:
+
+\begin{align*}
+L =& \limn \sqrt{\big(f'(x_i)\Delta x\big)^2 + \big(\Delta x\big)^2} \\
+  =& \limn \sqrt{\big(f'(x_i)\big)^2 + 1} \Delta x\\
+  =& \int_a^b \sqrt{\big(f'(x)\big)^2 + 1} \d x
+\end{align*}
 
 
 ----------------------------------------------------------------------------
