@@ -11,8 +11,9 @@
 \newcommand{\limn}{\lim\limits_{n \to \infty}}
 \newcommand{\limDt}{\lim\limits_{\Delta t \to 0}}
 \newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\d}{\,\mathrm{d}}
 $$&lt;/div&gt;
-&lt;p&gt;Define &lt;span class="math"&gt;\(\int_a^b f(t) dt\)&lt;/span&gt; to be the area under the graph of &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; between
+&lt;p&gt;Define &lt;span class="math"&gt;\(\int_a^b f(t) \dt\)&lt;/span&gt; to be the area under the graph of &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; between
 &lt;span class="math"&gt;\(t=a\)&lt;/span&gt; and &lt;span class="math"&gt;\(t=b\)&lt;/span&gt;. This can be approximated as the sum of areas of rectangles,
 where &lt;span class="math"&gt;\(t_i\)&lt;/span&gt; is the height of the &lt;span class="math"&gt;\(i\mathrm{th}\)&lt;/span&gt; rectangle.&lt;sup id="sf-calculus-1-back"&gt;&lt;a href="#sf-calculus-1" class="simple-footnote" title="The rectangles can be chosen so that their height is given by the value of \(f(t)\) at either their left or right endpoint, or in fact anywhere inbetween."&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/p&gt;
 &lt;div class="math"&gt;$$
@@ -20,8 +21,12 @@ where &lt;span class="math"&gt;\(t_i\)&lt;/span&gt; is the height of the &lt;spa
 $$&lt;/div&gt;
 &lt;hr&gt;
 &lt;h3 id="fundamental-theorem-of-calculus"&gt;Fundamental Theorem of Calculus&lt;/h3&gt;
-&lt;p&gt;Consider the case where &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; is the derivative of some function &lt;span class="math"&gt;\(F(t)\)&lt;/span&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; The area under &lt;span class="math"&gt;\(F'(t)\)&lt;/span&gt; between &lt;span class="math"&gt;\(t=a\)&lt;/span&gt; and &lt;span class="math"&gt;\(t=b\)&lt;/span&gt; is &lt;span class="math"&gt;\(F(b) - F(a)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (FTC I):&lt;/strong&gt; The derivative of the cumulative area function is the original function itself.&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\frac{d}{\dt} \int_a^t f(s) \d s = f(t)
+$$&lt;/div&gt;
+&lt;p&gt;Consider the case where &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt; is the derivative of some function &lt;span class="math"&gt;\(F(t)\)&lt;/span&gt;; i.e. &lt;span class="math"&gt;\(F(t)\)&lt;/span&gt; is an antiderivative of &lt;span class="math"&gt;\(f(t)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem (FTC II):&lt;/strong&gt; The area under &lt;span class="math"&gt;\(F'(t)\)&lt;/span&gt; between &lt;span class="math"&gt;\(t=a\)&lt;/span&gt; and &lt;span class="math"&gt;\(t=b\)&lt;/span&gt; is &lt;span class="math"&gt;\(F(b) - F(a)\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;E.g. consider position &lt;span class="math"&gt;\(x(t)\)&lt;/span&gt; and its derivative velocity &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;. If someone
 is stationary until time &lt;span class="math"&gt;\(t=a\)&lt;/span&gt;, then moves at constant velocity &lt;span class="math"&gt;\(v\)&lt;/span&gt; until time
 &lt;span class="math"&gt;\(t=b\)&lt;/span&gt;, and then is stationary again, their total displacement is
@@ -38,6 +43,8 @@ graph of &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;.&lt;/p&gt;
 \end{align*}&lt;/div&gt;
 &lt;h4 id="antiderivative"&gt;Antiderivative&lt;/h4&gt;
 &lt;p&gt;&lt;img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"&gt;&lt;/p&gt;
+&lt;h3 id="arc-length"&gt;Arc length&lt;/h3&gt;
+&lt;p&gt;An example of a definite integral that does not correspond to an area:&lt;/p&gt;
 &lt;hr&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",

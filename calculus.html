@@ -50,8 +50,9 @@
 \newcommand{\limn}{\lim\limits_{n \to \infty}}
 \newcommand{\limDt}{\lim\limits_{\Delta t \to 0}}
 \newcommand{\dt}{\,\mathrm{d}t}
+\newcommand{\d}{\,\mathrm{d}}
 $$</div>
-<p>Define <span class="math">\(\int_a^b f(t) dt\)</span> to be the area under the graph of <span class="math">\(f(t)\)</span> between
+<p>Define <span class="math">\(\int_a^b f(t) \dt\)</span> to be the area under the graph of <span class="math">\(f(t)\)</span> between
 <span class="math">\(t=a\)</span> and <span class="math">\(t=b\)</span>. This can be approximated as the sum of areas of rectangles,
 where <span class="math">\(t_i\)</span> is the height of the <span class="math">\(i\mathrm{th}\)</span> rectangle.<sup id="sf-calculus-1-back"><a href="#sf-calculus-1" class="simple-footnote" title="The rectangles can be chosen so that their height is given by the value of \(f(t)\) at either their left or right endpoint, or in fact anywhere inbetween.">1</a></sup></p>
 <div class="math">$$
@@ -59,8 +60,12 @@ where <span class="math">\(t_i\)</span> is the height of the <span class="math">
 $$</div>
 <hr>
 <h3 id="fundamental-theorem-of-calculus">Fundamental Theorem of Calculus</h3>
-<p>Consider the case where <span class="math">\(f(t)\)</span> is the derivative of some function <span class="math">\(F(t)\)</span>.</p>
-<p><strong>Theorem:</strong> The area under <span class="math">\(F'(t)\)</span> between <span class="math">\(t=a\)</span> and <span class="math">\(t=b\)</span> is <span class="math">\(F(b) - F(a)\)</span>.</p>
+<p><strong>Theorem (FTC I):</strong> The derivative of the cumulative area function is the original function itself.</p>
+<div class="math">$$
+\frac{d}{\dt} \int_a^t f(s) \d s = f(t)
+$$</div>
+<p>Consider the case where <span class="math">\(f(t)\)</span> is the derivative of some function <span class="math">\(F(t)\)</span>; i.e. <span class="math">\(F(t)\)</span> is an antiderivative of <span class="math">\(f(t)\)</span>.</p>
+<p><strong>Theorem (FTC II):</strong> The area under <span class="math">\(F'(t)\)</span> between <span class="math">\(t=a\)</span> and <span class="math">\(t=b\)</span> is <span class="math">\(F(b) - F(a)\)</span>.</p>
 <p>E.g. consider position <span class="math">\(x(t)\)</span> and its derivative velocity <span class="math">\(x'(t)\)</span>. If someone
 is stationary until time <span class="math">\(t=a\)</span>, then moves at constant velocity <span class="math">\(v\)</span> until time
 <span class="math">\(t=b\)</span>, and then is stationary again, their total displacement is
@@ -77,6 +82,8 @@ graph of <span class="math">\(x'(t)\)</span>.</p>
 \end{align*}</div>
 <h4 id="antiderivative">Antiderivative</h4>
 <p><img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"></p>
+<h3 id="arc-length">Arc length</h3>
+<p>An example of a definite integral that does not correspond to an area:</p>
 <hr>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
