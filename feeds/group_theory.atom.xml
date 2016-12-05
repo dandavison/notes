@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/group_theory.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-04T00:00:00-08:00</updated><entry><title>Group Theory</title><link href="http://dandavison.github.io/notes/group-theory.html" rel="alternate"></link><published>2016-12-04T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-04:notes/group-theory.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\R}{\mathbb{R}}
+$$&lt;/div&gt;
+&lt;p&gt;A group is a set, together with an operation that can be performed on two elements to produce another element.&lt;/p&gt;
+&lt;p&gt;Concrete examples of groups:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\{1, i, -1, -i\}\)&lt;/span&gt; where the operation is multiplication of complex numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(GL_n(\R)\)&lt;/span&gt;: the set of &lt;span class="math"&gt;\(n \times n\)&lt;/span&gt; matrices, under matrix multiplication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(S_2\)&lt;/span&gt;: the set of permutations of two objects, where the operation is composition of functions.
+  There are just two elements in the group: the do-nothing permutation and the
+  switch-the-elements permutation: &lt;span class="math"&gt;\(\{e, \tau\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(S_3\)&lt;/span&gt;: the set of permutations of three objects. There are 6 elements: the identity, 3 transitions and two cyclic permutations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Note that in the first two examples, the elements being composed are "inert"
+objects (numbers or matrices): they are not themselves functions. However, in
+&lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;, the &lt;em&gt;elements&lt;/em&gt; being composed are already function-like
+objects (a permutation of &lt;span class="math"&gt;\(n\)&lt;/span&gt; objects is a bijection from the set to itself).&lt;/p&gt;
+&lt;p&gt;Hang on, is that true? Both multiplication by a complex number, and matrix
+multiplication, can be viewed as composition of functions (a complex number
+rotates and scales the complex plane, and a matrix is a linear transformation).&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;homomorphism&lt;/strong&gt; is a map from one group to another. If it is bijective, it
+is an &lt;strong&gt;isomorphism&lt;/strong&gt;. If it is bijective and from one group to itself then it
+is an &lt;strong&gt;automorphism&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Note that these concepts are maps from one group to another, i.e. they take in
+an element &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt; and output an element &lt;span class="math"&gt;\(g' \in G'\)&lt;/span&gt;. The element &lt;span class="math"&gt;\(g\)&lt;/span&gt; may
+itself already be a map of sorts (e.g. if it is a permutation in &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;, or if
+it is a matrix).&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry></feed>

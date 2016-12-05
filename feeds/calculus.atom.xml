@@ -278,6 +278,7 @@ then either &lt;em&gt;both converge&lt;/em&gt; or &lt;em&gt;both diverge&lt;/em&
 \text{limit} &amp;gt; 1 ~\text{or}~ \text{limit} = \infty&amp;amp;Divergent\\
 \end{cases}
 $$&lt;/div&gt;
+&lt;p&gt;If the original series was alternating, then these conclusions of "convergent" and "divergent" apply to the alternating series too, as well as the series of absolute values.&lt;/p&gt;
 &lt;h3 id="root-test"&gt;Root test&lt;/h3&gt;
 &lt;p&gt;This is like the ratio test, but you use it if there are powers of &lt;span class="math"&gt;\(n\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Evaluate the limit of the absolute value of the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt; root of the &lt;span class="math"&gt;\(\nth\)&lt;/span&gt;: &lt;span class="math"&gt;\(|\sqrt[n]{a_n}|\)&lt;/span&gt;. The cases are the same as for the ratio test:&lt;/p&gt;
@@ -333,8 +334,8 @@ $$&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt;11.6 (5, 6, 29) Absolutely convergent | Conditionally convergent | Divergent&lt;/strong&gt;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Questions typically concern alternating series&lt;/li&gt;
-&lt;li&gt;Use ratio test on absolute values to check if absolutely convergent. If it is, then stop.&lt;/li&gt;
-&lt;li&gt;Use Alternating Series Test to check if conditionally convergent or divergent.&lt;/li&gt;
+&lt;li&gt;Use Ratio Test on absolute values to check if convergent or divergent. If it is convergent on the Ratio Test then it is "absolutely convergent".&lt;/li&gt;
+&lt;li&gt;If Ratio Test is inconclusive (limit &lt;span class="math"&gt;\(= 1\)&lt;/span&gt;) then the Alternating Series Test might show that it is Conditionally Convergent.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;/li&gt;
 &lt;li&gt;
