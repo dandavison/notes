@@ -221,6 +221,8 @@ $$
 \end{cases}
 $$
 
+If the original series was alternating, then these conclusions of "convergent" and "divergent" apply to the alternating series too, as well as the series of absolute values.
+
 
 ### Root test
 This is like the ratio test, but you use it if there are powers of $n$.
@@ -279,8 +281,8 @@ A common question is: over what interval of $x$-values does the series converge?
 
 - **11.6 (5, 6, 29) Absolutely convergent | Conditionally convergent | Divergent**
     - Questions typically concern alternating series
-    - Use ratio test on absolute values to check if absolutely convergent. If it is, then stop.
-    - Use Alternating Series Test to check if conditionally convergent or divergent.
+    - Use Ratio Test on absolute values to check if convergent or divergent. If it is convergent on the Ratio Test then it is "absolutely convergent".
+    - If Ratio Test is inconclusive (limit $= 1$) then the Alternating Series Test might show that it is Conditionally Convergent.
 
 - **11.8 (10, 12) Find radius / interval of convergence**
     - Typically, use the ratio test (converges for values of $x$ that make $\limn |\frac{a_{n+1}}{a_n}|$ less than 1)
