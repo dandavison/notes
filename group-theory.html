@@ -51,12 +51,14 @@ $$</div>
 <p><span class="math">\(GL_n(\R)\)</span>: the set of <span class="math">\(n \times n\)</span> matrices, under matrix multiplication.</p>
 </li>
 <li>
-<p><span class="math">\(S_2\)</span>: the set of permutations of two objects, where the operation is composition of functions.
-  There are just two elements in the group: the do-nothing permutation and the
-  switch-the-elements permutation: <span class="math">\(\{e, \tau\}\)</span>.</p>
+<p><span class="math">\(S_2\)</span>: the set of permutations of two objects, where the operation is
+  composition of functions.  There are just two elements in the group: the
+  do-nothing permutation and the switch-the-elements permutation: <span class="math">\(\{e,
+  \tau\}\)</span>.</p>
 </li>
 <li>
-<p><span class="math">\(S_3\)</span>: the set of permutations of three objects. There are 6 elements: the identity, 3 transitions and two cyclic permutations.</p>
+<p><span class="math">\(S_3\)</span>: the set of permutations of three objects. There are 6 elements: the
+  identity, 3 transitions<sup id="sf-group-theory-1-back"><a href="#sf-group-theory-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone">1</a></sup> and two cyclic permutations.</p>
 </li>
 </ul>
 <p>Note that in the first two examples, the elements being composed are "inert"
@@ -73,6 +75,31 @@ is an <strong>automorphism</strong>.</p>
 an element <span class="math">\(g \in G\)</span> and output an element <span class="math">\(g' \in G'\)</span>. The element <span class="math">\(g\)</span> may
 itself already be a map of sorts (e.g. if it is a permutation in <span class="math">\(S_3\)</span>, or if
 it is a matrix).</p>
+<h3 id="inverse-of-an-automorphism-is-an-automorphism">Inverse of an automorphism is an automorphism</h3>
+<p>[Artin 2.3.11: show that Aut(<span class="math">\(G\)</span>) is a group]</p>
+<div class="math">$$
+\newcommand{\a}{\alpha}
+\newcommand{\ainv}{\alpha^{-1}}
+$$</div>
+<p>Suppose <span class="math">\(\alpha\)</span> is an automorphism that sends <span class="math">\(g_1\)</span> and <span class="math">\(g_2\)</span> to <span class="math">\(g_1'\)</span> and
+<span class="math">\(g_2'\)</span>, respectively. We need to show that <span class="math">\(\ainv\)</span> preserves structure,
+i.e. that</p>
+<div class="math">$$
+\ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
+$$</div>
+<p>Now, (1) the RHS is <span class="math">\(g_1g_2\)</span> by the definition of inverse, and (2) <span class="math">\(g_1'g_2'\)</span>
+is <span class="math">\(\a(g_1)\a(g_2)\)</span>, since <span class="math">\(a\)</span> is an automorphism and therefore surjective. So
+we need to show that</p>
+<div class="math">$$
+\ainv(\a(g_1)\a(g_2)) = g_1g_2.
+$$</div>
+<p>And since <span class="math">\(\a\)</span> is an automorphism, it preserves structure, therefore
+<span class="math">\(\a(g_1)\a(g_2) = \a(g_1g_2)\)</span>. So,</p>
+<div class="math">$$
+\ainv(\a(g_1)\a(g_2)) = \ainv(\a(g_1g_2)) = g_1g_2,
+$$</div>
+<p>as required.</p>
+<hr>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -129,7 +156,8 @@ it is a matrix).</p>
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script></div>
+</script><ol class="simple-footnotes"><li id="sf-group-theory-1">A transition is a permutation that switches two
+  elements and leaves all other alone <a href="#sf-group-theory-1-back" class="simple-footnote-back">↩</a></li></ol></div>
 	<hr>
 	<h2>Comments</h2>
 <div id="disqus_thread"></div>
