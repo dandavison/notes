@@ -42,7 +42,7 @@ graph of &lt;span class="math"&gt;\(x'(t)\)&lt;/span&gt;.&lt;/p&gt;
 &amp;amp;= F(b) - F(a)
 \end{align*}&lt;/div&gt;
 &lt;h4 id="antiderivative"&gt;Antiderivative&lt;/h4&gt;
-&lt;p&gt;&lt;img alt="ftc-position-velocity" src="/images/calculus/ftc-position-velocity.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="ftc-position-velocity" src="/notes/images/calculus/ftc-position-velocity.png"&gt;&lt;/p&gt;
 &lt;h3 id="arc-length"&gt;Arc length&lt;/h3&gt;
 &lt;p&gt;An example of a definite integral that does not correspond to an area: the
 length of a curved line between &lt;span class="math"&gt;\(a\)&lt;/span&gt; and &lt;span class="math"&gt;\(b\)&lt;/span&gt; is the limit of the sum of
@@ -530,7 +530,7 @@ $$&lt;/div&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary></entry><entry><title>Calculus: useful results</title><link href="http://dandavison.github.io/notes/calculus-useful-results.html" rel="alternate"></link><published>2016-06-27T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-06-27:notes/calculus-useful-results.html</id><summary type="html">&lt;p&gt;&lt;img alt="antiderivatives" src="/images/calculus/antiderivatives.png" /&gt;
-&lt;img alt="ftc" src="/images/calculus/ftc.png" /&gt;
-&lt;img alt="indefinite-integrals" src="/images/calculus/indefinite-integrals.png" /&gt;
-&lt;img alt="sums-of-powers" src="/images/calculus/sums-of-powers-of-positive-integers.png" /&gt;&lt;/p&gt;</summary></entry></feed>
+&lt;/script&gt;</summary></entry><entry><title>Calculus: useful results</title><link href="http://dandavison.github.io/notes/calculus-useful-results.html" rel="alternate"></link><published>2016-06-27T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-06-27:notes/calculus-useful-results.html</id><summary type="html">&lt;p&gt;&lt;img alt="antiderivatives" src="/notes/images/calculus/antiderivatives.png" /&gt;
+&lt;img alt="ftc" src="/notes/images/calculus/ftc.png" /&gt;
+&lt;img alt="indefinite-integrals" src="/notes/images/calculus/indefinite-integrals.png" /&gt;
+&lt;img alt="sums-of-powers" src="/notes/images/calculus/sums-of-powers-of-positive-integers.png" /&gt;&lt;/p&gt;</summary></entry></feed>

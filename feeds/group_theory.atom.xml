@@ -44,7 +44,7 @@ it is a matrix).&lt;/p&gt;
 $$&lt;/div&gt;
 &lt;p&gt;Suppose &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is an automorphism that sends &lt;span class="math"&gt;\(g_1\)&lt;/span&gt; and &lt;span class="math"&gt;\(g_2\)&lt;/span&gt; to &lt;span class="math"&gt;\(g_1'\)&lt;/span&gt; and
 &lt;span class="math"&gt;\(g_2'\)&lt;/span&gt;, respectively.&lt;/p&gt;
-&lt;p&gt;&lt;img width="300 px" src="/images/group-theory/inverse-of-automorphism-1.png"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png"&gt;&lt;/p&gt;
 &lt;p&gt;We need to show that &lt;span class="math"&gt;\(\ainv\)&lt;/span&gt; preserves structure, i.e. that&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
