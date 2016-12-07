@@ -214,7 +214,7 @@ $$&lt;/div&gt;
 &lt;p&gt;A &lt;strong&gt;homomorphism&lt;/strong&gt; is a map&lt;sup id="sf-group-theory-2-back"&gt;&lt;a href="#sf-group-theory-2" class="simple-footnote" title='"map" is a synonym of "function".'&gt;2&lt;/a&gt;&lt;/sup&gt; from
 one group to another. If it is bijective, it is an &lt;strong&gt;isomorphism&lt;/strong&gt;. If it is
 bijective and from a group to itself (i.e. a permutation of the group elements)
-then it is an &lt;strong&gt;automorphism&lt;/strong&gt;. The critical feature of all these maps is that
+then it is an &lt;strong&gt;automorphism&lt;/strong&gt;. The critical feature of these concepts is that
 they "preserve group structure", i.e. they preserve the relationships among
 group elements defined by the group operation. Suppose that they map from group
 &lt;span class="math"&gt;\(G\)&lt;/span&gt; to group &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. Then the preservation-of-structure criterion is that the map
