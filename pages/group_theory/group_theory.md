@@ -24,24 +24,29 @@ Concrete examples of groups:
   identity, 3 transitions[ref]A transition is a permutation that switches two
   elements and leaves all other alone[/ref] and two cyclic permutations.
 
+A **homomorphism** is a map[ref]"map" is a synonym of "function".[/ref] from
+one group to another. If it is bijective, it is an **isomorphism**. If it is
+bijective and from a group to itself (i.e. a permutation of the group elements)
+then it is an **automorphism**. The critical feature of all these maps is that
+they "preserve group structure", i.e. they preserve the relationships among
+group elements defined by the group operation. Suppose that they map from group
+$G$ to group $G'$. Then the preservation-of-structure criterion is that the map
+sends a product $g_1 \circ g_2$ to the product of whatever the separate
+elements are sent to:
 
-Note that in the first two examples, the elements being composed are numbers or
-matrices: they are not themselves functions. However, in $S_2$ and $S_3$, the
-*elements* being composed are already function-like objects (a permutation of
-$n$ objects is a bijection from the set to itself).
+$$
+f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+$$
 
-Hang on, is that true? Both multiplication by a complex number, and matrix
-multiplication, can be viewed as composition of functions (a complex number
-rotates and scales the complex plane, and a matrix is a linear transformation).
+There the composition on the left is happening in $G$ and the composition on
+the right is happening in $G'$. (For an automorphism, $G=G'$.)
 
-A **homomorphism** is a map from one group to another. If it is bijective, it
-is an **isomorphism**. If it is bijective and from one group to itself then it
-is an **automorphism**.
-
-Note that these concepts are maps from one group to another, i.e. they take in
-an element $g \in G$ and output an element $g' \in G'$. The element $g$ may
-itself already be a map of sorts (e.g. if it is a permutation in $S_3$, or if
-it is a matrix).
+Note that an element such as $g_1$ that is being sent somewhere by a morphism
+may itself already be a map of sorts, e.g. if it is a permutation in
+$S_3$. This is potentially confusing, since an automorphism can be thought of
+as a permutation of group elements. So an automorphism on $S_3$ is a
+permutation of group elements that are themselves permutations of some generic
+labeled objects.
 
 
 ### Inverse of an automorphism is an automorphism
