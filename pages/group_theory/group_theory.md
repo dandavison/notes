@@ -63,16 +63,16 @@ $$
 
 
 
-Now, (1) the RHS is $g_1g_2$ by the definition of inverse, and (2) $g_1'g_2'$
-is $\a(g_1)\a(g_2)$, since $a$ is an automorphism and therefore surjective. So
-we need to show that
+Now, (1) the RHS is $g_1g_2$ by the definition of inverse, and (2) there exist
+    some $g_1, g_2$ for which $g_1'g_2' = \a(g_1)\a(g_2)$, since $a$ is an
+automorphism and therefore surjective. So we need to show that
 
 $$
 \ainv(\a(g_1)\a(g_2)) = g_1g_2.
 $$
 
 
-And since $\a$ is an automorphism, it preserves structure, therefore
+Since $\a$ is an automorphism, it preserves structure, therefore
 $\a(g_1)\a(g_2) = \a(g_1g_2)$. So,
 
 $$
