@@ -3,7 +3,7 @@ Slug: calculus-useful-results
 Date: 2016-06-27
 
 
-![antiderivatives](/images/calculus/antiderivatives.png)
-![ftc](/images/calculus/ftc.png)
-![indefinite-integrals](/images/calculus/indefinite-integrals.png)
-![sums-of-powers](/images/calculus/sums-of-powers-of-positive-integers.png)
+![antiderivatives](/notes/images/calculus/antiderivatives.png)
+![ftc](/notes/images/calculus/ftc.png)
+![indefinite-integrals](/notes/images/calculus/indefinite-integrals.png)
+![sums-of-powers](/notes/images/calculus/sums-of-powers-of-positive-integers.png)

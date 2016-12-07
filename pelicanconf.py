@@ -47,4 +47,5 @@ THEME = 'themes/aboutwilson'
 
 STATIC_PATHS = [
     'images',
+    'notes',
 ]

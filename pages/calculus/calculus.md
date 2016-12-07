@@ -64,7 +64,7 @@ graph of $x'(t)$.
 
 
 #### Antiderivative
-![ftc-position-velocity](/images/calculus/ftc-position-velocity.png)
+![ftc-position-velocity](/notes/images/calculus/ftc-position-velocity.png)
 
 
 ### Arc length
