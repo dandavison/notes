@@ -1,6 +1,195 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-04T00:00:00-08:00</updated><entry><title>Group Theory</title><link href="http://dandavison.github.io/notes/group-theory.html" rel="alternate"></link><published>2016-12-04T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-04:notes/group-theory.html</id><summary type="html">&lt;div class="math"&gt;$$
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-05T00:00:00-08:00</updated><entry><title>Examples of groups</title><link href="http://dandavison.github.io/notes/examples-of-groups.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/examples-of-groups.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+$$&lt;/div&gt;
+&lt;h3 id="examples-of-groups"&gt;Examples of groups&lt;/h3&gt;
+&lt;h3 id="finite-order"&gt;Finite order&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(S_2\)&lt;/span&gt;: the set of permutations of two objects, where the operation is
+  composition of functions.  There are just two elements in the group: the
+  do-nothing permutation and the switch-the-elements permutation: &lt;span class="math"&gt;\(\{e,
+  \tau\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(S_3\)&lt;/span&gt;: the set of permutations of three objects. There are 6 elements: the
+  identity, 3 transitions&lt;sup id="sf-examples-of-groups-1-back"&gt;&lt;a href="#sf-examples-of-groups-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone"&gt;1&lt;/a&gt;&lt;/sup&gt; and two cyclic permutations.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\{1, i, -1, -i\}\)&lt;/span&gt; where the operation is multiplication of complex numbers.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(GL_n(\R)\)&lt;/span&gt;: the set of &lt;span class="math"&gt;\(n \times n\)&lt;/span&gt; matrices, under matrix multiplication.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(SL_n(\R)\)&lt;/span&gt;: set of &lt;span class="math"&gt;\(n \times n\)&lt;/span&gt; matrices with determinant &lt;span class="math"&gt;\(1\)&lt;/span&gt; (kernel of the
+  determinant homomorphism &lt;span class="math"&gt;\(GL_n(\R) \rightarrow \R^x\)&lt;/span&gt; and therefore a normal
+  subgroup of &lt;span class="math"&gt;\(GL_n(\R)\)&lt;/span&gt;)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id="infinite-order"&gt;Infinite order&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\Z^+\)&lt;/span&gt; integers under addition&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\Z^x\)&lt;/span&gt; integers under multiplication&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\Z_{&amp;gt;0}^+\)&lt;/span&gt; positive integers under addition&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Similarly, &lt;span class="math"&gt;\(\Q+\)&lt;/span&gt;, &lt;span class="math"&gt;\(\Q^x\)&lt;/span&gt;, &lt;span class="math"&gt;\(\C^+\)&lt;/span&gt;, &lt;span class="math"&gt;\(\C^x\)&lt;/span&gt;, &lt;span class="math"&gt;\(\R^+\)&lt;/span&gt;, &lt;span class="math"&gt;\(\R^x\)&lt;/span&gt; etc&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;ol class="simple-footnotes"&gt;&lt;li id="sf-examples-of-groups-1"&gt;A transition is a permutation that switches two
+  elements and leaves all other alone &lt;a href="#sf-examples-of-groups-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Group Theory (Misc)</title><link href="http://dandavison.github.io/notes/group-theory-misc.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/group-theory-misc.html</id><summary type="html">&lt;hr /&gt;
+&lt;p&gt;&lt;em&gt;The kernel of a homomorphism is a normal subgroup.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;The structure-preserving property means that the element being conjugated
+disappears leaving the conjugating elements to cancel each other out:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\varphi(gag^{-1}) = \varphi(g)\varphi(a)\varphi(g^{-1}) = \varphi(g)1\varphi(g)^{-1} = 1
+$$&lt;/div&gt;
+&lt;hr /&gt;
+&lt;p&gt;Whether or not a map is a homomorphism, and what its kernel is, depend on what
+the group operation in the codomain is. So you can find normal subgroups of a
+group &lt;span class="math"&gt;\(G\)&lt;/span&gt; by considering codomains and codomain operations and determining
+their kernel.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(A_n\)&lt;/span&gt; is a normal subgroup of &lt;span class="math"&gt;\(S_n\)&lt;/span&gt;. What is &lt;span class="math"&gt;\(A_n\)&lt;/span&gt;? OK it's to do with
+permutations and permutation matrices. Read that bit of ch 1.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;For finite groups, the following words have basically the same meaning:
+- bijective function
+- permutation
+-&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;Note that in the first two examples, the elements being composed are numbers or
+matrices: they are not themselves functions. However, in &lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;, the
+&lt;em&gt;elements&lt;/em&gt; being composed are already function-like objects (a permutation of
+&lt;span class="math"&gt;\(n\)&lt;/span&gt; objects is a bijection from the set to itself).&lt;/p&gt;
+&lt;p&gt;Hang on, is that true? Both multiplication by a complex number, and matrix
+multiplication, can be viewed as composition of functions (a complex number
+rotates and scales the complex plane, and a matrix is a linear transformation).&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Group Theory</title><link href="http://dandavison.github.io/notes/group-theory.html" rel="alternate"></link><published>2016-12-04T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-04:notes/group-theory.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 $$&lt;/div&gt;
 &lt;p&gt;A group is a set, together with an operation that can be performed on two elements to produce another element.&lt;/p&gt;
 &lt;p&gt;Concrete examples of groups:&lt;/p&gt;
@@ -51,13 +240,16 @@ $$&lt;/div&gt;
 &lt;p&gt;Suppose &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is an automorphism that sends &lt;span class="math"&gt;\(g_1\)&lt;/span&gt; and &lt;span class="math"&gt;\(g_2\)&lt;/span&gt; to &lt;span class="math"&gt;\(g_1'\)&lt;/span&gt; and
 &lt;span class="math"&gt;\(g_2'\)&lt;/span&gt;, respectively.&lt;/p&gt;
 &lt;p&gt;&lt;img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png"&gt;&lt;/p&gt;
-&lt;p&gt;We need to show that &lt;span class="math"&gt;\(\ainv\)&lt;/span&gt; preserves structure, i.e. that&lt;/p&gt;
+&lt;p&gt;We need to show that &lt;span class="math"&gt;\(\ainv\)&lt;/span&gt; preserves structure, i.e. that when &lt;span class="math"&gt;\(\ainv\)&lt;/span&gt; acts
+on an element which is a product, say &lt;span class="math"&gt;\(g_1'g_2'\)&lt;/span&gt;, it sends it to the product of
+whatever it send the individual factors to:&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
 $$&lt;/div&gt;
-&lt;p&gt;Now, (1) the RHS is &lt;span class="math"&gt;\(g_1g_2\)&lt;/span&gt; by the definition of inverse, and (2) there exist
-    some &lt;span class="math"&gt;\(g_1, g_2\)&lt;/span&gt; for which &lt;span class="math"&gt;\(g_1'g_2' = \a(g_1)\a(g_2)\)&lt;/span&gt;, since &lt;span class="math"&gt;\(a\)&lt;/span&gt; is an
-automorphism and therefore surjective. So we need to show that&lt;/p&gt;
+&lt;p&gt;Firstly, we know that &lt;span class="math"&gt;\(\ainv(g_1')\)&lt;/span&gt; and &lt;span class="math"&gt;\(\ainv(g_2')\)&lt;/span&gt; exist, i.e. some elements
+are taken to them by &lt;span class="math"&gt;\(a\)&lt;/span&gt;, because &lt;span class="math"&gt;\(a\)&lt;/span&gt; is an automorphism and therefore
+surjective. So we'll call those &lt;span class="math"&gt;\(g_1\)&lt;/span&gt; and &lt;span class="math"&gt;\(g_2\)&lt;/span&gt;, and the equality we need to
+demonstrate has become&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \ainv(\a(g_1)\a(g_2)) = g_1g_2.
 $$&lt;/div&gt;

@@ -40,6 +40,7 @@
 	</div>
 	<div itemprop="articleBody" class="article-body"><div class="math">$$
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 $$</div>
 <p>A group is a set, together with an operation that can be performed on two elements to produce another element.</p>
 <p>Concrete examples of groups:</p>
@@ -90,13 +91,16 @@ $$</div>
 <p>Suppose <span class="math">\(\alpha\)</span> is an automorphism that sends <span class="math">\(g_1\)</span> and <span class="math">\(g_2\)</span> to <span class="math">\(g_1'\)</span> and
 <span class="math">\(g_2'\)</span>, respectively.</p>
 <p><img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png"></p>
-<p>We need to show that <span class="math">\(\ainv\)</span> preserves structure, i.e. that</p>
+<p>We need to show that <span class="math">\(\ainv\)</span> preserves structure, i.e. that when <span class="math">\(\ainv\)</span> acts
+on an element which is a product, say <span class="math">\(g_1'g_2'\)</span>, it sends it to the product of
+whatever it send the individual factors to:</p>
 <div class="math">$$
 \ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
 $$</div>
-<p>Now, (1) the RHS is <span class="math">\(g_1g_2\)</span> by the definition of inverse, and (2) there exist
-    some <span class="math">\(g_1, g_2\)</span> for which <span class="math">\(g_1'g_2' = \a(g_1)\a(g_2)\)</span>, since <span class="math">\(a\)</span> is an
-automorphism and therefore surjective. So we need to show that</p>
+<p>Firstly, we know that <span class="math">\(\ainv(g_1')\)</span> and <span class="math">\(\ainv(g_2')\)</span> exist, i.e. some elements
+are taken to them by <span class="math">\(a\)</span>, because <span class="math">\(a\)</span> is an automorphism and therefore
+surjective. So we'll call those <span class="math">\(g_1\)</span> and <span class="math">\(g_2\)</span>, and the equality we need to
+demonstrate has become</p>
 <div class="math">$$
 \ainv(\a(g_1)\a(g_2)) = g_1g_2.
 $$</div>
@@ -205,7 +209,7 @@ $$</div>
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (1)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (3)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (1)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
 						</ul>

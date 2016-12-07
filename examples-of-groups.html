@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic — Notes</title>
-	<meta name="description" content="Title: Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic; Date: 2016-11-12; Author: Dan Davison">
+	<title>Examples of groups — Notes</title>
+	<meta name="description" content="Title: Examples of groups; Date: 2016-12-05; Author: Dan Davison">
 	<meta name="author" content="Dan Davison">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -26,69 +26,65 @@
 		<div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
-		<h1 itemprop="name headline" class="article-title">Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic</h1>
+		<h1 itemprop="name headline" class="article-title">Examples of groups</h1>
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 			<h4 itemprop="name">Dan Davison</h4>
 		</span>
-		<time datetime="2016-11-12T00:00:00-08:00" itemprop="datePublished">Sat 12 November 2016</time>
+		<time datetime="2016-12-05T00:00:00-08:00" itemprop="datePublished">Mon 05 December 2016</time>
 	</div>
 	<div>
 		Category:
 		<span itemprop="articleSection">
-			<a href="http://dandavison.github.io/notes/category/visualcomplexanalysisneedham.html" rel="category">VisualComplexAnalysisNeedham</a>
+			<a href="http://dandavison.github.io/notes/category/group_theory.html" rel="category">group_theory</a>
 		</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"><style type="text/css">
-body {color: black;}
-</style>
-
-<div class="math">$$
-\newcommand{\i}{\mathbf{i}}
-\newcommand{\j}{\mathbf{j}}
-\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
-\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
-\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
-\newcommand{\nth}{n^{\text{th}}}
+	<div itemprop="articleBody" class="article-body"><div class="math">$$
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 $$</div>
-<p>A complex number <span class="math">\(z = x + iy\)</span> is a point in the two-dimensional plane <span class="math">\(\mathbb{C}\)</span>.</p>
-<p>Addition is normal vector addition.</p>
-<p>Multiplication is not obvious: <span class="math">\(z_1z_2\)</span> has angle equal to the sum of the two
-angles, and length equal to the product of the two lengths.</p>
-<p>In other words, multiplying by a complex number <span class="math">\(z\)</span> rotates by <span class="math">\(z\)</span>'s angle, and
-scales by <span class="math">\(z\)</span>'s length.</p>
-<p>For example: multiplying by <span class="math">\(i\)</span> is an anticlockwise rotation through 90°; <span class="math">\(i^2 = -1\)</span>.</p>
-<p>A complex number has infinitely many representations <span class="math">\((r, \theta)\)</span> in polar
-coordinates, with <span class="math">\(\theta\)</span> differing by multiples of <span class="math">\(2\pi\)</span>.</p>
-<p><strong>"Bombelli's wild thought"</strong>: complex numbers are usually introduced by
-considering the roots of a quadratic which does not intersect the
-x-axis. However it is more compelling to consider solutions to a cubic
-intersecting a line. In this case real solutions do exist, but they may require
-complex arithmetic, and this arithmetic implies the addition and multiplication
-laws.</p>
-<p><strong>Obtaining symbolic from geometric rule</strong>: Addition <span class="math">\(z_1 + z_2\)</span>
-describes a parallelogram. So multiplication <span class="math">\(z_3(z_1 + z_2)\)</span> describes a
-rotated and shifted parallelogram. (...?)</p>
-<p><strong>Obtaining geometric from symbolic rule</strong>: Consider multiplying <span class="math">\(z\)</span> by <span class="math">\(A =
-4 + 3i = (5, tan^{-1}(\frac{3}{4}))\)</span>. We want to show that the algebraic result
-is equivalent to rotating by <span class="math">\(A\)</span>'s angle and scaling by <span class="math">\(5\)</span>. Algebraically, <span class="math">\(Az
-= 4z + 3(iz)\)</span>. That describes a right-angle triangle with sides of length
-<span class="math">\(4|z|\)</span> and <span class="math">\(3|z|\)</span>. So the hypotenuse is length <span class="math">\(5|z|\)</span> as required, and since
-the triangles are similar, their angles are the same and so we have rotated <span class="math">\(z\)</span>
-by <span class="math">\(A\)</span>'s angle.</p>
-<h2 id="eulers-formula">Euler's formula</h2>
-<p><span class="math">\(e^{i\theta}\)</span> is the point/vector on the unit circle at angle <span class="math">\(\theta\)</span>:</p>
-<div class="math">$$
-e^{i\theta} = cos \theta + i ~ sin \theta,
-$$</div>
-<p>and a generic complex number is <span class="math">\(z = re^{i\theta}\)</span>. This makes the
-multiplication law natural:</p>
-<div class="math">$$
-(ae^{i\theta})(be^{i\phi}) = ab~e^{i(\theta + \phi)}.
-$$</div>
-<h3 id="two-justifications-of-eulers-formula">Two justification's of Euler's formula</h3>
-<h4 id="1-particle-moving-in-mathbbc">1. Particle moving in <span class="math">\(\mathbb{C}\)</span></h4>
-<h4 id="2-power-series">2. Power series</h4>
+<h3 id="examples-of-groups">Examples of groups</h3>
+<h3 id="finite-order">Finite order</h3>
+<ul>
+<li>
+<p><span class="math">\(S_2\)</span>: the set of permutations of two objects, where the operation is
+  composition of functions.  There are just two elements in the group: the
+  do-nothing permutation and the switch-the-elements permutation: <span class="math">\(\{e,
+  \tau\}\)</span>.</p>
+</li>
+<li>
+<p><span class="math">\(S_3\)</span>: the set of permutations of three objects. There are 6 elements: the
+  identity, 3 transitions<sup id="sf-examples-of-groups-1-back"><a href="#sf-examples-of-groups-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone">1</a></sup> and two cyclic permutations.</p>
+</li>
+<li>
+<p><span class="math">\(\{1, i, -1, -i\}\)</span> where the operation is multiplication of complex numbers.</p>
+</li>
+<li>
+<p><span class="math">\(GL_n(\R)\)</span>: the set of <span class="math">\(n \times n\)</span> matrices, under matrix multiplication.</p>
+</li>
+<li>
+<p><span class="math">\(SL_n(\R)\)</span>: set of <span class="math">\(n \times n\)</span> matrices with determinant <span class="math">\(1\)</span> (kernel of the
+  determinant homomorphism <span class="math">\(GL_n(\R) \rightarrow \R^x\)</span> and therefore a normal
+  subgroup of <span class="math">\(GL_n(\R)\)</span>)</p>
+</li>
+</ul>
+<h3 id="infinite-order">Infinite order</h3>
+<ul>
+<li>
+<p><span class="math">\(\Z^+\)</span> integers under addition</p>
+</li>
+<li>
+<p><span class="math">\(\Z^x\)</span> integers under multiplication</p>
+</li>
+<li>
+<p><span class="math">\(\Z_{&gt;0}^+\)</span> positive integers under addition</p>
+</li>
+<li>
+<p>Similarly, <span class="math">\(\Q+\)</span>, <span class="math">\(\Q^x\)</span>, <span class="math">\(\C^+\)</span>, <span class="math">\(\C^x\)</span>, <span class="math">\(\R^+\)</span>, <span class="math">\(\R^x\)</span> etc</p>
+</li>
+</ul>
+<hr>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -145,13 +141,14 @@ $$</div>
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script></div>
+</script><ol class="simple-footnotes"><li id="sf-examples-of-groups-1">A transition is a permutation that switches two
+  elements and leaves all other alone <a href="#sf-examples-of-groups-1-back" class="simple-footnote-back">↩</a></li></ol></div>
 	<hr>
 	<h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dandavison7-notes'; 
-    var disqus_title = 'Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic';
+    var disqus_title = 'Examples of groups';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
