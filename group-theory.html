@@ -61,20 +61,26 @@ $$</div>
   identity, 3 transitions<sup id="sf-group-theory-1-back"><a href="#sf-group-theory-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone">1</a></sup> and two cyclic permutations.</p>
 </li>
 </ul>
-<p>Note that in the first two examples, the elements being composed are "inert"
-objects (numbers or matrices): they are not themselves functions. However, in
-<span class="math">\(S_2\)</span> and <span class="math">\(S_3\)</span>, the <em>elements</em> being composed are already function-like
-objects (a permutation of <span class="math">\(n\)</span> objects is a bijection from the set to itself).</p>
-<p>Hang on, is that true? Both multiplication by a complex number, and matrix
-multiplication, can be viewed as composition of functions (a complex number
-rotates and scales the complex plane, and a matrix is a linear transformation).</p>
-<p>A <strong>homomorphism</strong> is a map from one group to another. If it is bijective, it
-is an <strong>isomorphism</strong>. If it is bijective and from one group to itself then it
-is an <strong>automorphism</strong>.</p>
-<p>Note that these concepts are maps from one group to another, i.e. they take in
-an element <span class="math">\(g \in G\)</span> and output an element <span class="math">\(g' \in G'\)</span>. The element <span class="math">\(g\)</span> may
-itself already be a map of sorts (e.g. if it is a permutation in <span class="math">\(S_3\)</span>, or if
-it is a matrix).</p>
+<p>A <strong>homomorphism</strong> is a map<sup id="sf-group-theory-2-back"><a href="#sf-group-theory-2" class="simple-footnote" title='"map" is a synonym of "function".'>2</a></sup> from
+one group to another. If it is bijective, it is an <strong>isomorphism</strong>. If it is
+bijective and from a group to itself (i.e. a permutation of the group elements)
+then it is an <strong>automorphism</strong>. The critical feature of all these maps is that
+they "preserve group structure", i.e. they preserve the relationships among
+group elements defined by the group operation. Suppose that they map from group
+<span class="math">\(G\)</span> to group <span class="math">\(G'\)</span>. Then the preservation-of-structure criterion is that the map
+sends a product <span class="math">\(g_1 \circ g_2\)</span> to the product of whatever the separate
+elements are sent to:</p>
+<div class="math">$$
+f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+$$</div>
+<p>There the composition on the left is happening in <span class="math">\(G\)</span> and the composition on
+the right is happening in <span class="math">\(G'\)</span>. (For an automorphism, <span class="math">\(G=G'\)</span>!)</p>
+<p>Note that an element such as <span class="math">\(g_1\)</span> that is being sent somewhere by a morphism
+may itself already be a map of sorts, e.g. if it is a permutation in
+<span class="math">\(S_3\)</span>. This is potentially confusing, since an automorphism can be thought of
+as a permutation of group elements. So an automorphism on <span class="math">\(S_3\)</span> is a
+permutation of group elements that are themselves permutations of some generic
+labeled objects.</p>
 <h3 id="inverse-of-an-automorphism-is-an-automorphism">Inverse of an automorphism is an automorphism</h3>
 <p>[Artin 2.3.11: show that Aut(<span class="math">\(G\)</span>) is a group]</p>
 <div class="math">$$
@@ -158,7 +164,7 @@ $$</div>
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 </script><ol class="simple-footnotes"><li id="sf-group-theory-1">A transition is a permutation that switches two
-  elements and leaves all other alone <a href="#sf-group-theory-1-back" class="simple-footnote-back">↩</a></li></ol></div>
+  elements and leaves all other alone <a href="#sf-group-theory-1-back" class="simple-footnote-back">↩</a></li><li id="sf-group-theory-2">"map" is a synonym of "function". <a href="#sf-group-theory-2-back" class="simple-footnote-back">↩</a></li></ol></div>
 	<hr>
 	<h2>Comments</h2>
 <div id="disqus_thread"></div>

@@ -22,20 +22,26 @@ $$&lt;/div&gt;
   identity, 3 transitions&lt;sup id="sf-group-theory-1-back"&gt;&lt;a href="#sf-group-theory-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone"&gt;1&lt;/a&gt;&lt;/sup&gt; and two cyclic permutations.&lt;/p&gt;
 &lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Note that in the first two examples, the elements being composed are "inert"
-objects (numbers or matrices): they are not themselves functions. However, in
-&lt;span class="math"&gt;\(S_2\)&lt;/span&gt; and &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;, the &lt;em&gt;elements&lt;/em&gt; being composed are already function-like
-objects (a permutation of &lt;span class="math"&gt;\(n\)&lt;/span&gt; objects is a bijection from the set to itself).&lt;/p&gt;
-&lt;p&gt;Hang on, is that true? Both multiplication by a complex number, and matrix
-multiplication, can be viewed as composition of functions (a complex number
-rotates and scales the complex plane, and a matrix is a linear transformation).&lt;/p&gt;
-&lt;p&gt;A &lt;strong&gt;homomorphism&lt;/strong&gt; is a map from one group to another. If it is bijective, it
-is an &lt;strong&gt;isomorphism&lt;/strong&gt;. If it is bijective and from one group to itself then it
-is an &lt;strong&gt;automorphism&lt;/strong&gt;.&lt;/p&gt;
-&lt;p&gt;Note that these concepts are maps from one group to another, i.e. they take in
-an element &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt; and output an element &lt;span class="math"&gt;\(g' \in G'\)&lt;/span&gt;. The element &lt;span class="math"&gt;\(g\)&lt;/span&gt; may
-itself already be a map of sorts (e.g. if it is a permutation in &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;, or if
-it is a matrix).&lt;/p&gt;
+&lt;p&gt;A &lt;strong&gt;homomorphism&lt;/strong&gt; is a map&lt;sup id="sf-group-theory-2-back"&gt;&lt;a href="#sf-group-theory-2" class="simple-footnote" title='"map" is a synonym of "function".'&gt;2&lt;/a&gt;&lt;/sup&gt; from
+one group to another. If it is bijective, it is an &lt;strong&gt;isomorphism&lt;/strong&gt;. If it is
+bijective and from a group to itself (i.e. a permutation of the group elements)
+then it is an &lt;strong&gt;automorphism&lt;/strong&gt;. The critical feature of all these maps is that
+they "preserve group structure", i.e. they preserve the relationships among
+group elements defined by the group operation. Suppose that they map from group
+&lt;span class="math"&gt;\(G\)&lt;/span&gt; to group &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. Then the preservation-of-structure criterion is that the map
+sends a product &lt;span class="math"&gt;\(g_1 \circ g_2\)&lt;/span&gt; to the product of whatever the separate
+elements are sent to:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+$$&lt;/div&gt;
+&lt;p&gt;There the composition on the left is happening in &lt;span class="math"&gt;\(G\)&lt;/span&gt; and the composition on
+the right is happening in &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. (For an automorphism, &lt;span class="math"&gt;\(G=G'\)&lt;/span&gt;!)&lt;/p&gt;
+&lt;p&gt;Note that an element such as &lt;span class="math"&gt;\(g_1\)&lt;/span&gt; that is being sent somewhere by a morphism
+may itself already be a map of sorts, e.g. if it is a permutation in
+&lt;span class="math"&gt;\(S_3\)&lt;/span&gt;. This is potentially confusing, since an automorphism can be thought of
+as a permutation of group elements. So an automorphism on &lt;span class="math"&gt;\(S_3\)&lt;/span&gt; is a
+permutation of group elements that are themselves permutations of some generic
+labeled objects.&lt;/p&gt;
 &lt;h3 id="inverse-of-an-automorphism-is-an-automorphism"&gt;Inverse of an automorphism is an automorphism&lt;/h3&gt;
 &lt;p&gt;[Artin 2.3.11: show that Aut(&lt;span class="math"&gt;\(G\)&lt;/span&gt;) is a group]&lt;/p&gt;
 &lt;div class="math"&gt;$$
@@ -119,7 +125,7 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;&lt;ol class="simple-footnotes"&gt;&lt;li id="sf-group-theory-1"&gt;A transition is a permutation that switches two
-  elements and leaves all other alone &lt;a href="#sf-group-theory-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Calculus</title><link href="http://dandavison.github.io/notes/calculus.html" rel="alternate"></link><published>2016-11-28T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-28:notes/calculus.html</id><summary type="html">&lt;div class="math"&gt;$$
+  elements and leaves all other alone &lt;a href="#sf-group-theory-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;li id="sf-group-theory-2"&gt;"map" is a synonym of "function". &lt;a href="#sf-group-theory-2-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Calculus</title><link href="http://dandavison.github.io/notes/calculus.html" rel="alternate"></link><published>2016-11-28T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-28:notes/calculus.html</id><summary type="html">&lt;div class="math"&gt;$$
 \newcommand{\i}{\mathbf{i}}
 \newcommand{\j}{\mathbf{j}}
 \newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
