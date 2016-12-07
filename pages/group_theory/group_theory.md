@@ -54,8 +54,11 @@ $$
 $$
 
 Suppose $\alpha$ is an automorphism that sends $g_1$ and $g_2$ to $g_1'$ and
-$g_2'$, respectively. We need to show that $\ainv$ preserves structure,
-i.e. that
+$g_2'$, respectively.
+
+<img width="300 px" src="/images/group-theory/inverse-of-automorphism-1.png" />
+
+We need to show that $\ainv$ preserves structure, i.e. that
 
 $$
 \ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
