@@ -4,6 +4,7 @@ Date: 2016-12-04
 
 $$
 \newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
 $$
 
 
@@ -63,22 +64,23 @@ $g_2'$, respectively.
 
 <img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png" />
 
-We need to show that $\ainv$ preserves structure, i.e. that
+We need to show that $\ainv$ preserves structure, i.e. that when $\ainv$ acts
+on an element which is a product, say $g_1'g_2'$, it sends it to the product of
+whatever it send the individual factors to:
 
 $$
 \ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
 $$
 
 
-
-Now, (1) the RHS is $g_1g_2$ by the definition of inverse, and (2) there exist
-    some $g_1, g_2$ for which $g_1'g_2' = \a(g_1)\a(g_2)$, since $a$ is an
-automorphism and therefore surjective. So we need to show that
+Firstly, we know that $\ainv(g_1')$ and $\ainv(g_2')$ exist, i.e. some elements
+are taken to them by $a$, because $a$ is an automorphism and therefore
+surjective. So we'll call those $g_1$ and $g_2$, and the equality we need to
+demonstrate has become
 
 $$
 \ainv(\a(g_1)\a(g_2)) = g_1g_2.
 $$
-
 
 Since $\a$ is an automorphism, it preserves structure, therefore
 $\a(g_1)\a(g_2) = \a(g_1g_2)$. So,
