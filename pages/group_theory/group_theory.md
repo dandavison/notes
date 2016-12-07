@@ -28,7 +28,7 @@ Concrete examples of groups:
 A **homomorphism** is a map[ref]"map" is a synonym of "function".[/ref] from
 one group to another. If it is bijective, it is an **isomorphism**. If it is
 bijective and from a group to itself (i.e. a permutation of the group elements)
-then it is an **automorphism**. The critical feature of all these maps is that
+then it is an **automorphism**. The critical feature of these concepts is that
 they "preserve group structure", i.e. they preserve the relationships among
 group elements defined by the group operation. Suppose that they map from group
 $G$ to group $G'$. Then the preservation-of-structure criterion is that the map
