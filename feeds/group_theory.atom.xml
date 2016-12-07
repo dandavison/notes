@@ -35,7 +35,7 @@ elements are sent to:&lt;/p&gt;
 f(g_1 \circ g_2) = f(g1) \circ f(g_2)
 $$&lt;/div&gt;
 &lt;p&gt;There the composition on the left is happening in &lt;span class="math"&gt;\(G\)&lt;/span&gt; and the composition on
-the right is happening in &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. (For an automorphism, &lt;span class="math"&gt;\(G=G'\)&lt;/span&gt;!)&lt;/p&gt;
+the right is happening in &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. (For an automorphism, &lt;span class="math"&gt;\(G=G'\)&lt;/span&gt;.)&lt;/p&gt;
 &lt;p&gt;Note that an element such as &lt;span class="math"&gt;\(g_1\)&lt;/span&gt; that is being sent somewhere by a morphism
 may itself already be a map of sorts, e.g. if it is a permutation in
 &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;. This is potentially confusing, since an automorphism can be thought of
