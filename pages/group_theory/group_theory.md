@@ -25,10 +25,10 @@ Concrete examples of groups:
   elements and leaves all other alone[/ref] and two cyclic permutations.
 
 
-Note that in the first two examples, the elements being composed are "inert"
-objects (numbers or matrices): they are not themselves functions. However, in
-$S_2$ and $S_3$, the *elements* being composed are already function-like
-objects (a permutation of $n$ objects is a bijection from the set to itself).
+Note that in the first two examples, the elements being composed are numbers or
+matrices: they are not themselves functions. However, in $S_2$ and $S_3$, the
+*elements* being composed are already function-like objects (a permutation of
+$n$ objects is a bijection from the set to itself).
 
 Hang on, is that true? Both multiplication by a complex number, and matrix
 multiplication, can be viewed as composition of functions (a complex number
