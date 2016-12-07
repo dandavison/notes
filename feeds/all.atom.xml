@@ -576,86 +576,6 @@ $$&lt;/div&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary></entry><entry><title>Differential equations</title><link href="http://dandavison.github.io/notes/differential-equations.html" rel="alternate"></link><published>2016-11-13T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-13:notes/differential-equations.html</id><summary type="html">&lt;style type="text/css"&gt;
-body {color: black;}
-&lt;/style&gt;
-
-&lt;div class="math"&gt;$$
-\newcommand{\i}{\mathbf{i}}
-\newcommand{\j}{\mathbf{j}}
-\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
-\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
-\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
-\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
-\newcommand{\nth}{n^{\text{th}}}
-$$&lt;/div&gt;
-&lt;h1 id="first-order"&gt;First-order&lt;/h1&gt;
-&lt;h2 id="separable"&gt;Separable&lt;/h2&gt;
-&lt;div class="math"&gt;$$
-y' = f(x)g(y)
-$$&lt;/div&gt;
-&lt;p&gt;Separate and integrate.&lt;/p&gt;
-&lt;h3 id="linear"&gt;Linear&lt;/h3&gt;
-&lt;div class="math"&gt;$$
-y' + f(x)y = g(x)
-$$&lt;/div&gt;
-&lt;p&gt;Use an integrating factor.&lt;/p&gt;
-&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
-    var align = "center",
-        indent = "0em",
-        linebreak = "false";
-
-    if (false) {
-        align = (screen.width &lt; 768) ? "left" : align;
-        indent = (screen.width &lt; 768) ? "0em" : indent;
-        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
-    }
-
-    var mathjaxscript = document.createElement('script');
-    var location_protocol = (false) ? 'https' : document.location.protocol;
-    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
-    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
-    mathjaxscript.type = 'text/javascript';
-    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
-    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
-        "MathJax.Hub.Config({" +
-        "    config: ['MMLorHTML.js']," +
-        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
-        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
-        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
-        "    displayAlign: '"+ align +"'," +
-        "    displayIndent: '"+ indent +"'," +
-        "    showMathMenu: true," +
-        "    messageStyle: 'normal'," +
-        "    tex2jax: { " +
-        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
-        "        displayMath: [ ['$$','$$'] ]," +
-        "        processEscapes: true," +
-        "        preview: 'TeX'," +
-        "    }, " +
-        "    'HTML-CSS': { " +
-        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
-        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
-        "    }, " +
-        "}); " +
-        "if ('default' !== 'default') {" +
-            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
-                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
-                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
-                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
-                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
-                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
-            "});" +
-        "}";
-    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
-}
 &lt;/script&gt;</summary></entry><entry><title>Visual Complex Analysis - Needham - 1 Geometry and Compex Arithmetic</title><link href="http://dandavison.github.io/notes/visual-complex-analysis-1.html" rel="alternate"></link><published>2016-11-12T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-11-12:notes/visual-complex-analysis-1.html</id><summary type="html">&lt;style type="text/css"&gt;
 body {color: black;}
 &lt;/style&gt;
@@ -886,7 +806,4 @@ $$&lt;/div&gt;
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-&lt;/script&gt;</summary></entry><entry><title>Calculus: useful results</title><link href="http://dandavison.github.io/notes/calculus-useful-results.html" rel="alternate"></link><published>2016-06-27T00:00:00-07:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-06-27:notes/calculus-useful-results.html</id><summary type="html">&lt;p&gt;&lt;img alt="antiderivatives" src="/notes/images/calculus/antiderivatives.png" /&gt;
-&lt;img alt="ftc" src="/notes/images/calculus/ftc.png" /&gt;
-&lt;img alt="indefinite-integrals" src="/notes/images/calculus/indefinite-integrals.png" /&gt;
-&lt;img alt="sums-of-powers" src="/notes/images/calculus/sums-of-powers-of-positive-integers.png" /&gt;&lt;/p&gt;</summary></entry></feed>
+&lt;/script&gt;</summary></entry></feed>
