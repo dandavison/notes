@@ -2,6 +2,18 @@ Title: Group Theory (Misc)
 Slug: group-theory-misc
 Date: 2016-12-05
 
+
+The equivalent in linear algebra is: if a linear transformation sends two
+vectors to the same place, then one of the vectors can be expressed as the
+other plus some vector in the nullspace. I.e. adding a vector from the
+nullspace makes no difference to to where you are sent, and furthermore, that
+is the only way two vectors can end up being sent to the same place.
+
+
+-------------------------------------------------------------------------------
+
+<img src="/notes/images/group-theory/fibres-and-congruence-classes.png" />
+
 -------------------------------------------------------------------------------
 
 *The kernel of a homomorphism is a normal subgroup.*
@@ -42,4 +54,3 @@ $n$ objects is a bijection from the set to itself).
 Hang on, is that true? Both multiplication by a complex number, and matrix
 multiplication, can be viewed as composition of functions (a complex number
 rotates and scales the complex plane, and a matrix is a linear transformation).
-

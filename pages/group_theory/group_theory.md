@@ -36,7 +36,7 @@ sends a product $g_1 \circ g_2$ to the product of whatever the separate
 elements are sent to:
 
 $$
-f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+f(g_1 \circ g_2) = f(g_1) \circ f(g_2)
 $$
 
 There the composition on the left is happening in $G$ and the composition on
@@ -49,6 +49,8 @@ as a permutation of group elements. So an automorphism on $S_3$ is a
 permutation of group elements that are themselves permutations of some generic
 labeled objects.
 
+The definition of homomorphism implies that $f(g^{-1}) = f(g)^{-1}$ since
+$f(gg^{-1}) = f(g)f(g^{-1}) = f(e)$.
 
 ### Inverse of an automorphism is an automorphism
 
@@ -90,5 +92,68 @@ $$
 $$
 
 as required.
+
+### Kernel, nullspace, bijection and congruency
+
+Consider a homomorphism $f$ with kernel $N$.
+
+**Theorem:** $a$ and $b$ are sent to the same place by $f$ if and only if
+$b = an$ for some $n \in N$.
+
+**Corollary:** $f$ is a bijection (isomorphism) if and only if the kernel
+contains only the identity element.
+
+**Example:** Consider the absolute value homomorphism mapping complex numbers
+under multiplication to positive reals under multiplication. The equivalence
+classes are concentric circles around the origin. Two complex numbers have the
+same absolute value iff one can be obtained from the other by rotation only (no
+scaling). This is multiplication by a complex number with absolute value 1, and
+such a complex number is in the kernel.
+
+**Proof:** Clearly, if $b = an$ then $b$ is sent to the same place as $a$,
+since
+
+$$
+f(b) = f(an) = f(a)f(n) = f(a).
+$$
+
+However we need to demonstrate the converse, i.e. that the *only* way that $b$
+can be sent to the same place as $a$ is if $b=an$ for some $n \in N$.
+
+Two almost identical ways of showing that:
+
+**(1) Show that if $f(a) = f(b)$ then $b = an$ for some $n \in N$**
+
+In linear algebra, you can always get from $u$ to $v$ by adding $v - u = -u +
+v$, so the claim is that $L(u) = L(v)$ implies $-u + v$ is in the nullspace,
+which is true:
+
+$$
+L(-u + v) = L(-u) + L(v) = L(-u) + L(u) = 0.
+$$
+
+For a group homomorphism, $b$ can be written as $aa^{-1}b$, so the claim is
+that $f(a) = f(b)$ implies $a^{-1}b \in N$, which is true:
+
+$$
+f(a^{-1}b) = f(a^{-1})f(b) = f(a)^{-1}f(a) = e.
+$$
+
+**(2) Show that if it is not the case that $b = an$ for some $n \in N$, then $f(a) \neq f(b)$**
+
+In linear algebra, you can always get from $u$ to $v$ by adding $v - u = -u + v$,
+so if $-u + v$ is not in the nullspace then
+
+$$
+L(v) = L(u + (-u + v)) = L(u) + L(-u + v) \neq L(u).
+$$
+
+For a group homomorphism, $b$ can be written as $aa^{-1}b$, so if $a^{-1}b$ is
+not in the kernel then
+
+$$
+f(b) = f(aa^{-1}b) = f(a)f(a^{-1}b) \neq f(a)
+$$
+
 
 ----------------------------------------------------------------------------
