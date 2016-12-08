@@ -52,47 +52,6 @@ labeled objects.
 The definition of homomorphism implies that $f(g^{-1}) = f(g)^{-1}$ since
 $f(gg^{-1}) = f(g)f(g^{-1}) = f(e)$.
 
-### Inverse of an automorphism is an automorphism
-
-[Artin 2.3.11: show that Aut($G$) is a group]
-
-$$
-\newcommand{\a}{\alpha}
-\newcommand{\ainv}{\alpha^{-1}}
-$$
-
-Suppose $\alpha$ is an automorphism that sends $g_1$ and $g_2$ to $g_1'$ and
-$g_2'$, respectively.
-
-<img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png" />
-
-We need to show that $\ainv$ preserves structure, i.e. that when $\ainv$ acts
-on an element which is a product, say $g_1'g_2'$, it sends it to the product of
-whatever it send the individual factors to:
-
-$$
-\ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
-$$
-
-
-Firstly, we know that $\ainv(g_1')$ and $\ainv(g_2')$ exist, i.e. some elements
-are taken to them by $a$, because $a$ is an automorphism and therefore
-surjective. So we'll call those $g_1$ and $g_2$, and the equality we need to
-demonstrate has become
-
-$$
-\ainv(\a(g_1)\a(g_2)) = g_1g_2.
-$$
-
-Since $\a$ is an automorphism, it preserves structure, therefore
-$\a(g_1)\a(g_2) = \a(g_1g_2)$. So,
-
-$$
-\ainv(\a(g_1)\a(g_2)) = \ainv(\a(g_1g_2)) = g_1g_2,
-$$
-
-as required.
-
 ### Kernel, nullspace, bijection and congruency
 
 Consider a homomorphism $f$ with kernel $N$.
@@ -155,5 +114,46 @@ $$
 f(b) = f(aa^{-1}b) = f(a)f(a^{-1}b) \neq f(a)
 $$
 
+
+### Inverse of an automorphism is an automorphism
+
+[Artin 2.3.11: show that Aut($G$) is a group]
+
+$$
+\newcommand{\a}{\alpha}
+\newcommand{\ainv}{\alpha^{-1}}
+$$
+
+Suppose $\alpha$ is an automorphism that sends $g_1$ and $g_2$ to $g_1'$ and
+$g_2'$, respectively.
+
+<img width="300 px" src="/notes/images/group-theory/inverse-of-automorphism-1.png" />
+
+We need to show that $\ainv$ preserves structure, i.e. that when $\ainv$ acts
+on an element which is a product, say $g_1'g_2'$, it sends it to the product of
+whatever it send the individual factors to:
+
+$$
+\ainv(g_1'g_2') = \ainv(g_1')\ainv(g_2').
+$$
+
+
+Firstly, we know that $\ainv(g_1')$ and $\ainv(g_2')$ exist, i.e. some elements
+are taken to them by $a$, because $a$ is an automorphism and therefore
+surjective. So we'll call those $g_1$ and $g_2$, and the equality we need to
+demonstrate has become
+
+$$
+\ainv(\a(g_1)\a(g_2)) = g_1g_2.
+$$
+
+Since $\a$ is an automorphism, it preserves structure, therefore
+$\a(g_1)\a(g_2) = \a(g_1g_2)$. So,
+
+$$
+\ainv(\a(g_1)\a(g_2)) = \ainv(\a(g_1g_2)) = g_1g_2,
+$$
+
+as required.
 
 ----------------------------------------------------------------------------
