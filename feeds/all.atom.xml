@@ -103,7 +103,14 @@ $$&lt;/div&gt;
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
 &lt;/script&gt;&lt;ol class="simple-footnotes"&gt;&lt;li id="sf-examples-of-groups-1"&gt;A transition is a permutation that switches two
-  elements and leaves all other alone &lt;a href="#sf-examples-of-groups-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Group Theory (Misc)</title><link href="http://dandavison.github.io/notes/group-theory-misc.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/group-theory-misc.html</id><summary type="html">&lt;hr /&gt;
+  elements and leaves all other alone &lt;a href="#sf-examples-of-groups-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Group Theory (Misc)</title><link href="http://dandavison.github.io/notes/group-theory-misc.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/group-theory-misc.html</id><summary type="html">&lt;p&gt;The equivalent in linear algebra is: if a linear transformation sends two
+vectors to the same place, then one of the vectors can be expressed as the
+other plus some vector in the nullspace. I.e. adding a vector from the
+nullspace makes no difference to to where you are sent, and furthermore, that
+is the only way two vectors can end up being sent to the same place.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;img src="/notes/images/group-theory/fibres-and-congruence-classes.png" /&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;em&gt;The kernel of a homomorphism is a normal subgroup.&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;The structure-preserving property means that the element being conjugated
 disappears leaving the conjugating elements to cancel each other out:&lt;/p&gt;
@@ -221,7 +228,7 @@ group elements defined by the group operation. Suppose that they map from group
 sends a product &lt;span class="math"&gt;\(g_1 \circ g_2\)&lt;/span&gt; to the product of whatever the separate
 elements are sent to:&lt;/p&gt;
 &lt;div class="math"&gt;$$
-f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+f(g_1 \circ g_2) = f(g_1) \circ f(g_2)
 $$&lt;/div&gt;
 &lt;p&gt;There the composition on the left is happening in &lt;span class="math"&gt;\(G\)&lt;/span&gt; and the composition on
 the right is happening in &lt;span class="math"&gt;\(G'\)&lt;/span&gt;. (For an automorphism, &lt;span class="math"&gt;\(G=G'\)&lt;/span&gt;.)&lt;/p&gt;
@@ -231,6 +238,51 @@ may itself already be a map of sorts, e.g. if it is a permutation in
 as a permutation of group elements. So an automorphism on &lt;span class="math"&gt;\(S_3\)&lt;/span&gt; is a
 permutation of group elements that are themselves permutations of some generic
 labeled objects.&lt;/p&gt;
+&lt;p&gt;The definition of homomorphism implies that &lt;span class="math"&gt;\(f(g^{-1}) = f(g)^{-1}\)&lt;/span&gt; since
+&lt;span class="math"&gt;\(f(gg^{-1}) = f(g)f(g^{-1}) = f(e)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="kernel-nullspace-bijection-and-congruency"&gt;Kernel, nullspace, bijection and congruency&lt;/h3&gt;
+&lt;p&gt;Consider a homomorphism &lt;span class="math"&gt;\(f\)&lt;/span&gt; with kernel &lt;span class="math"&gt;\(N\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Theorem:&lt;/strong&gt; &lt;span class="math"&gt;\(a\)&lt;/span&gt; and &lt;span class="math"&gt;\(b\)&lt;/span&gt; are sent to the same place by &lt;span class="math"&gt;\(f\)&lt;/span&gt; if and only if
+&lt;span class="math"&gt;\(b = an\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n \in N\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Corollary:&lt;/strong&gt; &lt;span class="math"&gt;\(f\)&lt;/span&gt; is a bijection (isomorphism) if and only if the kernel
+contains only the identity element.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:&lt;/strong&gt; Consider the absolute value homomorphism mapping complex numbers
+under multiplication to positive reals under multiplication. The equivalence
+classes are concentric circles around the origin. Two complex numbers have the
+same absolute value iff one can be obtained from the other by rotation only (no
+scaling). This is multiplication by a complex number with absolute value 1, and
+such a complex number is in the kernel.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Proof:&lt;/strong&gt; Clearly, if &lt;span class="math"&gt;\(b = an\)&lt;/span&gt; then &lt;span class="math"&gt;\(b\)&lt;/span&gt; is sent to the same place as &lt;span class="math"&gt;\(a\)&lt;/span&gt;,
+since&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(b) = f(an) = f(a)f(n) = f(a).
+$$&lt;/div&gt;
+&lt;p&gt;However we need to demonstrate the converse, i.e. that the &lt;em&gt;only&lt;/em&gt; way that &lt;span class="math"&gt;\(b\)&lt;/span&gt;
+can be sent to the same place as &lt;span class="math"&gt;\(a\)&lt;/span&gt; is if &lt;span class="math"&gt;\(b=an\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n \in N\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Two almost identical ways of showing that:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(1) Show that if &lt;span class="math"&gt;\(f(a) = f(b)\)&lt;/span&gt; then &lt;span class="math"&gt;\(b = an\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n \in N\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In linear algebra, you can always get from &lt;span class="math"&gt;\(u\)&lt;/span&gt; to &lt;span class="math"&gt;\(v\)&lt;/span&gt; by adding &lt;span class="math"&gt;\(v - u = -u +
+v\)&lt;/span&gt;, so the claim is that &lt;span class="math"&gt;\(L(u) = L(v)\)&lt;/span&gt; implies &lt;span class="math"&gt;\(-u + v\)&lt;/span&gt; is in the nullspace,
+which is true:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L(-u + v) = L(-u) + L(v) = L(-u) + L(u) = 0.
+$$&lt;/div&gt;
+&lt;p&gt;For a group homomorphism, &lt;span class="math"&gt;\(b\)&lt;/span&gt; can be written as &lt;span class="math"&gt;\(aa^{-1}b\)&lt;/span&gt;, so the claim is
+that &lt;span class="math"&gt;\(f(a) = f(b)\)&lt;/span&gt; implies &lt;span class="math"&gt;\(a^{-1}b \in N\)&lt;/span&gt;, which is true:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(a^{-1}b) = f(a^{-1})f(b) = f(a)^{-1}f(a) = e.
+$$&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt;(2) Show that if it is not the case that &lt;span class="math"&gt;\(b = an\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n \in N\)&lt;/span&gt;, then &lt;span class="math"&gt;\(f(a) \neq f(b)\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In linear algebra, you can always get from &lt;span class="math"&gt;\(u\)&lt;/span&gt; to &lt;span class="math"&gt;\(v\)&lt;/span&gt; by adding &lt;span class="math"&gt;\(v - u = -u + v\)&lt;/span&gt;,
+so if &lt;span class="math"&gt;\(-u + v\)&lt;/span&gt; is not in the nullspace then&lt;/p&gt;
+&lt;div class="math"&gt;$$
+L(v) = L(u + (-u + v)) = L(u) + L(-u + v) \neq L(u).
+$$&lt;/div&gt;
+&lt;p&gt;For a group homomorphism, &lt;span class="math"&gt;\(b\)&lt;/span&gt; can be written as &lt;span class="math"&gt;\(aa^{-1}b\)&lt;/span&gt;, so if &lt;span class="math"&gt;\(a^{-1}b\)&lt;/span&gt; is
+not in the kernel then&lt;/p&gt;
+&lt;div class="math"&gt;$$
+f(b) = f(aa^{-1}b) = f(a)f(a^{-1}b) \neq f(a)
+$$&lt;/div&gt;
 &lt;h3 id="inverse-of-an-automorphism-is-an-automorphism"&gt;Inverse of an automorphism is an automorphism&lt;/h3&gt;
 &lt;p&gt;[Artin 2.3.11: show that Aut(&lt;span class="math"&gt;\(G\)&lt;/span&gt;) is a group]&lt;/p&gt;
 &lt;div class="math"&gt;$$

@@ -72,7 +72,7 @@ group elements defined by the group operation. Suppose that they map from group
 sends a product <span class="math">\(g_1 \circ g_2\)</span> to the product of whatever the separate
 elements are sent to:</p>
 <div class="math">$$
-f(g_1 \circ g_2) = f(g1) \circ f(g_2)
+f(g_1 \circ g_2) = f(g_1) \circ f(g_2)
 $$</div>
 <p>There the composition on the left is happening in <span class="math">\(G\)</span> and the composition on
 the right is happening in <span class="math">\(G'\)</span>. (For an automorphism, <span class="math">\(G=G'\)</span>.)</p>
@@ -82,6 +82,51 @@ may itself already be a map of sorts, e.g. if it is a permutation in
 as a permutation of group elements. So an automorphism on <span class="math">\(S_3\)</span> is a
 permutation of group elements that are themselves permutations of some generic
 labeled objects.</p>
+<p>The definition of homomorphism implies that <span class="math">\(f(g^{-1}) = f(g)^{-1}\)</span> since
+<span class="math">\(f(gg^{-1}) = f(g)f(g^{-1}) = f(e)\)</span>.</p>
+<h3 id="kernel-nullspace-bijection-and-congruency">Kernel, nullspace, bijection and congruency</h3>
+<p>Consider a homomorphism <span class="math">\(f\)</span> with kernel <span class="math">\(N\)</span>.</p>
+<p><strong>Theorem:</strong> <span class="math">\(a\)</span> and <span class="math">\(b\)</span> are sent to the same place by <span class="math">\(f\)</span> if and only if
+<span class="math">\(b = an\)</span> for some <span class="math">\(n \in N\)</span>.</p>
+<p><strong>Corollary:</strong> <span class="math">\(f\)</span> is a bijection (isomorphism) if and only if the kernel
+contains only the identity element.</p>
+<p><strong>Example:</strong> Consider the absolute value homomorphism mapping complex numbers
+under multiplication to positive reals under multiplication. The equivalence
+classes are concentric circles around the origin. Two complex numbers have the
+same absolute value iff one can be obtained from the other by rotation only (no
+scaling). This is multiplication by a complex number with absolute value 1, and
+such a complex number is in the kernel.</p>
+<p><strong>Proof:</strong> Clearly, if <span class="math">\(b = an\)</span> then <span class="math">\(b\)</span> is sent to the same place as <span class="math">\(a\)</span>,
+since</p>
+<div class="math">$$
+f(b) = f(an) = f(a)f(n) = f(a).
+$$</div>
+<p>However we need to demonstrate the converse, i.e. that the <em>only</em> way that <span class="math">\(b\)</span>
+can be sent to the same place as <span class="math">\(a\)</span> is if <span class="math">\(b=an\)</span> for some <span class="math">\(n \in N\)</span>.</p>
+<p>Two almost identical ways of showing that:</p>
+<p><strong>(1) Show that if <span class="math">\(f(a) = f(b)\)</span> then <span class="math">\(b = an\)</span> for some <span class="math">\(n \in N\)</span></strong></p>
+<p>In linear algebra, you can always get from <span class="math">\(u\)</span> to <span class="math">\(v\)</span> by adding <span class="math">\(v - u = -u +
+v\)</span>, so the claim is that <span class="math">\(L(u) = L(v)\)</span> implies <span class="math">\(-u + v\)</span> is in the nullspace,
+which is true:</p>
+<div class="math">$$
+L(-u + v) = L(-u) + L(v) = L(-u) + L(u) = 0.
+$$</div>
+<p>For a group homomorphism, <span class="math">\(b\)</span> can be written as <span class="math">\(aa^{-1}b\)</span>, so the claim is
+that <span class="math">\(f(a) = f(b)\)</span> implies <span class="math">\(a^{-1}b \in N\)</span>, which is true:</p>
+<div class="math">$$
+f(a^{-1}b) = f(a^{-1})f(b) = f(a)^{-1}f(a) = e.
+$$</div>
+<p><strong>(2) Show that if it is not the case that <span class="math">\(b = an\)</span> for some <span class="math">\(n \in N\)</span>, then <span class="math">\(f(a) \neq f(b)\)</span></strong></p>
+<p>In linear algebra, you can always get from <span class="math">\(u\)</span> to <span class="math">\(v\)</span> by adding <span class="math">\(v - u = -u + v\)</span>,
+so if <span class="math">\(-u + v\)</span> is not in the nullspace then</p>
+<div class="math">$$
+L(v) = L(u + (-u + v)) = L(u) + L(-u + v) \neq L(u).
+$$</div>
+<p>For a group homomorphism, <span class="math">\(b\)</span> can be written as <span class="math">\(aa^{-1}b\)</span>, so if <span class="math">\(a^{-1}b\)</span> is
+not in the kernel then</p>
+<div class="math">$$
+f(b) = f(aa^{-1}b) = f(a)f(a^{-1}b) \neq f(a)
+$$</div>
 <h3 id="inverse-of-an-automorphism-is-an-automorphism">Inverse of an automorphism is an automorphism</h3>
 <p>[Artin 2.3.11: show that Aut(<span class="math">\(G\)</span>) is a group]</p>
 <div class="math">$$
