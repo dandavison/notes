@@ -12,8 +12,94 @@ $$
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
 \newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
 $$
 
+Exercises from Artin *Algebra* 1st edition.
+
+
+----------------------------------------------------------------------------
+
+### Homework 1
+
+** 1. Read 1.1, pp. 38-42 **
+** 1.1.7 **
+** 1.1.16 **
+** 1.1.17 **
+
+----------------------------------------------------------------------------
+### Homework 2
+**Read 2.1, 2.2**
+
+** 2.1.5 **
+** 2.1.7 **
+** 2.2.1 **
+** 2.2.15 **
+** 2.2.20(a) **
+
+
+----------------------------------------------------------------------------
+
+### Homework 3
+
+** 2.3.1 **
+
+** 2.3.11 **
+
+** 2.3.12 **
+
+** 2.4.3 **
+
+** 2.4.6 **
+
+** 2.4.11 **
+
+----------------------------------------------------------------------------
+### Homework 4
+** 1. Read Artin 1.4.**
+
+** 2. Let $V$ denote the Klein 4-group. Show that Aut($V$) is isomorphic to $S_3$.**
+
+Every automorphism sends the identity to itself. This is because an
+automorphism must preserve structure, therefore we require $\rho(e) =
+\rho(ee^\1) = \rho(e)\rho(e^\1) = \rho(e)\rho(e)^\1$ which implies $\rho(e) =
+e$.
+
+Therefore, elements of Aut($V$) are distinguished by their effect on the 3
+non-identity elements and there is a 1-1 correspondence $f$ between elements of
+Aut($V$) and $S_3$.
+
+We need to show that $f$ is a homomorphism, i.e. that $f(\rho_1 \rho_2) =
+f(\rho_1) f(\rho_2)$. The operation is composition of permutations in both
+groups...the identity seems obvious.
+
+**3.**
+
+Define $f : \GL_n(\R) \rightarrow \GL_n(\R)$ by $f(A) =~ ^tA^\1$ (where $^tA$
+is the transpose of $A$). Show that $f$ is an automorphism, but not an inner
+automorphism for $n ≥ 1$.
+
+To show that $f$ is an automorphism we need to show that it preserves structure
+and is a bijection.
+
+*Preservation of structure:* We require that $^t(AB)^\1 =~ ^tA^\1~ ^tB^\1$.
+The RHS is $^tA^\1~ ^tB^\1 = (^tB^tA)^\1 = ~^t(AB)^\1$ as required.
+
+*Bijection:* $f^\1(A) =~ ^tA$. Since an inverse mapping exists, the original
+mapping must be bijective.
+
+Finally, we need to show that $f$ is not an inner automorphism for $n \geq
+1$. An inner automorphism is an automorphism defined by $\rho(A) = BAB^\1$ for
+some fixed $B$. So we need to show that there is no $B$ for which $^tA^\1 =
+BAB^\1$ for all $A$. $BAB^\1$ corresponds to the action of $A$ performed in a
+basis defined by $B$. The determinant of $A$ is invariant under change of
+basis. However, $\det ~^tA^\1 = (\det A)^\1$. Therefore $^tA^\1 = BAB^\1$ is
+not true in general since it is not true when $\det A \neq \pm 1$.
+
+**4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.**
+
+### Homework 5
+----------------------------------------------------------------------------
 
 **2.5.1 Prove that the nonempty fibres of a map form a partition of the domain.**
 
@@ -51,7 +137,6 @@ that the relation is reflexive, transitive and symmetric.
                 g_2(g_1xg_1^{-1})g_2^{-1} = (g_2g_1)x(g_1^{-1}g_2^{-1})$
 
 
-
 **(b) Describe the elements $a$ whose conjugacy class (= equivalence class)
 consists of the element $a$ alone.**
 
@@ -70,16 +155,16 @@ same.
 
 ----------------------------------------------------------------------------
 
-**2.6.4 Give an example showing that left cosets and right cosets of $GL_2(\R)$
-  in $GL_2(\C)$ are not always equal.**
+**2.6.4 Give an example showing that left cosets and right cosets of $\GL_2(\R)$
+  in $\GL_2(\C)$ are not always equal.**
 
 We don't even need to consider matrices outside $\GL_2(\R)$. Let A =
 $\smat{1}{0}
-      {0}{0}$ and let $H = \GLR{2}$.
+      {0}{0}$ and let $H = \GL_2(\R)$.
 
 Geometrically, this matrix projects points in 2D onto the x-axis.
 
-The left coset of $\GLR{2}$ containing $A$ is the set of matrices of the form
+The left coset of $\GL_2(\R)$ containing $A$ is the set of matrices of the form
 
 $$
 \smat{1}{0}
@@ -92,7 +177,7 @@ where $a,b,c,d \in \R$. Geometrically, this composition first sends the basis
 vectors to new locations with x-coordinates $a$ and $b$, and then projects onto
 the x axis.
 
-The right coset of $\GLR{2}$ containing $A$ is the set of matrices of the form
+The right coset of $\GL_2(\R)$ containing $A$ is the set of matrices of the form
 
 $$
 \smat{a}{b}
@@ -118,3 +203,17 @@ order of an element in a group must divide the order of the group). Therefore,
 while $e$ is in $H \cap K$, no other element is.
 
 ----------------------------------------------------------------------------
+
+### Homework 6
+
+----------------------------------------------------------------------------
+**2.9.2**
+
+----------------------------------------------------------------------------
+**2.9.4**
+
+----------------------------------------------------------------------------
+**2.9.5**
+
+----------------------------------------------------------------------------
+**2.9.8**
