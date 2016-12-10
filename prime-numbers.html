@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Examples of groups — Notes</title>
-	<meta name="description" content="Title: Examples of groups; Date: 2016-12-05; Author: Dan Davison">
+	<title>Prime numbers — Notes</title>
+	<meta name="description" content="Title: Prime numbers; Date: 2016-12-09; Author: Dan Davison">
 	<meta name="author" content="Dan Davison">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
@@ -26,65 +26,26 @@
 		<div class="col-md-8 col-md-offset-2">
 <div class="article" itemscope itemtype="http://schema.org/BlogPosting">
 	<div class="text-center article-header">
-		<h1 itemprop="name headline" class="article-title">Examples of groups</h1>
+		<h1 itemprop="name headline" class="article-title">Prime numbers</h1>
 		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
 			<h4 itemprop="name">Dan Davison</h4>
 		</span>
-		<time datetime="2016-12-05T00:00:00-08:00" itemprop="datePublished">Mon 05 December 2016</time>
+		<time datetime="2016-12-09T00:00:00-08:00" itemprop="datePublished">Fri 09 December 2016</time>
 	</div>
 	<div>
 		Category:
 		<span itemprop="articleSection">
-			<a href="http://dandavison.github.io/notes/category/group_theory.html" rel="category">group_theory</a>
+			<a href="http://dandavison.github.io/notes/category/misc.html" rel="category">misc</a>
 		</span>
 	</div>
-	<div itemprop="articleBody" class="article-body"><div class="math">$$
-\newcommand{\Z}{\mathbb{Z}}
-\newcommand{\Q}{\mathbb{Q}}
-\newcommand{\R}{\mathbb{R}}
-\newcommand{\C}{\mathbb{C}}
-$$</div>
-<h3 id="examples-of-groups">Examples of groups</h3>
-<h3 id="finite-order">Finite order</h3>
-<ul>
-<li>
-<p><span class="math">\(S_2\)</span>: the set of permutations of two objects, where the operation is
-  composition of functions.  There are just two elements in the group: the
-  do-nothing permutation and the switch-the-elements permutation: <span class="math">\(\{e,
-  \tau\}\)</span>.</p>
-</li>
-<li>
-<p><span class="math">\(S_3\)</span>: the set of permutations of three objects. There are 6 elements: the
-  identity, 3 transitions<sup id="sf-examples-of-groups-1-back"><a href="#sf-examples-of-groups-1" class="simple-footnote" title="A transition is a permutation that switches two   elements and leaves all other alone">1</a></sup> and two cyclic permutations.</p>
-</li>
-<li>
-<p><span class="math">\(\{1, i, -1, -i\}\)</span> where the operation is multiplication of complex numbers.</p>
-</li>
-<li>
-<p><span class="math">\(GL_n(\R)\)</span>: the set of <span class="math">\(n \times n\)</span> matrices, under matrix multiplication.</p>
-</li>
-<li>
-<p><span class="math">\(SL_n(\R)\)</span>: set of <span class="math">\(n \times n\)</span> matrices with determinant <span class="math">\(1\)</span> (kernel of the
-  determinant homomorphism <span class="math">\(GL_n(\R) \rightarrow \R^x\)</span> and therefore a normal
-  subgroup of <span class="math">\(GL_n(\R)\)</span>)</p>
-</li>
-</ul>
-<h3 id="infinite-order">Infinite order</h3>
-<ul>
-<li>
-<p><span class="math">\(\Z^+\)</span> integers under addition</p>
-</li>
-<li>
-<p><span class="math">\(\Z^x\)</span> integers under multiplication</p>
-</li>
-<li>
-<p><span class="math">\(\Z_{&gt;0}^+\)</span> positive integers under addition</p>
-</li>
-<li>
-<p>Similarly, <span class="math">\(\Q+\)</span>, <span class="math">\(\Q^x\)</span>, <span class="math">\(\C^+\)</span>, <span class="math">\(\C^x\)</span>, <span class="math">\(\R^+\)</span>, <span class="math">\(\R^x\)</span> etc</p>
-</li>
-</ul>
-<hr>
+	<div itemprop="articleBody" class="article-body"><p><strong>Least common multiple of two primes is their product</strong></p>
+<p>Let <span class="math">\(p_1, p_2\)</span> be prime. We want the smallest integer <span class="math">\(q\)</span> such that both <span class="math">\(p_1\)</span>
+and <span class="math">\(p_2\)</span> divide <span class="math">\(q\)</span>.</p>
+<p>Suppose <span class="math">\(p_1 &gt; p_2\)</span> and let <span class="math">\(q = ap_1\)</span>. <span class="math">\(a\)</span> can not be 1 since <span class="math">\(p_1\)</span> is prime
+and therefore <span class="math">\(p_2\)</span> does not divide it. In general, the factors of <span class="math">\(ap_1\)</span> are
+<span class="math">\(p_1\)</span>, and integers equal to or smaller than <span class="math">\(a\)</span>. Therefore the first value of
+<span class="math">\(a\)</span> for which <span class="math">\(p_2\)</span> divides <span class="math">\(ap_1\)</span> is <span class="math">\(p_2\)</span>. Therefore the least common
+multiple of <span class="math">\(p_1\)</span> and <span class="math">\(p_2\)</span> is their product <span class="math">\(p_2p_1\)</span>.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -141,14 +102,13 @@ $$</div>
         "}";
     (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
 }
-</script><ol class="simple-footnotes"><li id="sf-examples-of-groups-1">A transition is a permutation that switches two
-  elements and leaves all other alone <a href="#sf-examples-of-groups-1-back" class="simple-footnote-back">↩</a></li></ol></div>
+</script></div>
 	<hr>
 	<h2>Comments</h2>
 <div id="disqus_thread"></div>
 <script type="text/javascript">
     var disqus_shortname = 'dandavison7-notes'; 
-    var disqus_title = 'Examples of groups';
+    var disqus_title = 'Prime numbers';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

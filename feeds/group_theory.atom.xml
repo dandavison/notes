@@ -1,5 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/group_theory.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-05T00:00:00-08:00</updated><entry><title>Examples of groups</title><link href="http://dandavison.github.io/notes/examples-of-groups.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/examples-of-groups.html</id><summary type="html">&lt;div class="math"&gt;$$
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/group_theory.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-08T00:00:00-08:00</updated><entry><title>Harvard E222 Algebra - Homework</title><link href="http://dandavison.github.io/notes/harvard-e222.html" rel="alternate"></link><published>2016-12-08T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-08:notes/harvard-e222.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
+\newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
+$$&lt;/div&gt;
+&lt;p&gt;Exercises from Artin &lt;em&gt;Algebra&lt;/em&gt; 1st edition.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="homework-1"&gt;Homework 1&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; 1. Read 1.1, pp. 38-42 &lt;/strong&gt;
+&lt;strong&gt; 1.1.7 &lt;/strong&gt;
+&lt;strong&gt; 1.1.16 &lt;/strong&gt;
+&lt;strong&gt; 1.1.17 &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="homework-2"&gt;Homework 2&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;Read 2.1, 2.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.1.5 &lt;/strong&gt;
+&lt;strong&gt; 2.1.7 &lt;/strong&gt;
+&lt;strong&gt; 2.2.1 &lt;/strong&gt;
+&lt;strong&gt; 2.2.15 &lt;/strong&gt;
+&lt;strong&gt; 2.2.20(a) &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="homework-3"&gt;Homework 3&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; 2.3.1 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.3.11 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.3.12 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.3 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.6 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.11 &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="homework-4"&gt;Homework 4&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; 1. Read Artin 1.4.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2. Let &lt;span class="math"&gt;\(V\)&lt;/span&gt; denote the Klein 4-group. Show that Aut(&lt;span class="math"&gt;\(V\)&lt;/span&gt;) is isomorphic to &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Every automorphism sends the identity to itself. This is because an
+automorphism must preserve structure, therefore we require &lt;span class="math"&gt;\(\rho(e) =
+\rho(ee^\1) = \rho(e)\rho(e^\1) = \rho(e)\rho(e)^\1\)&lt;/span&gt; which implies &lt;span class="math"&gt;\(\rho(e) =
+e\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Therefore, elements of Aut(&lt;span class="math"&gt;\(V\)&lt;/span&gt;) are distinguished by their effect on the 3
+non-identity elements and there is a 1-1 correspondence &lt;span class="math"&gt;\(f\)&lt;/span&gt; between elements of
+Aut(&lt;span class="math"&gt;\(V\)&lt;/span&gt;) and &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We need to show that &lt;span class="math"&gt;\(f\)&lt;/span&gt; is a homomorphism, i.e. that &lt;span class="math"&gt;\(f(\rho_1 \rho_2) =
+f(\rho_1) f(\rho_2)\)&lt;/span&gt;. The operation is composition of permutations in both
+groups...the identity seems obvious.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Define &lt;span class="math"&gt;\(f : \GL_n(\R) \rightarrow \GL_n(\R)\)&lt;/span&gt; by &lt;span class="math"&gt;\(f(A) =~ ^tA^\1\)&lt;/span&gt; (where &lt;span class="math"&gt;\(^tA\)&lt;/span&gt;
+is the transpose of &lt;span class="math"&gt;\(A\)&lt;/span&gt;). Show that &lt;span class="math"&gt;\(f\)&lt;/span&gt; is an automorphism, but not an inner
+automorphism for &lt;span class="math"&gt;\(n ≥ 1\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;To show that &lt;span class="math"&gt;\(f\)&lt;/span&gt; is an automorphism we need to show that it preserves structure
+and is a bijection.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Preservation of structure:&lt;/em&gt; We require that &lt;span class="math"&gt;\(^t(AB)^\1 =~ ^tA^\1~ ^tB^\1\)&lt;/span&gt;.
+The RHS is &lt;span class="math"&gt;\(^tA^\1~ ^tB^\1 = (^tB^tA)^\1 = ~^t(AB)^\1\)&lt;/span&gt; as required.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Bijection:&lt;/em&gt; &lt;span class="math"&gt;\(f^\1(A) =~ ^tA\)&lt;/span&gt;. Since an inverse mapping exists, the original
+mapping must be bijective.&lt;/p&gt;
+&lt;p&gt;Finally, we need to show that &lt;span class="math"&gt;\(f\)&lt;/span&gt; is not an inner automorphism for &lt;span class="math"&gt;\(n \geq
+1\)&lt;/span&gt;. An inner automorphism is an automorphism defined by &lt;span class="math"&gt;\(\rho(A) = BAB^\1\)&lt;/span&gt; for
+some fixed &lt;span class="math"&gt;\(B\)&lt;/span&gt;. So we need to show that there is no &lt;span class="math"&gt;\(B\)&lt;/span&gt; for which &lt;span class="math"&gt;\(^tA^\1 =
+BAB^\1\)&lt;/span&gt; for all &lt;span class="math"&gt;\(A\)&lt;/span&gt;. &lt;span class="math"&gt;\(BAB^\1\)&lt;/span&gt; corresponds to the action of &lt;span class="math"&gt;\(A\)&lt;/span&gt; performed in a
+basis defined by &lt;span class="math"&gt;\(B\)&lt;/span&gt;. The determinant of &lt;span class="math"&gt;\(A\)&lt;/span&gt; is invariant under change of
+basis. However, &lt;span class="math"&gt;\(\det ~^tA^\1 = (\det A)^\1\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(^tA^\1 = BAB^\1\)&lt;/span&gt; is
+not true in general since it is not true when &lt;span class="math"&gt;\(\det A \neq \pm 1\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;http://math.stackexchange.com/questions/98378/fx-tx-1-is-an-automorphism-of-gl-n-mathbbr&lt;/p&gt;
+&lt;p&gt;I'm also watching these lectures and trying to do the homework, so by no means
+an expert. In the final part of the proof, a variant would be to use
+determinants:&lt;/p&gt;
+&lt;p&gt;Assume that &lt;span class="math"&gt;\(f\)&lt;/span&gt; is an inner automorphism. Therefore for some fixed &lt;span class="math"&gt;\(B\)&lt;/span&gt;, &lt;span class="math"&gt;\(^tA^\1
+= BAB^\1\)&lt;/span&gt; for all &lt;span class="math"&gt;\(A\)&lt;/span&gt;. But this implies &lt;span class="math"&gt;\((\det A)^\1 = \det A\)&lt;/span&gt; which is true
+only for &lt;span class="math"&gt;\(\det A = \pm 1\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(f\)&lt;/span&gt; is not an inner automorphism.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="homework-5"&gt;Homework 5&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.5.1 Prove that the nonempty fibres of a map form a partition of the domain.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We need to show&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;That every element of the domain is in some fibre, and&lt;/li&gt;
+&lt;li&gt;That no element is in more than one fibre&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(f\)&lt;/span&gt; be a map from set &lt;span class="math"&gt;\(S\)&lt;/span&gt; to set &lt;span class="math"&gt;\(T\)&lt;/span&gt;. A fibre &lt;span class="math"&gt;\(\phi_t\)&lt;/span&gt; of &lt;span class="math"&gt;\(f\)&lt;/span&gt; is the set
+&lt;span class="math"&gt;\(\{s: f(s) = t\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;For any element &lt;span class="math"&gt;\(s\)&lt;/span&gt; in the domain, &lt;span class="math"&gt;\(f(s)\)&lt;/span&gt; exists and &lt;span class="math"&gt;\(s\)&lt;/span&gt; is in fibre
+&lt;span class="math"&gt;\(\phi_{f(s)}\)&lt;/span&gt;. This proves (1).&lt;/p&gt;
+&lt;p&gt;To prove (2), suppose that &lt;span class="math"&gt;\(s\)&lt;/span&gt; belongs to fibres &lt;span class="math"&gt;\(\phi_{t_1}\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(\phi_{t_2}\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(f(s) = t_1\)&lt;/span&gt; and &lt;span class="math"&gt;\(f(s) = t_2\)&lt;/span&gt; which is a contradiction
+showing that no element belongs to two fibres.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.5.6&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(a) Prove that the relation &lt;span class="math"&gt;\(x\)&lt;/span&gt; conjugate to &lt;span class="math"&gt;\(y\)&lt;/span&gt; in a group &lt;span class="math"&gt;\(G\)&lt;/span&gt; is an
+  equivalence relation on &lt;span class="math"&gt;\(G\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(x\)&lt;/span&gt; conjugate to &lt;span class="math"&gt;\(y\)&lt;/span&gt; means &lt;span class="math"&gt;\(y = gxg^{-1}\)&lt;/span&gt; for some &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt;. We need to show
+that the relation is reflexive, transitive and symmetric.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Reflexivity&lt;/em&gt;: &lt;span class="math"&gt;\(x\)&lt;/span&gt; is equal to &lt;span class="math"&gt;\(x\)&lt;/span&gt; conjugated with the identity element: &lt;span class="math"&gt;\(x = exe^{-1}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Symmetry&lt;/em&gt;: Let &lt;span class="math"&gt;\(y = gxg^{-1}\)&lt;/span&gt;. Then multiplying on the right by &lt;span class="math"&gt;\(g\)&lt;/span&gt; and on the
+            left by &lt;span class="math"&gt;\(g^{-1}\)&lt;/span&gt; gives &lt;span class="math"&gt;\(g^{-1}yg = x\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Transitivity&lt;/em&gt;: Let &lt;span class="math"&gt;\(y = g_1xg_1^{-1}\)&lt;/span&gt; and &lt;span class="math"&gt;\(z = g_2yg_2^{-1}\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(z =
+                g_2(g_1xg_1^{-1})g_2^{-1} = (g_2g_1)x(g_1^{-1}g_2^{-1})\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(b) Describe the elements &lt;span class="math"&gt;\(a\)&lt;/span&gt; whose conjugacy class (= equivalence class)
+consists of the element &lt;span class="math"&gt;\(a\)&lt;/span&gt; alone.&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.6.2 Prove directly that distinct cosets do not overlap.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(H\)&lt;/span&gt; be a subgroup of &lt;span class="math"&gt;\(G\)&lt;/span&gt; and let &lt;span class="math"&gt;\(g_1H = \{g_1h:h\in H\}\)&lt;/span&gt; be a coset of &lt;span class="math"&gt;\(H\)&lt;/span&gt;
+in &lt;span class="math"&gt;\(G\)&lt;/span&gt;. Consider an element &lt;span class="math"&gt;\(g_3 \in g_1H\)&lt;/span&gt;. This means that &lt;span class="math"&gt;\(g_3 = g_1h\)&lt;/span&gt; for a
+unique &lt;span class="math"&gt;\(h \in H\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Suppose that &lt;span class="math"&gt;\(g_3\)&lt;/span&gt; is also in another coset &lt;span class="math"&gt;\(g_2H\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(g_3 = g_1h = g_2h'\)&lt;/span&gt;
+for &lt;span class="math"&gt;\(h, h' \in H\)&lt;/span&gt; and therefore &lt;span class="math"&gt;\(g_1hh'^{-1} = g_2\)&lt;/span&gt;. But &lt;span class="math"&gt;\(hh'^{-1} \in H\)&lt;/span&gt; so
+&lt;span class="math"&gt;\(g_2\)&lt;/span&gt; is in coset &lt;span class="math"&gt;\(g_1H\)&lt;/span&gt;, which shows that cosets &lt;span class="math"&gt;\(g_1H\)&lt;/span&gt; and &lt;span class="math"&gt;\(g_2H\)&lt;/span&gt; are the
+same.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.6.4 Give an example showing that left cosets and right cosets of &lt;span class="math"&gt;\(\GL_2(\R)\)&lt;/span&gt;
+  in &lt;span class="math"&gt;\(\GL_2(\C)\)&lt;/span&gt; are not always equal.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We don't even need to consider matrices outside &lt;span class="math"&gt;\(\GL_2(\R)\)&lt;/span&gt;. Let A =
+&lt;span class="math"&gt;\(\smat{1}{0}
+      {0}{0}\)&lt;/span&gt; and let &lt;span class="math"&gt;\(H = \GL_2(\R)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Geometrically, this matrix projects points in 2D onto the x-axis.&lt;/p&gt;
+&lt;p&gt;The left coset of &lt;span class="math"&gt;\(\GL_2(\R)\)&lt;/span&gt; containing &lt;span class="math"&gt;\(A\)&lt;/span&gt; is the set of matrices of the form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\smat{1}{0}
+     {0}{0} \smat{a}{b}
+                 {c}{d} = \smat{a}{b}
+                               {0}{0}
+$$&lt;/div&gt;
+&lt;p&gt;where &lt;span class="math"&gt;\(a,b,c,d \in \R\)&lt;/span&gt;. Geometrically, this composition first sends the basis
+vectors to new locations with x-coordinates &lt;span class="math"&gt;\(a\)&lt;/span&gt; and &lt;span class="math"&gt;\(b\)&lt;/span&gt;, and then projects onto
+the x axis.&lt;/p&gt;
+&lt;p&gt;The right coset of &lt;span class="math"&gt;\(\GL_2(\R)\)&lt;/span&gt; containing &lt;span class="math"&gt;\(A\)&lt;/span&gt; is the set of matrices of the form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\smat{a}{b}
+     {c}{d} \smat{1}{0}
+                 {0}{0} = \smat{a}{0}
+                               {c}{0}
+$$&lt;/div&gt;
+&lt;p&gt;Geometrically, this composition first sends the &lt;span class="math"&gt;\(\scvec{0}{1}\)&lt;/span&gt; basis vector to
+the origin, and then performs an arbitrary linear transformation. But once sent
+to the origin, the &lt;span class="math"&gt;\(\scvec{0}{1}\)&lt;/span&gt; basis vector stays there, regardless of the
+nature of the second transformation.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.6.5 Let &lt;span class="math"&gt;\(H\)&lt;/span&gt;, &lt;span class="math"&gt;\(K\)&lt;/span&gt; be subgroups of a group &lt;span class="math"&gt;\(G\)&lt;/span&gt; of orders 3, 5
+  respectively. Prove that &lt;span class="math"&gt;\(H \cap K = \{e\}\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(H\)&lt;/span&gt; and &lt;span class="math"&gt;\(K\)&lt;/span&gt; are of prime order, they are isomorphic to the cyclic groups
+of orders 3 and 5 respectively. Therefore the non-identity elements of &lt;span class="math"&gt;\(H\)&lt;/span&gt; are
+of order 3, and the non-identity elements of &lt;span class="math"&gt;\(K\)&lt;/span&gt; are of order 5 (because the
+order of an element in a group must divide the order of the group). Therefore,
+while &lt;span class="math"&gt;\(e\)&lt;/span&gt; is in &lt;span class="math"&gt;\(H \cap K\)&lt;/span&gt;, no other element is.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;h3 id="homework-6"&gt;Homework 6&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.9.2&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.9.4&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.9.5&lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt;2.9.8&lt;/strong&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Examples of groups</title><link href="http://dandavison.github.io/notes/examples-of-groups.html" rel="alternate"></link><published>2016-12-05T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-05:notes/examples-of-groups.html</id><summary type="html">&lt;div class="math"&gt;$$
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\Q}{\mathbb{Q}}
 \newcommand{\R}{\mathbb{R}}

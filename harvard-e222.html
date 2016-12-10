@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Harvard E222 Algebra - Homework — Notes</title>
+	<meta name="description" content="Title: Harvard E222 Algebra - Homework; Date: 2016-12-08; Author: Dan Davison">
+	<meta name="author" content="Dan Davison">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://dandavison.github.io/notes/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://dandavison.github.io/notes/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/local.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="http://dandavison.github.io/notes/">Notes</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Harvard E222 Algebra - Homework</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Dan Davison</h4>
+		</span>
+		<time datetime="2016-12-08T00:00:00-08:00" itemprop="datePublished">Thu 08 December 2016</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="http://dandavison.github.io/notes/category/group_theory.html" rel="category">group_theory</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><div class="math">$$
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
+\newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
+$$</div>
+<p>Exercises from Artin <em>Algebra</em> 1st edition.</p>
+<hr />
+<h3 id="homework-1">Homework 1</h3>
+<p><strong> 1. Read 1.1, pp. 38-42 </strong>
+<strong> 1.1.7 </strong>
+<strong> 1.1.16 </strong>
+<strong> 1.1.17 </strong></p>
+<hr />
+<h3 id="homework-2">Homework 2</h3>
+<p><strong>Read 2.1, 2.2</strong></p>
+<p><strong> 2.1.5 </strong>
+<strong> 2.1.7 </strong>
+<strong> 2.2.1 </strong>
+<strong> 2.2.15 </strong>
+<strong> 2.2.20(a) </strong></p>
+<hr />
+<h3 id="homework-3">Homework 3</h3>
+<p><strong> 2.3.1 </strong></p>
+<p><strong> 2.3.11 </strong></p>
+<p><strong> 2.3.12 </strong></p>
+<p><strong> 2.4.3 </strong></p>
+<p><strong> 2.4.6 </strong></p>
+<p><strong> 2.4.11 </strong></p>
+<hr />
+<h3 id="homework-4">Homework 4</h3>
+<p><strong> 1. Read Artin 1.4.</strong></p>
+<p><strong> 2. Let <span class="math">\(V\)</span> denote the Klein 4-group. Show that Aut(<span class="math">\(V\)</span>) is isomorphic to <span class="math">\(S_3\)</span>.</strong></p>
+<p>Every automorphism sends the identity to itself. This is because an
+automorphism must preserve structure, therefore we require <span class="math">\(\rho(e) =
+\rho(ee^\1) = \rho(e)\rho(e^\1) = \rho(e)\rho(e)^\1\)</span> which implies <span class="math">\(\rho(e) =
+e\)</span>.</p>
+<p>Therefore, elements of Aut(<span class="math">\(V\)</span>) are distinguished by their effect on the 3
+non-identity elements and there is a 1-1 correspondence <span class="math">\(f\)</span> between elements of
+Aut(<span class="math">\(V\)</span>) and <span class="math">\(S_3\)</span>.</p>
+<p>We need to show that <span class="math">\(f\)</span> is a homomorphism, i.e. that <span class="math">\(f(\rho_1 \rho_2) =
+f(\rho_1) f(\rho_2)\)</span>. The operation is composition of permutations in both
+groups...the identity seems obvious.</p>
+<p><strong>3.</strong></p>
+<p>Define <span class="math">\(f : \GL_n(\R) \rightarrow \GL_n(\R)\)</span> by <span class="math">\(f(A) =~ ^tA^\1\)</span> (where <span class="math">\(^tA\)</span>
+is the transpose of <span class="math">\(A\)</span>). Show that <span class="math">\(f\)</span> is an automorphism, but not an inner
+automorphism for <span class="math">\(n ≥ 1\)</span>.</p>
+<p>To show that <span class="math">\(f\)</span> is an automorphism we need to show that it preserves structure
+and is a bijection.</p>
+<p><em>Preservation of structure:</em> We require that <span class="math">\(^t(AB)^\1 =~ ^tA^\1~ ^tB^\1\)</span>.
+The RHS is <span class="math">\(^tA^\1~ ^tB^\1 = (^tB^tA)^\1 = ~^t(AB)^\1\)</span> as required.</p>
+<p><em>Bijection:</em> <span class="math">\(f^\1(A) =~ ^tA\)</span>. Since an inverse mapping exists, the original
+mapping must be bijective.</p>
+<p>Finally, we need to show that <span class="math">\(f\)</span> is not an inner automorphism for <span class="math">\(n \geq
+1\)</span>. An inner automorphism is an automorphism defined by <span class="math">\(\rho(A) = BAB^\1\)</span> for
+some fixed <span class="math">\(B\)</span>. So we need to show that there is no <span class="math">\(B\)</span> for which <span class="math">\(^tA^\1 =
+BAB^\1\)</span> for all <span class="math">\(A\)</span>. <span class="math">\(BAB^\1\)</span> corresponds to the action of <span class="math">\(A\)</span> performed in a
+basis defined by <span class="math">\(B\)</span>. The determinant of <span class="math">\(A\)</span> is invariant under change of
+basis. However, <span class="math">\(\det ~^tA^\1 = (\det A)^\1\)</span>. Therefore <span class="math">\(^tA^\1 = BAB^\1\)</span> is
+not true in general since it is not true when <span class="math">\(\det A \neq \pm 1\)</span>.</p>
+<p>http://math.stackexchange.com/questions/98378/fx-tx-1-is-an-automorphism-of-gl-n-mathbbr</p>
+<p>I'm also watching these lectures and trying to do the homework, so by no means
+an expert. In the final part of the proof, a variant would be to use
+determinants:</p>
+<p>Assume that <span class="math">\(f\)</span> is an inner automorphism. Therefore for some fixed <span class="math">\(B\)</span>, <span class="math">\(^tA^\1
+= BAB^\1\)</span> for all <span class="math">\(A\)</span>. But this implies <span class="math">\((\det A)^\1 = \det A\)</span> which is true
+only for <span class="math">\(\det A = \pm 1\)</span>. Therefore <span class="math">\(f\)</span> is not an inner automorphism.</p>
+<p><strong>4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.</strong></p>
+<h3 id="homework-5">Homework 5</h3>
+<hr />
+<p><strong>2.5.1 Prove that the nonempty fibres of a map form a partition of the domain.</strong></p>
+<p>We need to show</p>
+<ol>
+<li>That every element of the domain is in some fibre, and</li>
+<li>That no element is in more than one fibre</li>
+</ol>
+<p>Let <span class="math">\(f\)</span> be a map from set <span class="math">\(S\)</span> to set <span class="math">\(T\)</span>. A fibre <span class="math">\(\phi_t\)</span> of <span class="math">\(f\)</span> is the set
+<span class="math">\(\{s: f(s) = t\}\)</span>.</p>
+<p>For any element <span class="math">\(s\)</span> in the domain, <span class="math">\(f(s)\)</span> exists and <span class="math">\(s\)</span> is in fibre
+<span class="math">\(\phi_{f(s)}\)</span>. This proves (1).</p>
+<p>To prove (2), suppose that <span class="math">\(s\)</span> belongs to fibres <span class="math">\(\phi_{t_1}\)</span> and
+<span class="math">\(\phi_{t_2}\)</span>. Then <span class="math">\(f(s) = t_1\)</span> and <span class="math">\(f(s) = t_2\)</span> which is a contradiction
+showing that no element belongs to two fibres.</p>
+<hr />
+<p><strong>2.5.6</strong></p>
+<p><strong>(a) Prove that the relation <span class="math">\(x\)</span> conjugate to <span class="math">\(y\)</span> in a group <span class="math">\(G\)</span> is an
+  equivalence relation on <span class="math">\(G\)</span>.</strong></p>
+<p><span class="math">\(x\)</span> conjugate to <span class="math">\(y\)</span> means <span class="math">\(y = gxg^{-1}\)</span> for some <span class="math">\(g \in G\)</span>. We need to show
+that the relation is reflexive, transitive and symmetric.</p>
+<p><em>Reflexivity</em>: <span class="math">\(x\)</span> is equal to <span class="math">\(x\)</span> conjugated with the identity element: <span class="math">\(x = exe^{-1}\)</span>.</p>
+<p><em>Symmetry</em>: Let <span class="math">\(y = gxg^{-1}\)</span>. Then multiplying on the right by <span class="math">\(g\)</span> and on the
+            left by <span class="math">\(g^{-1}\)</span> gives <span class="math">\(g^{-1}yg = x\)</span>.</p>
+<p><em>Transitivity</em>: Let <span class="math">\(y = g_1xg_1^{-1}\)</span> and <span class="math">\(z = g_2yg_2^{-1}\)</span>. Then <span class="math">\(z =
+                g_2(g_1xg_1^{-1})g_2^{-1} = (g_2g_1)x(g_1^{-1}g_2^{-1})\)</span></p>
+<p><strong>(b) Describe the elements <span class="math">\(a\)</span> whose conjugacy class (= equivalence class)
+consists of the element <span class="math">\(a\)</span> alone.</strong></p>
+<hr />
+<p><strong>2.6.2 Prove directly that distinct cosets do not overlap.</strong></p>
+<p>Let <span class="math">\(H\)</span> be a subgroup of <span class="math">\(G\)</span> and let <span class="math">\(g_1H = \{g_1h:h\in H\}\)</span> be a coset of <span class="math">\(H\)</span>
+in <span class="math">\(G\)</span>. Consider an element <span class="math">\(g_3 \in g_1H\)</span>. This means that <span class="math">\(g_3 = g_1h\)</span> for a
+unique <span class="math">\(h \in H\)</span>.</p>
+<p>Suppose that <span class="math">\(g_3\)</span> is also in another coset <span class="math">\(g_2H\)</span>. Then <span class="math">\(g_3 = g_1h = g_2h'\)</span>
+for <span class="math">\(h, h' \in H\)</span> and therefore <span class="math">\(g_1hh'^{-1} = g_2\)</span>. But <span class="math">\(hh'^{-1} \in H\)</span> so
+<span class="math">\(g_2\)</span> is in coset <span class="math">\(g_1H\)</span>, which shows that cosets <span class="math">\(g_1H\)</span> and <span class="math">\(g_2H\)</span> are the
+same.</p>
+<hr />
+<p><strong>2.6.4 Give an example showing that left cosets and right cosets of <span class="math">\(\GL_2(\R)\)</span>
+  in <span class="math">\(\GL_2(\C)\)</span> are not always equal.</strong></p>
+<p>We don't even need to consider matrices outside <span class="math">\(\GL_2(\R)\)</span>. Let A =
+<span class="math">\(\smat{1}{0}
+      {0}{0}\)</span> and let <span class="math">\(H = \GL_2(\R)\)</span>.</p>
+<p>Geometrically, this matrix projects points in 2D onto the x-axis.</p>
+<p>The left coset of <span class="math">\(\GL_2(\R)\)</span> containing <span class="math">\(A\)</span> is the set of matrices of the form</p>
+<div class="math">$$
+\smat{1}{0}
+     {0}{0} \smat{a}{b}
+                 {c}{d} = \smat{a}{b}
+                               {0}{0}
+$$</div>
+<p>where <span class="math">\(a,b,c,d \in \R\)</span>. Geometrically, this composition first sends the basis
+vectors to new locations with x-coordinates <span class="math">\(a\)</span> and <span class="math">\(b\)</span>, and then projects onto
+the x axis.</p>
+<p>The right coset of <span class="math">\(\GL_2(\R)\)</span> containing <span class="math">\(A\)</span> is the set of matrices of the form</p>
+<div class="math">$$
+\smat{a}{b}
+     {c}{d} \smat{1}{0}
+                 {0}{0} = \smat{a}{0}
+                               {c}{0}
+$$</div>
+<p>Geometrically, this composition first sends the <span class="math">\(\scvec{0}{1}\)</span> basis vector to
+the origin, and then performs an arbitrary linear transformation. But once sent
+to the origin, the <span class="math">\(\scvec{0}{1}\)</span> basis vector stays there, regardless of the
+nature of the second transformation.</p>
+<hr />
+<p><strong>2.6.5 Let <span class="math">\(H\)</span>, <span class="math">\(K\)</span> be subgroups of a group <span class="math">\(G\)</span> of orders 3, 5
+  respectively. Prove that <span class="math">\(H \cap K = \{e\}\)</span>.</strong></p>
+<p>Since <span class="math">\(H\)</span> and <span class="math">\(K\)</span> are of prime order, they are isomorphic to the cyclic groups
+of orders 3 and 5 respectively. Therefore the non-identity elements of <span class="math">\(H\)</span> are
+of order 3, and the non-identity elements of <span class="math">\(K\)</span> are of order 5 (because the
+order of an element in a group must divide the order of the group). Therefore,
+while <span class="math">\(e\)</span> is in <span class="math">\(H \cap K\)</span>, no other element is.</p>
+<hr />
+<h3 id="homework-6">Homework 6</h3>
+<hr />
+<p><strong>2.9.2</strong></p>
+<hr />
+<p><strong>2.9.4</strong></p>
+<hr />
+<p><strong>2.9.5</strong></p>
+<hr />
+<p><strong>2.9.8</strong></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
+	<hr>
+	<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dandavison7-notes'; 
+    var disqus_title = 'Harvard E222 Algebra - Homework';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes">Notes</a></li>
+							<li><a href="http://dandavison.github.io/notes/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/dandavison">github</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (2)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/questions.html">questions (1)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Dan Davison 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>
