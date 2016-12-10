@@ -20,7 +20,7 @@ Exercises from Artin *Algebra* 1st edition.
 
 ----------------------------------------------------------------------------
 
-### Homework 1
+### E122 Homework 1
 
 ** 1. Read 1.1, pp. 38-42 **
 ** 1.1.7 **
@@ -28,7 +28,7 @@ Exercises from Artin *Algebra* 1st edition.
 ** 1.1.17 **
 
 ----------------------------------------------------------------------------
-### Homework 2
+### E122 Homework 2
 **Read 2.1, 2.2**
 
 ** 2.1.5 **
@@ -40,7 +40,7 @@ Exercises from Artin *Algebra* 1st edition.
 
 ----------------------------------------------------------------------------
 
-### Homework 3
+### E122 Homework 3
 
 ** 2.3.1 **
 
@@ -48,14 +48,25 @@ Exercises from Artin *Algebra* 1st edition.
 
 ** 2.3.12 **
 
+** 2.3.14 (122) **
+
 ** 2.4.3 **
+
+** 2.4.5 (122) **
 
 ** 2.4.6 **
 
+** 2.4.8 (122) **
+
 ** 2.4.11 **
 
+** 2.4.16 (122) **
+
+** 2.4.23 (122) **
+
+
 ----------------------------------------------------------------------------
-### Homework 4
+### E122 Homework 4
 ** 1. Read Artin 1.4.**
 
 ** 2. Let $V$ denote the Klein 4-group. Show that Aut($V$) is isomorphic to $S_3$.**
@@ -98,7 +109,7 @@ not true in general since it is not true when $\det A \neq \pm 1$.
 
 **4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.**
 
-### Homework 5
+### E122 Homework 5
 ----------------------------------------------------------------------------
 
 **2.5.1 Prove that the nonempty fibres of a map form a partition of the domain.**
@@ -204,7 +215,17 @@ while $e$ is in $H \cap K$, no other element is.
 
 ----------------------------------------------------------------------------
 
-### Homework 6
+
+** 2.6.10 (122) **
+
+** 2.6.11 (122) **
+
+** 2.8.2 (122) **
+
+** 2.8.10 (122) **
+
+
+### E122 Homework 6
 
 ----------------------------------------------------------------------------
 **2.9.2**
@@ -217,3 +238,8 @@ while $e$ is in $H \cap K$, no other element is.
 
 ----------------------------------------------------------------------------
 **2.9.8**
+
+
+** 2.10.1 (122) **
+
+** 2.10.10 (122) **
