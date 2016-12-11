@@ -17,14 +17,19 @@ $$
 
 Exercises from Artin *Algebra* 1st edition.
 
+E122: Harvard E122 http://wayback.archive-it.org/3671/20150528171650/https://www.extension.harvard.edu/open-learning-initiative/abstract-algebra
+122: Harvard 122 http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/hw.html
 
 ----------------------------------------------------------------------------
 
 ### E122 Homework 1
 
 ** 1. Read 1.1, pp. 38-42 **
+
 ** 1.1.7 **
+
 ** 1.1.16 **
+
 ** 1.1.17 **
 
 ----------------------------------------------------------------------------
@@ -32,9 +37,43 @@ Exercises from Artin *Algebra* 1st edition.
 **Read 2.1, 2.2**
 
 ** 2.1.5 **
+
 ** 2.1.7 **
+
 ** 2.2.1 **
+
+** 2.2.14 (122) Let $G$ be a cyclic group of order $n$, and let $r$ be an integer
+dividing $n$. Prove that $G$ contains exactly one subgroup of order $r$. **
+
+If $n$ is prime then the only subgroups of $G$ are $\{e\}$ and $G$. The
+integers which divide $n$ are 1 and $n$ and so it is true that for every such
+integer $r$ there is one subgroup of order $r$.
+
+If $n$ is not prime then $G$ has non-trivial subgroups for every integer that
+divides it.
+
+For example, if $G$ has order 8, the claim is that $G$ has only one subgroup of
+order 2. Well, all subgroups of order 2 are isomorphic to $\{e, \tau\}$. So the
+claim implies that groups of permutations of order 4, 6, 8 etc (i.e. $S_4, S_6,
+S_8$) contain only one transposition.
+
+
+A solution is given in the
+[Harvard 122 materials](http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/home/solns/hw2.pdf).
+
+The starting point is to note that $<g^{n/r}>$ is a subgroup of order $r$
+($n/r$ fits $r$ times into each chunk of $n$ items). So in the example with $G$
+of order 8, $<g^{4}>$ has order 2. The question is whether there is any other
+subgroup of order 2. Intuitively it seems obvious that the answer is no, since
+only 4 divides up chunks of 8 in that way.
+
+Formally, the proof proceeds by supposing that $H' = <g^m>$ also has order $r$
+(using a lemma that every subgroup of a cyclic group is cyclic). It then shows
+that $m$ must divide $n$ (otherwise leads to a contradiction). Therefore the
+order of $H'$ is $n/m$. Therefore $m = n/r$ which shows that $H'$ is $H$.
+
 ** 2.2.15 **
+
 ** 2.2.20(a) **
 
 
@@ -47,8 +86,6 @@ Exercises from Artin *Algebra* 1st edition.
 ** 2.3.11 **
 
 ** 2.3.12 **
-
-** 2.3.14 (122) **
 
 ** 2.4.3 **
 
@@ -106,6 +143,17 @@ BAB^\1$ for all $A$. $BAB^\1$ corresponds to the action of $A$ performed in a
 basis defined by $B$. The determinant of $A$ is invariant under change of
 basis. However, $\det ~^tA^\1 = (\det A)^\1$. Therefore $^tA^\1 = BAB^\1$ is
 not true in general since it is not true when $\det A \neq \pm 1$.
+
+http://math.stackexchange.com/questions/98378/fx-tx-1-is-an-automorphism-of-gl-n-mathbbr
+
+I'm also watching these lectures and trying to do the homework, so by no means
+an expert. In the final part of the proof, a variant would be to use
+determinants:
+
+Assume that $f$ is an inner automorphism. Therefore for some fixed $B$, $^tA^\1
+= BAB^\1$ for all $A$. But this implies $(\det A)^\1 = \det A$ which is true
+only for $\det A = \pm 1$. Therefore $f$ is not an inner automorphism.
+
 
 **4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.**
 
