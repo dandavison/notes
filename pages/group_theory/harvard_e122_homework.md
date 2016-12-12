@@ -390,23 +390,23 @@ $H = \left\{ \mat{1}{b}
                  {0}{d} \right\}$
 
 This is closed, contains the identity and contains inverses, so it is a
-subgroup. However, if we conjugate it with an arbitrary element
-$\smat{e}{f}{g}{h}$ from $G$, the result is not in the subgroup, so it is not a
-normal subgroup. Geometrically, I think this is because the matrix representing
-the stretch-in-the-y-direction and shear-in-the-x-direction in the changed
-basis does not also perform a stretch and shear in the corresponding directions
-in the original basis.
+subgroup. And closed under conjugation, so normal.
+
+Geometrically, the matrix represents a stretch-in-the-y-direction and
+shear-in-the-x-direction transformation. The normality is because the matrix
+that performs the transformation in the changed basis performs a transformation
+in the original basis which is of the same form.
 
 \begin{align*}
 &\mat{e}{f}
-     {g}{h} \mat{1}{b}
+     {0}{h} \mat{1}{b}
                 {0}{d} \mat{h}{-f}
-                           {-g}{e} \frac{1}{eh - fg} \\
+                           {0}{e} \frac{1}{eh} \\
 = &\mat{e}{f}
-       {g}{h} \mat{h-bg}{-f + be}
-                  {-dg }{de     } \frac{1}{eh - fg} \\
-= &\mat{e(h-bg) - fdg}{e(-f + be) + fde}
-       {g(h-bg) - hdg}{g(-f + be) + hde} \frac{1}{eh - fg}
+       {0}{h} \mat{h}{-f + be}
+                  {0}{de     } \frac{1}{eh} \\
+= &\mat{eh}{e(-f + be) + fde}
+       {0}{hde} \frac{1}{eh}
 \end{align*}
 
 ** (b) $a_{12} = 0$ **
@@ -415,21 +415,23 @@ $H = \left\{ \mat{a}{0}
                  {0}{d} \right\}$
 
 This is closed, contains identity and inverses, hence is a subgroup. However
-again, it is not closed under conjugation, so not normal. Geometrically, I
-think this is because the matrix performing the stretch in orthogonal x- and
-y-directions in the changed basis does not also perform a stretch in the
-corresponding directions in the original basis.
+again, it is not closed under conjugation, so not normal.
+
+Geometrically, the matrix represents a stretch in orthogonal x- and
+y-directions. The non-normality is because the matrix that performs the
+transformation in the changed basis does not stretch in the directions of the
+basis vectors in the original basis.
 
 \begin{align*}
 &\mat{e}{f}
-     {g}{h} \mat{a}{0}
+     {0}{h} \mat{a}{0}
                 {0}{d} \mat{h}{-f}
-                           {-g}{e} \frac{1}{eh - fg} \\
+                           {0}{e } \frac{1}{eh} \\
 = &\mat{e}{f}
-       {g}{h} \mat{ah}{-af}
-                  {-dg}{de} \frac{1}{eh - fg} \\
-= &\mat{eah - fdg}{-eaf + fde}
-       {gah - hdg}{-gaf + hde} \frac{1}{eh - fg}
+       {0}{h} \mat{ah}{-af}
+                  {0 }{de } \frac{1}{eh} \\
+= &\mat{eah}{-eaf + fde}
+       {0  }{hde       } \frac{1}{eh}
 \end{align*}
 
 ** (c) $a_{11} = a_{22}$ **
@@ -439,16 +441,21 @@ $H = \left\{ \mat{a}{b}
 
 Closed and contains identity and inverses, so a subgroup, but again not closed under conjugation.
 
+Geometrically, the matrix represents a stretch by the same amount in orthogonal
+x- and y-directions, plus a shear. The non-normality is because the matrix that
+performs the transformation in the changed basis does not stretch equally in
+the directions of the basis vectors in the original basis.
+
 \begin{align*}
 &\mat{e}{f}
-     {g}{h} \mat{a}{b}
+     {0}{h} \mat{a}{b}
                 {0}{d} \mat{h}{-f}
-                           {-g}{e} \frac{1}{eh - fg} \\
+                           {0}{e } \frac{1}{eh} \\
 = &\mat{e}{f}
-       {g}{h} \mat{ah - bg}{-af + be}
-                  {-dg    }{de      } \frac{1}{eh - fg} \\
-= &\mat{e(ah - bg) - fdg}{e(-af + be) + fde}
-       {g(ah - bg) - hdg}{g(-af + be) + hde} \frac{1}{eh - fg}
+       {0}{h} \mat{ah}{-af + be}
+                  {0 }{de      } \frac{1}{eh} \\
+= &\mat{eah}{e(-af + be) + fde}
+       {0  }{hde              } \frac{1}{eh}
 \end{align*}
 
 
@@ -458,18 +465,23 @@ $H = \left\{ \mat{1}{b}
                  {0}{1} \right\}$
 
 Closed, contains identity and inverses. It performs a shear, with no
-stretching. But again not closed under conjugation.
+stretching. Closed under conjugation and therefore normal.
+
+Geometrically, the matrix represents a shear, with no stretching. The normality
+is because the matrix that performs that transformation in the changed basis
+also performs a shear without stretching in the original basis.
+
 
 \begin{align*}
 &\mat{e}{f}
-     {g}{h} \mat{1}{b}
+     {0}{h} \mat{1}{b}
                 {0}{1} \mat{h}{-f}
-                           {-g}{e} \frac{1}{eh - fg} \\
+                           {0}{e} \frac{1}{eh} \\
 = &\mat{e}{f}
-       {g}{h} \mat{h - bg}{-f + be}
-                  {-g    }{e      } \frac{1}{eh - fg} \\
-= &\mat{e(h - bg) - fg}{e(-f + be) + fe}
-       {g(h - bg) - hg}{g(-f + be) + he} \frac{1}{eh - fg}
+       {0}{h} \mat{h}{-f + be}
+                  {0}{e      } \frac{1}{eh} \\
+= &\mat{eh}{e(-f + be) + fe}
+       {0  }{eh             } \frac{1}{eh}
 \end{align*}
 
 
