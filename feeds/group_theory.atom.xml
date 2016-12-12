@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/group_theory.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-08T00:00:00-08:00</updated><entry><title>Harvard E222 Algebra - Homework</title><link href="http://dandavison.github.io/notes/harvard-e222.html" rel="alternate"></link><published>2016-12-08T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-08:notes/harvard-e222.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
@@ -12,30 +13,60 @@
 \newcommand{\1}{{-1}}
 $$&lt;/div&gt;
 &lt;p&gt;Exercises from Artin &lt;em&gt;Algebra&lt;/em&gt; 1st edition.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://wayback.archive-it.org/3671/20150528171650/https://www.extension.harvard.edu/open-learning-initiative/abstract-algebra"&gt;Harvard E122&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/hw.html"&gt;Harvard 122&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
 &lt;hr /&gt;
-&lt;h3 id="homework-1"&gt;Homework 1&lt;/h3&gt;
-&lt;p&gt;&lt;strong&gt; 1. Read 1.1, pp. 38-42 &lt;/strong&gt;
-&lt;strong&gt; 1.1.7 &lt;/strong&gt;
-&lt;strong&gt; 1.1.16 &lt;/strong&gt;
-&lt;strong&gt; 1.1.17 &lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="e122-homework-1"&gt;E122 Homework 1&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; 1. Read 1.1, pp. 38-42 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 1.1.7 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 1.1.16 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 1.1.17 &lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id="homework-2"&gt;Homework 2&lt;/h3&gt;
+&lt;h3 id="e122-homework-2"&gt;E122 Homework 2&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt;Read 2.1, 2.2&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt; 2.1.5 &lt;/strong&gt;
-&lt;strong&gt; 2.1.7 &lt;/strong&gt;
-&lt;strong&gt; 2.2.1 &lt;/strong&gt;
-&lt;strong&gt; 2.2.15 &lt;/strong&gt;
-&lt;strong&gt; 2.2.20(a) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.1.5 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.1.7 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.2.1 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.2.14 (122) Let &lt;span class="math"&gt;\(G\)&lt;/span&gt; be a cyclic group of order &lt;span class="math"&gt;\(n\)&lt;/span&gt;, and let &lt;span class="math"&gt;\(r\)&lt;/span&gt; be an integer
+dividing &lt;span class="math"&gt;\(n\)&lt;/span&gt;. Prove that &lt;span class="math"&gt;\(G\)&lt;/span&gt; contains exactly one subgroup of order &lt;span class="math"&gt;\(r\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If &lt;span class="math"&gt;\(n\)&lt;/span&gt; is prime then the only subgroups of &lt;span class="math"&gt;\(G\)&lt;/span&gt; are &lt;span class="math"&gt;\(\{e\}\)&lt;/span&gt; and &lt;span class="math"&gt;\(G\)&lt;/span&gt;. The
+integers which divide &lt;span class="math"&gt;\(n\)&lt;/span&gt; are 1 and &lt;span class="math"&gt;\(n\)&lt;/span&gt; and so it is true that for every such
+integer &lt;span class="math"&gt;\(r\)&lt;/span&gt; there is one subgroup of order &lt;span class="math"&gt;\(r\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;span class="math"&gt;\(n\)&lt;/span&gt; is not prime then &lt;span class="math"&gt;\(G\)&lt;/span&gt; has non-trivial subgroups for every integer that
+divides it.&lt;/p&gt;
+&lt;p&gt;For example, if &lt;span class="math"&gt;\(G\)&lt;/span&gt; has order 8, the claim is that &lt;span class="math"&gt;\(G\)&lt;/span&gt; has only one subgroup of
+order 2. Well, all subgroups of order 2 are isomorphic to &lt;span class="math"&gt;\(\{e, \tau\}\)&lt;/span&gt;. So the
+claim implies that groups of permutations of order 4, 6, 8 etc (i.e. &lt;span class="math"&gt;\(S_4, S_6,
+S_8\)&lt;/span&gt;) contain only one transposition.&lt;/p&gt;
+&lt;p&gt;A solution is given in the
+&lt;a href="http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/home/solns/hw2.pdf"&gt;Harvard 122 materials&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;The starting point is to note that &lt;span class="math"&gt;\(&amp;lt;g^{n/r}&amp;gt;\)&lt;/span&gt; is a subgroup of order &lt;span class="math"&gt;\(r\)&lt;/span&gt;
+(&lt;span class="math"&gt;\(n/r\)&lt;/span&gt; fits &lt;span class="math"&gt;\(r\)&lt;/span&gt; times into each chunk of &lt;span class="math"&gt;\(n\)&lt;/span&gt; items). So in the example with &lt;span class="math"&gt;\(G\)&lt;/span&gt;
+of order 8, &lt;span class="math"&gt;\(&amp;lt;g^{4}&amp;gt;\)&lt;/span&gt; has order 2. The question is whether there is any other
+subgroup of order 2. Intuitively it seems obvious that the answer is no, since
+only 4 divides up chunks of 8 in that way.&lt;/p&gt;
+&lt;p&gt;Formally, the proof proceeds by supposing that &lt;span class="math"&gt;\(H' = &amp;lt;g^m&amp;gt;\)&lt;/span&gt; also has order &lt;span class="math"&gt;\(r\)&lt;/span&gt;
+(using a lemma that every subgroup of a cyclic group is cyclic). It then shows
+that &lt;span class="math"&gt;\(m\)&lt;/span&gt; must divide &lt;span class="math"&gt;\(n\)&lt;/span&gt; (otherwise leads to a contradiction). Therefore the
+order of &lt;span class="math"&gt;\(H'\)&lt;/span&gt; is &lt;span class="math"&gt;\(n/m\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(m = n/r\)&lt;/span&gt; which shows that &lt;span class="math"&gt;\(H'\)&lt;/span&gt; is &lt;span class="math"&gt;\(H\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.2.15 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.2.20(a) &lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id="homework-3"&gt;Homework 3&lt;/h3&gt;
+&lt;h3 id="e122-homework-3"&gt;E122 Homework 3&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt; 2.3.1 &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.3.11 &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.3.12 &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.4.3 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.5 (122) &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.4.6 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.8 (122) &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2.4.11 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.16 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.4.23 (122) &lt;/strong&gt;&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id="homework-4"&gt;Homework 4&lt;/h3&gt;
+&lt;h3 id="e122-homework-4"&gt;E122 Homework 4&lt;/h3&gt;
 &lt;p&gt;&lt;strong&gt; 1. Read Artin 1.4.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt; 2. Let &lt;span class="math"&gt;\(V\)&lt;/span&gt; denote the Klein 4-group. Show that Aut(&lt;span class="math"&gt;\(V\)&lt;/span&gt;) is isomorphic to &lt;span class="math"&gt;\(S_3\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Every automorphism sends the identity to itself. This is because an
@@ -73,7 +104,7 @@ determinants:&lt;/p&gt;
 = BAB^\1\)&lt;/span&gt; for all &lt;span class="math"&gt;\(A\)&lt;/span&gt;. But this implies &lt;span class="math"&gt;\((\det A)^\1 = \det A\)&lt;/span&gt; which is true
 only for &lt;span class="math"&gt;\(\det A = \pm 1\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(f\)&lt;/span&gt; is not an inner automorphism.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;4. 1.4.5 Prove that the transpose of a permutation matrix P is its inverse.&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id="homework-5"&gt;Homework 5&lt;/h3&gt;
+&lt;h3 id="e122-homework-5"&gt;E122 Homework 5&lt;/h3&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt;2.5.1 Prove that the nonempty fibres of a map form a partition of the domain.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;We need to show&lt;/p&gt;
@@ -147,15 +178,161 @@ of order 3, and the non-identity elements of &lt;span class="math"&gt;\(K\)&lt;/
 order of an element in a group must divide the order of the group). Therefore,
 while &lt;span class="math"&gt;\(e\)&lt;/span&gt; is in &lt;span class="math"&gt;\(H \cap K\)&lt;/span&gt;, no other element is.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;h3 id="homework-6"&gt;Homework 6&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt; 2.6.10 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.6.11 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.8.2 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.8.10 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id="e122-homework-6"&gt;E122 Homework 6&lt;/h3&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;2.9.2&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.9.2 2. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (a) Prove that the square &lt;span class="math"&gt;\(a^2\)&lt;/span&gt; of an integer &lt;span class="math"&gt;\(a\)&lt;/span&gt; is congruent to 0 or 1 modulo 4. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Suppose &lt;span class="math"&gt;\(a\)&lt;/span&gt; is even, so &lt;span class="math"&gt;\(a = 2n\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n \in \Z\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(a^2 = 4n^2 \equiv
+0\)&lt;/span&gt; (mod 4). Alternatively, suppose &lt;span class="math"&gt;\(a\)&lt;/span&gt; is odd, i.e. &lt;span class="math"&gt;\(a = 2n + 1\)&lt;/span&gt; for some &lt;span class="math"&gt;\(n
+\in \Z\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(a^2 = 4n^2 + 4n +1 \equiv 1\)&lt;/span&gt; (mod 4).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (b) What are the possible values of &lt;span class="math"&gt;\(a^2\)&lt;/span&gt; modulo 8? &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;If &lt;span class="math"&gt;\(a\)&lt;/span&gt; is even, then &lt;span class="math"&gt;\(a^2 = 4n^2\)&lt;/span&gt;. If &lt;span class="math"&gt;\(n^2\)&lt;/span&gt; is odd then &lt;span class="math"&gt;\(a^2 \equiv 4\)&lt;/span&gt; (mod 8)
+and if even then &lt;span class="math"&gt;\(a^2 \equiv 0\)&lt;/span&gt; (mod 8). If &lt;span class="math"&gt;\(a\)&lt;/span&gt; is odd, then &lt;span class="math"&gt;\(a^2 = 4n(n+1) + 1
+\equiv 1\)&lt;/span&gt; (mod 8). So the possible values are 0, 1, 4.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;2.9.4&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.9.4 Prove that every integer a is congruent to the sum of its decimal
+digits modulo 9. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(a = d_0 + d_1 10 + d_2 10^2 + \ldots\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L47"&gt;&lt;em&gt;Good solution&lt;/em&gt;&lt;/a&gt;:
+Note that &lt;span class="math"&gt;\(10 \equiv 1\)&lt;/span&gt; (mod 9). So &lt;span class="math"&gt;\(a \equiv d_0 + d_1 + d_2 + \ldots\)&lt;/span&gt; (mod 9).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;My solution&lt;/em&gt;: we require that the difference is a multiple of 9. The difference
+is &lt;span class="math"&gt;\(\sum_{i=0}^\infty d_i 10^i - \sum_{i=0}^\infty d_i = \sum_{i=0}^\infty
+d_i(10^i - 1)\)&lt;/span&gt;...which is a multiple of 9.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;2.9.5&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.9.5 Solve the congruence &lt;span class="math"&gt;\(2x \equiv 5\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (a) modulo 9 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L52"&gt;&lt;em&gt;Good solution&lt;/em&gt;&lt;/a&gt;:
+&lt;span class="math"&gt;\(x = 2^\1 5 \equiv 5 \cdot 5 \equiv 7\)&lt;/span&gt; (mod 9)&lt;/p&gt;
+&lt;p&gt;The possible values of &lt;span class="math"&gt;\(2x\)&lt;/span&gt; (mod 9) are 0, 2, 4, 6, 8, 1, 3, 5, 7, 9. So 2 (mod
+9) does have a multiplicative inverse (5).&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;My solution&lt;/em&gt;: &lt;span class="math"&gt;\(14 = 2 \cdot 7 \equiv 5\)&lt;/span&gt; (mod 9). So the solution is &lt;span class="math"&gt;\(x \equiv 7\)&lt;/span&gt; (mod 9).&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (b) modulo 6 &lt;/strong&gt;
+&lt;a href="https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L54"&gt;&lt;em&gt;Good solution&lt;/em&gt;&lt;/a&gt;
+The possible values of &lt;span class="math"&gt;\(2x\)&lt;/span&gt; (mod 6) are 0, 2, 4. Therefore &lt;span class="math"&gt;\(2x \equiv 5\)&lt;/span&gt; has no
+solution.&lt;/p&gt;
+&lt;p&gt;I.e. 2 (mod 6) has no multiplicative inverse?&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;My solution&lt;/em&gt;: &lt;span class="math"&gt;\(\bar 5\)&lt;/span&gt; (mod 6) &lt;span class="math"&gt;\(= 5 + 6\Z = 1 + 2\cdot2 + 2\cdot3\Z = 1 + 2(2 + 3\Z)\)&lt;/span&gt; is an
+equivalence class of odd numbers. Therefore &lt;span class="math"&gt;\(2x \equiv 5\)&lt;/span&gt; (mod 6) has no
+solutions.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt;2.9.8&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;2.9.8 Use Proposition (2.6) to prove the Chinese Remainder Theorem: Let &lt;span class="math"&gt;\(m\)&lt;/span&gt;,
+&lt;span class="math"&gt;\(n\)&lt;/span&gt;, &lt;span class="math"&gt;\(a\)&lt;/span&gt;, &lt;span class="math"&gt;\(b\)&lt;/span&gt; be integers, and assume that the greatest common divisor of &lt;span class="math"&gt;\(m\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(n\)&lt;/span&gt; is 1. Then there is an integer &lt;span class="math"&gt;\(x\)&lt;/span&gt; such that &lt;span class="math"&gt;\(x \equiv a\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(m\)&lt;/span&gt;)
+and &lt;span class="math"&gt;\(x \equiv b\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(n)\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Proposition 2.6 is the theorem describing the fact that, for two integers &lt;span class="math"&gt;\(i\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(j\)&lt;/span&gt;, &lt;span class="math"&gt;\(\gcd(i, j)\)&lt;/span&gt; generates the subgroup &lt;span class="math"&gt;\(i\Z + j\Z\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Here's the proof from &lt;a href="https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L66"&gt;A Mouri's solutions&lt;/a&gt;:&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;From Proposition 2.6, &lt;span class="math"&gt;\(1 = an + bm\)&lt;/span&gt;. Then&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(1 \equiv an + bm\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(m\)&lt;/span&gt;) &lt;span class="math"&gt;\(\rightarrow 1 \equiv an\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(m\)&lt;/span&gt;).&lt;/p&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(\gcd(n, m) = 1\)&lt;/span&gt;, then &lt;span class="math"&gt;\(n^{-1} \equiv a \mod m\)&lt;/span&gt;. Similarly, &lt;span class="math"&gt;\(m^{-1}
+\equiv b \mod n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;My attempt:&lt;/p&gt;
+&lt;p&gt;We need to show that for any values &lt;span class="math"&gt;\(a,b\)&lt;/span&gt;, we can always find an integer &lt;span class="math"&gt;\(x\)&lt;/span&gt;
+which exceeds the previous multiple of &lt;span class="math"&gt;\(m\)&lt;/span&gt; by &lt;span class="math"&gt;\(a\)&lt;/span&gt; and exceeds the previous
+multiple of &lt;span class="math"&gt;\(n\)&lt;/span&gt; by &lt;span class="math"&gt;\(b\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;So we want to show that the intersection of &lt;span class="math"&gt;\(a + m\Z\)&lt;/span&gt; and &lt;span class="math"&gt;\(b + n\Z\)&lt;/span&gt; is
+non-empty. I.e. we need to show that we can always find integers &lt;span class="math"&gt;\(r, s\)&lt;/span&gt;
+satisfying &lt;span class="math"&gt;\(a + rm = b +sn\)&lt;/span&gt;. That's equivalent to &lt;span class="math"&gt;\(rm - sn = b - a\)&lt;/span&gt;. We know
+that &lt;span class="math"&gt;\(m\Z + n\Z = \gcd(m, n)\Z\)&lt;/span&gt;, and thus since &lt;span class="math"&gt;\(\gcd(m, n) = 1\)&lt;/span&gt; we know that
+&lt;span class="math"&gt;\(m\Z + n\Z\)&lt;/span&gt; is all of &lt;span class="math"&gt;\(\Z\)&lt;/span&gt;. Therefore the integer &lt;span class="math"&gt;\(b - a\)&lt;/span&gt; must be reachable by
+taking some number &lt;span class="math"&gt;\(b\)&lt;/span&gt; of steps of length &lt;span class="math"&gt;\(m\)&lt;/span&gt; and some number &lt;span class="math"&gt;\(-a\)&lt;/span&gt; of steps of
+length &lt;span class="math"&gt;\(n\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="e122-homework-7"&gt;E122 Homework 7&lt;/h3&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.1 (E122 &amp;amp; 122) Let &lt;span class="math"&gt;\(G\)&lt;/span&gt; be the group of invertible real upper triangular
+2 x 2 matrices. Determine whether or not the following conditions describe
+normal subgroups &lt;span class="math"&gt;\(H\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt;. If they do, use the First Isomorphism Theorem to
+identify the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(G = \left\{ \mat{a}{b}
+                 {0}{d} \right\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (a) &lt;span class="math"&gt;\(a_{11} = 1\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{1}{b}
+                 {0}{d} \right\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is closed, contains the identity and contains inverses, so it is a
+subgroup. And closed under conjugation, so normal.&lt;/p&gt;
+&lt;p&gt;Geometrically, the matrix represents a stretch-in-the-y-direction and
+shear-in-the-x-direction transformation. The normality is because the matrix
+that performs the transformation in the changed basis performs a transformation
+in the original basis which is of the same form.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp;\mat{e}{f}
+     {0}{h} \mat{1}{b}
+                {0}{d} \mat{h}{-f}
+                           {0}{e} \frac{1}{eh} \\
+= &amp;amp;\mat{e}{f}
+       {0}{h} \mat{h}{-f + be}
+                  {0}{de     } \frac{1}{eh} \\
+= &amp;amp;\mat{eh}{e(-f + be) + fde}
+       {0}{hde} \frac{1}{eh}
+\end{align*}&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; (b) &lt;span class="math"&gt;\(a_{12} = 0\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{0}
+                 {0}{d} \right\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;This is closed, contains identity and inverses, hence is a subgroup. However
+again, it is not closed under conjugation, so not normal.&lt;/p&gt;
+&lt;p&gt;Geometrically, the matrix represents a stretch in orthogonal x- and
+y-directions. The non-normality is because the matrix that performs the
+transformation in the changed basis does not stretch in the directions of the
+basis vectors in the original basis.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp;\mat{e}{f}
+     {0}{h} \mat{a}{0}
+                {0}{d} \mat{h}{-f}
+                           {0}{e } \frac{1}{eh} \\
+= &amp;amp;\mat{e}{f}
+       {0}{h} \mat{ah}{-af}
+                  {0 }{de } \frac{1}{eh} \\
+= &amp;amp;\mat{eah}{-eaf + fde}
+       {0  }{hde       } \frac{1}{eh}
+\end{align*}&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; (c) &lt;span class="math"&gt;\(a_{11} = a_{22}\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{b}
+                 {0}{a} \right\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Closed and contains identity and inverses, so a subgroup, but again not closed under conjugation.&lt;/p&gt;
+&lt;p&gt;Geometrically, the matrix represents a stretch by the same amount in orthogonal
+x- and y-directions, plus a shear. The non-normality is because the matrix that
+performs the transformation in the changed basis does not stretch equally in
+the directions of the basis vectors in the original basis.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp;\mat{e}{f}
+     {0}{h} \mat{a}{b}
+                {0}{d} \mat{h}{-f}
+                           {0}{e } \frac{1}{eh} \\
+= &amp;amp;\mat{e}{f}
+       {0}{h} \mat{ah}{-af + be}
+                  {0 }{de      } \frac{1}{eh} \\
+= &amp;amp;\mat{eah}{e(-af + be) + fde}
+       {0  }{hde              } \frac{1}{eh}
+\end{align*}&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; (d) &lt;span class="math"&gt;\(a_{11} = a_{22} = 1\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{1}{b}
+                 {0}{1} \right\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;Closed, contains identity and inverses. It performs a shear, with no
+stretching. Closed under conjugation and therefore normal.&lt;/p&gt;
+&lt;p&gt;Geometrically, the matrix represents a shear, with no stretching. The normality
+is because the matrix that performs that transformation in the changed basis
+also performs a shear without stretching in the original basis.&lt;/p&gt;
+&lt;div class="math"&gt;\begin{align*}
+&amp;amp;\mat{e}{f}
+     {0}{h} \mat{1}{b}
+                {0}{1} \mat{h}{-f}
+                           {0}{e} \frac{1}{eh} \\
+= &amp;amp;\mat{e}{f}
+       {0}{h} \mat{h}{-f + be}
+                  {0}{e      } \frac{1}{eh} \\
+= &amp;amp;\mat{eh}{e(-f + be) + fe}
+       {0  }{eh             } \frac{1}{eh}
+\end{align*}&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.3 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.5 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.6 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.10 (122) &lt;/strong&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
