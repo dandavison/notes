@@ -3,6 +3,7 @@ Slug: harvard-e222
 Date: 2016-12-08
 
 $$
+\newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\\ \end{bmatrix}}
@@ -17,8 +18,8 @@ $$
 
 Exercises from Artin *Algebra* 1st edition.
 
-E122: Harvard E122 http://wayback.archive-it.org/3671/20150528171650/https://www.extension.harvard.edu/open-learning-initiative/abstract-algebra
-122: Harvard 122 http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/hw.html
+- [Harvard E122](http://wayback.archive-it.org/3671/20150528171650/https://www.extension.harvard.edu/open-learning-initiative/abstract-algebra)
+- [Harvard 122](http://www.math.harvard.edu/~ctm/home/text/class/harvard/122/02/html/hw.html)
 
 ----------------------------------------------------------------------------
 
@@ -276,17 +277,99 @@ while $e$ is in $H \cap K$, no other element is.
 ### E122 Homework 6
 
 ----------------------------------------------------------------------------
-**2.9.2**
+** 2.9.2 2. **
+
+** (a) Prove that the square $a^2$ of an integer $a$ is congruent to 0 or 1 modulo 4. **
+
+Suppose $a$ is even, so $a = 2n$ for some $n \in \Z$. Then $a^2 = 4n^2 \equiv
+0$ (mod 4). Alternatively, suppose $a$ is odd, i.e. $a = 2n + 1$ for some $n
+\in \Z$. Then $a^2 = 4n^2 + 4n +1 \equiv 1$ (mod 4).
+
+** (b) What are the possible values of $a^2$ modulo 8? **
+
+If $a$ is even, then $a^2 = 4n^2$. If $n^2$ is odd then $a^2 \equiv 4$ (mod 8)
+and if even then $a^2 \equiv 0$ (mod 8). If $a$ is odd, then $a^2 = 4n(n+1) + 1
+\equiv 1$ (mod 8). So the possible values are 0, 1, 4.
+
 
 ----------------------------------------------------------------------------
-**2.9.4**
+
+** 2.9.4 Prove that every integer a is congruent to the sum of its decimal
+digits modulo 9. **
+
+Let $a = d_0 + d_1 10 + d_2 10^2 + \ldots$.
+
+[*Good solution*](https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L47):
+Note that $10 \equiv 1$ (mod 9). So $a \equiv d_0 + d_1 + d_2 + \ldots$ (mod 9).
+
+*My solution*: we require that the difference is a multiple of 9. The difference
+is $\sum_{i=0}^\infty d_i 10^i - \sum_{i=0}^\infty d_i = \sum_{i=0}^\infty
+d_i(10^i - 1)$...which is a multiple of 9.
+
 
 ----------------------------------------------------------------------------
-**2.9.5**
+
+** 2.9.5 Solve the congruence $2x \equiv 5$ **
+
+** (a) modulo 9 **
+
+[*Good solution*](https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L52):
+$x = 2^\1 5 \equiv 5 \cdot 5 \equiv 7$ (mod 9)
+
+The possible values of $2x$ (mod 9) are 0, 2, 4, 6, 8, 1, 3, 5, 7, 9. So 2 (mod
+9) does have a multiplicative inverse (5).
+
+
+*My solution*: $14 = 2 \cdot 7 \equiv 5$ (mod 9). So the solution is $x \equiv 7$ (mod 9).
+
+** (b) modulo 6 **
+[*Good solution*](https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L54)
+The possible values of $2x$ (mod 6) are 0, 2, 4. Therefore $2x \equiv 5$ has no
+solution.
+
+I.e. 2 (mod 6) has no multiplicative inverse?
+
+*My solution*: $\bar 5$ (mod 6) $= 5 + 6\Z = 1 + 2\cdot2 + 2\cdot3\Z = 1 + 2(2 + 3\Z)$ is an
+equivalence class of odd numbers. Therefore $2x \equiv 5$ (mod 6) has no
+solutions.
+
+
 
 ----------------------------------------------------------------------------
-**2.9.8**
 
+**2.9.8 Use Proposition (2.6) to prove the Chinese Remainder Theorem: Let $m$,
+$n$, $a$, $b$ be integers, and assume that the greatest common divisor of $m$
+and $n$ is 1. Then there is an integer $x$ such that $x \equiv a$ (mod $m$)
+and $x \equiv b$ (mod $n)$.**
+
+Proposition 2.6 is the theorem describing the fact that, for two integers $i$
+and $j$, $\gcd(i, j)$ generates the subgroup $i\Z + j\Z$.
+
+Here's the proof from [A Mouri's solutions](https://github.com/AMouri/artin-algebra/blob/3083860baf553b472495fd01ef62489db9a261ee/Chapter%202%20-%20Groups/Section%209%20-%20Modular%20Arithmetic/solutions.tex#L66):
+
+----------------------------------------------------------------------------
+
+From Proposition 2.6, $1 = an + bm$. Then
+
+$1 \equiv an + bm$ (mod $m$) $\rightarrow 1 \equiv an$ (mod $m$).
+
+Since $\gcd(n, m) = 1$, then $n^{-1} \equiv a \mod m$. Similarly, $m^{-1}
+\equiv b \mod n$.
+
+----------------------------------------------------------------------------
+My attempt:
+
+We need to show that for any values $a,b$, we can always find an integer $x$
+which exceeds the previous multiple of $m$ by $a$ and exceeds the previous
+multiple of $n$ by $b$.
+
+So we want to show that the intersection of $a + m\Z$ and $b + n\Z$ is
+non-empty. I.e. we need to show that we can always find integers $r, s$
+satisfying $a + rm = b +sn$. That's equivalent to $rm - sn = b - a$. We know
+that $m\Z + n\Z = \gcd(m, n)\Z$, and thus since $\gcd(m, n) = 1$ we know that
+$m\Z + n\Z$ is all of $\Z$. Therefore the integer $b - a$ must be reachable by
+taking some number $b$ of steps of length $m$ and some number $-a$ of steps of
+length $n$.
 
 ** 2.10.1 (122) **
 
