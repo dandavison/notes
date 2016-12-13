@@ -299,7 +299,8 @@ subgroup. And closed under conjugation, so normal.</p>
 shear-in-the-x-direction transformation. The normality is because the matrix
 that performs the transformation in the changed basis performs a transformation
 in the original basis which is of the same form.</p>
-<div class="math">\begin{align*}
+<div class="math">$$
+\begin{align*}
 &amp;\mat{e}{f}
      {0}{h} \mat{1}{b}
                 {0}{d} \mat{h}{-f}
@@ -309,7 +310,38 @@ in the original basis which is of the same form.</p>
                   {0}{de     } \frac{1}{eh} \\
 = &amp;\mat{eh}{e(-f + be) + fde}
        {0}{hde} \frac{1}{eh}
-\end{align*}</div>
+\end{align*}
+$$</div>
+<p>So we have a subgroup <span class="math">\(H\)</span> of the group <span class="math">\(G\)</span> of real upper-triangular 2x2
+matrices. The theory of quotient groups involves identifying establishing a
+group structure on a set of cosets of a normal subgroup: this set of cosets is
+then a quotient group. We've determined that the normal subgroup is <span class="math">\(H\)</span>, a
+particular subset of real upper-triangular matrices. Each coset is therefore,
+for some fixed <span class="math">\(g \in G\)</span>, the set of matrices that can be obtained by
+multiplying <span class="math">\(g\)</span> by some <span class="math">\(h \in H\)</span>. So there are infinitely many cosets and each
+has infinitely many elements. Each coset contains matrices of the form</p>
+<div class="math">$$
+\begin{align*}
+\mat{1}{b}
+    {0}{d} \mat{e}{f}
+               {0}{h} = \mat{e}{b + df}
+                            {0}{dh    }.
+\end{align*}
+$$</div>
+<p>Since <span class="math">\(b\)</span> and <span class="math">\(d\)</span> can be any real numbers, we could write this as</p>
+<div class="math">$$
+\begin{align*}
+\mat{1}{*}
+    {0}{*} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{*},
+\end{align*}
+$$</div>
+<p>thus the cosets are distinguished by the real number in their top-left
+entry. So the quotient group <span class="math">\(G/H\)</span> is <span class="math">\(\left\{\smat{e}{*} {0}{*}: e \in
+\R\right\}\)</span>. Viewed as transformations of the plane, its elements are
+distinguished by the magnitude of their stretch in the x-direction.</p>
+<hr />
 <p><strong> (b) <span class="math">\(a_{12} = 0\)</span> </strong></p>
 <p><span class="math">\(H = \left\{ \mat{a}{0}
                  {0}{d} \right\}\)</span></p>
@@ -319,7 +351,8 @@ again, it is not closed under conjugation, so not normal.</p>
 y-directions. The non-normality is because the matrix that performs the
 transformation in the changed basis does not stretch in the directions of the
 basis vectors in the original basis.</p>
-<div class="math">\begin{align*}
+<div class="math">$$
+\begin{align*}
 &amp;\mat{e}{f}
      {0}{h} \mat{a}{0}
                 {0}{d} \mat{h}{-f}
@@ -329,7 +362,9 @@ basis vectors in the original basis.</p>
                   {0 }{de } \frac{1}{eh} \\
 = &amp;\mat{eah}{-eaf + fde}
        {0  }{hde       } \frac{1}{eh}
-\end{align*}</div>
+\end{align*}
+$$</div>
+<hr />
 <p><strong> (c) <span class="math">\(a_{11} = a_{22}\)</span> </strong></p>
 <p><span class="math">\(H = \left\{ \mat{a}{b}
                  {0}{a} \right\}\)</span></p>
@@ -338,7 +373,8 @@ basis vectors in the original basis.</p>
 x- and y-directions, plus a shear. The non-normality is because the matrix that
 performs the transformation in the changed basis does not stretch equally in
 the directions of the basis vectors in the original basis.</p>
-<div class="math">\begin{align*}
+<div class="math">$$
+\begin{align*}
 &amp;\mat{e}{f}
      {0}{h} \mat{a}{b}
                 {0}{d} \mat{h}{-f}
@@ -348,7 +384,9 @@ the directions of the basis vectors in the original basis.</p>
                   {0 }{de      } \frac{1}{eh} \\
 = &amp;\mat{eah}{e(-af + be) + fde}
        {0  }{hde              } \frac{1}{eh}
-\end{align*}</div>
+\end{align*}
+$$</div>
+<hr />
 <p><strong> (d) <span class="math">\(a_{11} = a_{22} = 1\)</span> </strong></p>
 <p><span class="math">\(H = \left\{ \mat{1}{b}
                  {0}{1} \right\}\)</span></p>
@@ -357,7 +395,8 @@ stretching. Closed under conjugation and therefore normal.</p>
 <p>Geometrically, the matrix represents a shear, with no stretching. The normality
 is because the matrix that performs that transformation in the changed basis
 also performs a shear without stretching in the original basis.</p>
-<div class="math">\begin{align*}
+<div class="math">$$
+\begin{align*}
 &amp;\mat{e}{f}
      {0}{h} \mat{1}{b}
                 {0}{1} \mat{h}{-f}
@@ -367,10 +406,15 @@ also performs a shear without stretching in the original basis.</p>
                   {0}{e      } \frac{1}{eh} \\
 = &amp;\mat{eh}{e(-f + be) + fe}
        {0  }{eh             } \frac{1}{eh}
-\end{align*}</div>
+\end{align*}
+$$</div>
+<hr />
 <p><strong> 2.10.3 </strong></p>
+<hr />
 <p><strong> 2.10.5 </strong></p>
+<hr />
 <p><strong> 2.10.6 </strong></p>
+<hr />
 <p><strong> 2.10.10 (122) </strong></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",

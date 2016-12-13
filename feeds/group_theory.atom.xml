@@ -260,7 +260,8 @@ subgroup. And closed under conjugation, so normal.&lt;/p&gt;
 shear-in-the-x-direction transformation. The normality is because the matrix
 that performs the transformation in the changed basis performs a transformation
 in the original basis which is of the same form.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$
+\begin{align*}
 &amp;amp;\mat{e}{f}
      {0}{h} \mat{1}{b}
                 {0}{d} \mat{h}{-f}
@@ -270,7 +271,38 @@ in the original basis which is of the same form.&lt;/p&gt;
                   {0}{de     } \frac{1}{eh} \\
 = &amp;amp;\mat{eh}{e(-f + be) + fde}
        {0}{hde} \frac{1}{eh}
-\end{align*}&lt;/div&gt;
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;So we have a subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt; of the group &lt;span class="math"&gt;\(G\)&lt;/span&gt; of real upper-triangular 2x2
+matrices. The theory of quotient groups involves identifying establishing a
+group structure on a set of cosets of a normal subgroup: this set of cosets is
+then a quotient group. We've determined that the normal subgroup is &lt;span class="math"&gt;\(H\)&lt;/span&gt;, a
+particular subset of real upper-triangular matrices. Each coset is therefore,
+for some fixed &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt;, the set of matrices that can be obtained by
+multiplying &lt;span class="math"&gt;\(g\)&lt;/span&gt; by some &lt;span class="math"&gt;\(h \in H\)&lt;/span&gt;. So there are infinitely many cosets and each
+has infinitely many elements. Each coset contains matrices of the form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+\mat{1}{b}
+    {0}{d} \mat{e}{f}
+               {0}{h} = \mat{e}{b + df}
+                            {0}{dh    }.
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;Since &lt;span class="math"&gt;\(b\)&lt;/span&gt; and &lt;span class="math"&gt;\(d\)&lt;/span&gt; can be any real numbers, we could write this as&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+\mat{1}{*}
+    {0}{*} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{*},
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;thus the cosets are distinguished by the real number in their top-left
+entry. So the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is &lt;span class="math"&gt;\(\left\{\smat{e}{*} {0}{*}: e \in
+\R\right\}\)&lt;/span&gt;. Viewed as transformations of the plane, its elements are
+distinguished by the magnitude of their stretch in the x-direction.&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; (b) &lt;span class="math"&gt;\(a_{12} = 0\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{0}
                  {0}{d} \right\}\)&lt;/span&gt;&lt;/p&gt;
@@ -280,7 +312,8 @@ again, it is not closed under conjugation, so not normal.&lt;/p&gt;
 y-directions. The non-normality is because the matrix that performs the
 transformation in the changed basis does not stretch in the directions of the
 basis vectors in the original basis.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$
+\begin{align*}
 &amp;amp;\mat{e}{f}
      {0}{h} \mat{a}{0}
                 {0}{d} \mat{h}{-f}
@@ -290,7 +323,9 @@ basis vectors in the original basis.&lt;/p&gt;
                   {0 }{de } \frac{1}{eh} \\
 = &amp;amp;\mat{eah}{-eaf + fde}
        {0  }{hde       } \frac{1}{eh}
-\end{align*}&lt;/div&gt;
+\end{align*}
+$$&lt;/div&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; (c) &lt;span class="math"&gt;\(a_{11} = a_{22}\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{b}
                  {0}{a} \right\}\)&lt;/span&gt;&lt;/p&gt;
@@ -299,7 +334,8 @@ basis vectors in the original basis.&lt;/p&gt;
 x- and y-directions, plus a shear. The non-normality is because the matrix that
 performs the transformation in the changed basis does not stretch equally in
 the directions of the basis vectors in the original basis.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$
+\begin{align*}
 &amp;amp;\mat{e}{f}
      {0}{h} \mat{a}{b}
                 {0}{d} \mat{h}{-f}
@@ -309,7 +345,9 @@ the directions of the basis vectors in the original basis.&lt;/p&gt;
                   {0 }{de      } \frac{1}{eh} \\
 = &amp;amp;\mat{eah}{e(-af + be) + fde}
        {0  }{hde              } \frac{1}{eh}
-\end{align*}&lt;/div&gt;
+\end{align*}
+$$&lt;/div&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; (d) &lt;span class="math"&gt;\(a_{11} = a_{22} = 1\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{1}{b}
                  {0}{1} \right\}\)&lt;/span&gt;&lt;/p&gt;
@@ -318,7 +356,8 @@ stretching. Closed under conjugation and therefore normal.&lt;/p&gt;
 &lt;p&gt;Geometrically, the matrix represents a shear, with no stretching. The normality
 is because the matrix that performs that transformation in the changed basis
 also performs a shear without stretching in the original basis.&lt;/p&gt;
-&lt;div class="math"&gt;\begin{align*}
+&lt;div class="math"&gt;$$
+\begin{align*}
 &amp;amp;\mat{e}{f}
      {0}{h} \mat{1}{b}
                 {0}{1} \mat{h}{-f}
@@ -328,10 +367,15 @@ also performs a shear without stretching in the original basis.&lt;/p&gt;
                   {0}{e      } \frac{1}{eh} \\
 = &amp;amp;\mat{eh}{e(-f + be) + fe}
        {0  }{eh             } \frac{1}{eh}
-\end{align*}&lt;/div&gt;
+\end{align*}
+$$&lt;/div&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; 2.10.3 &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; 2.10.5 &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; 2.10.6 &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; 2.10.10 (122) &lt;/strong&gt;&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
