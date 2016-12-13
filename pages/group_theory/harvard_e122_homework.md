@@ -397,6 +397,7 @@ shear-in-the-x-direction transformation. The normality is because the matrix
 that performs the transformation in the changed basis performs a transformation
 in the original basis which is of the same form.
 
+$$
 \begin{align*}
 &\mat{e}{f}
      {0}{h} \mat{1}{b}
@@ -408,7 +409,43 @@ in the original basis which is of the same form.
 = &\mat{eh}{e(-f + be) + fde}
        {0}{hde} \frac{1}{eh}
 \end{align*}
+$$
 
+So we have a subgroup $H$ of the group $G$ of real upper-triangular 2x2
+matrices. The theory of quotient groups involves identifying establishing a
+group structure on a set of cosets of a normal subgroup: this set of cosets is
+then a quotient group. We've determined that the normal subgroup is $H$, a
+particular subset of real upper-triangular matrices. Each coset is therefore,
+for some fixed $g \in G$, the set of matrices that can be obtained by
+multiplying $g$ by some $h \in H$. So there are infinitely many cosets and each
+has infinitely many elements. Each coset contains matrices of the form
+
+$$
+\begin{align*}
+\mat{1}{b}
+    {0}{d} \mat{e}{f}
+               {0}{h} = \mat{e}{b + df}
+                            {0}{dh    }.
+\end{align*}
+$$
+
+Since $b$ and $d$ can be any real numbers, we could write this as
+
+$$
+\begin{align*}
+\mat{1}{*}
+    {0}{*} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{*},
+\end{align*}
+$$
+
+thus the cosets are distinguished by the real number in their top-left
+entry. So the quotient group $G/H$ is $\left\{\smat{e}{*} {0}{*}: e \in
+\R\right\}$. Viewed as transformations of the plane, its elements are
+distinguished by the magnitude of their stretch in the x-direction.
+
+----------------------------------------------------------------------------
 ** (b) $a_{12} = 0$ **
 
 $H = \left\{ \mat{a}{0}
@@ -422,6 +459,7 @@ y-directions. The non-normality is because the matrix that performs the
 transformation in the changed basis does not stretch in the directions of the
 basis vectors in the original basis.
 
+$$
 \begin{align*}
 &\mat{e}{f}
      {0}{h} \mat{a}{0}
@@ -433,7 +471,9 @@ basis vectors in the original basis.
 = &\mat{eah}{-eaf + fde}
        {0  }{hde       } \frac{1}{eh}
 \end{align*}
+$$
 
+----------------------------------------------------------------------------
 ** (c) $a_{11} = a_{22}$ **
 
 $H = \left\{ \mat{a}{b}
@@ -446,6 +486,7 @@ x- and y-directions, plus a shear. The non-normality is because the matrix that
 performs the transformation in the changed basis does not stretch equally in
 the directions of the basis vectors in the original basis.
 
+$$
 \begin{align*}
 &\mat{e}{f}
      {0}{h} \mat{a}{b}
@@ -457,8 +498,10 @@ the directions of the basis vectors in the original basis.
 = &\mat{eah}{e(-af + be) + fde}
        {0  }{hde              } \frac{1}{eh}
 \end{align*}
+$$
 
 
+----------------------------------------------------------------------------
 ** (d) $a_{11} = a_{22} = 1$ **
 
 $H = \left\{ \mat{1}{b}
@@ -472,6 +515,7 @@ is because the matrix that performs that transformation in the changed basis
 also performs a shear without stretching in the original basis.
 
 
+$$
 \begin{align*}
 &\mat{e}{f}
      {0}{h} \mat{1}{b}
@@ -483,12 +527,17 @@ also performs a shear without stretching in the original basis.
 = &\mat{eh}{e(-f + be) + fe}
        {0  }{eh             } \frac{1}{eh}
 \end{align*}
+$$
 
 
+----------------------------------------------------------------------------
 ** 2.10.3 **
 
+----------------------------------------------------------------------------
 ** 2.10.5 **
 
+----------------------------------------------------------------------------
 ** 2.10.6 **
 
+----------------------------------------------------------------------------
 ** 2.10.10 (122) **
