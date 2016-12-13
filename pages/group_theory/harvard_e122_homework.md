@@ -411,14 +411,23 @@ $$
 \end{align*}
 $$
 
+
+The theory of quotient groups involves identifying establishing a group
+structure on a set of cosets of a normal subgroup: this set of cosets is then a
+quotient group $G/H$. There's a homomorphism $f:G \rightarrow G/H$ defined by
+$f(g) =$ (coset containing $g$), and the multiplication law between cosets is
+
+(coset containing $g$) x (coset containing $g'$) = (coset containing $gg'$)
+
+The normal subgroup is the kernel of this homomorphism, since $f(1)$ = (coset
+containing $1$) = $1H$.
+
 So we have a subgroup $H$ of the group $G$ of real upper-triangular 2x2
-matrices. The theory of quotient groups involves identifying establishing a
-group structure on a set of cosets of a normal subgroup: this set of cosets is
-then a quotient group. We've determined that the normal subgroup is $H$, a
-particular subset of real upper-triangular matrices. Each coset is therefore,
-for some fixed $g \in G$, the set of matrices that can be obtained by
-multiplying $g$ by some $h \in H$. So there are infinitely many cosets and each
-has infinitely many elements. Each coset contains matrices of the form
+matrices.  We've determined that the normal subgroup is $H$, a particular
+subset of real upper-triangular matrices. Each coset is therefore, for some
+fixed $g \in G$, the set of matrices that can be obtained by multiplying $g$ by
+some $h \in H$. So there are infinitely many cosets and each has infinitely
+many elements. Each coset contains matrices of the form
 
 $$
 \begin{align*}
@@ -434,16 +443,18 @@ Since $b$ and $d$ can be any real numbers, we could write this as
 $$
 \begin{align*}
 \mat{1}{*}
-    {0}{*} \mat{e}{f}
-               {0}{h} = \mat{e}{*}
+    {0}{*} \mat{a}{b}
+               {0}{d} = \mat{a}{*}
                             {0}{*},
 \end{align*}
 $$
 
 thus the cosets are distinguished by the real number in their top-left
-entry. So the quotient group $G/H$ is $\left\{\smat{e}{*} {0}{*}: e \in
-\R\right\}$. Viewed as transformations of the plane, its elements are
-distinguished by the magnitude of their stretch in the x-direction.
+entry. So the quotient group $G/H$ is $\left\{\smat{a}{*} {0}{*}: a \in
+\R\right\}$; it is isomorphic to the positive real numbers (elements of $G$
+would not be invertible if $a$ were $0$). Viewed as transformations of the
+plane, the elements of $G/H$ are distinguished by the magnitude of their
+stretch in the x-direction.
 
 ----------------------------------------------------------------------------
 ** (b) $a_{12} = 0$ **
@@ -479,7 +490,8 @@ $$
 $H = \left\{ \mat{a}{b}
                  {0}{a} \right\}$
 
-Closed and contains identity and inverses, so a subgroup, but again not closed under conjugation.
+Closed and contains identity and inverses, so a subgroup, but again not closed
+under conjugation.
 
 Geometrically, the matrix represents a stretch by the same amount in orthogonal
 x- and y-directions, plus a shear. The non-normality is because the matrix that
@@ -528,6 +540,31 @@ $$
        {0  }{eh             } \frac{1}{eh}
 \end{align*}
 $$
+
+Each coset contains matrices of the form
+
+$$
+\begin{align*}
+\mat{1}{b}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{f + bh}
+                            {0}{h     }.
+\end{align*}
+$$
+
+which could be written as
+
+$$
+\begin{align*}
+\mat{1}{*}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{h}.
+\end{align*}
+$$
+
+The elements of the quotient group $G/H$ are thus distinguished by their
+diagonal entries. I.e., $G/H$ is isomorphic to $\R^2$.
 
 
 ----------------------------------------------------------------------------
