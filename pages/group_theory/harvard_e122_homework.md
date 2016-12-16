@@ -392,10 +392,15 @@ $H = \left\{ \mat{1}{b}
 This is closed, contains the identity and contains inverses, so it is a
 subgroup. And closed under conjugation, so normal.
 
-Geometrically, the matrix represents a stretch-in-the-y-direction and
-shear-in-the-x-direction transformation. The normality is because the matrix
-that performs the transformation in the changed basis performs a transformation
-in the original basis which is of the same form.
+Geometrically, the elements of the subgroup $H$ are matrices representing a
+stretch in the direction of the second basis vector ("Y axis") and shearing
+parallel to the first basis vector ("X axis). Conjugation yields matrices
+$ghg^\1$ which correspond to doing the same transformation in a different
+basis. However, this class of change-of-basis operations preserves the
+direction of the first basis vector. Therefore the transformation, in the new
+basis, also corresponds to stretching in the direction of the second basis
+vector and shearing parallel to the first basis vector, and thus the conjugated
+matrix is still in the subgroup.
 
 $$
 \begin{align*}
