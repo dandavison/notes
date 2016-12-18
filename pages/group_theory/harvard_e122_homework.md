@@ -620,7 +620,12 @@ is a coset of $N$.
 
 ----------------------------------------------------------------------------
 
-** 2.10.5 **
+** 2.10.5 Identify the quotient group $\R^\times/P$, where $P$ denotes the subgroup of
+positive real numbers. **
+
+Let $f: \R^\times \rightarrow P$ be defined by $f(x) = |x|$. $f$ is a group
+homomorphism since $|ab| = |a||b|$. The kernel is $\{-1, 1\}$ and the quotient
+group is $\{ \{-x, x\}| x \in \R^\times\}$.
 
 ----------------------------------------------------------------------------
 
