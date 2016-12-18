@@ -629,7 +629,17 @@ group is $\{ \{-x, x\}| x \in \R^\times\}$.
 
 ----------------------------------------------------------------------------
 
-** 2.10.6 **
+** 2.10.6 Let $H = \{±1, ±i\}$ be the subgroup of $G = \C^\times$ of fourth roots
+of unity. Describe the cosets of $H$ in $G$ explicitly, and prove that $G/H$ is
+isomorphic to $G$. **
+
+The cosets of $H$ in $G$ are sets of the form $zH = \{±z, ±zi\}$, where $z \in
+\C^\times$. Geometrically, they are the four points of a cross in the complex
+plane; a rotated and scaled version of the unit cross corresponding to $\{±1,
+±i\}$.
+
+If $z \neq z'$ then $zH != z'H$. So there is a bijection between $G/H$ and
+$G$. I.e. $G/H$ is isomorphic to $G$.
 
 ----------------------------------------------------------------------------
 
