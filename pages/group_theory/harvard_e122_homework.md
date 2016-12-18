@@ -643,4 +643,6 @@ $G$. I.e. $G/H$ is isomorphic to $G$.
 
 ----------------------------------------------------------------------------
 
-** 2.10.10 (122) **
+** 2.10.10 (122) Describe the quotient groups $\C^\times / P$ and $\C^\times /
+U$, where $U$ is the subgroup of complex numbers of absolute value $1$ and $P$
+denotes the positive reals. **
