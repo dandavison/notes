@@ -573,13 +573,59 @@ diagonal entries. I.e., $G/H$ is isomorphic to $\R^2$.
 
 
 ----------------------------------------------------------------------------
-** 2.10.3 **
+
+** 2.10.3 Let $P$ be a partition of a group $G$ with the property that for any
+pair of elements $A, B$ of the partition, the product set $AB$ is contained
+entirely within another element $C$ of the partition. Let $N$ be the element of
+$P$ which contains 1. Prove that $N$ is a normal subgroup of $G$ and that $P$
+is the set of its cosets. **
+
+** Prove that $N$ is a normal subgroup of $G$: **
+
+We know that $1 = 1^\1$ is in $N$. Therefore we know that the product set $NN$
+must lie entirely within $N$, since one example of a product
+(i.e. $1\cdot1^\1$) is in $N$. I.e. $N$ is closed. Does it contain inverses?
+Consider an arbitrary element $n$ of $N$. Let $n^\1$ be in some element $A \in
+P$ of the partition. Then the product set $NA$ must lie entirely within $N$,
+since $nn^\1$ does. So either $A = N$, or $N$ and $A$ are distinct elements of
+the partition but with the property that $NN = NA$. I'm going to say that $NN =
+NA$ implies $N = A$ by the definition of the problem, and thus that $N$
+contains inverses, but I may be missing something here.
+
+So, $N$ contains the identity, is closed and contains inverses. It inherits
+associativity from $G$. So $N$ is a subgroup. Is it normal? Consider $gNg^\1$
+for some fixed $g$. Since $1 \in N$, we conclude that $gN$ is a subset of the
+element $A$ of the partition that contains $g$. And since $g \in gN$,
+$(gN)g^\1$ must be a subset of $N$. Therefore $N$ is normal.
+
+** Prove that $P$ is the set of its cosets: **
+
+The set of cosets of $N$ are $\{gN: g \in G\}$ by definition.
+
+We need to show that exactly one partition satisfying the definition of $P$
+exists, and that it is the set of cosets of $N$.
+
+First, we show that the set of cosets satisfy the definition of $P$. Consider
+two cosets $gN$ and $hN$. Their product set is $(gN)(hN)$. We know that $g \in
+gN$ and $h \in hN$ so we conclude that $(gN)(hN)$ is a subset of the element of
+the partition that contains $gh$.
+
+So the set of cosets satisfy the definition of $P$, showing that at least one
+such partition exists. Now we show that any such partition must be the set of
+cosets. Consider subsets $A, B$ of $G$ that satisfy the definition of $P$. We
+need to show that $A$ and $B$ are cosets of $N$. Fix an arbitrary element $a$
+of $A$. Since $1 \in N$ and $a1 \in A$ we conclude that the product set $AN$ is
+equal to $A$ and therefore that $A$ is equal to the coset $aN$. Similarly, $B$
+is a coset of $N$.
 
 ----------------------------------------------------------------------------
+
 ** 2.10.5 **
 
 ----------------------------------------------------------------------------
+
 ** 2.10.6 **
 
 ----------------------------------------------------------------------------
+
 ** 2.10.10 (122) **
