@@ -1,5 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-09T00:00:00-08:00</updated><entry><title>Prime numbers</title><link href="http://dandavison.github.io/notes/prime-numbers.html" rel="alternate"></link><published>2016-12-09T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-09:notes/prime-numbers.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Least common multiple of two primes is their product&lt;/strong&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/all.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-18T00:00:00-08:00</updated><entry><title>Quotient Groups</title><link href="http://dandavison.github.io/notes/quotient-groups.html" rel="alternate"></link><published>2016-12-18T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-18:notes/quotient-groups.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
+\newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
+\renewcommand{\bar}{\overline}
+\newcommand{\textstack}[2]{
+  \left(\begin{array}{c}
+    \text{#1}  \\
+    \text{#2}
+  \end{array}\right)
+}
+$$&lt;/div&gt;
+&lt;h3 id="modular-arithmetic"&gt;Modular arithmetic&lt;/h3&gt;
+&lt;p&gt;The canonical example of a quotient group comes from "modular arithmetic" on
+the integers. For example, consider the integers, mod 4. This means that every
+integer is mapped to whatever its remainder is after dividing by 4. The
+integers mod 4 is a group, which contains 4 elements: &lt;span class="math"&gt;\(\{\bar 0, \bar 1, \bar
+2, \bar 3\}\)&lt;/span&gt;. So &lt;span class="math"&gt;\(5 \rightarrow \bar 1\)&lt;/span&gt;, &lt;span class="math"&gt;\(14 \rightarrow \bar 2\)&lt;/span&gt;, &lt;span class="math"&gt;\(-1
+\rightarrow \bar 3\)&lt;/span&gt;, etc.&lt;/p&gt;
+&lt;p&gt;We said that the integers mod 4 are a group, so what is the group operation?
+The answer is that we define an addition law on the elements: for example,
+&lt;span class="math"&gt;\(\bar 1 + \bar 3 = \bar{1 + 3} = \bar 4 = \bar 0\)&lt;/span&gt;. In words, to find the result
+of combining &lt;span class="math"&gt;\(\bar 1\)&lt;/span&gt; with &lt;span class="math"&gt;\(\bar 3\)&lt;/span&gt;, you first add &lt;span class="math"&gt;\(1\)&lt;/span&gt; and &lt;span class="math"&gt;\(3\)&lt;/span&gt; as usual to get
+4, then see where &lt;span class="math"&gt;\(4\)&lt;/span&gt; is mapped to, and that's the answer. This corresponds to
+the fairly familiar notion that e.g. &lt;span class="math"&gt;\(5 + 23 = 28 = 0\)&lt;/span&gt; (mod 4), but it is a bit
+subtle/slippery, and it helps to pause and consider exactly what's going on.&lt;/p&gt;
+&lt;p&gt;Let's be explicit about what &lt;span class="math"&gt;\(\bar 1\)&lt;/span&gt; actually is: it's the set of all integers
+that have &lt;span class="math"&gt;\(1\)&lt;/span&gt; as their remainder when divided by &lt;span class="math"&gt;\(4\)&lt;/span&gt;. So, &lt;span class="math"&gt;\(5 \in \bar 1\)&lt;/span&gt; for
+example. What we've just done is define an addition operation on these &lt;em&gt;sets&lt;/em&gt;
+(as opposed to addition of integers). The operation works as follows. To add
+&lt;span class="math"&gt;\(\bar 2\)&lt;/span&gt; and &lt;span class="math"&gt;\(\bar 3\)&lt;/span&gt;, you do the following:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Take any number that has remainder &lt;span class="math"&gt;\(2\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(4\)&lt;/span&gt;) and any number that has
+   remainder &lt;span class="math"&gt;\(3\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(4\)&lt;/span&gt;).&lt;/li&gt;
+&lt;li&gt;Add them together using normal integer addition and find the remainder (mod
+   &lt;span class="math"&gt;\(4\)&lt;/span&gt;) of the result.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;There are two important points here.&lt;/p&gt;
+&lt;p&gt;Firstly, we didn't need anything beyond what we had to come up with this
+operation: it uses the addition operation that's &lt;em&gt;already defined&lt;/em&gt; on the main
+group to define an operation on the subsets.&lt;/p&gt;
+&lt;p&gt;Secondly, it is only well-defined if you always get the same answer regardless
+of which integers you pick in step (1). In this case that is true.&lt;/p&gt;
+&lt;p&gt;So we have an example of a "quotient group": &lt;span class="math"&gt;\(\{\bar 0, \bar 1, \bar 2, \bar
+3\}\)&lt;/span&gt; under this addition operation. Let's recap and start putting this in group
+theoretic terminology.&lt;/p&gt;
+&lt;h3 id="a-quotient-group-is-a-group-of-cosets"&gt;A quotient group is a group of cosets&lt;/h3&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\bar 0\)&lt;/span&gt; (mod &lt;span class="math"&gt;\(4\)&lt;/span&gt;) is the following subset of the integers &lt;span class="math"&gt;\(\Z\)&lt;/span&gt; under addition:
+&lt;span class="math"&gt;\(\{\ldots, -12, -8, -4, 0, 4, 8, 12, \ldots\}\)&lt;/span&gt;. It's not only a subset, but a
+&lt;em&gt;subgroup&lt;/em&gt; (it contains the identity element &lt;span class="math"&gt;\(0\)&lt;/span&gt;, every element has an additive
+inverse, and addition stays within the subset). It is written as &lt;span class="math"&gt;\(4\Z\)&lt;/span&gt; (or in
+general, &lt;span class="math"&gt;\(n\Z\)&lt;/span&gt; for mod &lt;span class="math"&gt;\(n\)&lt;/span&gt;). However, we will often use &lt;span class="math"&gt;\(H\)&lt;/span&gt; for a subgroup, so
+let's call it &lt;span class="math"&gt;\(H\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\bar 1 = \{\ldots, -11, -7, -3, 1, 5, 9, 13, \ldots\}\)&lt;/span&gt; is not a subgroup of
+&lt;span class="math"&gt;\(\Z\)&lt;/span&gt; because it does not contain the identity element. What it is is a &lt;em&gt;coset&lt;/em&gt;
+of the subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt;: the set comprising all the results you get by adding &lt;span class="math"&gt;\(1\)&lt;/span&gt;
+to elements of &lt;span class="math"&gt;\(H\)&lt;/span&gt;. We can write this as &lt;span class="math"&gt;\(1 + H\)&lt;/span&gt;. In fact, it's usually written
+&lt;span class="math"&gt;\(1H\)&lt;/span&gt;; we just have to remember that the operation here is additive rather than
+multiplicative.&lt;/p&gt;
+&lt;p&gt;Of course, &lt;span class="math"&gt;\(\bar 2\)&lt;/span&gt; and &lt;span class="math"&gt;\(\bar 3\)&lt;/span&gt; are cosets defined in the same way. &lt;span class="math"&gt;\(\{\bar 0,
+\bar 1, \bar 2, \bar 3\}\)&lt;/span&gt; are the only distinct cosets: for example, &lt;span class="math"&gt;\(\bar 4 =
+4+H\)&lt;/span&gt; is exactly the same set of integers as &lt;span class="math"&gt;\(\bar 0\)&lt;/span&gt;. Similarly, &lt;span class="math"&gt;\(5 + H = \bar
+1\)&lt;/span&gt;, etc.&lt;/p&gt;
+&lt;p&gt;So we arrived at the integers mod &lt;span class="math"&gt;\(4\)&lt;/span&gt; quotient group as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;We started with the group of integers under addition, &lt;span class="math"&gt;\(\Z^+\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;We identified a subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;We identified the cosets of &lt;span class="math"&gt;\(H\)&lt;/span&gt;: &lt;span class="math"&gt;\(\{H, 1+H, 2+H, 3+H\}\)&lt;/span&gt;&lt;/li&gt;
+&lt;li&gt;We defined an operation on the cosets: &lt;span class="math"&gt;\((i+H) + (j+H) = (i+j)+H\)&lt;/span&gt;.&lt;/li&gt;
+&lt;li&gt;We noted that it was only well-defined because
+  &lt;div class="math"&gt;$$
+  \textstack{any number with}{remainder $i$} +
+  \textstack{any number with}{remainder $j$} =
+  \textstack{a number with the same}{remainder as $i+j$}.
+  $$&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Note that (3) and (4) can equally be written like this, which is how it's
+likely to be written write when considering subgroups and cosets more
+abstractly:&lt;/p&gt;
+&lt;p&gt;(3). We identified the cosets of &lt;span class="math"&gt;\(H\)&lt;/span&gt;: &lt;span class="math"&gt;\(\{H, 1H, 2H, 3H\}\)&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;(4). We defined an operation on the cosets: &lt;span class="math"&gt;\((iH) + (jH) = (ij)H\)&lt;/span&gt;.&lt;/p&gt;
+&lt;h3 id="notational-digression"&gt;Notational digression&lt;/h3&gt;
+&lt;p&gt;The integers mod &lt;span class="math"&gt;\(4\)&lt;/span&gt; is written &lt;span class="math"&gt;\(\Z/4\Z\)&lt;/span&gt;. It's an example of a quotient
+group. You read that as &lt;span class="math"&gt;\((\text{some group}) / (\text{some subgroup})\)&lt;/span&gt;. In this
+case the group is the integers under addition, and the subgroup is &lt;span class="math"&gt;\(4Z =
+\{\ldots, -12, -8, -4, 0, 4, 8, 12, \ldots\}\)&lt;/span&gt;&lt;sup id="sf-quotient-groups-1-back"&gt;&lt;a href="#sf-quotient-groups-1" class="simple-footnote" title="In this context, \(4\Z\) always means multiplication, even if the group operation is addition! So it's the set \(\{4z|z \in \Z\}\). It is not the same as the coset \(4 + \Z = \{4+z|z \in \Z\}\). This is a well-established notational inconsistency. "&gt;1&lt;/a&gt;&lt;/sup&gt;. In general,
+one writes &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; to refer to the quotient group of "&lt;span class="math"&gt;\(G\)&lt;/span&gt; mod &lt;span class="math"&gt;\(H\)&lt;/span&gt;".&lt;/p&gt;
+&lt;h3 id="a-second-example-of-a-quotient-group"&gt;A second example of a quotient group&lt;/h3&gt;
+&lt;p&gt;Here's an example of a (simple) problem from an undergraduate textbook on group theory:&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Identify the quotient group &lt;span class="math"&gt;\(\R^\times/P\)&lt;/span&gt;, where &lt;span class="math"&gt;\(P\)&lt;/span&gt; denotes the subgroup of
+positive real numbers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;What does this mean and how does one do it? Well, let's try to follow the same
+steps as for the integers mod &lt;span class="math"&gt;\(4\)&lt;/span&gt; example above.&lt;/p&gt;
+&lt;p&gt;Our starting group is the non-zero real numbers under multiplication &lt;span class="math"&gt;\(\Rx\)&lt;/span&gt;:
+this plays the role of &lt;span class="math"&gt;\(\Z^+\)&lt;/span&gt; in the modular arithmetic example. And the
+subgroup is the positive real numbers &lt;span class="math"&gt;\(P\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;What are the cosets of &lt;span class="math"&gt;\(P\)&lt;/span&gt;? To get one example of a coset, you pick a number
+&lt;span class="math"&gt;\(x\)&lt;/span&gt; from the main group, and you form a set by combining &lt;span class="math"&gt;\(x\)&lt;/span&gt; with each element
+of the subgroup &lt;span class="math"&gt;\(P\)&lt;/span&gt; in turn. So that's the set &lt;span class="math"&gt;\(\{xp|p \in P\}\)&lt;/span&gt;. We can see
+that we're either going to get all the positive reals (if &lt;span class="math"&gt;\(x\)&lt;/span&gt; is positive), or
+all the negative reals (if &lt;span class="math"&gt;\(x\)&lt;/span&gt; is negative). So the set of cosets has those two
+sets as its elements: &lt;span class="math"&gt;\(\{P, -1P\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;OK, so we've done steps (1)-(3). Now, what's the group operation that's going
+to combine two cosets and produce another coset? Well, in the integers mod &lt;span class="math"&gt;\(4\)&lt;/span&gt;
+example, we used the standard addition of integers to define the result of
+adding cosets &lt;span class="math"&gt;\(i+H\)&lt;/span&gt; and &lt;span class="math"&gt;\(j+H\)&lt;/span&gt; to be the coset &lt;span class="math"&gt;\((i+j)+H\)&lt;/span&gt;. The analogous
+definition here would be to use the standard multiplication of real numbers to
+say that &lt;span class="math"&gt;\((xP)(yP) = (xy)P\)&lt;/span&gt;. That's going to lead us to the following
+intuitively reasonable multiplication table:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{array}{ c|cc }
+ ~   &amp;amp; P   &amp;amp; -1P \\
+ \hline
+ P   &amp;amp; P   &amp;amp; -1P \\
+ -1P &amp;amp; -1P &amp;amp; P \\
+\end{array}
+$$&lt;/div&gt;
+&lt;p&gt;And we conclude that the quotient group is isomorphic to the group of size 2
+(there's only one -- the one with this multiplication table).&lt;/p&gt;
+&lt;p&gt;The only question is (5): is the operation on cosets well-defined? In this
+case, the answer is yes: for example, any positive number &lt;span class="math"&gt;\(x \in P\)&lt;/span&gt;, multiplied
+by any negative number &lt;span class="math"&gt;\(y \in -1P\)&lt;/span&gt;, is going to give a negative number &lt;span class="math"&gt;\(xy \in
+-1P\)&lt;/span&gt;.&lt;sup id="sf-quotient-groups-2-back"&gt;&lt;a href="#sf-quotient-groups-2" class="simple-footnote" title="We can prove it easily here because the group is commutative: \((xP)(yP) = (Px)(yP) = P(xy)P = (xy)PP = (xy)P\). In addition to commutativity those steps make use of associativity and closure."&gt;2&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;h3 id="quotient-groups-of-arbitrary-groups"&gt;Quotient groups of arbitrary groups&lt;/h3&gt;
+&lt;p&gt;What about in general? If we have a subgroup, can we just identify the cosets
+of the subgroup, and define a composition law on them using the composition law
+from the main group? Will it always be well-defined in the sense answered
+above? The answer is: yes if and only if the subgroup is "normal".&lt;/p&gt;
+&lt;p&gt;A normal subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt; is defined to be a subgroup that is closed under
+conjugation. This means that you can take any element &lt;span class="math"&gt;\(g\)&lt;/span&gt; of the main group,
+form the product &lt;span class="math"&gt;\(ghg^\1\)&lt;/span&gt; using any element &lt;span class="math"&gt;\(h\)&lt;/span&gt; of the subgroup, and the result
+will always be in the subgroup. One can prove that if and only if this is true,
+then the composition of cosets is well-defined, in which case the prescription
+above for forming a quotient group can be followed (find the cosets of &lt;span class="math"&gt;\(H\)&lt;/span&gt;,
+define the operation on the cosets).&lt;/p&gt;
+&lt;p&gt;So, if you need to find a quotient group of some subgroup, you need to show
+that the subgroup is normal. There are two ways of doing that:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Show that it is closed under conjugation.&lt;/li&gt;
+&lt;li&gt;Show that it is the kernel of a homomorphism.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Is (2) interesting in that it could be &lt;em&gt;any&lt;/em&gt; homomorphism? So if one can find
+two different homomorphisms of which &lt;span class="math"&gt;\(H\)&lt;/span&gt; is the kernel, then...I guess one can
+find many homomorphisms and the quotient group is isomorphic to their image
+set, but they're all the same isomorphism class?&lt;/p&gt;
+&lt;hr&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;&lt;ol class="simple-footnotes"&gt;&lt;li id="sf-quotient-groups-1"&gt;In this context, &lt;span class="math"&gt;\(4\Z\)&lt;/span&gt; always
+means multiplication, even if the group operation is addition! So it's the set
+&lt;span class="math"&gt;\(\{4z|z \in \Z\}\)&lt;/span&gt;. It is &lt;em&gt;not&lt;/em&gt; the same as the coset &lt;span class="math"&gt;\(4 + \Z = \{4+z|z \in
+\Z\}\)&lt;/span&gt;. This is a well-established notational inconsistency.  &lt;a href="#sf-quotient-groups-1-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;li id="sf-quotient-groups-2"&gt;We can prove it easily here because the group is commutative:
+&lt;span class="math"&gt;\((xP)(yP) = (Px)(yP) = P(xy)P = (xy)PP = (xy)P\)&lt;/span&gt;. In addition to commutativity
+those steps make use of associativity and closure. &lt;a href="#sf-quotient-groups-2-back" class="simple-footnote-back"&gt;↩&lt;/a&gt;&lt;/li&gt;&lt;/ol&gt;</summary></entry><entry><title>Prime numbers</title><link href="http://dandavison.github.io/notes/prime-numbers.html" rel="alternate"></link><published>2016-12-09T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-09:notes/prime-numbers.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Least common multiple of two primes is their product&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Let &lt;span class="math"&gt;\(p_1, p_2\)&lt;/span&gt; be prime. We want the smallest integer &lt;span class="math"&gt;\(q\)&lt;/span&gt; such that both &lt;span class="math"&gt;\(p_1\)&lt;/span&gt;
 and &lt;span class="math"&gt;\(p_2\)&lt;/span&gt; divide &lt;span class="math"&gt;\(q\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Suppose &lt;span class="math"&gt;\(p_1 &amp;gt; p_2\)&lt;/span&gt; and let &lt;span class="math"&gt;\(q = ap_1\)&lt;/span&gt;. &lt;span class="math"&gt;\(a\)&lt;/span&gt; can not be 1 since &lt;span class="math"&gt;\(p_1\)&lt;/span&gt; is prime
@@ -67,6 +286,8 @@ multiple of &lt;span class="math"&gt;\(p_1\)&lt;/span&gt; and &lt;span class="ma
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\Cx}{\C^\times}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
 \newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
 \newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
@@ -320,10 +541,15 @@ identify the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt;. &lt;/
                  {0}{d} \right\}\)&lt;/span&gt;&lt;/p&gt;
 &lt;p&gt;This is closed, contains the identity and contains inverses, so it is a
 subgroup. And closed under conjugation, so normal.&lt;/p&gt;
-&lt;p&gt;Geometrically, the matrix represents a stretch-in-the-y-direction and
-shear-in-the-x-direction transformation. The normality is because the matrix
-that performs the transformation in the changed basis performs a transformation
-in the original basis which is of the same form.&lt;/p&gt;
+&lt;p&gt;Geometrically, the elements of the subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt; are matrices representing a
+stretch in the direction of the second basis vector ("Y axis") and shearing
+parallel to the first basis vector ("X axis). Conjugation yields matrices
+&lt;span class="math"&gt;\(ghg^\1\)&lt;/span&gt; which correspond to doing the same transformation in a different
+basis. However, this class of change-of-basis operations preserves the
+direction of the first basis vector. Therefore the transformation, in the new
+basis, also corresponds to stretching in the direction of the second basis
+vector and shearing parallel to the first basis vector, and thus the conjugated
+matrix is still in the subgroup.&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \begin{align*}
 &amp;amp;\mat{e}{f}
@@ -337,14 +563,19 @@ in the original basis which is of the same form.&lt;/p&gt;
        {0}{hde} \frac{1}{eh}
 \end{align*}
 $$&lt;/div&gt;
+&lt;p&gt;The theory of quotient groups involves identifying establishing a group
+structure on a set of cosets of a normal subgroup: this set of cosets is then a
+quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt;. There's a homomorphism &lt;span class="math"&gt;\(f:G \rightarrow G/H\)&lt;/span&gt; defined by
+&lt;span class="math"&gt;\(f(g) =\)&lt;/span&gt; (coset containing &lt;span class="math"&gt;\(g\)&lt;/span&gt;), and the multiplication law between cosets is&lt;/p&gt;
+&lt;p&gt;(coset containing &lt;span class="math"&gt;\(g\)&lt;/span&gt;) x (coset containing &lt;span class="math"&gt;\(g'\)&lt;/span&gt;) = (coset containing &lt;span class="math"&gt;\(gg'\)&lt;/span&gt;)&lt;/p&gt;
+&lt;p&gt;The normal subgroup is the kernel of this homomorphism, since &lt;span class="math"&gt;\(f(1)\)&lt;/span&gt; = (coset
+containing &lt;span class="math"&gt;\(1\)&lt;/span&gt;) = &lt;span class="math"&gt;\(1H\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;So we have a subgroup &lt;span class="math"&gt;\(H\)&lt;/span&gt; of the group &lt;span class="math"&gt;\(G\)&lt;/span&gt; of real upper-triangular 2x2
-matrices. The theory of quotient groups involves identifying establishing a
-group structure on a set of cosets of a normal subgroup: this set of cosets is
-then a quotient group. We've determined that the normal subgroup is &lt;span class="math"&gt;\(H\)&lt;/span&gt;, a
-particular subset of real upper-triangular matrices. Each coset is therefore,
-for some fixed &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt;, the set of matrices that can be obtained by
-multiplying &lt;span class="math"&gt;\(g\)&lt;/span&gt; by some &lt;span class="math"&gt;\(h \in H\)&lt;/span&gt;. So there are infinitely many cosets and each
-has infinitely many elements. Each coset contains matrices of the form&lt;/p&gt;
+matrices.  We've determined that the normal subgroup is &lt;span class="math"&gt;\(H\)&lt;/span&gt;, a particular
+subset of real upper-triangular matrices. Each coset is therefore, for some
+fixed &lt;span class="math"&gt;\(g \in G\)&lt;/span&gt;, the set of matrices that can be obtained by multiplying &lt;span class="math"&gt;\(g\)&lt;/span&gt; by
+some &lt;span class="math"&gt;\(h \in H\)&lt;/span&gt;. So there are infinitely many cosets and each has infinitely
+many elements. Each coset contains matrices of the form&lt;/p&gt;
 &lt;div class="math"&gt;$$
 \begin{align*}
 \mat{1}{b}
@@ -357,15 +588,17 @@ $$&lt;/div&gt;
 &lt;div class="math"&gt;$$
 \begin{align*}
 \mat{1}{*}
-    {0}{*} \mat{e}{f}
-               {0}{h} = \mat{e}{*}
+    {0}{*} \mat{a}{b}
+               {0}{d} = \mat{a}{*}
                             {0}{*},
 \end{align*}
 $$&lt;/div&gt;
 &lt;p&gt;thus the cosets are distinguished by the real number in their top-left
-entry. So the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is &lt;span class="math"&gt;\(\left\{\smat{e}{*} {0}{*}: e \in
-\R\right\}\)&lt;/span&gt;. Viewed as transformations of the plane, its elements are
-distinguished by the magnitude of their stretch in the x-direction.&lt;/p&gt;
+entry. So the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is &lt;span class="math"&gt;\(\left\{\smat{a}{*} {0}{*}: a \in
+\R\right\}\)&lt;/span&gt;; it is isomorphic to the positive real numbers (elements of &lt;span class="math"&gt;\(G\)&lt;/span&gt;
+would not be invertible if &lt;span class="math"&gt;\(a\)&lt;/span&gt; were &lt;span class="math"&gt;\(0\)&lt;/span&gt;). Viewed as transformations of the
+plane, the elements of &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; are distinguished by the magnitude of their
+stretch in the x-direction.&lt;/p&gt;
 &lt;hr /&gt;
 &lt;p&gt;&lt;strong&gt; (b) &lt;span class="math"&gt;\(a_{12} = 0\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{0}
@@ -393,7 +626,8 @@ $$&lt;/div&gt;
 &lt;p&gt;&lt;strong&gt; (c) &lt;span class="math"&gt;\(a_{11} = a_{22}\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;span class="math"&gt;\(H = \left\{ \mat{a}{b}
                  {0}{a} \right\}\)&lt;/span&gt;&lt;/p&gt;
-&lt;p&gt;Closed and contains identity and inverses, so a subgroup, but again not closed under conjugation.&lt;/p&gt;
+&lt;p&gt;Closed and contains identity and inverses, so a subgroup, but again not closed
+under conjugation.&lt;/p&gt;
 &lt;p&gt;Geometrically, the matrix represents a stretch by the same amount in orthogonal
 x- and y-directions, plus a shear. The non-normality is because the matrix that
 performs the transformation in the changed basis does not stretch equally in
@@ -433,14 +667,95 @@ also performs a shear without stretching in the original basis.&lt;/p&gt;
        {0  }{eh             } \frac{1}{eh}
 \end{align*}
 $$&lt;/div&gt;
+&lt;p&gt;Each coset contains matrices of the form&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+\mat{1}{b}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{f + bh}
+                            {0}{h     }.
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;which could be written as&lt;/p&gt;
+&lt;div class="math"&gt;$$
+\begin{align*}
+\mat{1}{*}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{h}.
+\end{align*}
+$$&lt;/div&gt;
+&lt;p&gt;The elements of the quotient group &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; are thus distinguished by their
+diagonal entries. I.e., &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is isomorphic to &lt;span class="math"&gt;\(\R^2\)&lt;/span&gt;.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt; 2.10.3 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.3 Let &lt;span class="math"&gt;\(P\)&lt;/span&gt; be a partition of a group &lt;span class="math"&gt;\(G\)&lt;/span&gt; with the property that for any
+pair of elements &lt;span class="math"&gt;\(A, B\)&lt;/span&gt; of the partition, the product set &lt;span class="math"&gt;\(AB\)&lt;/span&gt; is contained
+entirely within another element &lt;span class="math"&gt;\(C\)&lt;/span&gt; of the partition. Let &lt;span class="math"&gt;\(N\)&lt;/span&gt; be the element of
+&lt;span class="math"&gt;\(P\)&lt;/span&gt; which contains 1. Prove that &lt;span class="math"&gt;\(N\)&lt;/span&gt; is a normal subgroup of &lt;span class="math"&gt;\(G\)&lt;/span&gt; and that &lt;span class="math"&gt;\(P\)&lt;/span&gt;
+is the set of its cosets. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Prove that &lt;span class="math"&gt;\(N\)&lt;/span&gt; is a normal subgroup of &lt;span class="math"&gt;\(G\)&lt;/span&gt;: &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;We know that &lt;span class="math"&gt;\(1 = 1^\1\)&lt;/span&gt; is in &lt;span class="math"&gt;\(N\)&lt;/span&gt;. Therefore we know that the product set &lt;span class="math"&gt;\(NN\)&lt;/span&gt;
+must lie entirely within &lt;span class="math"&gt;\(N\)&lt;/span&gt;, since one example of a product
+(i.e. &lt;span class="math"&gt;\(1\cdot1^\1\)&lt;/span&gt;) is in &lt;span class="math"&gt;\(N\)&lt;/span&gt;. I.e. &lt;span class="math"&gt;\(N\)&lt;/span&gt; is closed. Does it contain inverses?
+Consider an arbitrary element &lt;span class="math"&gt;\(n\)&lt;/span&gt; of &lt;span class="math"&gt;\(N\)&lt;/span&gt;. Let &lt;span class="math"&gt;\(n^\1\)&lt;/span&gt; be in some element &lt;span class="math"&gt;\(A \in
+P\)&lt;/span&gt; of the partition. Then the product set &lt;span class="math"&gt;\(NA\)&lt;/span&gt; must lie entirely within &lt;span class="math"&gt;\(N\)&lt;/span&gt;,
+since &lt;span class="math"&gt;\(nn^\1\)&lt;/span&gt; does. So either &lt;span class="math"&gt;\(A = N\)&lt;/span&gt;, or &lt;span class="math"&gt;\(N\)&lt;/span&gt; and &lt;span class="math"&gt;\(A\)&lt;/span&gt; are distinct elements of
+the partition but with the property that &lt;span class="math"&gt;\(NN = NA\)&lt;/span&gt;. I'm going to say that &lt;span class="math"&gt;\(NN =
+NA\)&lt;/span&gt; implies &lt;span class="math"&gt;\(N = A\)&lt;/span&gt; by the definition of the problem, and thus that &lt;span class="math"&gt;\(N\)&lt;/span&gt;
+contains inverses, but I may be missing something here.&lt;/p&gt;
+&lt;p&gt;So, &lt;span class="math"&gt;\(N\)&lt;/span&gt; contains the identity, is closed and contains inverses. It inherits
+associativity from &lt;span class="math"&gt;\(G\)&lt;/span&gt;. So &lt;span class="math"&gt;\(N\)&lt;/span&gt; is a subgroup. Is it normal? Consider &lt;span class="math"&gt;\(gNg^\1\)&lt;/span&gt;
+for some fixed &lt;span class="math"&gt;\(g\)&lt;/span&gt;. Since &lt;span class="math"&gt;\(1 \in N\)&lt;/span&gt;, we conclude that &lt;span class="math"&gt;\(gN\)&lt;/span&gt; is a subset of the
+element &lt;span class="math"&gt;\(A\)&lt;/span&gt; of the partition that contains &lt;span class="math"&gt;\(g\)&lt;/span&gt;. And since &lt;span class="math"&gt;\(g \in gN\)&lt;/span&gt;,
+&lt;span class="math"&gt;\((gN)g^\1\)&lt;/span&gt; must be a subset of &lt;span class="math"&gt;\(N\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\(N\)&lt;/span&gt; is normal.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Prove that &lt;span class="math"&gt;\(P\)&lt;/span&gt; is the set of its cosets: &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The set of cosets of &lt;span class="math"&gt;\(N\)&lt;/span&gt; are &lt;span class="math"&gt;\(\{gN: g \in G\}\)&lt;/span&gt; by definition.&lt;/p&gt;
+&lt;p&gt;We need to show that exactly one partition satisfying the definition of &lt;span class="math"&gt;\(P\)&lt;/span&gt;
+exists, and that it is the set of cosets of &lt;span class="math"&gt;\(N\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;First, we show that the set of cosets satisfy the definition of &lt;span class="math"&gt;\(P\)&lt;/span&gt;. Consider
+two cosets &lt;span class="math"&gt;\(gN\)&lt;/span&gt; and &lt;span class="math"&gt;\(hN\)&lt;/span&gt;. Their product set is &lt;span class="math"&gt;\((gN)(hN)\)&lt;/span&gt;. We know that &lt;span class="math"&gt;\(g \in
+gN\)&lt;/span&gt; and &lt;span class="math"&gt;\(h \in hN\)&lt;/span&gt; so we conclude that &lt;span class="math"&gt;\((gN)(hN)\)&lt;/span&gt; is a subset of the element of
+the partition that contains &lt;span class="math"&gt;\(gh\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;So the set of cosets satisfy the definition of &lt;span class="math"&gt;\(P\)&lt;/span&gt;, showing that at least one
+such partition exists. Now we show that any such partition must be the set of
+cosets. Consider subsets &lt;span class="math"&gt;\(A, B\)&lt;/span&gt; of &lt;span class="math"&gt;\(G\)&lt;/span&gt; that satisfy the definition of &lt;span class="math"&gt;\(P\)&lt;/span&gt;. We
+need to show that &lt;span class="math"&gt;\(A\)&lt;/span&gt; and &lt;span class="math"&gt;\(B\)&lt;/span&gt; are cosets of &lt;span class="math"&gt;\(N\)&lt;/span&gt;. Fix an arbitrary element &lt;span class="math"&gt;\(a\)&lt;/span&gt;
+of &lt;span class="math"&gt;\(A\)&lt;/span&gt;. Since &lt;span class="math"&gt;\(1 \in N\)&lt;/span&gt; and &lt;span class="math"&gt;\(a1 \in A\)&lt;/span&gt; we conclude that the product set &lt;span class="math"&gt;\(AN\)&lt;/span&gt; is
+equal to &lt;span class="math"&gt;\(A\)&lt;/span&gt; and therefore that &lt;span class="math"&gt;\(A\)&lt;/span&gt; is equal to the coset &lt;span class="math"&gt;\(aN\)&lt;/span&gt;. Similarly, &lt;span class="math"&gt;\(B\)&lt;/span&gt;
+is a coset of &lt;span class="math"&gt;\(N\)&lt;/span&gt;.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt; 2.10.5 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.5 Identify the quotient group &lt;span class="math"&gt;\(\R^\times/P\)&lt;/span&gt;, where &lt;span class="math"&gt;\(P\)&lt;/span&gt; denotes the subgroup of
+positive real numbers. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The cosets of &lt;span class="math"&gt;\(P\)&lt;/span&gt; are the positive and negative reals, &lt;span class="math"&gt;\(\{P, -1P\}\)&lt;/span&gt;. We define
+composition of cosets to be &lt;span class="math"&gt;\((xP)(yP) = (xy)P\)&lt;/span&gt;. The group operation is
+commutative, therefore &lt;span class="math"&gt;\(P\)&lt;/span&gt; is normal and the operation on cosets is
+well-defined. Therefore the quotient group is isomorphic to the group of size
+2: &lt;span class="math"&gt;\(P\)&lt;/span&gt; is the identity and &lt;span class="math"&gt;\((-1P)(-1P) = P\)&lt;/span&gt;.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt; 2.10.6 &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.6 Let &lt;span class="math"&gt;\(H = \{±1, ±i\}\)&lt;/span&gt; be the subgroup of &lt;span class="math"&gt;\(G = \Cx\)&lt;/span&gt; of fourth roots
+of unity. Describe the cosets of &lt;span class="math"&gt;\(H\)&lt;/span&gt; in &lt;span class="math"&gt;\(G\)&lt;/span&gt; explicitly, and prove that &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is
+isomorphic to &lt;span class="math"&gt;\(G\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The cosets of &lt;span class="math"&gt;\(H\)&lt;/span&gt; in &lt;span class="math"&gt;\(G\)&lt;/span&gt; are sets of the form &lt;span class="math"&gt;\(zH = \{±z, ±zi\}\)&lt;/span&gt;, where &lt;span class="math"&gt;\(z \in
+\Cx\)&lt;/span&gt;. Geometrically, they are the four points of a cross in the complex
+plane; a rotated and scaled version of the unit cross corresponding to &lt;span class="math"&gt;\(\{±1,
+±i\}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;If &lt;span class="math"&gt;\(z \neq z'\)&lt;/span&gt; then &lt;span class="math"&gt;\(zH \neq z'H\)&lt;/span&gt;. So there is a bijection between &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(G\)&lt;/span&gt;. I.e. &lt;span class="math"&gt;\(G/H\)&lt;/span&gt; is isomorphic to &lt;span class="math"&gt;\(G\)&lt;/span&gt;.&lt;/p&gt;
 &lt;hr /&gt;
-&lt;p&gt;&lt;strong&gt; 2.10.10 (122) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 2.10.10 (122) Describe the quotient groups &lt;span class="math"&gt;\(\Cx / P\)&lt;/span&gt; and &lt;span class="math"&gt;\(\Cx /
+U\)&lt;/span&gt;, where &lt;span class="math"&gt;\(U\)&lt;/span&gt; is the subgroup of complex numbers of absolute value &lt;span class="math"&gt;\(1\)&lt;/span&gt; and &lt;span class="math"&gt;\(P\)&lt;/span&gt;
+denotes the positive reals. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="math"&gt;\(\Cx / P\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The cosets of &lt;span class="math"&gt;\(P\)&lt;/span&gt; are the set of radial lines emanating from the origin in the
+complex plane. So a single coset is &lt;span class="math"&gt;\(e^{i\theta}P = \{pe^{i\theta} | p \in P\}\)&lt;/span&gt;
+and there is one coset for every value of &lt;span class="math"&gt;\(\theta \in [0, 2\pi)\)&lt;/span&gt;. We define the
+following operation on the set of cosets:
+&lt;span class="math"&gt;\((e^{i\theta_1}P)(e^{i\theta_2}P) = e^{i(\theta_1 + \theta_2)}P\)&lt;/span&gt;. The group operation is commutative, therefore &lt;span class="math"&gt;\(P\)&lt;/span&gt; is normal and the operation is well-defined.&lt;/p&gt;
+&lt;p&gt;So the quotient group is isomorphic to the group of angles &lt;span class="math"&gt;\([0, 2\pi)\)&lt;/span&gt; under addition, and to &lt;span class="math"&gt;\(U\)&lt;/span&gt;. This is the "circle group" &lt;span class="math"&gt;\(T\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; &lt;span class="math"&gt;\(\Cx / U\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;The cosets of &lt;span class="math"&gt;\(U\)&lt;/span&gt; are concentric circles in the complex plane. So a single coset is &lt;span class="math"&gt;\(re^{i\phi}U = rU = \{re^{i\theta}|0\leq\theta&amp;lt;2\pi\}\)&lt;/span&gt;, and there is one coset for every &lt;span class="math"&gt;\(r \in P\)&lt;/span&gt;. We define the
+following operation on the set of cosets: &lt;span class="math"&gt;\((r_1U)(r_2U) = r_1r_2U\)&lt;/span&gt;. The group operation is commutative, therefore &lt;span class="math"&gt;\(U\)&lt;/span&gt; is normal and the operation is well-defined.&lt;/p&gt;
+&lt;p&gt;So the quotient group is isomorphic to &lt;span class="math"&gt;\(P\)&lt;/span&gt;, the positive reals under multiplication.&lt;/p&gt;
 &lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",

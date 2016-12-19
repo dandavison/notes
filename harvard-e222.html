@@ -42,6 +42,8 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\Cx}{\C^\times}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
 \newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
 \newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
@@ -295,10 +297,15 @@ identify the quotient group <span class="math">\(G/H\)</span>. </strong></p>
                  {0}{d} \right\}\)</span></p>
 <p>This is closed, contains the identity and contains inverses, so it is a
 subgroup. And closed under conjugation, so normal.</p>
-<p>Geometrically, the matrix represents a stretch-in-the-y-direction and
-shear-in-the-x-direction transformation. The normality is because the matrix
-that performs the transformation in the changed basis performs a transformation
-in the original basis which is of the same form.</p>
+<p>Geometrically, the elements of the subgroup <span class="math">\(H\)</span> are matrices representing a
+stretch in the direction of the second basis vector ("Y axis") and shearing
+parallel to the first basis vector ("X axis). Conjugation yields matrices
+<span class="math">\(ghg^\1\)</span> which correspond to doing the same transformation in a different
+basis. However, this class of change-of-basis operations preserves the
+direction of the first basis vector. Therefore the transformation, in the new
+basis, also corresponds to stretching in the direction of the second basis
+vector and shearing parallel to the first basis vector, and thus the conjugated
+matrix is still in the subgroup.</p>
 <div class="math">$$
 \begin{align*}
 &amp;\mat{e}{f}
@@ -312,14 +319,19 @@ in the original basis which is of the same form.</p>
        {0}{hde} \frac{1}{eh}
 \end{align*}
 $$</div>
+<p>The theory of quotient groups involves identifying establishing a group
+structure on a set of cosets of a normal subgroup: this set of cosets is then a
+quotient group <span class="math">\(G/H\)</span>. There's a homomorphism <span class="math">\(f:G \rightarrow G/H\)</span> defined by
+<span class="math">\(f(g) =\)</span> (coset containing <span class="math">\(g\)</span>), and the multiplication law between cosets is</p>
+<p>(coset containing <span class="math">\(g\)</span>) x (coset containing <span class="math">\(g'\)</span>) = (coset containing <span class="math">\(gg'\)</span>)</p>
+<p>The normal subgroup is the kernel of this homomorphism, since <span class="math">\(f(1)\)</span> = (coset
+containing <span class="math">\(1\)</span>) = <span class="math">\(1H\)</span>.</p>
 <p>So we have a subgroup <span class="math">\(H\)</span> of the group <span class="math">\(G\)</span> of real upper-triangular 2x2
-matrices. The theory of quotient groups involves identifying establishing a
-group structure on a set of cosets of a normal subgroup: this set of cosets is
-then a quotient group. We've determined that the normal subgroup is <span class="math">\(H\)</span>, a
-particular subset of real upper-triangular matrices. Each coset is therefore,
-for some fixed <span class="math">\(g \in G\)</span>, the set of matrices that can be obtained by
-multiplying <span class="math">\(g\)</span> by some <span class="math">\(h \in H\)</span>. So there are infinitely many cosets and each
-has infinitely many elements. Each coset contains matrices of the form</p>
+matrices.  We've determined that the normal subgroup is <span class="math">\(H\)</span>, a particular
+subset of real upper-triangular matrices. Each coset is therefore, for some
+fixed <span class="math">\(g \in G\)</span>, the set of matrices that can be obtained by multiplying <span class="math">\(g\)</span> by
+some <span class="math">\(h \in H\)</span>. So there are infinitely many cosets and each has infinitely
+many elements. Each coset contains matrices of the form</p>
 <div class="math">$$
 \begin{align*}
 \mat{1}{b}
@@ -332,15 +344,17 @@ $$</div>
 <div class="math">$$
 \begin{align*}
 \mat{1}{*}
-    {0}{*} \mat{e}{f}
-               {0}{h} = \mat{e}{*}
+    {0}{*} \mat{a}{b}
+               {0}{d} = \mat{a}{*}
                             {0}{*},
 \end{align*}
 $$</div>
 <p>thus the cosets are distinguished by the real number in their top-left
-entry. So the quotient group <span class="math">\(G/H\)</span> is <span class="math">\(\left\{\smat{e}{*} {0}{*}: e \in
-\R\right\}\)</span>. Viewed as transformations of the plane, its elements are
-distinguished by the magnitude of their stretch in the x-direction.</p>
+entry. So the quotient group <span class="math">\(G/H\)</span> is <span class="math">\(\left\{\smat{a}{*} {0}{*}: a \in
+\R\right\}\)</span>; it is isomorphic to the positive real numbers (elements of <span class="math">\(G\)</span>
+would not be invertible if <span class="math">\(a\)</span> were <span class="math">\(0\)</span>). Viewed as transformations of the
+plane, the elements of <span class="math">\(G/H\)</span> are distinguished by the magnitude of their
+stretch in the x-direction.</p>
 <hr />
 <p><strong> (b) <span class="math">\(a_{12} = 0\)</span> </strong></p>
 <p><span class="math">\(H = \left\{ \mat{a}{0}
@@ -368,7 +382,8 @@ $$</div>
 <p><strong> (c) <span class="math">\(a_{11} = a_{22}\)</span> </strong></p>
 <p><span class="math">\(H = \left\{ \mat{a}{b}
                  {0}{a} \right\}\)</span></p>
-<p>Closed and contains identity and inverses, so a subgroup, but again not closed under conjugation.</p>
+<p>Closed and contains identity and inverses, so a subgroup, but again not closed
+under conjugation.</p>
 <p>Geometrically, the matrix represents a stretch by the same amount in orthogonal
 x- and y-directions, plus a shear. The non-normality is because the matrix that
 performs the transformation in the changed basis does not stretch equally in
@@ -408,14 +423,95 @@ also performs a shear without stretching in the original basis.</p>
        {0  }{eh             } \frac{1}{eh}
 \end{align*}
 $$</div>
+<p>Each coset contains matrices of the form</p>
+<div class="math">$$
+\begin{align*}
+\mat{1}{b}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{f + bh}
+                            {0}{h     }.
+\end{align*}
+$$</div>
+<p>which could be written as</p>
+<div class="math">$$
+\begin{align*}
+\mat{1}{*}
+    {0}{1} \mat{e}{f}
+               {0}{h} = \mat{e}{*}
+                            {0}{h}.
+\end{align*}
+$$</div>
+<p>The elements of the quotient group <span class="math">\(G/H\)</span> are thus distinguished by their
+diagonal entries. I.e., <span class="math">\(G/H\)</span> is isomorphic to <span class="math">\(\R^2\)</span>.</p>
 <hr />
-<p><strong> 2.10.3 </strong></p>
+<p><strong> 2.10.3 Let <span class="math">\(P\)</span> be a partition of a group <span class="math">\(G\)</span> with the property that for any
+pair of elements <span class="math">\(A, B\)</span> of the partition, the product set <span class="math">\(AB\)</span> is contained
+entirely within another element <span class="math">\(C\)</span> of the partition. Let <span class="math">\(N\)</span> be the element of
+<span class="math">\(P\)</span> which contains 1. Prove that <span class="math">\(N\)</span> is a normal subgroup of <span class="math">\(G\)</span> and that <span class="math">\(P\)</span>
+is the set of its cosets. </strong></p>
+<p><strong> Prove that <span class="math">\(N\)</span> is a normal subgroup of <span class="math">\(G\)</span>: </strong></p>
+<p>We know that <span class="math">\(1 = 1^\1\)</span> is in <span class="math">\(N\)</span>. Therefore we know that the product set <span class="math">\(NN\)</span>
+must lie entirely within <span class="math">\(N\)</span>, since one example of a product
+(i.e. <span class="math">\(1\cdot1^\1\)</span>) is in <span class="math">\(N\)</span>. I.e. <span class="math">\(N\)</span> is closed. Does it contain inverses?
+Consider an arbitrary element <span class="math">\(n\)</span> of <span class="math">\(N\)</span>. Let <span class="math">\(n^\1\)</span> be in some element <span class="math">\(A \in
+P\)</span> of the partition. Then the product set <span class="math">\(NA\)</span> must lie entirely within <span class="math">\(N\)</span>,
+since <span class="math">\(nn^\1\)</span> does. So either <span class="math">\(A = N\)</span>, or <span class="math">\(N\)</span> and <span class="math">\(A\)</span> are distinct elements of
+the partition but with the property that <span class="math">\(NN = NA\)</span>. I'm going to say that <span class="math">\(NN =
+NA\)</span> implies <span class="math">\(N = A\)</span> by the definition of the problem, and thus that <span class="math">\(N\)</span>
+contains inverses, but I may be missing something here.</p>
+<p>So, <span class="math">\(N\)</span> contains the identity, is closed and contains inverses. It inherits
+associativity from <span class="math">\(G\)</span>. So <span class="math">\(N\)</span> is a subgroup. Is it normal? Consider <span class="math">\(gNg^\1\)</span>
+for some fixed <span class="math">\(g\)</span>. Since <span class="math">\(1 \in N\)</span>, we conclude that <span class="math">\(gN\)</span> is a subset of the
+element <span class="math">\(A\)</span> of the partition that contains <span class="math">\(g\)</span>. And since <span class="math">\(g \in gN\)</span>,
+<span class="math">\((gN)g^\1\)</span> must be a subset of <span class="math">\(N\)</span>. Therefore <span class="math">\(N\)</span> is normal.</p>
+<p><strong> Prove that <span class="math">\(P\)</span> is the set of its cosets: </strong></p>
+<p>The set of cosets of <span class="math">\(N\)</span> are <span class="math">\(\{gN: g \in G\}\)</span> by definition.</p>
+<p>We need to show that exactly one partition satisfying the definition of <span class="math">\(P\)</span>
+exists, and that it is the set of cosets of <span class="math">\(N\)</span>.</p>
+<p>First, we show that the set of cosets satisfy the definition of <span class="math">\(P\)</span>. Consider
+two cosets <span class="math">\(gN\)</span> and <span class="math">\(hN\)</span>. Their product set is <span class="math">\((gN)(hN)\)</span>. We know that <span class="math">\(g \in
+gN\)</span> and <span class="math">\(h \in hN\)</span> so we conclude that <span class="math">\((gN)(hN)\)</span> is a subset of the element of
+the partition that contains <span class="math">\(gh\)</span>.</p>
+<p>So the set of cosets satisfy the definition of <span class="math">\(P\)</span>, showing that at least one
+such partition exists. Now we show that any such partition must be the set of
+cosets. Consider subsets <span class="math">\(A, B\)</span> of <span class="math">\(G\)</span> that satisfy the definition of <span class="math">\(P\)</span>. We
+need to show that <span class="math">\(A\)</span> and <span class="math">\(B\)</span> are cosets of <span class="math">\(N\)</span>. Fix an arbitrary element <span class="math">\(a\)</span>
+of <span class="math">\(A\)</span>. Since <span class="math">\(1 \in N\)</span> and <span class="math">\(a1 \in A\)</span> we conclude that the product set <span class="math">\(AN\)</span> is
+equal to <span class="math">\(A\)</span> and therefore that <span class="math">\(A\)</span> is equal to the coset <span class="math">\(aN\)</span>. Similarly, <span class="math">\(B\)</span>
+is a coset of <span class="math">\(N\)</span>.</p>
 <hr />
-<p><strong> 2.10.5 </strong></p>
+<p><strong> 2.10.5 Identify the quotient group <span class="math">\(\R^\times/P\)</span>, where <span class="math">\(P\)</span> denotes the subgroup of
+positive real numbers. </strong></p>
+<p>The cosets of <span class="math">\(P\)</span> are the positive and negative reals, <span class="math">\(\{P, -1P\}\)</span>. We define
+composition of cosets to be <span class="math">\((xP)(yP) = (xy)P\)</span>. The group operation is
+commutative, therefore <span class="math">\(P\)</span> is normal and the operation on cosets is
+well-defined. Therefore the quotient group is isomorphic to the group of size
+2: <span class="math">\(P\)</span> is the identity and <span class="math">\((-1P)(-1P) = P\)</span>.</p>
 <hr />
-<p><strong> 2.10.6 </strong></p>
+<p><strong> 2.10.6 Let <span class="math">\(H = \{±1, ±i\}\)</span> be the subgroup of <span class="math">\(G = \Cx\)</span> of fourth roots
+of unity. Describe the cosets of <span class="math">\(H\)</span> in <span class="math">\(G\)</span> explicitly, and prove that <span class="math">\(G/H\)</span> is
+isomorphic to <span class="math">\(G\)</span>. </strong></p>
+<p>The cosets of <span class="math">\(H\)</span> in <span class="math">\(G\)</span> are sets of the form <span class="math">\(zH = \{±z, ±zi\}\)</span>, where <span class="math">\(z \in
+\Cx\)</span>. Geometrically, they are the four points of a cross in the complex
+plane; a rotated and scaled version of the unit cross corresponding to <span class="math">\(\{±1,
+±i\}\)</span>.</p>
+<p>If <span class="math">\(z \neq z'\)</span> then <span class="math">\(zH \neq z'H\)</span>. So there is a bijection between <span class="math">\(G/H\)</span> and
+<span class="math">\(G\)</span>. I.e. <span class="math">\(G/H\)</span> is isomorphic to <span class="math">\(G\)</span>.</p>
 <hr />
-<p><strong> 2.10.10 (122) </strong></p>
+<p><strong> 2.10.10 (122) Describe the quotient groups <span class="math">\(\Cx / P\)</span> and <span class="math">\(\Cx /
+U\)</span>, where <span class="math">\(U\)</span> is the subgroup of complex numbers of absolute value <span class="math">\(1\)</span> and <span class="math">\(P\)</span>
+denotes the positive reals. </strong></p>
+<p><strong> <span class="math">\(\Cx / P\)</span> </strong></p>
+<p>The cosets of <span class="math">\(P\)</span> are the set of radial lines emanating from the origin in the
+complex plane. So a single coset is <span class="math">\(e^{i\theta}P = \{pe^{i\theta} | p \in P\}\)</span>
+and there is one coset for every value of <span class="math">\(\theta \in [0, 2\pi)\)</span>. We define the
+following operation on the set of cosets:
+<span class="math">\((e^{i\theta_1}P)(e^{i\theta_2}P) = e^{i(\theta_1 + \theta_2)}P\)</span>. The group operation is commutative, therefore <span class="math">\(P\)</span> is normal and the operation is well-defined.</p>
+<p>So the quotient group is isomorphic to the group of angles <span class="math">\([0, 2\pi)\)</span> under addition, and to <span class="math">\(U\)</span>. This is the "circle group" <span class="math">\(T\)</span>.</p>
+<p><strong> <span class="math">\(\Cx / U\)</span> </strong></p>
+<p>The cosets of <span class="math">\(U\)</span> are concentric circles in the complex plane. So a single coset is <span class="math">\(re^{i\phi}U = rU = \{re^{i\theta}|0\leq\theta&lt;2\pi\}\)</span>, and there is one coset for every <span class="math">\(r \in P\)</span>. We define the
+following operation on the set of cosets: <span class="math">\((r_1U)(r_2U) = r_1r_2U\)</span>. The group operation is commutative, therefore <span class="math">\(U\)</span> is normal and the operation is well-defined.</p>
+<p>So the quotient group is isomorphic to <span class="math">\(P\)</span>, the positive reals under multiplication.</p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -513,7 +609,7 @@ $$</div>
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (5)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (2)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/questions.html">questions (1)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
