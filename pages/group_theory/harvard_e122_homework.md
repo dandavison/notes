@@ -6,6 +6,8 @@ $$
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\Cx}{\C^\times}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 & #2\\#3 & #4\\ \end{bmatrix}}
 \newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
 \newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
@@ -623,26 +625,46 @@ is a coset of $N$.
 ** 2.10.5 Identify the quotient group $\R^\times/P$, where $P$ denotes the subgroup of
 positive real numbers. **
 
-Let $f: \R^\times \rightarrow P$ be defined by $f(x) = |x|$. $f$ is a group
-homomorphism since $|ab| = |a||b|$. The kernel is $\{-1, 1\}$ and the quotient
-group is $\{ \{-x, x\}| x \in \R^\times\}$.
+The cosets of $P$ are the positive and negative reals, $\{P, -1P\}$. We define
+composition of cosets to be $(xP)(yP) = (xy)P$. The group operation is
+commutative, therefore $P$ is normal and the operation on cosets is
+well-defined. Therefore the quotient group is isomorphic to the group of size
+2: $P$ is the identity and $(-1P)(-1P) = P$.
 
 ----------------------------------------------------------------------------
 
-** 2.10.6 Let $H = \{±1, ±i\}$ be the subgroup of $G = \C^\times$ of fourth roots
+** 2.10.6 Let $H = \{±1, ±i\}$ be the subgroup of $G = \Cx$ of fourth roots
 of unity. Describe the cosets of $H$ in $G$ explicitly, and prove that $G/H$ is
 isomorphic to $G$. **
 
 The cosets of $H$ in $G$ are sets of the form $zH = \{±z, ±zi\}$, where $z \in
-\C^\times$. Geometrically, they are the four points of a cross in the complex
+\Cx$. Geometrically, they are the four points of a cross in the complex
 plane; a rotated and scaled version of the unit cross corresponding to $\{±1,
 ±i\}$.
 
-If $z \neq z'$ then $zH != z'H$. So there is a bijection between $G/H$ and
+If $z \neq z'$ then $zH \neq z'H$. So there is a bijection between $G/H$ and
 $G$. I.e. $G/H$ is isomorphic to $G$.
 
 ----------------------------------------------------------------------------
 
-** 2.10.10 (122) Describe the quotient groups $\C^\times / P$ and $\C^\times /
+** 2.10.10 (122) Describe the quotient groups $\Cx / P$ and $\Cx /
 U$, where $U$ is the subgroup of complex numbers of absolute value $1$ and $P$
 denotes the positive reals. **
+
+** $\Cx / P$ **
+
+The cosets of $P$ are the set of radial lines emanating from the origin in the
+complex plane. So a single coset is $e^{i\theta}P = \{pe^{i\theta} | p \in P\}$
+and there is one coset for every value of $\theta \in [0, 2\pi)$. We define the
+following operation on the set of cosets:
+$(e^{i\theta_1}P)(e^{i\theta_2}P) = e^{i(\theta_1 + \theta_2)}P$. The group operation is commutative, therefore $P$ is normal and the operation is well-defined.
+
+So the quotient group is isomorphic to the group of angles $[0, 2\pi)$ under addition, and to $U$. This is the "circle group" $T$.
+
+
+** $\Cx / U$ **
+
+The cosets of $U$ are concentric circles in the complex plane. So a single coset is $re^{i\phi}U = rU = \{re^{i\theta}|0\leq\theta<2\pi\}$, and there is one coset for every $r \in P$. We define the
+following operation on the set of cosets: $(r_1U)(r_2U) = r_1r_2U$. The group operation is commutative, therefore $U$ is normal and the operation is well-defined.
+
+So the quotient group is isomorphic to $P$, the positive reals under multiplication.
