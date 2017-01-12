@@ -191,10 +191,17 @@ that the subgroup is normal. There are two ways of doing that:</p>
 <li>Show that it is closed under conjugation.</li>
 <li>Show that it is the kernel of a homomorphism.</li>
 </ol>
-<p>Is (2) interesting in that it could be <em>any</em> homomorphism? So if one can find
-two different homomorphisms of which <span class="math">\(H\)</span> is the kernel, then...I guess one can
-find many homomorphisms and the quotient group is isomorphic to their image
-set, but they're all the same isomorphism class?</p>
+<h3 id="first-isomorphism-theorem">First isomorphism theorem</h3>
+<p>[https://theoremoftheweek.wordpress.com/2010/05/20/theorem-26-the-first-isomorphism-theorem/ | Cambridge Theorem of the Week blog ]</p>
+<p>Every normal subgroup is the kernel of the homomorphism that sends a group element to its coset.</p>
+<p>Can two "different" homomorphisms share the same kernel?</p>
+<p>Let <span class="math">\(f: G \rightarrow G'\)</span> be a homomorphism with kernel <span class="math">\(N\)</span>. <span class="math">\(e \in N\)</span>,
+therefore every <span class="math">\(g \in G\)</span> is in some coset <span class="math">\(gN\)</span>, so the set of cosets
+partitions the domain. What about the image? Consider two elements <span class="math">\(gn_1\)</span> and
+<span class="math">\(gn_2\)</span> of the same coset. These both get sent to the same value, since
+<span class="math">\(f(gn_i) = f(g)f(n_i) = f(g)\)</span>.</p>
+<p>So is it possible to have homomorphisms <span class="math">\(f\)</span> and <span class="math">\(\varphi\)</span> with the same kernel
+<span class="math">\(N\)</span> but with <span class="math">\(f(g) \neq \varphi(g)\)</span> for some <span class="math">\(g \in G\)</span>? If that were true</p>
 <hr>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
@@ -298,9 +305,8 @@ those steps make use of associativity and closure. <a href="#sf-quotient-groups-
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (5)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/questions.html">questions (1)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (4)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
 						</ul>
 					</div>

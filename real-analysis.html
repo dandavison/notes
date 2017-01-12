@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Rudin - Principles of Mathematical Analysis - Exercises — Notes</title>
+	<meta name="description" content="Title: Rudin - Principles of Mathematical Analysis - Exercises; Date: 2016-12-21; Author: Dan Davison">
+	<meta name="author" content="Dan Davison">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+	<!--[if lt IE 9]>
+		<script src="http://dandavison.github.io/notes/theme/html5.js"></script>
+		<![endif]-->
+	<link href="http://dandavison.github.io/notes/theme/css/ipython.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+	<link href="//maxcdn.bootstrapcdn.com/bootswatch/3.2.0/simplex/bootstrap.min.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/local.css" rel="stylesheet">
+	<link href="http://dandavison.github.io/notes/theme/css/pygments.css" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+	<div class="page-header">
+		<h1><a href="http://dandavison.github.io/notes/">Notes</a>
+			<br>	</div>
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2">
+<div class="article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="text-center article-header">
+		<h1 itemprop="name headline" class="article-title">Rudin - Principles of Mathematical Analysis - Exercises</h1>
+		<span itemprop="author" itemscope itemtype="http://schema.org/Person">
+			<h4 itemprop="name">Dan Davison</h4>
+		</span>
+		<time datetime="2016-12-21T00:00:00-08:00" itemprop="datePublished">Wed 21 December 2016</time>
+	</div>
+	<div>
+		Category:
+		<span itemprop="articleSection">
+			<a href="http://dandavison.github.io/notes/category/misc.html" rel="category">misc</a>
+		</span>
+	</div>
+	<div itemprop="articleBody" class="article-body"><div class="math">$$
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\Cx}{\C^\times}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\matt}[9]{\begin{bmatrix}#1 &amp; #2 &amp; #3\\#4 &amp; #5 &amp; #6\\#7 &amp; #8 &amp; #9\\ \end{bmatrix}}
+\newcommand{\smatt}[9]{\tiny{\matt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
+\newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
+$$</div>
+<p><strong> 1.1 If <span class="math">\(r\)</span> is rational (<span class="math">\(r \neq 0\)</span>) and <span class="math">\(x\)</span> is irrational, prove that <span class="math">\(r + x\)</span>
+and <span class="math">\(rx\)</span> are irrational. </strong></p>
+<p>Let <span class="math">\(r = \frac{i}{j}\)</span>, where <span class="math">\(i, j \in \Z\)</span>.</p>
+<p>Take <span class="math">\(rx\)</span> first. Suppose that <span class="math">\(rx\)</span> is rational, so <span class="math">\(rx = \frac{i}{j}x =
+\frac{k}{l}\)</span> for some <span class="math">\(k, l \in \Z\)</span>. This implies <span class="math">\(x = \frac{jk}{il}\)</span>, which is
+rational. This is a contradiction, since <span class="math">\(x\)</span> is irrational by
+definition. Therefore <span class="math">\(rx\)</span> is irrational.</p>
+<p>Now take <span class="math">\(r + x\)</span>. Again suppose it's rational, so <span class="math">\(r + x = \frac{i}{j} +
+\frac{k}{l}\)</span> for some <span class="math">\(k, l \in \Z\)</span>. This implies <span class="math">\(x = \frac{k}{l} -
+\frac{i}{j} = \frac{jk - il}{lj}\)</span> which is rational. This is a contradiction
+again, since <span class="math">\(x\)</span> is irrational by definition. Therefore <span class="math">\(r + x\)</span> is irrational.</p>
+<p><em>Better proof</em> If <span class="math">\(rx\)</span> is rational then <span class="math">\(rx/r = x\)</span> must be rational, since <span class="math">\(\Q\)</span>
+is closed under division. That's a contradiction, therefore <span class="math">\(rx\)</span> is not
+rational. Similarly, if <span class="math">\(r + x\)</span> is rational then <span class="math">\(x = r + x - r\)</span> must be
+rational, since <span class="math">\(\Q\)</span> is closed under addition and additive inverses. Again a
+contradiction, showing that <span class="math">\(r+x\)</span> is irrational.</p>
+<p><strong> 1.2 Prove that there is no rational number whose square is 12. </strong></p>
+<p><em>Lemma: The square root of a prime is irrational.</em></p>
+<p><em>Proof</em>: Let <span class="math">\(p\)</span> be prime and suppose <span class="math">\(\sqrt{p}\)</span> is rational. Then <span class="math">\(\sqrt{p} =
+i/j\)</span> for some <span class="math">\(i, j \in \Z\)</span> with <span class="math">\(i,j\)</span> sharing no common factor. So <span class="math">\(i^2 =
+pj^2\)</span>. But <span class="math">\(p\)</span> is prime, so if <span class="math">\(p\)</span> is a factor of <span class="math">\(i^2\)</span> then <span class="math">\(p\)</span> must be a
+factor of <span class="math">\(i\)</span> also. Therefore <span class="math">\(i^2\)</span> is divisible by <span class="math">\(p^2\)</span> and so <span class="math">\(j^2\)</span> must be
+divisible by <span class="math">\(p\)</span> and so <span class="math">\(j\)</span> must be divisible by <span class="math">\(p\)</span>. But <span class="math">\(i,j\)</span> share no common
+factor by construction. This contradiction proves that <span class="math">\(\sqrt{p}\)</span> is
+irrational.</p>
+<p>Suppose <span class="math">\((i/j)^2 = 12\)</span> for some <span class="math">\(i,j \in \Z\)</span>. Then <span class="math">\(i/j = 2\sqrt{3}\)</span>. But <span class="math">\(3\)</span>
+is prime and therefore <span class="math">\(\sqrt{3}\)</span> is irrational and we know that the product of
+a rational and an irrational number is irrational. Therefore <span class="math">\(i/j\)</span> is
+irrational, which is a contradiction proving that there is no rational number
+whose square is 12.</p>
+<p><strong> 3. Prove Proposition 1.15 (implications of multiplication axioms) </strong></p>
+<p><strong> 4. Let <span class="math">\(E\)</span> be a nonempty subset of an ordered set ; suppose <span class="math">\(\alpha\)</span> is a
+lower bound of E and that <span class="math">\(\beta\)</span> is an upper bound of <span class="math">\(E\)</span>. Prove that <span class="math">\(\alpha
+\leq \beta\)</span>. </strong></p>
+<p>Intuitively: it's non-empty, so the smallest it can be is one element. That
+element could be <span class="math">\(\alpha = \beta\)</span> or else <span class="math">\(\alpha &lt; \beta\)</span>.</p>
+<p><span class="math">\(\alpha\)</span> is a lower bound for <span class="math">\(E\)</span>, therefore <span class="math">\(\alpha \leq e\)</span> for every <span class="math">\(e \in
+E\)</span>. Similarly <span class="math">\(\beta \geq e\)</span> for every <span class="math">\(e \in E\)</span>. Suppose that <span class="math">\(\alpha &gt;
+\beta\)</span>. Then <span class="math">\(\alpha &gt; e\)</span> for every <span class="math">\(e \in E\)</span>. This contradicts the premise
+that <span class="math">\(\alpha\)</span> is a lower bound for <span class="math">\(E\)</span>, therefore <span class="math">\(\alpha \leq \beta\)</span>.</p>
+<p><strong> 5. Let <span class="math">\(A\)</span> be a nonempty set of real numbers which is bounded below. Let <span class="math">\(-A\)</span>
+be the set of all numbers <span class="math">\(-x\)</span>, where <span class="math">\(x \in A\)</span>. Prove that
+<div class="math">$$
+\inf A = - \sup(-A)
+$$</div>
+</strong></p>
+<p><span class="math">\(A\)</span> is bounded below, therefore <span class="math">\(\inf A\)</span> exists. Let <span class="math">\(\alpha = \inf A\)</span>, i.e. <span class="math">\(x
+\geq \alpha\)</span> for every <span class="math">\(x \in A\)</span>, and <span class="math">\(\alpha\)</span> is the largest number for which
+this is true. Therefore <span class="math">\(-x \leq -\alpha\)</span> for every <span class="math">\(x \in A\)</span> and <span class="math">\(-\alpha\)</span> is
+the smallest number for which this is true. Therefore <span class="math">\(-\alpha=\sup(-A)\)</span> and
+<span class="math">\(\alpha=-\sup(-A)\)</span>.</p>
+<p><strong>Definitions:</strong></p>
+<p><strong>lower bound of <span class="math">\(A\)</span></strong>: a number <span class="math">\(\alpha\)</span> such that <span class="math">\(x \geq \alpha\)</span> for every <span class="math">\(x \in A\)</span>.</p>
+<p><strong><span class="math">\(\inf A\)</span></strong>: the greatest lower bound (or <span class="math">\(-\infty\)</span> if there is no lower bound)</p>
+<p><strong>upper bound of <span class="math">\(A\)</span></strong>: a number <span class="math">\(\alpha\)</span> such that <span class="math">\(x \leq \alpha\)</span> for every <span class="math">\(x \in A\)</span>.</p>
+<p><strong><span class="math">\(\sup(-A)\)</span></strong>: the least upper bound of <span class="math">\(-A\)</span> (or <span class="math">\(+\infty\)</span> if there is no upper bound)</p>
+<hr />
+<p><strong> 6 Fix <span class="math">\(b &gt; 1\)</span>. </strong></p>
+<p><strong>
+(a) If <span class="math">\(m,n,p,q\)</span> are integers, <span class="math">\(n&gt;0\)</span>, <span class="math">\(q&gt;0\)</span>, and <span class="math">\(r=\frac{m}{n}=\frac{p}{q}\)</span>,
+prove that <span class="math">\((b^m)^{1/n} = (b^p)^{1/q}\)</span>. Hence it makes sense to define <span class="math">\(b^r =
+(b^m)^{1/n}\)</span>· </strong></p>
+<p>Consider raising these quantities to the power of the integer <span class="math">\(mq = np\)</span>:</p>
+<div class="math">$$
+((b^m)^{1/n})^{np} = (((b^m)^{1/n})^{n})^p = (b^m)^p = b^{mp},
+$$</div>
+<p>
+and similarly
+</p>
+<div class="math">$$
+((b^p)^{1/q})^{mq} = (((b^p)^{1/q})^{q})^m = (b^p)^m = b^{mp}.
+$$</div>
+<p>So both give the same result, but there is just one positive real number <span class="math">\(r\)</span>
+with the property that <span class="math">\(r^{mq} = b^{mp}\)</span>. Therefore <span class="math">\((b^m)^{1/n} =
+(b^p)^{1/q}\)</span>.</p>
+<p><strong>
+(b) Prove that <span class="math">\(b^{r+s} = b^rb^s\)</span> if <span class="math">\(r\)</span> and <span class="math">\(s\)</span> are rational.
+</strong></p>
+<p>Let <span class="math">\(r=\frac{i}{j}\)</span> and <span class="math">\(s=\frac{k}{l}\)</span>. Then</p>
+<div class="math">$$
+b^{r+s} =
+b^\frac{iL + jk}{jl} =
+(b^{iL + jk})^\frac{1}{jl} =
+(b^{iL}b^{jk})^\frac{1}{jl} =
+b^\frac{il}{jl}b^\frac{jk}{jl} =
+b^{r}b^{s}
+$$</div>
+<p><strong> (c) If <span class="math">\(x\)</span> is real, define <span class="math">\(B(x)\)</span> to be the set of all numbers <span class="math">\(b^t\)</span>, where
+<span class="math">\(t\)</span> is rational and <span class="math">\(t \leq x\)</span>. Prove that <div class="math">$$b^r = \sup B(r)$$</div> when <span class="math">\(r\)</span> is
+rational. Hence it makes sense to define <div class="math">$$b^x = \sup B(x)$$</div> for every real <span class="math">\(x\)</span>.
+</strong></p>
+<p>First consider rational <span class="math">\(r\)</span>. <span class="math">\(B(r)\)</span> is the set <span class="math">\(\{b^t: t \leq r\}\)</span> for rational
+<span class="math">\(t\)</span>. It's clear that <span class="math">\(b^r\)</span> is an upper bound for this; we need to prove that it
+is the least upper bound. (Transcribed from solutions) The approach we're going
+to take is to show that, for any number <span class="math">\(x\)</span> smaller than <span class="math">\(b^r\)</span>, we can always
+construct a larger number that is in <span class="math">\(B(r)\)</span> and hence that <span class="math">\(x\)</span> is not the least
+upper bound. Specifically, we're going to prove that for any <span class="math">\(0 &lt; x &lt; b^r\)</span>
+there exists an integer <span class="math">\(n\)</span> such that <span class="math">\(x &lt; b^{r - 1/n}\)</span> and <span class="math">\(b^{r - 1/n} \in
+B(r)\)</span>.</p>
+<p><span class="math">\(r\)</span> is rational, so <span class="math">\(r - 1/n\)</span> is also rational, hence <span class="math">\(b^{r - \frac{1}{n}}&gt; \in B(r)\)</span>.</p>
+<p><strong> Prove that <span class="math">\(b^{x+y} = b^xb^y\)</span> for all real <span class="math">\(x\)</span> and <span class="math">\(y\)</span>.  </strong></p>
+<hr />
+<p><strong> 7 Fix <span class="math">\(b &gt; 1, y &gt; 0\)</span> and prove that there is a unique real <span class="math">\(x\)</span> such that
+<span class="math">\(b^x = y\)</span>, by completing the following outline. (This is called the logarithm
+of <span class="math">\(y\)</span> to the base <span class="math">\(b\)</span>) </strong></p>
+<p><strong> (a) For any positive integer <span class="math">\(n\)</span>, <span class="math">\(b^n - 1 \geq n(b-1)\)</span>. </strong></p>
+<ul>
+<li>
+<p><em>Base case:</em> It's true for <span class="math">\(n=1\)</span>, i.e. <span class="math">\(b^1 - 1 = 1(b-1)\)</span></p>
+</li>
+<li>
+<p><em>Induction:</em> Suppose that it is true for <span class="math">\(n=i\)</span>, i.e. <span class="math">\(b^i - 1 \geq i(b-1)\)</span></p>
+<ul>
+<li>
+<p><em>Claim:</em> It is true for <span class="math">\(n=i+1\)</span>, i.e. <span class="math">\(b^{i+1} - 1 \geq (i+1)(b-1)\)</span>.</p>
+</li>
+<li>
+<p><em>Proof:</em> The desired inequality can be written as <span class="math">\(b^{i+1} \geq i(b-1) +
+  b\)</span>, and the assumed inequality can be written as <span class="math">\(b^i \geq i(b-1) +
+  1\)</span>. Multiplying both sides of the latter by <span class="math">\(b\)</span> gives <span class="math">\(b^{i+1} \geq
+  bi(b-1) + b\)</span>. Now <span class="math">\(i \geq 1\)</span> and <span class="math">\(b&gt;1\)</span>, so <span class="math">\(bi(b-1) &gt; i(b-1)\)</span>, thus
+  <span class="math">\(b^{i+1} \geq i(b-1) + b\)</span> as required.</p>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong> (b) Hence <span class="math">\(b - 1 \geq n(b^{1/n} - 1)\)</span> </strong></p>
+<p>In (a), <span class="math">\(b\)</span> was an arbitrary real number greater than 1. For clarity, let's
+rewrite that result as <span class="math">\(a^n - 1 \geq n(a-1)\)</span>. We can choose <span class="math">\(a=b^{1/n}\)</span> for
+some other real number <span class="math">\(b\)</span>. Thus <span class="math">\(b - 1 \geq n(b^{1/n}-1)\)</span>.</p>
+<p><strong> (c) If <span class="math">\(t &gt; 1\)</span> and <span class="math">\(n &gt; \frac{b-1}{t-1}\)</span>, then <span class="math">\(b^{1/n} &lt; t\)</span>. </strong></p>
+<p>Rearranging, we have <span class="math">\(b^{1/n} \leq \frac{b-1}{n} + 1\)</span>. If <span class="math">\(n &gt; \frac{b-1}{t-1}\)</span>
+then <span class="math">\(b^{1/n} &lt; \frac{b-1}{(b-1)/(t-1)} + 1 = t\)</span>.</p>
+<p><strong> (d) If <span class="math">\(w\)</span> is such that <span class="math">\(b^w &lt; y\)</span> then <span class="math">\(b^{w + 1/n} &lt; y\)</span> for sufficiently
+large <span class="math">\(n\)</span>; to see this, apply part (c) with <span class="math">\(t = yb^{-w}.\)</span></strong></p>
+<p>Let <span class="math">\(t = \frac{y}{b^w}\)</span>. Since <span class="math">\(b^w &lt; y\)</span>, <span class="math">\(\frac{y}{b^w} &gt; 1\)</span>. Thus <span class="math">\(b^{1/n} &lt;
+\frac{y}{b^w}\)</span> and hence <span class="math">\(b^{w + 1/n} &lt; y\)</span>, iff <span class="math">\(n &gt; \frac{b-1}{(y -
+b^w)/b^w}\)</span>.</p>
+<p><strong> (e) If <span class="math">\(b^w &gt; y\)</span>, then <span class="math">\(b^{w - 1/n} &gt; y\)</span> for sufficiently large <span class="math">\(n\)</span>.</strong></p>
+<p>Let <span class="math">\(t = \frac{b^w}{y}\)</span>. Since <span class="math">\(b^w &gt; y\)</span>, <span class="math">\(\frac{b^w}{y} &gt; 1\)</span>. Thus <span class="math">\(b^{1/n} &lt;
+\frac{b^w}{y}\)</span> and hence <span class="math">\(b^{w - 1/n} &gt; y\)</span>, iff <span class="math">\(n &gt; \frac{b-1}{(b^w -
+y)/y}\)</span>.</p>
+<p><strong> (f) Let <span class="math">\(A\)</span> be the set of all <span class="math">\(w\)</span> such that <span class="math">\(b^w &lt; y\)</span>, and show that <span class="math">\(x =
+\sup A\)</span> satisfies <span class="math">\(b^x = y.\)</span></strong></p>
+<p><strong> (g) Prove that this <span class="math">\(x\)</span> is unique.</strong></p>
+<script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width < 768) ? "left" : align;
+        indent = (screen.width < 768) ? "0em" : indent;
+        linebreak = (screen.width < 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' && location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+</script></div>
+	<hr>
+	<h2>Comments</h2>
+<div id="disqus_thread"></div>
+<script type="text/javascript">
+    var disqus_shortname = 'dandavison7-notes'; 
+    var disqus_title = 'Rudin - Principles of Mathematical Analysis - Exercises';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = 'https://' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</div>
+		</div>
+	</div> 	<!-- <hr> -->
+</div> <!-- /container -->
+<footer class="aw-footer bg-danger">
+	<div class="container"> <!-- footer -->
+		<div class="row">
+			<div class="col-md-10 col-md-offset-1">
+				<div class="row">
+					<div class="col-md-3">
+						<h4>Navigation</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes">Notes</a></li>
+							<li><a href="http://dandavison.github.io/notes/feeds/all.atom.xml" type="application/atom+xml"><i class="fa fa-rss "></i> atom</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Author</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="https://github.com/dandavison">github</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3">
+						<h4>Categories</h4>
+						<ul class="list-unstyled my-list-style">
+							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</footer>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 text-center center-block aw-bottom">
+			<p>&copy; Dan Davison 2016</p>
+			<p>Powered by Pelican</p>
+		</div>
+	</div>
+</div>
+<!-- JavaScript -->
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	$("div.collapseheader").click(function () {
+		$header = $(this).children("span").first();
+		$codearea = $(this).children(".input_area");
+		$codearea.slideToggle(500, function () {
+			$header.text(function () {
+				return $codearea.is(":visible") ? "Collapse Code" : "Expand Code";
+			});
+		});
+	});
+});
+</script>
+</body>
+</html>

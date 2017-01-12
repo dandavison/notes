@@ -42,16 +42,21 @@
 \newcommand{\Z}{\mathbb{Z}}
 \newcommand{\R}{\mathbb{R}}
 \newcommand{\C}{\mathbb{C}}
+\newcommand{\F}{\mathbb{F}}
 \newcommand{\Rx}{\R^\times}
 \newcommand{\Cx}{\C^\times}
 \newcommand{\mat}[4]{\begin{bmatrix}#1 &amp; #2\\#3 &amp; #4\\ \end{bmatrix}}
 \newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\matt}[9]{\begin{bmatrix}#1 &amp; #2 &amp; #3\\#4 &amp; #5 &amp; #6\\#7 &amp; #8 &amp; #9\\ \end{bmatrix}}
+\newcommand{\smatt}[9]{\tiny{\matt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}}}
 \newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
 \newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
 \newcommand{\GL}{\mathrm{GL}}
 \newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
 \newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
 \newcommand{\1}{{-1}}
+\newcommand{\(}{\left(}
+\newcommand{\)}{\right)}
 $$</div>
 <p>Exercises from Artin <em>Algebra</em> 1st edition.</p>
 <ul>
@@ -61,7 +66,9 @@ $$</div>
 <hr />
 <h3 id="e122-homework-1">E122 Homework 1</h3>
 <p><strong> 1. Read 1.1, pp. 38-42 </strong></p>
-<p><strong> 1.1.7 </strong></p>
+<p><strong> 1.1.7 Find a formula for <span class="math">\(\smatt{1}{1}{1}
+                                   { }{1}{1}
+                                   { }{ }{1}^n\)</span> and prove it by induction. </strong></p>
 <p><strong> 1.1.16 </strong></p>
 <p><strong> 1.1.17 </strong></p>
 <hr />
@@ -512,6 +519,112 @@ following operation on the set of cosets:
 <p>The cosets of <span class="math">\(U\)</span> are concentric circles in the complex plane. So a single coset is <span class="math">\(re^{i\phi}U = rU = \{re^{i\theta}|0\leq\theta&lt;2\pi\}\)</span>, and there is one coset for every <span class="math">\(r \in P\)</span>. We define the
 following operation on the set of cosets: <span class="math">\((r_1U)(r_2U) = r_1r_2U\)</span>. The group operation is commutative, therefore <span class="math">\(U\)</span> is normal and the operation is well-defined.</p>
 <p>So the quotient group is isomorphic to <span class="math">\(P\)</span>, the positive reals under multiplication.</p>
+<h3 id="e122-homework-8">E122 Homework 8</h3>
+<hr />
+<p><strong> 3.1.1 Which of the following subsets of the vector space of real <span class="math">\(n \times
+n\)</span> matrices is a subspace?</strong></p>
+<p><strong> (a) symmetric matrices (<span class="math">\(A = A^t\)</span>) </strong></p>
+<p>This is a subspace: it's closed under addition, contains the identity (zero
+matrix), and contains additive inverses, and is closed under scalar
+multiplication.</p>
+<p><strong> (b) invertible matrices </strong></p>
+<p>This is not a subspace, since the additive identity (zero matrix) is not an
+invertible matrix. (It's closed under scalar multiplication but I'm not sure if
+it contains additive inverses.)</p>
+<p><strong> (c) upper-triangular matrices </strong></p>
+<p>This is a subspace, since the additive identity (zero matrix) is upper
+triangular, and it is closed under scalar multiplication and contains additive
+inverses.</p>
+<hr />
+<p><strong> 3.1.5 Prove that the classification of subspaces of <span class="math">\(\R^3\)</span> stated after
+(1.2) is complete </strong></p>
+<blockquote>
+<p>The subspaces of <span class="math">\(\R^3\)</span> are of four types</p>
+<p>(i) The zero vector</p>
+<p>(ii) Vectors lying in a line through the origin</p>
+<p>(iii) Vectors lying in a plane through the origin</p>
+<p>(iv) The whole space <span class="math">\(\R^3\)</span></p>
+</blockquote>
+<p>Subspaces must contain the identity. So <span class="math">\(\{0\}\)</span> is one subspace. Now consider a
+subspace that contains <span class="math">\(x \neq 0\)</span> in addition to <span class="math">\(0\)</span>. In order to be closed
+under scalar multiplication the subspace must also contain all vectors <span class="math">\(x' =
+cx\)</span> for every <span class="math">\(c \in \R\)</span>. So that's a line through the origin and <span class="math">\(x\)</span>. One such
+subspace exists for every distinct direction that a line through the origin can
+take. Next planes...</p>
+<p><strong> 3.2.1 Prove that the set of numbers of the form <span class="math">\(a + b \sqrt 2\)</span>, where <span class="math">\(a,
+b\)</span> are rational numbers, is a field. </strong></p>
+<p>A field is by definition a set with an addition and a multiplication
+operation. For each operation there must be associativity, closure,
+commutativity, identity, inverses. A distributive law must hold: <span class="math">\((a + b)c =
+ac + bc\)</span>.</p>
+<p>More briefly, for a set <span class="math">\(\F\)</span> to be a field, there must be an addition law that
+turns <span class="math">\(\F\)</span> into an Abelian group (identity <span class="math">\(0\)</span>), and there must be a
+multiplication law that turns <span class="math">\(\F - \{0\}\)</span> into an Abelian group (identity
+<span class="math">\(1\)</span>). Distributivity must hold: <span class="math">\((a + b)c = ac + bc\)</span>.</p>
+<p>Take the <strong>addition</strong> operation first. Closure, commutativity and associativity
+obviously hold. The identity is <span class="math">\(0 = 0 + 0\sqrt 2\)</span>. The inverse is <span class="math">\((a + b
+\sqrt 2)^\1 = (-a + -b \sqrt 2)\)</span> (this is unique since the product of a
+rational and irrational is irrational).</p>
+<p>Now <strong>multiplication</strong>.</p>
+<p>Closure and commutativity: <span class="math">\((a + b\sqrt 2)(c + d\sqrt 2) = (c + d\sqrt 2)(a +
+b\sqrt 2) = (ac + 2bd) + (cb + ad)\sqrt 2\)</span>.</p>
+<p>Associativity:
+</p>
+<div class="math">\begin{align*}
+\((a + b\sqrt 2)(c + d\sqrt 2)\)(e + f\sqrt 2) = \\
+\((ac + 2bd) + (cb + ad)\sqrt 2\)(e + f\sqrt 2) = \\
+\((ac + 2bd)e + 2(cb + ad)f\) + \((cb + ad)e + (ac + 2bd)f\)\sqrt 2 = \\
+\(ace + 2adf + 2bcf + 2bde\) + \(acf + ade + bce + 2bdf\)\sqrt 2 = \\
+\end{align*}</div>
+<div class="math">\begin{align*}
+(a + b\sqrt 2)\((c + d\sqrt 2)(e + f\sqrt 2)\) = \\
+(a + b\sqrt 2)\((ce + 2df) + (cf + de)\sqrt 2\) = \\
+\(a(ce + 2df) + 2b(cf + de)\) + \(a(cf + de) + b(ce + 2df)\)\sqrt 2 = \\
+\(ace + 2adf + 2bcf + 2bde\) + \(acf + ade + bce + 2bdf\)\sqrt 2
+\end{align*}</div>
+<p>Identity is <span class="math">\(1 + 0\sqrt 2 = 1\)</span>.</p>
+<p>Inverses: <span class="math">\((a + b\sqrt 2)(a - b\sqrt 2) = (a^2 - 2b^2) \implies (a + b\sqrt
+2)^\1 = \frac{1}{(a^2 - 2b^2)}(a - b\sqrt 2)\)</span></p>
+<p>Distributivity: ...bored now.</p>
+<p><strong> 3.2.7 Define homomorphism of fields, and prove that every homomorphism of
+fields is injective. </strong></p>
+<p>A homomorphism between fields <span class="math">\(F\)</span> and <span class="math">\(G\)</span> is a function <span class="math">\(f: F \rightarrow G\)</span>
+such that <span class="math">\(f(a+b) = f(a) + f(b)\)</span> and <span class="math">\(f(ab) = f(a)f(b)\)</span>.</p>
+<p>Suppose that <span class="math">\(f\)</span> is not injective. Then <span class="math">\(f(a) = f(b)\)</span> for some <span class="math">\(a \neq b\)</span>. So
+<span class="math">\(f(a-b) = f(a) + -f(b) = 0\)</span>. Then <span class="math">\(f((a-b)(a-b)^\1) = f(a-b)f((a-b)^\1) = 0\)</span>
+since the product of <span class="math">\(0\)</span> with anything is <span class="math">\(0\)</span>; and yet <span class="math">\(f((a-b)(a-b)^\1) = f(1)
+= 1\)</span>. This is a contradiction which proves that homomorphisms must be
+injective.</p>
+<p>So what about linear maps with non-empty nullspace / non full rank? A vector
+space <span class="math">\(V\)</span> is defined <em>on</em> a field <span class="math">\(F\)</span>, but it does not make use of the
+multiplication operation in the field. So although linear transformations are
+homomorphisms on the vector space, and do not have to be injective,
+homomorphisms on the underlying field which preserve structure w.r.t. both
+field operations, are necessarily injective.</p>
+<p><strong> 3.2.15 </strong></p>
+<p><strong> (a) By pairing elements with their inverses, prove that the product of all
+nonzero elements of <span class="math">\(\F_p\)</span> is <span class="math">\(-1\)</span>. </strong></p>
+<p><span class="math">\(\F_p\)</span> is the field comprising integers modulo some prime <span class="math">\(p\)</span>. Integers modulo <span class="math">\(p\)</span> always form a group under addition; the point about <span class="math">\(\F_p\)</span> is that for prime <span class="math">\(p\)</span> they form a group under</p>
+<pre>
+|   | 1 | 2 |
+|---|---|---|
+| 1 | 1 | 2 |
+| 2 | 2 | 1 |
+</pre>
+
+<pre>
+|   | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| 1 | 1 | 2 | 3 | 4 |
+| 2 | 2 | 1 |   |   |
+| 3 | 3 |   |   |   |
+| 4 | 4 |   |   |   |
+</pre>
+
+<div class="math">\begin{align*}
+\prod aa^\1 bb^\1 ...
+\end{align*}</div>
+<p><strong> (b) Let <span class="math">\(p\)</span> be a prime integer. Prove Wilson's Theorem: <span class="math">\((p- 1)! \equiv -1\)</span> (mod <span class="math">\(p\)</span>). </strong></p>
 <script type="text/javascript">if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
     var align = "center",
         indent = "0em",
@@ -609,9 +722,8 @@ following operation on the set of cosets: <span class="math">\((r_1U)(r_2U) = r_
 						<h4>Categories</h4>
 						<ul class="list-unstyled my-list-style">
 							<li><a href="http://dandavison.github.io/notes/category/calculus.html">calculus (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (5)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (2)</a></li>
-							<li><a href="http://dandavison.github.io/notes/category/questions.html">questions (1)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/group_theory.html">group_theory (4)</a></li>
+							<li><a href="http://dandavison.github.io/notes/category/misc.html">misc (4)</a></li>
 							<li><a href="http://dandavison.github.io/notes/category/VisualComplexAnalysisNeedham.html">VisualComplexAnalysisNeedham (1)</a></li>
 						</ul>
 					</div>

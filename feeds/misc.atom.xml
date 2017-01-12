@@ -1,5 +1,224 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/misc.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-09T00:00:00-08:00</updated><entry><title>Prime numbers</title><link href="http://dandavison.github.io/notes/prime-numbers.html" rel="alternate"></link><published>2016-12-09T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-09:notes/prime-numbers.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Least common multiple of two primes is their product&lt;/strong&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Notes</title><link href="http://dandavison.github.io/notes/" rel="alternate"></link><link href="http://dandavison.github.io/notes/feeds/misc.atom.xml" rel="self"></link><id>http://dandavison.github.io/notes/</id><updated>2016-12-21T00:00:00-08:00</updated><entry><title>Halmos - Naive Set Theory</title><link href="http://dandavison.github.io/notes/halmos-naive-set-theory.html" rel="alternate"></link><published>2016-12-21T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-21:notes/halmos-naive-set-theory.html</id><summary type="html"></summary></entry><entry><title>Rudin - Principles of Mathematical Analysis - Exercises</title><link href="http://dandavison.github.io/notes/real-analysis.html" rel="alternate"></link><published>2016-12-21T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-21:notes/real-analysis.html</id><summary type="html">&lt;div class="math"&gt;$$
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\Q}{\mathbb{Q}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\Rx}{\R^\times}
+\newcommand{\Cx}{\C^\times}
+\newcommand{\mat}[4]{\begin{bmatrix}#1 &amp;amp; #2\\#3 &amp;amp; #4\\ \end{bmatrix}}
+\newcommand{\smat}[4]{\tiny{\mat{#1}{#2}{#3}{#4}}}
+\newcommand{\matt}[9]{\begin{bmatrix}#1 &amp;amp; #2 &amp;amp; #3\\#4 &amp;amp; #5 &amp;amp; #6\\#7 &amp;amp; #8 &amp;amp; #9\\ \end{bmatrix}}
+\newcommand{\smatt}[9]{\tiny{\matt{#1}{#2}{#3}{#4}{#5}{#6}{#7}{#8}{#9}}}
+\newcommand{\cvec}[2]{\begin{pmatrix}#1\\#2\end{pmatrix}}
+\newcommand{\scvec}[2]{\tiny{\cvec{#1}{#2}}}
+\newcommand{\GL}{\mathrm{GL}}
+\newcommand{\GLR}[1]{\mathrm{GL}_{#1}(\R)}
+\newcommand{\GLC}[1]{\mathrm{GL}_{#1}(\C)}
+\newcommand{\1}{{-1}}
+$$&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; 1.1 If &lt;span class="math"&gt;\(r\)&lt;/span&gt; is rational (&lt;span class="math"&gt;\(r \neq 0\)&lt;/span&gt;) and &lt;span class="math"&gt;\(x\)&lt;/span&gt; is irrational, prove that &lt;span class="math"&gt;\(r + x\)&lt;/span&gt;
+and &lt;span class="math"&gt;\(rx\)&lt;/span&gt; are irrational. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(r = \frac{i}{j}\)&lt;/span&gt;, where &lt;span class="math"&gt;\(i, j \in \Z\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;Take &lt;span class="math"&gt;\(rx\)&lt;/span&gt; first. Suppose that &lt;span class="math"&gt;\(rx\)&lt;/span&gt; is rational, so &lt;span class="math"&gt;\(rx = \frac{i}{j}x =
+\frac{k}{l}\)&lt;/span&gt; for some &lt;span class="math"&gt;\(k, l \in \Z\)&lt;/span&gt;. This implies &lt;span class="math"&gt;\(x = \frac{jk}{il}\)&lt;/span&gt;, which is
+rational. This is a contradiction, since &lt;span class="math"&gt;\(x\)&lt;/span&gt; is irrational by
+definition. Therefore &lt;span class="math"&gt;\(rx\)&lt;/span&gt; is irrational.&lt;/p&gt;
+&lt;p&gt;Now take &lt;span class="math"&gt;\(r + x\)&lt;/span&gt;. Again suppose it's rational, so &lt;span class="math"&gt;\(r + x = \frac{i}{j} +
+\frac{k}{l}\)&lt;/span&gt; for some &lt;span class="math"&gt;\(k, l \in \Z\)&lt;/span&gt;. This implies &lt;span class="math"&gt;\(x = \frac{k}{l} -
+\frac{i}{j} = \frac{jk - il}{lj}\)&lt;/span&gt; which is rational. This is a contradiction
+again, since &lt;span class="math"&gt;\(x\)&lt;/span&gt; is irrational by definition. Therefore &lt;span class="math"&gt;\(r + x\)&lt;/span&gt; is irrational.&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Better proof&lt;/em&gt; If &lt;span class="math"&gt;\(rx\)&lt;/span&gt; is rational then &lt;span class="math"&gt;\(rx/r = x\)&lt;/span&gt; must be rational, since &lt;span class="math"&gt;\(\Q\)&lt;/span&gt;
+is closed under division. That's a contradiction, therefore &lt;span class="math"&gt;\(rx\)&lt;/span&gt; is not
+rational. Similarly, if &lt;span class="math"&gt;\(r + x\)&lt;/span&gt; is rational then &lt;span class="math"&gt;\(x = r + x - r\)&lt;/span&gt; must be
+rational, since &lt;span class="math"&gt;\(\Q\)&lt;/span&gt; is closed under addition and additive inverses. Again a
+contradiction, showing that &lt;span class="math"&gt;\(r+x\)&lt;/span&gt; is irrational.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 1.2 Prove that there is no rational number whose square is 12. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Lemma: The square root of a prime is irrational.&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Proof&lt;/em&gt;: Let &lt;span class="math"&gt;\(p\)&lt;/span&gt; be prime and suppose &lt;span class="math"&gt;\(\sqrt{p}\)&lt;/span&gt; is rational. Then &lt;span class="math"&gt;\(\sqrt{p} =
+i/j\)&lt;/span&gt; for some &lt;span class="math"&gt;\(i, j \in \Z\)&lt;/span&gt; with &lt;span class="math"&gt;\(i,j\)&lt;/span&gt; sharing no common factor. So &lt;span class="math"&gt;\(i^2 =
+pj^2\)&lt;/span&gt;. But &lt;span class="math"&gt;\(p\)&lt;/span&gt; is prime, so if &lt;span class="math"&gt;\(p\)&lt;/span&gt; is a factor of &lt;span class="math"&gt;\(i^2\)&lt;/span&gt; then &lt;span class="math"&gt;\(p\)&lt;/span&gt; must be a
+factor of &lt;span class="math"&gt;\(i\)&lt;/span&gt; also. Therefore &lt;span class="math"&gt;\(i^2\)&lt;/span&gt; is divisible by &lt;span class="math"&gt;\(p^2\)&lt;/span&gt; and so &lt;span class="math"&gt;\(j^2\)&lt;/span&gt; must be
+divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt; and so &lt;span class="math"&gt;\(j\)&lt;/span&gt; must be divisible by &lt;span class="math"&gt;\(p\)&lt;/span&gt;. But &lt;span class="math"&gt;\(i,j\)&lt;/span&gt; share no common
+factor by construction. This contradiction proves that &lt;span class="math"&gt;\(\sqrt{p}\)&lt;/span&gt; is
+irrational.&lt;/p&gt;
+&lt;p&gt;Suppose &lt;span class="math"&gt;\((i/j)^2 = 12\)&lt;/span&gt; for some &lt;span class="math"&gt;\(i,j \in \Z\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(i/j = 2\sqrt{3}\)&lt;/span&gt;. But &lt;span class="math"&gt;\(3\)&lt;/span&gt;
+is prime and therefore &lt;span class="math"&gt;\(\sqrt{3}\)&lt;/span&gt; is irrational and we know that the product of
+a rational and an irrational number is irrational. Therefore &lt;span class="math"&gt;\(i/j\)&lt;/span&gt; is
+irrational, which is a contradiction proving that there is no rational number
+whose square is 12.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 3. Prove Proposition 1.15 (implications of multiplication axioms) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 4. Let &lt;span class="math"&gt;\(E\)&lt;/span&gt; be a nonempty subset of an ordered set ; suppose &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is a
+lower bound of E and that &lt;span class="math"&gt;\(\beta\)&lt;/span&gt; is an upper bound of &lt;span class="math"&gt;\(E\)&lt;/span&gt;. Prove that &lt;span class="math"&gt;\(\alpha
+\leq \beta\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Intuitively: it's non-empty, so the smallest it can be is one element. That
+element could be &lt;span class="math"&gt;\(\alpha = \beta\)&lt;/span&gt; or else &lt;span class="math"&gt;\(\alpha &amp;lt; \beta\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is a lower bound for &lt;span class="math"&gt;\(E\)&lt;/span&gt;, therefore &lt;span class="math"&gt;\(\alpha \leq e\)&lt;/span&gt; for every &lt;span class="math"&gt;\(e \in
+E\)&lt;/span&gt;. Similarly &lt;span class="math"&gt;\(\beta \geq e\)&lt;/span&gt; for every &lt;span class="math"&gt;\(e \in E\)&lt;/span&gt;. Suppose that &lt;span class="math"&gt;\(\alpha &amp;gt;
+\beta\)&lt;/span&gt;. Then &lt;span class="math"&gt;\(\alpha &amp;gt; e\)&lt;/span&gt; for every &lt;span class="math"&gt;\(e \in E\)&lt;/span&gt;. This contradicts the premise
+that &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is a lower bound for &lt;span class="math"&gt;\(E\)&lt;/span&gt;, therefore &lt;span class="math"&gt;\(\alpha \leq \beta\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; 5. Let &lt;span class="math"&gt;\(A\)&lt;/span&gt; be a nonempty set of real numbers which is bounded below. Let &lt;span class="math"&gt;\(-A\)&lt;/span&gt;
+be the set of all numbers &lt;span class="math"&gt;\(-x\)&lt;/span&gt;, where &lt;span class="math"&gt;\(x \in A\)&lt;/span&gt;. Prove that
+&lt;div class="math"&gt;$$
+\inf A = - \sup(-A)
+$$&lt;/div&gt;
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(A\)&lt;/span&gt; is bounded below, therefore &lt;span class="math"&gt;\(\inf A\)&lt;/span&gt; exists. Let &lt;span class="math"&gt;\(\alpha = \inf A\)&lt;/span&gt;, i.e. &lt;span class="math"&gt;\(x
+\geq \alpha\)&lt;/span&gt; for every &lt;span class="math"&gt;\(x \in A\)&lt;/span&gt;, and &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; is the largest number for which
+this is true. Therefore &lt;span class="math"&gt;\(-x \leq -\alpha\)&lt;/span&gt; for every &lt;span class="math"&gt;\(x \in A\)&lt;/span&gt; and &lt;span class="math"&gt;\(-\alpha\)&lt;/span&gt; is
+the smallest number for which this is true. Therefore &lt;span class="math"&gt;\(-\alpha=\sup(-A)\)&lt;/span&gt; and
+&lt;span class="math"&gt;\(\alpha=-\sup(-A)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Definitions:&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;lower bound of &lt;span class="math"&gt;\(A\)&lt;/span&gt;&lt;/strong&gt;: a number &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; such that &lt;span class="math"&gt;\(x \geq \alpha\)&lt;/span&gt; for every &lt;span class="math"&gt;\(x \in A\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class="math"&gt;\(\inf A\)&lt;/span&gt;&lt;/strong&gt;: the greatest lower bound (or &lt;span class="math"&gt;\(-\infty\)&lt;/span&gt; if there is no lower bound)&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;upper bound of &lt;span class="math"&gt;\(A\)&lt;/span&gt;&lt;/strong&gt;: a number &lt;span class="math"&gt;\(\alpha\)&lt;/span&gt; such that &lt;span class="math"&gt;\(x \leq \alpha\)&lt;/span&gt; for every &lt;span class="math"&gt;\(x \in A\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;span class="math"&gt;\(\sup(-A)\)&lt;/span&gt;&lt;/strong&gt;: the least upper bound of &lt;span class="math"&gt;\(-A\)&lt;/span&gt; (or &lt;span class="math"&gt;\(+\infty\)&lt;/span&gt; if there is no upper bound)&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt; 6 Fix &lt;span class="math"&gt;\(b &amp;gt; 1\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;
+(a) If &lt;span class="math"&gt;\(m,n,p,q\)&lt;/span&gt; are integers, &lt;span class="math"&gt;\(n&amp;gt;0\)&lt;/span&gt;, &lt;span class="math"&gt;\(q&amp;gt;0\)&lt;/span&gt;, and &lt;span class="math"&gt;\(r=\frac{m}{n}=\frac{p}{q}\)&lt;/span&gt;,
+prove that &lt;span class="math"&gt;\((b^m)^{1/n} = (b^p)^{1/q}\)&lt;/span&gt;. Hence it makes sense to define &lt;span class="math"&gt;\(b^r =
+(b^m)^{1/n}\)&lt;/span&gt;· &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Consider raising these quantities to the power of the integer &lt;span class="math"&gt;\(mq = np\)&lt;/span&gt;:&lt;/p&gt;
+&lt;div class="math"&gt;$$
+((b^m)^{1/n})^{np} = (((b^m)^{1/n})^{n})^p = (b^m)^p = b^{mp},
+$$&lt;/div&gt;
+&lt;p&gt;
+and similarly
+&lt;/p&gt;
+&lt;div class="math"&gt;$$
+((b^p)^{1/q})^{mq} = (((b^p)^{1/q})^{q})^m = (b^p)^m = b^{mp}.
+$$&lt;/div&gt;
+&lt;p&gt;So both give the same result, but there is just one positive real number &lt;span class="math"&gt;\(r\)&lt;/span&gt;
+with the property that &lt;span class="math"&gt;\(r^{mq} = b^{mp}\)&lt;/span&gt;. Therefore &lt;span class="math"&gt;\((b^m)^{1/n} =
+(b^p)^{1/q}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;
+(b) Prove that &lt;span class="math"&gt;\(b^{r+s} = b^rb^s\)&lt;/span&gt; if &lt;span class="math"&gt;\(r\)&lt;/span&gt; and &lt;span class="math"&gt;\(s\)&lt;/span&gt; are rational.
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(r=\frac{i}{j}\)&lt;/span&gt; and &lt;span class="math"&gt;\(s=\frac{k}{l}\)&lt;/span&gt;. Then&lt;/p&gt;
+&lt;div class="math"&gt;$$
+b^{r+s} =
+b^\frac{iL + jk}{jl} =
+(b^{iL + jk})^\frac{1}{jl} =
+(b^{iL}b^{jk})^\frac{1}{jl} =
+b^\frac{il}{jl}b^\frac{jk}{jl} =
+b^{r}b^{s}
+$$&lt;/div&gt;
+&lt;p&gt;&lt;strong&gt; (c) If &lt;span class="math"&gt;\(x\)&lt;/span&gt; is real, define &lt;span class="math"&gt;\(B(x)\)&lt;/span&gt; to be the set of all numbers &lt;span class="math"&gt;\(b^t\)&lt;/span&gt;, where
+&lt;span class="math"&gt;\(t\)&lt;/span&gt; is rational and &lt;span class="math"&gt;\(t \leq x\)&lt;/span&gt;. Prove that &lt;div class="math"&gt;$$b^r = \sup B(r)$$&lt;/div&gt; when &lt;span class="math"&gt;\(r\)&lt;/span&gt; is
+rational. Hence it makes sense to define &lt;div class="math"&gt;$$b^x = \sup B(x)$$&lt;/div&gt; for every real &lt;span class="math"&gt;\(x\)&lt;/span&gt;.
+&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;First consider rational &lt;span class="math"&gt;\(r\)&lt;/span&gt;. &lt;span class="math"&gt;\(B(r)\)&lt;/span&gt; is the set &lt;span class="math"&gt;\(\{b^t: t \leq r\}\)&lt;/span&gt; for rational
+&lt;span class="math"&gt;\(t\)&lt;/span&gt;. It's clear that &lt;span class="math"&gt;\(b^r\)&lt;/span&gt; is an upper bound for this; we need to prove that it
+is the least upper bound. (Transcribed from solutions) The approach we're going
+to take is to show that, for any number &lt;span class="math"&gt;\(x\)&lt;/span&gt; smaller than &lt;span class="math"&gt;\(b^r\)&lt;/span&gt;, we can always
+construct a larger number that is in &lt;span class="math"&gt;\(B(r)\)&lt;/span&gt; and hence that &lt;span class="math"&gt;\(x\)&lt;/span&gt; is not the least
+upper bound. Specifically, we're going to prove that for any &lt;span class="math"&gt;\(0 &amp;lt; x &amp;lt; b^r\)&lt;/span&gt;
+there exists an integer &lt;span class="math"&gt;\(n\)&lt;/span&gt; such that &lt;span class="math"&gt;\(x &amp;lt; b^{r - 1/n}\)&lt;/span&gt; and &lt;span class="math"&gt;\(b^{r - 1/n} \in
+B(r)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;span class="math"&gt;\(r\)&lt;/span&gt; is rational, so &lt;span class="math"&gt;\(r - 1/n\)&lt;/span&gt; is also rational, hence &lt;span class="math"&gt;\(b^{r - \frac{1}{n}}&amp;gt; \in B(r)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; Prove that &lt;span class="math"&gt;\(b^{x+y} = b^xb^y\)&lt;/span&gt; for all real &lt;span class="math"&gt;\(x\)&lt;/span&gt; and &lt;span class="math"&gt;\(y\)&lt;/span&gt;.  &lt;/strong&gt;&lt;/p&gt;
+&lt;hr /&gt;
+&lt;p&gt;&lt;strong&gt; 7 Fix &lt;span class="math"&gt;\(b &amp;gt; 1, y &amp;gt; 0\)&lt;/span&gt; and prove that there is a unique real &lt;span class="math"&gt;\(x\)&lt;/span&gt; such that
+&lt;span class="math"&gt;\(b^x = y\)&lt;/span&gt;, by completing the following outline. (This is called the logarithm
+of &lt;span class="math"&gt;\(y\)&lt;/span&gt; to the base &lt;span class="math"&gt;\(b\)&lt;/span&gt;) &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (a) For any positive integer &lt;span class="math"&gt;\(n\)&lt;/span&gt;, &lt;span class="math"&gt;\(b^n - 1 \geq n(b-1)\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Base case:&lt;/em&gt; It's true for &lt;span class="math"&gt;\(n=1\)&lt;/span&gt;, i.e. &lt;span class="math"&gt;\(b^1 - 1 = 1(b-1)\)&lt;/span&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Induction:&lt;/em&gt; Suppose that it is true for &lt;span class="math"&gt;\(n=i\)&lt;/span&gt;, i.e. &lt;span class="math"&gt;\(b^i - 1 \geq i(b-1)\)&lt;/span&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Claim:&lt;/em&gt; It is true for &lt;span class="math"&gt;\(n=i+1\)&lt;/span&gt;, i.e. &lt;span class="math"&gt;\(b^{i+1} - 1 \geq (i+1)(b-1)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;em&gt;Proof:&lt;/em&gt; The desired inequality can be written as &lt;span class="math"&gt;\(b^{i+1} \geq i(b-1) +
+  b\)&lt;/span&gt;, and the assumed inequality can be written as &lt;span class="math"&gt;\(b^i \geq i(b-1) +
+  1\)&lt;/span&gt;. Multiplying both sides of the latter by &lt;span class="math"&gt;\(b\)&lt;/span&gt; gives &lt;span class="math"&gt;\(b^{i+1} \geq
+  bi(b-1) + b\)&lt;/span&gt;. Now &lt;span class="math"&gt;\(i \geq 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(b&amp;gt;1\)&lt;/span&gt;, so &lt;span class="math"&gt;\(bi(b-1) &amp;gt; i(b-1)\)&lt;/span&gt;, thus
+  &lt;span class="math"&gt;\(b^{i+1} \geq i(b-1) + b\)&lt;/span&gt; as required.&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt; (b) Hence &lt;span class="math"&gt;\(b - 1 \geq n(b^{1/n} - 1)\)&lt;/span&gt; &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In (a), &lt;span class="math"&gt;\(b\)&lt;/span&gt; was an arbitrary real number greater than 1. For clarity, let's
+rewrite that result as &lt;span class="math"&gt;\(a^n - 1 \geq n(a-1)\)&lt;/span&gt;. We can choose &lt;span class="math"&gt;\(a=b^{1/n}\)&lt;/span&gt; for
+some other real number &lt;span class="math"&gt;\(b\)&lt;/span&gt;. Thus &lt;span class="math"&gt;\(b - 1 \geq n(b^{1/n}-1)\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (c) If &lt;span class="math"&gt;\(t &amp;gt; 1\)&lt;/span&gt; and &lt;span class="math"&gt;\(n &amp;gt; \frac{b-1}{t-1}\)&lt;/span&gt;, then &lt;span class="math"&gt;\(b^{1/n} &amp;lt; t\)&lt;/span&gt;. &lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Rearranging, we have &lt;span class="math"&gt;\(b^{1/n} \leq \frac{b-1}{n} + 1\)&lt;/span&gt;. If &lt;span class="math"&gt;\(n &amp;gt; \frac{b-1}{t-1}\)&lt;/span&gt;
+then &lt;span class="math"&gt;\(b^{1/n} &amp;lt; \frac{b-1}{(b-1)/(t-1)} + 1 = t\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (d) If &lt;span class="math"&gt;\(w\)&lt;/span&gt; is such that &lt;span class="math"&gt;\(b^w &amp;lt; y\)&lt;/span&gt; then &lt;span class="math"&gt;\(b^{w + 1/n} &amp;lt; y\)&lt;/span&gt; for sufficiently
+large &lt;span class="math"&gt;\(n\)&lt;/span&gt;; to see this, apply part (c) with &lt;span class="math"&gt;\(t = yb^{-w}.\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(t = \frac{y}{b^w}\)&lt;/span&gt;. Since &lt;span class="math"&gt;\(b^w &amp;lt; y\)&lt;/span&gt;, &lt;span class="math"&gt;\(\frac{y}{b^w} &amp;gt; 1\)&lt;/span&gt;. Thus &lt;span class="math"&gt;\(b^{1/n} &amp;lt;
+\frac{y}{b^w}\)&lt;/span&gt; and hence &lt;span class="math"&gt;\(b^{w + 1/n} &amp;lt; y\)&lt;/span&gt;, iff &lt;span class="math"&gt;\(n &amp;gt; \frac{b-1}{(y -
+b^w)/b^w}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (e) If &lt;span class="math"&gt;\(b^w &amp;gt; y\)&lt;/span&gt;, then &lt;span class="math"&gt;\(b^{w - 1/n} &amp;gt; y\)&lt;/span&gt; for sufficiently large &lt;span class="math"&gt;\(n\)&lt;/span&gt;.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Let &lt;span class="math"&gt;\(t = \frac{b^w}{y}\)&lt;/span&gt;. Since &lt;span class="math"&gt;\(b^w &amp;gt; y\)&lt;/span&gt;, &lt;span class="math"&gt;\(\frac{b^w}{y} &amp;gt; 1\)&lt;/span&gt;. Thus &lt;span class="math"&gt;\(b^{1/n} &amp;lt;
+\frac{b^w}{y}\)&lt;/span&gt; and hence &lt;span class="math"&gt;\(b^{w - 1/n} &amp;gt; y\)&lt;/span&gt;, iff &lt;span class="math"&gt;\(n &amp;gt; \frac{b-1}{(b^w -
+y)/y}\)&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (f) Let &lt;span class="math"&gt;\(A\)&lt;/span&gt; be the set of all &lt;span class="math"&gt;\(w\)&lt;/span&gt; such that &lt;span class="math"&gt;\(b^w &amp;lt; y\)&lt;/span&gt;, and show that &lt;span class="math"&gt;\(x =
+\sup A\)&lt;/span&gt; satisfies &lt;span class="math"&gt;\(b^x = y.\)&lt;/span&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt; (g) Prove that this &lt;span class="math"&gt;\(x\)&lt;/span&gt; is unique.&lt;/strong&gt;&lt;/p&gt;
+&lt;script type="text/javascript"&gt;if (!document.getElementById('mathjaxscript_pelican_#%@#$@#')) {
+    var align = "center",
+        indent = "0em",
+        linebreak = "false";
+
+    if (false) {
+        align = (screen.width &lt; 768) ? "left" : align;
+        indent = (screen.width &lt; 768) ? "0em" : indent;
+        linebreak = (screen.width &lt; 768) ? 'true' : linebreak;
+    }
+
+    var mathjaxscript = document.createElement('script');
+    var location_protocol = (false) ? 'https' : document.location.protocol;
+    if (location_protocol !== 'http' &amp;&amp; location_protocol !== 'https') location_protocol = 'https:';
+    mathjaxscript.id = 'mathjaxscript_pelican_#%@#$@#';
+    mathjaxscript.type = 'text/javascript';
+    mathjaxscript.src = location_protocol + '//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML';
+    mathjaxscript[(window.opera ? "innerHTML" : "text")] =
+        "MathJax.Hub.Config({" +
+        "    config: ['MMLorHTML.js']," +
+        "    TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' }, Macros: {} }," +
+        "    jax: ['input/TeX','input/MathML','output/HTML-CSS']," +
+        "    extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']," +
+        "    displayAlign: '"+ align +"'," +
+        "    displayIndent: '"+ indent +"'," +
+        "    showMathMenu: true," +
+        "    messageStyle: 'normal'," +
+        "    tex2jax: { " +
+        "        inlineMath: [ ['\\\\(','\\\\)'] ], " +
+        "        displayMath: [ ['$$','$$'] ]," +
+        "        processEscapes: true," +
+        "        preview: 'TeX'," +
+        "    }, " +
+        "    'HTML-CSS': { " +
+        "        styles: { '.MathJax_Display, .MathJax .mo, .MathJax .mi, .MathJax .mn': {color: 'inherit ! important'} }," +
+        "        linebreaks: { automatic: "+ linebreak +", width: '90% container' }," +
+        "    }, " +
+        "}); " +
+        "if ('default' !== 'default') {" +
+            "MathJax.Hub.Register.StartupHook('HTML-CSS Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax['HTML-CSS'].FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+            "MathJax.Hub.Register.StartupHook('SVG Jax Ready',function () {" +
+                "var VARIANT = MathJax.OutputJax.SVG.FONTDATA.VARIANT;" +
+                "VARIANT['normal'].fonts.unshift('MathJax_default');" +
+                "VARIANT['bold'].fonts.unshift('MathJax_default-bold');" +
+                "VARIANT['italic'].fonts.unshift('MathJax_default-italic');" +
+                "VARIANT['-tex-mathit'].fonts.unshift('MathJax_default-italic');" +
+            "});" +
+        "}";
+    (document.body || document.getElementsByTagName('head')[0]).appendChild(mathjaxscript);
+}
+&lt;/script&gt;</summary></entry><entry><title>Prime numbers</title><link href="http://dandavison.github.io/notes/prime-numbers.html" rel="alternate"></link><published>2016-12-09T00:00:00-08:00</published><author><name>Dan Davison</name></author><id>tag:dandavison.github.io,2016-12-09:notes/prime-numbers.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Least common multiple of two primes is their product&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Let &lt;span class="math"&gt;\(p_1, p_2\)&lt;/span&gt; be prime. We want the smallest integer &lt;span class="math"&gt;\(q\)&lt;/span&gt; such that both &lt;span class="math"&gt;\(p_1\)&lt;/span&gt;
 and &lt;span class="math"&gt;\(p_2\)&lt;/span&gt; divide &lt;span class="math"&gt;\(q\)&lt;/span&gt;.&lt;/p&gt;
 &lt;p&gt;Suppose &lt;span class="math"&gt;\(p_1 &amp;gt; p_2\)&lt;/span&gt; and let &lt;span class="math"&gt;\(q = ap_1\)&lt;/span&gt;. &lt;span class="math"&gt;\(a\)&lt;/span&gt; can not be 1 since &lt;span class="math"&gt;\(p_1\)&lt;/span&gt; is prime
